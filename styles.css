@@ -67,7 +67,7 @@ main h2 {
 .logo {
     display: block;
     margin: 0 auto; /* Zentriert das Logo */
-    max-width: 10%; /* 20% der Bildschirmbreite */
+    max-width: 5%; /* 20% der Bildschirmbreite */
     height: auto; /* Erhält das Seitenverhältnis */
 }
 
