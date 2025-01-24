@@ -13,10 +13,18 @@ header {
     text-align: center;
 }
 
+/* Überschrift - Standardgröße für Desktop */
 header h1 {
     margin: 0;
-    font-size: 28px;
+    font-size: 28px; /* Desktop-Größe */
     font-weight: bold;
+}
+
+/* Überschrift - kleinere Größe für mobile Geräte */
+@media (max-width: 600px) {
+    header h1 {
+        font-size: 20px; /* Reduziere die Schriftgröße für Smartphones */
+    }
 }
 
 /* Navigation */
