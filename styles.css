@@ -13,24 +13,36 @@ header {
     text-align: center;
 }
 
-/* Überschrift - Standardgröße für Desktop */
-header h1 {
-    margin: 0;
-    font-size: 28px; /* Desktop-Größe */
-    font-weight: bold;
+/* Header-Container mit Flexbox */
+.header-container {
+    display: flex;
+    align-items: center; /* Zentriert Logo und Text vertikal */
+    justify-content: center; /* Zentriert alles horizontal */
+    gap: 15px; /* Abstand zwischen Logo und Überschrift */
 }
 
-/* Überschrift - kleinere Größe für mobile Geräte */
-@media (max-width: 600px) {
-    header h1 {
-        font-size: 20px; /* Reduziere die Schriftgröße für Smartphones */
-    }
+/* Logo */
+.logo {
+    max-width: 50px; /* Logo-Größe für Desktop */
+    height: auto; /* Erhält das Seitenverhältnis */
+}
+
+/* Überschrift */
+header h1 {
+    margin: 0;
+    font-size: 28px; /* Schriftgröße für Desktop */
+    font-weight: bold;
+    text-align: left; /* Text linksbündig */
 }
 
 /* Navigation */
+nav {
+    margin-top: 10px; /* Abstand zwischen Überschrift und Navigation */
+}
+
 nav ul {
     list-style: none;
-    margin: 10px 0 0; /* Abstand zwischen Überschrift und Navigation */
+    margin: 0;
     padding: 0;
     display: inline-flex; /* Zentriert Navigationselemente horizontal */
     gap: 20px; /* Abstand zwischen den Links */
@@ -63,17 +75,18 @@ main h2 {
     font-size: 24px;
     margin-top: 20px;
 }
-/* Logo - Standardgröße für Desktop */
-.logo {
-    display: block;
-    margin: 0 auto; /* Zentriert das Logo */
-    max-width: 5%; /* 20% der Bildschirmbreite */
-    height: auto; /* Erhält das Seitenverhältnis */
-}
 
-/* Logo - kleinere Größe für mobile Geräte */
+/* Mobile Anpassungen */
 @media (max-width: 600px) {
     .logo {
-        max-width: 20%; /* 30% der Bildschirmbreite für Smartphones */
+        max-width: 40px; /* Kleinere Größe für Smartphones */
+    }
+
+    header h1 {
+        font-size: 17px; /* Kleinere Schriftgröße */
+    }
+
+    nav ul {
+        gap: 15px; /* Weniger Abstand zwischen Links auf kleinen Bildschirmen */
     }
 }
