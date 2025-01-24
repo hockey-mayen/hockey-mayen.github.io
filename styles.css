@@ -55,9 +55,17 @@ main h2 {
     font-size: 24px;
     margin-top: 20px;
 }
-/* Logo */
+/* Logo - Standardgröße für Desktop */
 .logo {
     display: block;
     margin: 0 auto; /* Zentriert das Logo */
-    height: 100px; /* Logo-Höhe anpassen (optional) */
+    max-width: 150px; /* Maximale Breite für Desktop */
+    height: auto; /* Erhält das Seitenverhältnis */
+}
+
+/* Logo - kleinere Größe für mobile Geräte */
+@media (max-width: 600px) {
+    .logo {
+        max-width: 100px; /* Reduziere die Breite für kleinere Bildschirme */
+    }
 }
