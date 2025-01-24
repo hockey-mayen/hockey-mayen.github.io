@@ -23,7 +23,7 @@ header h1 {
 /* Überschrift - kleinere Größe für mobile Geräte */
 @media (max-width: 600px) {
     header h1 {
-        font-size: 10px; /* Reduziere die Schriftgröße für Smartphones */
+        font-size: 20px; /* Reduziere die Schriftgröße für Smartphones */
     }
 }
 
@@ -67,13 +67,13 @@ main h2 {
 .logo {
     display: block;
     margin: 0 auto; /* Zentriert das Logo */
-    max-width: 150px; /* Maximale Breite für Desktop */
+    max-width: 20%; /* 20% der Bildschirmbreite */
     height: auto; /* Erhält das Seitenverhältnis */
 }
 
 /* Logo - kleinere Größe für mobile Geräte */
 @media (max-width: 600px) {
     .logo {
-        max-width: 100px; /* Reduziere die Breite für kleinere Bildschirme */
+        max-width: 20%; /* 30% der Bildschirmbreite für Smartphones */
     }
 }
