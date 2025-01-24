@@ -23,7 +23,7 @@ header h1 {
 /* Überschrift - kleinere Größe für mobile Geräte */
 @media (max-width: 600px) {
     header h1 {
-        font-size: 20px; /* Reduziere die Schriftgröße für Smartphones */
+        font-size: 10px; /* Reduziere die Schriftgröße für Smartphones */
     }
 }
 
