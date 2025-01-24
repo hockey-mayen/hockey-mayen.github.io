@@ -1,0 +1,58 @@
+/* Allgemeine Stile */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+/* Header */
+header {
+    background-color: #004d26; /* Dunkelgrün */
+    color: white;
+    padding: 20px 0;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+/* Navigation */
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 15px;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #a3d9b2; /* Helles Grün */
+}
+
+/* Hauptinhalt */
+main {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
