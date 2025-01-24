@@ -10,29 +10,22 @@ header {
     background-color: #004d26; /* Dunkelgrün */
     color: white;
     padding: 20px 0;
+    text-align: center;
 }
 
-.header-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-h1 {
+header h1 {
     margin: 0;
-    font-size: 24px;
+    font-size: 28px;
+    font-weight: bold;
 }
 
 /* Navigation */
 nav ul {
     list-style: none;
-    margin: 0;
+    margin: 10px 0 0; /* Abstand zwischen Überschrift und Navigation */
     padding: 0;
-    display: flex;
-    gap: 15px;
+    display: inline-flex; /* Zentriert Navigationselemente horizontal */
+    gap: 20px; /* Abstand zwischen den Links */
 }
 
 nav ul li {
@@ -55,4 +48,10 @@ main {
     max-width: 800px;
     margin: 20px auto;
     padding: 0 20px;
+    text-align: center;
+}
+
+main h2 {
+    font-size: 24px;
+    margin-top: 20px;
 }
