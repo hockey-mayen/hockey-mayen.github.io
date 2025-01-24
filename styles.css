@@ -79,14 +79,14 @@ main h2 {
 /* Mobile Anpassungen */
 @media (max-width: 600px) {
     .logo {
-        max-width: 40px; /* Kleinere Größe für Smartphones */
+        max-width: 10%; /* 10% der Bildschirmbreite für das Logo */
     }
 
     header h1 {
-        font-size: 17px; /* Kleinere Schriftgröße */
+        font-size: 4vw; /* 4% der Bildschirmbreite als Schriftgröße */
     }
 
     nav ul {
-        gap: 15px; /* Weniger Abstand zwischen Links auf kleinen Bildschirmen */
+        gap: 5vw; /* Abstand zwischen Links als 5% der Bildschirmbreite */
     }
 }
