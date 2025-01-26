@@ -1,0 +1,26 @@
+{
+  "title": "Willkommen auf der Startseite",
+  "content": "Hier findest du Informationen über unseren Verein.",
+  "tiles": [
+    {
+      "title": "Training",
+      "description": "Erfahre mehr über unser regelmäßiges Training. Für Anfänger und Fortgeschrittene.",
+      "image": "images/training.jpg"
+    },
+    {
+      "title": "Turniere",
+      "description": "Unsere Mitglieder nehmen regelmäßig an spannenden Turnieren teil. Sei dabei!",
+      "image": "images/turniere.jpg"
+    },
+    {
+      "title": "Veranstaltungen",
+      "description": "Gemeinschaft und Spaß stehen bei unseren Vereinsveranstaltungen im Mittelpunkt.",
+      "image": "images/veranstaltungen.jpg"
+    },
+    {
+      "title": "Just for Fun",
+      "description": "Werde Teil unseres Vereins und profitiere von einem starken Teamgeist.",
+      "image": "images/justforfun.jpg"
+    }
+  ]
+}

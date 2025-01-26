@@ -1,0 +1,19 @@
+/* Mobile Anpassungen */
+@media (max-width: 600px) {
+    .logo {
+        max-width: 15%; /* 10% der Bildschirmbreite für das Logo */
+    }
+
+    header h1 {
+        font-size: 4vw; /* 4% der Bildschirmbreite als Schriftgröße */
+    }
+
+    nav ul {
+        gap: 5vw; /* Abstand zwischen Links als 5% der Bildschirmbreite */
+    }
+
+    .tiles-container {
+        grid-template-columns: 1fr; /* 1 Spalte für kleine Bildschirme */
+        gap: 15px; /* Weniger Abstand auf kleinen Bildschirmen */
+    }
+}

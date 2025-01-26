@@ -1,0 +1,13 @@
+/* Hauptinhalt */
+main {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0 20px;
+    text-align: center;
+    overflow: hidden; /* Verhindert, dass Inhalte abgeschnitten werden */
+}
+
+main h2 {
+    font-size: 24px;
+    margin-top: 20px;
+}

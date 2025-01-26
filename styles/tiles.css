@@ -1,0 +1,29 @@
+/* Container für Kacheln */
+.tiles-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 Spalten */
+    gap: 20px; /* Abstand zwischen den Kacheln */
+    margin-top: 20px;
+    width: 90%; /* Nutze 90% der Breite des Containers */
+    margin-left: auto; /* Zentriert den Container horizontal */
+    margin-right: auto;
+    max-width: 1200px; /* Begrenze die Breite auf maximal 1200px */
+}
+
+/* Einzelne Kachel */
+.tile {
+    background-color: #f9f9f9; /* Heller Hintergrund */
+    border: 1px solid #ddd; /* Leichte Umrandung */
+    border-radius: 8px; /* Abgerundete Ecken */
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Schatten für Tiefe */
+}
+
+/* Kachel-Bild */
+.tile img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px; /* Abgerundete Ecken am Bild */
+    margin-top: 10px;
+}
