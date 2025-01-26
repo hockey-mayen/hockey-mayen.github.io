@@ -1,25 +1,25 @@
 {
-  "title": "Willkommen auf der Startseite",
-  "content": "Hier findest du Informationen über unseren Verein.",
+  "title": "Feldhockey ist eine der schönsten Team-Sportarten",
+  "content": "Wir leben und lieben Hockey, komm vorbei, und werde Teil unserer starken Gemeinschaft",
   "tiles": [
     {
       "title": "Training",
-      "description": "Erfahre mehr über unser regelmäßiges Training. Für Anfänger und Fortgeschrittene.",
+      "description": "Anfänger und Fortgeschrittene, Groß und Klein, erhalten bei uns ein interessantes Training. Komm einfach zum Schnuppern. Unsere Trainer sind erfahrene Hockey Spieler.",
       "image": "images/training.jpg"
     },
     {
       "title": "Turniere",
-      "description": "Unsere Mitglieder nehmen regelmäßig an spannenden Turnieren teil. Sei dabei!",
+      "description": "In der Verbandsliga  nehmen unsere kleinen und großem Mitglieder regelmäßig und erfolgreich an spannenden Turnieren teil. Wir spielen auf dem Feld und in der Halle.",
       "image": "images/turniere.jpg"
     },
     {
       "title": "Veranstaltungen",
-      "description": "Gemeinschaft und Spaß stehen bei unseren Vereinsveranstaltungen im Mittelpunkt.",
+      "description": "Wir sind eine Hockey-Familie und Gemeinschaft und Spaß stehen bei unseren Vereinsveranstaltungen im Mittelpunkt.",
       "image": "images/veranstaltungen.jpg"
     },
     {
       "title": "Just for Fun",
-      "description": "Werde Teil unseres Vereins und profitiere von einem starken Teamgeist.",
+      "description": "Wir spielen Hockey auch just for fun! Der Spaß beim Spielen kommt auch bei absoluten Anfängern gut an!",
       "image": "images/justforfun.jpg"
     }
   ]
