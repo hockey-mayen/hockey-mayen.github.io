@@ -1,0 +1,9 @@
+/* Footer */
+footer {
+    text-align: center; /* Zentriert den Text horizontal */
+    padding: 10px 0; /* Abstand oben und unten */
+    background-color: #004d26; /* Gleiche Hintergrundfarbe wie der Header */
+    color: white; /* Textfarbe */
+    font-size: 14px; /* Kleinere Schriftgröße */
+    margin-top: 20px; /* Abstand zum Hauptinhalt */
+}

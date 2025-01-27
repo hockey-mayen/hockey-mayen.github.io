@@ -5,22 +5,22 @@
     {
       "title": "Training",
       "description": "Kinder und Erwachsene, Anfänger und Fortgeschrittene, erhalten bei uns ein interessantes Training. Komm einfach zum Schnuppern. Unsere Trainer sind erfahrene Hockey Spieler.",
-      "image": "images/training.jpg"
+      "image": "/assets/images/training.jpg"
     },
     {
       "title": "Turniere",
       "description": "In der Verbandsliga  nehmen unsere kleinen und großem Mitglieder regelmäßig und erfolgreich an spannenden Turnieren teil. Wir spielen auf dem Feld und in der Halle.",
-      "image": "images/turniere.jpg"
+      "image": "/assets/images/turniere.jpg"
     },
     {
       "title": "Veranstaltungen",
       "description": "Wir sind eine Hockey-Familie und Gemeinschaft und Spaß stehen bei unseren Vereinsveranstaltungen im Mittelpunkt.",
-      "image": "images/veranstaltungen.jpg"
+      "image": "/assets/images/veranstaltungen.jpg"
     },
     {
       "title": "Just for Fun",
       "description": "Wir spielen Hockey auch ganz locker – bei uns zählt vor allem der Spaß am Spiel, und selbst absolute Anfänger fühlen sich sofort wohl!",
-      "image": "images/justforfun.jpg"
+      "image": "/assets/images/justforfun.jpg"
     }
   ]
 }
