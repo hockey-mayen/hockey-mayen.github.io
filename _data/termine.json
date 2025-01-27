@@ -4,7 +4,6 @@
   "tiles": [
     {
       "title": "U8 Jungs",
-      "description": "Unsere U8-Jungs treten in spannenden Turnieren an.",
       "details": [
         { "date": "02.02.2025", "location": "Trier" },
         { "date": "16.02.2025", "location": "Mainz" },
@@ -14,7 +13,6 @@
     },
     {
       "title": "U12 Mädels",
-      "description": "Die U12-Mädels zeigen ihr Können bei hochklassigen Turnieren.",
       "details": [
         { "date": "09.02.2025", "location": "Mayen" },
         { "date": "09.03.25", "location": "Ausrichter noch unbekannt" }
@@ -23,7 +21,6 @@
     },
     {
       "title": "U12 Jungs",
-      "description": "Auch die U12-Jungs sind regelmäßig auf Turnieren vertreten.",
       "details": [
         { "date": "09.02.2025", "location": "Koblenz" },
         { "date": "09.03.2025", "location": "Ausrichter noch unbekannt" }
@@ -32,7 +29,6 @@
     },
     {
       "title": "Herren",
-      "description": "Unsere Herrenmannschaft zeigt ihr Können in spannenden Begegnungen.",
       "details": [
         { "date": "26.01.2025", "location": "Realschule Mayen" }
       ],

@@ -10,7 +10,6 @@ title: "Termine"
     {% for tile in site.data.termine.tiles %}
     <div class="tile">
         <h3>{{ tile.title }}</h3>
-        <p>{{ tile.description }}</p>
         {% if tile.details %}
             {% for detail in tile.details %}
             <br>{{ detail.date }} - {{ detail.location }}
