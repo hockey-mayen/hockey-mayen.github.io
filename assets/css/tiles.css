@@ -13,13 +13,10 @@
 /* Einzelne Kachel */
 .tile {
     color: #6c757d; /* Grauer Farbton wie bei anderen Texten */
-
-    /*background-color: #f9f9f9; !* Heller Hintergrund *!*/
-    /*border: 1px solid #ddd; !* Leichte Umrandung *!*/
-    /*border-radius: 8px; !* Abgerundete Ecken *!*/
-    /*padding: 15px;*/
-    /*text-align: center;*/
-    /*box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); !* Schatten für Tiefe *!*/
+    display: flex;
+    flex-direction: column; /* Inhalte vertikal anordnen */
+    justify-content: space-between; /* Platz zwischen den Elementen */
+    align-items: center; /* Zentriert Inhalte horizontal */
 }
 
 /* Kachel-Bild */
@@ -29,5 +26,3 @@
     border-radius: 5px; /* Abgerundete Ecken am Bild */
     margin-top: 10px;
 }
-
-
