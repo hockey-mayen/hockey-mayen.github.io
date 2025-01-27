@@ -1,4 +1,42 @@
 {
   "title": "Termine",
-  "content": "Hier findest du bald die aktuellen Termine und Veranstaltungen unseres Vereins."
+  "content": "Hier findest du die aktuellen Turniertermine und Veranstaltungsorte für unsere Teams.",
+  "tiles": [
+    {
+      "title": "U8 Jungs",
+      "description": "Unsere U8-Jungs treten in spannenden Turnieren an.",
+      "details": [
+        { "date": "10.03.2025", "location": "Sporthalle Mayen" },
+        { "date": "24.03.2025", "location": "Stadion Koblenz" }
+      ],
+      "image": "images/u8-jungs.jpg"
+    },
+    {
+      "title": "U12 Mädels",
+      "description": "Die U12-Mädels zeigen ihr Können bei hochklassigen Turnieren.",
+      "details": [
+        { "date": "15.03.2025", "location": "Sportplatz Andernach" },
+        { "date": "30.03.2025", "location": "Hockeypark Bonn" }
+      ],
+      "image": "images/u12-maedels.jpg"
+    },
+    {
+      "title": "U12 Jungs",
+      "description": "Auch die U12-Jungs sind regelmäßig auf Turnieren vertreten.",
+      "details": [
+        { "date": "12.03.2025", "location": "Sportzentrum Neuwied" },
+        { "date": "26.03.2025", "location": "Hockeyplatz Koblenz" }
+      ],
+      "image": "images/u12-jungs.jpg"
+    },
+    {
+      "title": "Herren",
+      "description": "Unsere Herrenmannschaft zeigt ihr Können in spannenden Begegnungen.",
+      "details": [
+        { "date": "20.03.2025", "location": "Hockeyfeld Mayen" },
+        { "date": "02.04.2025", "location": "Stadion Köln" }
+      ],
+      "image": "images/herren.jpg"
+    }
+  ]
 }
