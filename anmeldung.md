@@ -2,6 +2,7 @@
 layout: default
 title: Anmeldung
 permalink: /anmeldung/
+useCaptcha: false
 ---
 
 ## Mitgliedsanmeldung
@@ -16,6 +17,8 @@ Bitte wähle eine Option:
 <!-- Tab-Inhalt -->
 <div id="form-tab" class="tab-content active">
     <h3>Online-Anmeldung</h3>
+
+    {% if page.useCaptcha %}
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
     <div class="recaptcha-container">
@@ -30,6 +33,11 @@ Bitte wähle eine Option:
                 marginwidth="0" marginheight="0" style="border: none; max-width:100%; max-height:100vh" allowfullscreen
                 webkitallowfullscreen mozallowfullscreen msallowfullscreen> </iframe>
     </div>
+    {% else %}
+    <iframe width="640px" height="480px" src="https://forms.office.com/e/jk4p9wk3St" frameborder="0"
+            marginwidth="0" marginheight="0" style="border: none; max-width:100%; max-height:100vh" allowfullscreen
+            webkitallowfullscreen mozallowfullscreen msallowfullscreen> </iframe>
+    {% endif %}
 </div>
 
 <div id="download-tab" class="tab-content">
