@@ -1,9 +1,35 @@
-/* Footer */
 footer {
-    text-align: center; /* Zentriert den Text horizontal */
-    padding: 10px 0; /* Abstand oben und unten */
-    background-color: #004d26; /* Gleiche Hintergrundfarbe wie der Header */
-    color: white; /* Textfarbe */
-    font-size: 14px; /* Kleinere Schriftgröße */
-    margin-top: 20px; /* Abstand zum Hauptinhalt */
+    background-color: #004d26; /* Dunkelgrün */
+    color: white; /* Standardfarbe für den Text */
+    text-align: center;
+    padding: 20px 10px;
+    margin-top: 30px;
+    font-size: 14px;
+}
+
+footer a {
+    color: white; /* Gleiche Farbe wie der Standardtext im Footer */
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+footer a:hover {
+    text-decoration: underline; /* Unterstreicht den Link bei Hover */
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Zentriert Inhalte im Footer */
+    gap: 10px; /* Abstand zwischen Bild und Text */
+}
+
+.footer-logo {
+    max-width: 180px; /* Reduzierte Breite für das Logo */
+    height: auto; /* Beibehaltung des Seitenverhältnisses */
+    margin-bottom: 10px;
+}
+
+.footer-content p {
+    margin: 5px 0;
 }
