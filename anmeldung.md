@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Mitgliedsanmeldung
+title: Anmeldung
 permalink: /anmeldung/
 ---
 
