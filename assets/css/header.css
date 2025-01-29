@@ -91,7 +91,7 @@ nav ul li a:hover {
 
 /* Stempel direkt über den letzten Buchstaben des Titels */
 .draft-stamp {
-    width: 70px; /* Größere Größe */
+    max-width: 70px;
     height: auto;
     opacity: 0.85; /* Leichte Transparenz */
     transform: rotate(-10deg); /* Leicht gedreht für realistischen Look */

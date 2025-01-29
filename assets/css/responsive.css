@@ -1,7 +1,14 @@
 /* Mobile Anpassungen */
 @media (max-width: 600px) {
     .logo {
-        max-width: 15%; /* 10% der Bildschirmbreite für das Logo */
+        max-width: 15%;
+        /*margin-left: 20px; !* Abstand vom linken Rand *!*/
+        /* Alternativ */
+         padding-left: 30px;
+    }
+
+    .draft-stamp {
+        max-width: 15%;
     }
 
     header h1 {
