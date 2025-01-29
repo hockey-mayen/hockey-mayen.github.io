@@ -8,34 +8,30 @@ permalink: /impressum/
 
 Seite aktuell im Aufbau 🚀
 
-**Hockey-Club Grün-Weiss TuS Mayen**  
-Teststraße  
-56727 Mayen  
-Deutschland
-
-**Vertreten durch:**  
-Max Mustermann (Vorsitzender)  
-Lisa Lustig (Geschäftsführung)
-
-**Kontakt:**  
+**Hockey-Club Grün-Weiss TuS Mayen e.v.**  
+Musterstraße 12  
+12345 Musterstadt  
 <span class="email-highlight"><a href="mailto:info@testdomain.de">info@testdomain.de</a></span>  
-Telefon: +49 123 _______
 
+
+**Vertreten durch den 1. Vorsitzenden  
+Sascha Flinsch**
+
+<small>  
 **Registereintrag:**  
-Eingetragen im Vereinsregister  
-Registergericht: Amtsgericht Teststadt  
-Registernummer: VR ______
-
-**Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV:**  
-Max Mustermann  
-Teststraße  
-56727 Mayen
-
+Eingetragen im Vereinsregister beim Amtsgericht XY unter VR ____
+</small>
+<small>  
 **Haftung für Inhalte:**  
-Die Inhalte unserer Seiten wurden mit größter Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte können wir jedoch keine Gewähr übernehmen.
-
+Die Inhalte unserer Seiten wurden mit größter Sorgfalt erstellt. Für die Richtigkeit,  
+Vollständigkeit und Aktualität der Inhalte können wir jedoch keine Gewähr übernehmen.
+</small>  
+<small>  
 **Haftung für Links:**  
-Unsere Website enthält Links zu externen Webseiten Dritter, auf deren Inhalte wir keinen Einfluss haben. Deshalb können wir für diese fremden Inhalte auch keine Gewähr übernehmen.
-
+Unsere Website enthält Links zu externen Webseiten Dritter, auf deren Inhalte wir keinen Einfluss haben.  
+Deshalb können wir für diese fremden Inhalte auch keine Gewähr übernehmen.
+</small>
+<small>  
 **Urheberrecht:**  
-Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht.  
+Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht.
+</small>  

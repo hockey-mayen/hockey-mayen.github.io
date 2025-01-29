@@ -1,5 +1,5 @@
 footer {
-    background-color: #004d26; /* Dunkelgrün */
+    background: linear-gradient(135deg, #004d26, #088442);
     color: white; /* Standardfarbe für den Text */
     text-align: center;
     padding: 20px 10px;

@@ -39,3 +39,8 @@ iframe {
     color: #014022 !important; /* Etwas dunkleres Grün beim Hover */
 }
 
+.small-text {
+    font-size: 14px; /* Kleinere Schriftgröße */
+    color: #555; /* Dezentes Grau für bessere Lesbarkeit */
+    line-height: 1.5; /* Zeilenhöhe für bessere Lesbarkeit */
+}
