@@ -4,7 +4,8 @@ title: "Turniere"
 ---
 
 <h2>Turniertermine</h2>
-<p>Hier findest du die aktuellen Turniertermine und Veranstaltungsorte für unsere Teams:</p>
+<p>Wir sind hartnäckig wie Basalt. Mayener Basalt – hau!</p>
+<p>Hier findest du die aktuellen Turniertermine für unsere Teams</p>
 
 <div class="tiles-container">
     {% for tile in site.data.turniere.tiles %}

@@ -6,7 +6,7 @@ permalink: /sportstaetten/
 
 ## Sportstätten
 
-Hockey ist eine Sportart, die sowohl draußen auf dem Feld als auch in der Halle begeistert  
+Hockey ist eine Sportart, die sowohl draußen auf dem Feld als auch in der Halle gespielt wird  
 
 <div class="tiles-container">
     {% for tile in site.data.sportstaetten.tiles %}
