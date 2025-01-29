@@ -15,8 +15,11 @@ Musterstraße 12
 
 
 **Vertreten durch den 1. Vorsitzenden  
-Sascha Flinsch**
-
+Sascha Flinsch**  
+<small>  
+**Urheberrecht:**  
+Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht.
+</small>
 <small>  
 **Registereintrag:**  
 Eingetragen im Vereinsregister beim Amtsgericht XY unter VR ____
@@ -26,12 +29,9 @@ Eingetragen im Vereinsregister beim Amtsgericht XY unter VR ____
 Die Inhalte unserer Seiten wurden mit größter Sorgfalt erstellt. Für die Richtigkeit,  
 Vollständigkeit und Aktualität der Inhalte können wir jedoch keine Gewähr übernehmen.
 </small>  
-<small>  
+<small>
 **Haftung für Links:**  
 Unsere Website enthält Links zu externen Webseiten Dritter, auf deren Inhalte wir keinen Einfluss haben.  
 Deshalb können wir für diese fremden Inhalte auch keine Gewähr übernehmen.
 </small>
-<small>  
-**Urheberrecht:**  
-Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht.
-</small>  
+

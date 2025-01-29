@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Anmeldung
-permalink: /anmeldung/
+permalink: /anmeldung
 useCaptcha: false
 ---
 
