@@ -89,10 +89,13 @@ nav ul li a:hover {
     gap: 10px; /* Abstand zwischen Überschrift und Stempel */
 }
 
-/* Stempel direkt rechts neben dem Titel */
+/* Stempel direkt über den letzten Buchstaben des Titels */
 .draft-stamp {
-    width: 60px; /* Kleinere Größe */
+    width: 90px; /* Größere Größe */
     height: auto;
-    opacity: 0.8; /* Leichte Transparenz */
+    opacity: 0.85; /* Leichte Transparenz */
     transform: rotate(-10deg); /* Leicht gedreht für realistischen Look */
+    position: relative;
+    left: -25px; /* Schiebt es nach links, um "yen" zu überlappen */
+    top: 10px; /* Verschiebt es leicht nach unten für bessere Platzierung */
 }
