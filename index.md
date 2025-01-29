@@ -6,7 +6,7 @@ title: "Startseite"
 Seite aktuell im Aufbau 🚀
 
 <h2>Feldhockey ist eine der schönsten Team-Sportarten</h2>
-<p>Wir leben und lieben Hockey – egal ob auf dem Feld oder in der Sporthalle. Komm vorbei und werde Teil unserer starken Gemeinschaft</p>
+<p>Wir leben und lieben Hockey – ob draußen auf dem Feld oder in der Sporthalle. Komm vorbei und werde Teil unserer starken Gemeinschaft</p>
 
 <div class="tiles-container">
     {% for tile in site.data.startseite.tiles %}
