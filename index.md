@@ -3,7 +3,7 @@ layout: default
 title: "Startseite"
 ---
 
-🛠️ Seite aktuell im Aufbau 🛠️
+Seite aktuell im Aufbau 🚀
 
 <h2>Feldhockey ist eine der schönsten Team-Sportarten</h2>
 <p>Wir leben und lieben Hockey, komm vorbei und werde Teil unserer starken Gemeinschaft</p>
