@@ -2,11 +2,11 @@
   "tiles": [
     {
       "title": "Vorsitzender",
-      "description": "Sascha Flinsch<br>Email: sascha.flinsch@testdomain.de"
+      "description": "Max Mustermann<br>Email: max.Mustermann@testdomain.de"
     },
     {
       "title": "Geschäftsführung",
-      "description": "Nina Graeff<br>Email: nina.graeff@testdomain.de"
+      "description": "Lisa Lustig<br>Email: lisa.Lustig@testdomain.de"
     }
   ]
 }

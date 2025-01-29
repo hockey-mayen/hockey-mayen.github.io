@@ -14,8 +14,8 @@ Teststraße
 Deutschland
 
 **Vertreten durch:**  
-Sascha Flinsch (Vorsitzender)  
-Nina Graeff (Geschäftsführung)
+Max Mustermann (Vorsitzender)  
+Lisa Lustig (Geschäftsführung)
 
 **Kontakt:**  
 <span class="email-highlight"><a href="mailto:info@testdomain.de">info@testdomain.de</a></span>  
