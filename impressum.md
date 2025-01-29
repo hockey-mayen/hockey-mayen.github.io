@@ -6,6 +6,8 @@ permalink: /impressum/
 
 ## Impressum
 
+ -- Seite befindet sich aktuell im Aufbau -- 
+
 **Hockey-Club Grün-Weiss TuS Mayen**  
 Teststraße  
 56727 Mayen  
@@ -16,13 +18,13 @@ Sascha Flinsch (Vorsitzender)
 Nina Graeff (Geschäftsführung)
 
 **Kontakt:**  
-<span class="email-highlight"><a href="mailto:info@hockey-mayen.de">info@hockey-mayen.de</a></span>  
-Telefon: +49 123 4567890
+<span class="email-highlight"><a href="mailto:info@testdomain.de">info@testdomain.de</a></span>  
+Telefon: +49 123 _______
 
 **Registereintrag:**  
 Eingetragen im Vereinsregister  
-Registergericht: Amtsgericht Koblenz  
-Registernummer: VR 12345
+Registergericht: Amtsgericht Teststadt  
+Registernummer: VR ______
 
 **Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV:**  
 Max Mustermann  

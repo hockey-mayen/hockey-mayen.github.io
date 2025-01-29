@@ -2,11 +2,11 @@
   "tiles": [
     {
       "title": "Vorsitzender",
-      "description": "Sascha Flinsch<br>Email: sascha.flinsch@hockey.mayen.de"
+      "description": "Sascha Flinsch<br>Email: sascha.flinsch@testdomain.de"
     },
     {
       "title": "Geschäftsführung",
-      "description": "Nina Graeff<br>Email: nina.graeff@hockey.mayen.de"
+      "description": "Nina Graeff<br>Email: nina.graeff@testdomain.de"
     }
   ]
 }

@@ -6,8 +6,11 @@ permalink: /kontakt/
 
 ## Kontakt
 
+-- Seite befindet sich aktuell im Aufbau --
+
+
 **Kontakt:**  
-<span class="email-highlight"><a href="mailto:info@hockey-mayen.de">info@hockey-mayen.de</a></span>  
+<span class="email-highlight"><a href="mailto:info@testdomain.de">info@testdomain.de</a></span>  
 Telefon: +49 123 4567890
 
 <div class="tiles-container">
