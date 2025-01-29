@@ -6,7 +6,7 @@ permalink: /kontakt/
 
 ## Kontakt
 
--- Seite befindet sich aktuell im Aufbau --
+🛠️ Seite aktuell im Aufbau 🛠️
 
 
 **Kontakt:**  

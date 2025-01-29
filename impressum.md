@@ -6,7 +6,7 @@ permalink: /impressum/
 
 ## Impressum
 
- -- Seite befindet sich aktuell im Aufbau -- 
+ 🛠️ Seite aktuell im Aufbau 🛠️ 
 
 **Hockey-Club Grün-Weiss TuS Mayen**  
 Teststraße  
