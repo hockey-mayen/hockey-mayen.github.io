@@ -1,0 +1,14 @@
+{
+  "tiles": [
+    {
+      "title": "Sporthalle Albert-Schweitzer-Realschule",
+      "description": "Joignystraße 5, 56727 Mayen",
+      "map_link": "https://www.google.com/maps?q=Joignystraße+5,+56727+Mayen"
+    },
+    {
+      "title": "Kunstrasenplatz",
+      "description": "Bürresheimer Straße, 56727 Mayen",
+      "map_link": "https://www.google.com/maps?q=Bürresheimer+Straße,+56727+Mayen"
+    }
+  ]
+}

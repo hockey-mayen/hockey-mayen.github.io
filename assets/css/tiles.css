@@ -26,3 +26,14 @@
     border-radius: 5px; /* Abgerundete Ecken am Bild */
     margin-top: 10px;
 }
+.tile a {
+    display: inline-block;
+    margin-top: 10px;
+    color: #004d26;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.tile a:hover {
+    text-decoration: underline;
+}

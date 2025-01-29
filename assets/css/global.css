@@ -27,3 +27,15 @@ iframe {
     height: 600px;
     border: none;
 }
+
+.email-highlight a {
+    color: #014022 !important; /* Hellgrün */
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.email-highlight a:hover {
+    text-decoration: underline;
+    color: #014022 !important; /* Etwas dunkleres Grün beim Hover */
+}
+

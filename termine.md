@@ -15,9 +15,6 @@ title: "Termine"
             <br>{{ detail.date }} - {{ detail.location }}
             {% endfor %}
         {% endif %}
-        {% if tile.image %}
-        <img src="{{ tile.image }}" alt="">
-        {% endif %}
     </div>
     {% endfor %}
 </div>
