@@ -28,7 +28,7 @@
     .nav-grid {
         display: grid;
         grid-template-columns: repeat(2, 1fr); /* Zwei Spalten */
-        grid-gap: 10px; /* Abstand zwischen den Elementen */
+        grid-gap: 5px; /* Abstand zwischen den Elementen */
         text-align: center;
     }
 
