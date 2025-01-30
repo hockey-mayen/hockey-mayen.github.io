@@ -44,3 +44,46 @@ iframe {
     color: #555; /* Dezentes Grau für bessere Lesbarkeit */
     line-height: 1.5; /* Zeilenhöhe für bessere Lesbarkeit */
 }
+
+#scrollTopBtn {
+    display: none; /* Standardmäßig versteckt */
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    background-color: rgba(0, 0, 0, 0.3); /* Grauer Hintergrund mit 30% Transparenz */
+    color: white;
+    border: none;
+    border-radius: 50%;
+    font-size: 24px;
+    cursor: pointer;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+    opacity: 0;
+    visibility: hidden;
+}
+
+/* Button sichtbar machen, wenn 100px gescrollt wurde */
+#scrollTopBtn.show {
+    display: block;
+    opacity: 0.5;
+    visibility: visible;
+}
+
+/* Hover-Effekt */
+#scrollTopBtn:hover {
+    background-color: rgba(0, 0, 0, 0.5); /* Etwas weniger transparent beim Hover */
+
+}
+
+/* Mobile Optimierung */
+@media (max-width: 600px) {
+    #scrollTopBtn {
+        width: 40px;
+        height: 40px;
+        font-size: 20px;
+        bottom: 15px;
+        right: 15px;
+    }
+}
