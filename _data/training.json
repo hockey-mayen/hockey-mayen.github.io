@@ -1,0 +1,64 @@
+{
+  "tiles": [
+    {
+      "title": "U8/U10 Jungs",
+      "times": [
+        {
+          "day": "Montag",
+          "time": "16:00 - 17:30 Uhr",
+          "location": "Kunstrasenplatz Stadion Nettetal"
+        },
+        {
+          "day": "Mittwoch",
+          "time": "16:00 - 17:30 Uhr",
+          "location": "Sporthalle Albert-Schweitzer-Realschule"
+        }
+      ]
+    },
+    {
+      "title": "U10/U12 Mädels",
+      "times": [
+        {
+          "day": "Dienstag",
+          "time": "17:00 - 18:30 Uhr",
+          "location": "Kunstrasenplatz Stadion Nettetal"
+        },
+        {
+          "day": "Donnerstag",
+          "time": "17:00 - 18:30 Uhr",
+          "location": "Sporthalle Albert-Schweitzer-Realschule"
+        }
+      ]
+    },
+    {
+      "title": "U10/U12 Jungs",
+      "times": [
+        {
+          "day": "Dienstag",
+          "time": "16:00 - 17:30 Uhr",
+          "location": "Kunstrasenplatz Stadion Nettetal"
+        },
+        {
+          "day": "Donnerstag",
+          "time": "16:00 - 17:30 Uhr",
+          "location": "Sporthalle Albert-Schweitzer-Realschule"
+        }
+      ]
+    },
+    {
+      "title": "Erwachsene Just For Fun",
+      "times": [
+        {
+          "day": "Mittwoch",
+          "time": "19:00 - 20:30 Uhr",
+          "location": "Kunstrasenplatz"
+        },
+        {
+          "day": "Freitag",
+          "time": "19:00 - 20:30 Uhr",
+          "location": "Sporthalle Albert-Schweitzer-Realschule"
+        }
+      ]
+    }
+  ]
+}

@@ -4,8 +4,9 @@ title: "Turniere"
 ---
 
 <h2>Turniertermine</h2>
-<p>Wir sind hartnäckig wie Basalt. Mayener Basalt – hau!</p>
-<p>Hier findest du die aktuellen Turniertermine für unsere Teams</p>
+<p>Wir spielen In der Verbandsliga Rheinland-Pfalz-Saar.</p>
+<p><strong>Und wir sind hartnäckig wie Basalt. Mayener Basalt – hau!</strong></p>
+<p>Hier findest du die Turniertermine für unsere Teams:</p>
 
 <div class="tiles-container">
     {% for tile in site.data.turniere.tiles %}
