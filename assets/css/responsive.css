@@ -23,4 +23,16 @@
         grid-template-columns: 1fr; /* 1 Spalte für kleine Bildschirme */
         gap: 15px; /* Weniger Abstand auf kleinen Bildschirmen */
     }
+
+    /* Auf Smartphones: 2x2 Grid */
+    .nav-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); /* Zwei Spalten */
+        grid-gap: 10px; /* Abstand zwischen den Elementen */
+        text-align: center;
+    }
+
+    nav ul li {
+        width: 100%;
+    }
 }
