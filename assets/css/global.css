@@ -5,7 +5,6 @@ body {
     line-height: 1.6;
     min-height: 100vh; /* Stellt sicher, dass der Body mindestens die Höhe des Bildschirms hat */
     font-family: "Open Sans", Arial, sans-serif; /* Open Sans als Standardschrift */
-
 }
 
 /* Verhindert das Springen durch den Scrollbalken */
@@ -56,7 +55,10 @@ iframe {
     color: white;
     border: none;
     border-radius: 50%;
-    font-size: 24px;
+    font-size: 32px; /* Größerer Pfeil */
+    font-weight: bold; /* Kräftigerer Pfeil */
+    line-height: 50px; /* Zentriert den Pfeil vertikal */
+    text-align: center;
     cursor: pointer;
     box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
     transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
@@ -74,7 +76,7 @@ iframe {
 /* Hover-Effekt */
 #scrollTopBtn:hover {
     background-color: rgba(0, 0, 0, 0.5); /* Etwas weniger transparent beim Hover */
-
+    opacity: 0.8;
 }
 
 /* Mobile Optimierung */
@@ -82,7 +84,8 @@ iframe {
     #scrollTopBtn {
         width: 40px;
         height: 40px;
-        font-size: 20px;
+        font-size: 28px; /* Größerer Pfeil für Mobile */
+        line-height: 40px; /* Vertikal ausrichten */
         bottom: 15px;
         right: 15px;
     }
