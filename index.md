@@ -1,19 +1,45 @@
 ---
 layout: default
-title: "Startseite"
+title: "{{ site.data.startseite.title }}"
+permalink: /
 ---
 
-<h2>Feldhockey ist eine der schönsten Team-Sportarten</h2>
-<p>Wir leben und lieben Hockey – ob draußen auf dem Feld oder in der Sporthalle. Komm vorbei und werde Teil unserer starken Gemeinschaft</p>
+## {{ site.data.startseite.title }}
+
+{{ site.data.startseite.content }}
 
 <div class="tiles-container">
-    {% for tile in site.data.startseite.tiles %}
+ 
+    <!-- Training-Kachel mit dynamischem Bildwechsel -->
     <div class="tile">
-        <h3>{{ tile.title }}</h3>
-        <p>{{ tile.description }}</p>
-        {% if tile.image %}
-        <img src="{{ tile.image }}" alt="{{ tile.title }}">
-        {% endif %}
+        <h3>{{ site.data.startseite.tiles[0].title }}</h3>
+        <p>{{ site.data.startseite.tiles[0].description }}</p>
+        <div class="training-image-container">
+            <img id="trainingImage" src="/assets/images/training/training1.jpg" alt="Training">
+        </div>
     </div>
-    {% endfor %}
+
+    <!-- Turniere-Kachel -->
+    <div class="tile">
+        <h3>{{ site.data.startseite.tiles[1].title }}</h3>
+        <p>{{ site.data.startseite.tiles[1].description }}</p>
+        <img src="{{ site.data.startseite.tiles[1].image }}" alt="{{ site.data.startseite.tiles[1].title }}">
+    </div>
+
+    <!-- Veranstaltungen-Kachel -->
+    <div class="tile">
+        <h3>{{ site.data.startseite.tiles[2].title }}</h3>
+        <p>{{ site.data.startseite.tiles[2].description }}</p>
+        <img src="{{ site.data.startseite.tiles[2].image }}" alt="{{ site.data.startseite.tiles[2].title }}">
+    </div>
+
+    <!-- Just for Fun-Kachel -->
+    <div class="tile">
+        <h3>{{ site.data.startseite.tiles[3].title }}</h3>
+        <p>{{ site.data.startseite.tiles[3].description }}</p>
+        <img src="{{ site.data.startseite.tiles[3].image }}" alt="{{ site.data.startseite.tiles[3].title }}">
+    </div>
+
 </div>
+
+<script src="/assets/js/trainingImageRotator.js"></script>
