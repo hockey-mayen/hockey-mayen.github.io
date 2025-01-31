@@ -35,5 +35,5 @@ document.addEventListener("DOMContentLoaded", function () {
             img1.classList.add("active");
             img2.classList.remove("active");
         }, 5000); // Wartezeit für den sanften Übergang
-    }, 15000); // Alle 25 Sekunden wechseln
+    }, 20000); // Alle 25 Sekunden wechseln
 });
