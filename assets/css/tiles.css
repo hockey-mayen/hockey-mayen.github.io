@@ -46,17 +46,6 @@
     text-decoration: underline;
 }
 
-/* Aktives Bild wird sichtbar */
-.training-image-container img.active {
-    opacity: 1;
-}
-
-/* Aktives Bild wird sichtbar */
-.turniere-image-container img.active {
-    opacity: 1;
-}
-
-
 
 .training-image-container,
 .turniere-image-container {
@@ -78,7 +67,13 @@
     height: 100%;
     object-fit: cover;
     opacity: 0;
-    transition: opacity 5s ease-in-out;
+    transition: opacity 2s ease-in-out;
+}
+
+/* Aktives Bild wird sichtbar */
+.training-image-container img.active,
+.turniere-image-container img.active{
+    opacity: 1;
 }
 
 /* Erste Bilder sichtbar machen */
@@ -87,8 +82,3 @@
     opacity: 1;
 }
 
-/* Aktives Bild */
-.training-image-container img.active,
-.turniere-image-container img.active {
-    opacity: 1;
-}

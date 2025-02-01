@@ -1,4 +1,3 @@
-// js/trainingImageRotator.js
 document.addEventListener("DOMContentLoaded", function () {
     let trainingContainer = document.querySelector(".training-image-container");
 
@@ -21,6 +20,7 @@ document.addEventListener("DOMContentLoaded", function () {
     ];
 
     let currentImageIndex = Math.floor(Math.random() * images.length); // Zufälliges Startbild
+    let nextImageIndex = (currentImageIndex + 1) % images.length;
 
     let img1 = document.createElement("img");
     let img2 = document.createElement("img");
@@ -28,20 +28,38 @@ document.addEventListener("DOMContentLoaded", function () {
     img1.src = images[currentImageIndex];
     img1.classList.add("active");
 
-    img2.src = images[(currentImageIndex + 1) % images.length];
+    img2.src = images[nextImageIndex];
 
     trainingContainer.appendChild(img1);
     trainingContainer.appendChild(img2);
 
-    setInterval(() => {
-        img1.classList.remove("active"); // Altes Bild ausblenden
-        img2.classList.add("active");    // Neues Bild einblenden
+    let wechselIntervall = 15000; // Bildwechsel alle 15 Sekunden
+    let startTime = performance.now(); // Startzeitpunkt
 
-        setTimeout(() => {
-            currentImageIndex = (currentImageIndex + 1) % images.length;
-            img1.src = images[currentImageIndex];
-            img1.classList.add("active");
-            img2.classList.remove("active");
-        }, 5000);
-    }, 10000);
+    function update() {
+        let elapsedTime = performance.now() - startTime; // Verstrichene Zeit berechnen
+
+        if (elapsedTime >= wechselIntervall) {
+            startTime = performance.now(); // Timer zurücksetzen
+
+            img1.classList.remove("active");
+            img2.classList.add("active");
+
+            setTimeout(() => {
+                currentImageIndex = (currentImageIndex + 1) % images.length;
+                nextImageIndex = (currentImageIndex + 1) % images.length;
+
+                img1.src = images[nextImageIndex];
+                img1.classList.add("fade");
+                img2.classList.remove("fade");
+
+                // Tausche die Rollen der Bilder
+                [img1, img2] = [img2, img1];
+            }, 2000); // Gleiche Zeit wie CSS Transition
+        }
+
+        requestAnimationFrame(update); // Frame aktualisieren, um exakte Zeit zu messen
+    }
+
+    requestAnimationFrame(update); // Starte die Animation
 });
