@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "{{ site.data.startseite.title }}"
+#title: "{{ site.data.startseite.title }}"
 permalink: /
 ---
 
@@ -9,7 +9,7 @@ permalink: /
 {{ site.data.startseite.content }}
 
 <div class="tiles-container">
- 
+
     <!-- Training-Kachel mit dynamischem Bildwechsel -->
     <div class="tile">
         <h3>{{ site.data.startseite.tiles[0].title }}</h3>
@@ -19,11 +19,13 @@ permalink: /
         </div>
     </div>
 
-    <!-- Turniere-Kachel -->
+    <!-- Turniere-Kachel mit Bildwechsel -->
     <div class="tile">
         <h3>{{ site.data.startseite.tiles[1].title }}</h3>
         <p>{{ site.data.startseite.tiles[1].description }}</p>
-        <img src="{{ site.data.startseite.tiles[1].image }}" alt="{{ site.data.startseite.tiles[1].title }}">
+        <div class="turniere-image-container">
+            <img id="turniereImage" src="/assets/images/turniere/turnier1.jpg" alt="Turniere">
+        </div>
     </div>
 
     <!-- Veranstaltungen-Kachel -->
@@ -43,3 +45,4 @@ permalink: /
 </div>
 
 <script src="/assets/js/trainingImageRotator.js"></script>
+<script src="/assets/js/turniereImageRotator.js"></script>

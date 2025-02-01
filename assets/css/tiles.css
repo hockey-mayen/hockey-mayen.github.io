@@ -38,39 +38,49 @@
     text-decoration: underline;
 }
 
-/* Container für die Training-Bilder */
-.training-image-container {
-    position: relative;
-    width: 100%;
-    height: auto; /* Automatische Höhe basierend auf Inhalt */
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-grow: 1; /* Dehnt sich innerhalb der Kachel aus */
-}
-
-/* Alle Bilder im Container */
-.training-image-container img {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    opacity: 0;
-    transition: opacity 5s ease-in-out; /* Langsamer Übergang */
-}
-
 /* Aktives Bild wird sichtbar */
 .training-image-container img.active {
     opacity: 1;
 }
 
+/* Aktives Bild wird sichtbar */
+.turniere-image-container img.active {
+    opacity: 1;
+}
 
-/* Sicherstellen, dass die Kachel dieselbe Höhe wie die anderen hat */
-.training-tile {
+
+
+.training-image-container,
+.turniere-image-container {
+    position: relative;
+    width: 100%;
+    height: 400px; /* Falls nötig, anpassen */
+    overflow: hidden;
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
+    flex-grow: 1;
+}
+
+/* Alle Bilder im Container */
+.training-image-container img,
+.turniere-image-container img {
+    position: absolute;
+    width: 100%;
     height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 5s ease-in-out;
+}
+
+/* Erste Bilder sichtbar machen */
+.training-image-container img:first-child,
+.turniere-image-container img:first-child {
+    opacity: 1;
+}
+
+/* Aktives Bild */
+.training-image-container img.active,
+.turniere-image-container img.active {
+    opacity: 1;
 }

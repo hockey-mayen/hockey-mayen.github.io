@@ -1,5 +1,11 @@
 document.addEventListener("DOMContentLoaded", function () {
     let trainingContainer = document.querySelector(".training-image-container");
+
+    if (!trainingContainer) {
+        console.error("Fehler: .training-image-container nicht gefunden!");
+        return;
+    }
+
     let images = [
         "/assets/images/training/training1.jpg",
         "/assets/images/training/training2.jpg",
@@ -7,13 +13,14 @@ document.addEventListener("DOMContentLoaded", function () {
         "/assets/images/training/training4.jpg",
         "/assets/images/training/training5.jpg",
         "/assets/images/training/training6.jpg",
-    ]; // Feste Liste der Bilder
-
-    if (!trainingContainer || images.length < 2) return; // Falls der Container fehlt, beenden
+        "/assets/images/training/training7.jpg",
+        "/assets/images/training/training8.jpg",
+        "/assets/images/training/training9.jpg",
+        "/assets/images/training/training10.jpg",
+    ];
 
     let currentImageIndex = Math.floor(Math.random() * images.length); // Zufälliges Startbild
 
-    // Zwei Bilder für sanften Übergang erstellen
     let img1 = document.createElement("img");
     let img2 = document.createElement("img");
 
@@ -30,10 +37,10 @@ document.addEventListener("DOMContentLoaded", function () {
         img2.classList.add("active");    // Neues Bild einblenden
 
         setTimeout(() => {
-            currentImageIndex = (currentImageIndex + 1) % images.length; // Nächstes Bild in der Liste
+            currentImageIndex = (currentImageIndex + 1) % images.length;
             img1.src = images[currentImageIndex];
             img1.classList.add("active");
             img2.classList.remove("active");
-        }, 5000); // Wartezeit für den sanften Übergang
-    }, 25000); // Alle 25 Sekunden wechseln
+        }, 5000);
+    }, 20000);
 });

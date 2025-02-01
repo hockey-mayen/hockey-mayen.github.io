@@ -1,7 +1,7 @@
 /* Mobile Anpassungen */
 @media (max-width: 600px) {
     .logo {
-        max-width: 15%;
+        max-width: 17%;
         /*margin-left: 20px; !* Abstand vom linken Rand *!*/
         /* Alternativ */
          padding-left: 30px;
@@ -37,22 +37,25 @@
     }
 
     /* Höhe für das Training-Bild in der mobilen Ansicht */
-    .training-image-container {
+    .training-image-container,
+    .turniere-image-container {
         height: 200px; /* Falls nötig, Höhe anpassen */
         position: relative; /* Lässt Bilder überlappen */
     }
 
     /* Mobile Version: Crossfade-Effekt beibehalten */
-    .training-image-container img {
+    .training-image-container img,
+    .turniere-image-container img{
         position: absolute; /* Wieder absolute Positionierung */
         width: 100%;
         height: 100%;
         object-fit: cover;
         opacity: 0;
-        transition: opacity 2s ease-in-out; /* Sanfter Übergang */
+        transition: opacity 5s ease-in-out; /* Sanfter Übergang */
     }
 
-    .training-image-container img.active {
+    .training-image-container img.active,
+    .turniere-image-container img.active {
         opacity: 1; /* Bild einblenden */
     }
 }

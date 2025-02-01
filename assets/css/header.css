@@ -18,7 +18,7 @@ header {
 
 /* Logo */
 .logo {
-    max-width: 50px; /* Logo-Größe für Desktop */
+    max-width: 60px; /* Logo-Größe für Desktop */
     height: auto; /* Erhält das Seitenverhältnis */
 }
 
@@ -97,5 +97,5 @@ nav ul li a:hover {
     transform: rotate(-10deg); /* Leicht gedreht für realistischen Look */
     position: relative;
     left: -80px; /* Schiebt es nach links, um "yen" zu überlappen */
-    top: 5px; /* Verschiebt es leicht nach unten für bessere Platzierung */
+    top: -0px; /* Verschiebt es leicht nach unten für bessere Platzierung */
 }

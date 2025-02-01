@@ -5,7 +5,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="noindex, nofollow">
-    <title>{{ page.title }} - Hockey-Club Grün-Weiss TuS Mayen</title>
+
+    <!-- Favicon für Browser-Tabs -->
+    <link rel="icon" type="image/png" href="/assets/images/Logo_transparenter_Hintergrund_300dpi-300x300.png">
+    <link rel="icon" type="image/x-icon" href="/assets/images/Logo_transparenter_Hintergrund_300dpi-300x300.ico">
+    <link rel="apple-touch-icon" href="/assets/images/Logo_transparenter_Hintergrund_300dpi-300x300.png">
+    <meta name="theme-color" content="#004d26">
+
+    <title>{% if page.title %}{{ page.title }} - Hockey-Club Grün-Weiss TuS Mayen{% else %}Hockey-Club Grün-Weiss TuS Mayen{% endif %}</title>
+
     <link rel="stylesheet" href="/assets/css/global.css">
     <link rel="stylesheet" href="/assets/css/header.css">
     <link rel="stylesheet" href="/assets/css/footer.css">
