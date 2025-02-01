@@ -1,6 +1,5 @@
 ---
 layout: default
-#title: "{{ site.data.startseite.title }}"
 permalink: /
 ---
 
