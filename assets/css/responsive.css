@@ -4,52 +4,50 @@
     /* Logo optimieren: Näher an linken Rand rücken */
     .logo {
         max-width: 18%;
-        padding-left: 10px; /* Weniger Abstand zum linken Rand */
+        padding-left: 10px;
     }
 
-    /* Title + Stempel korrekt platzieren */
+    /* Container für Titel + Stempel */
     .title-container {
-        width: 100%; /* Maximale Breite */
+        width: 100%;
         display: flex;
-        flex-direction: row; /* Logo, Titel und Stempel in einer Reihe */
-        justify-content: space-between; /* Stempel ganz nach rechts */
-        align-items: center;
-        padding: 0 5px; /* Reduzierter Innenabstand */
-        white-space: nowrap; /* Verhindert Zeilenumbruch des Titels */
-        overflow: hidden; /* Falls zu lang, wird abgeschnitten */
+        flex-direction: column; /* Stapelt Titel und Stempel */
+        align-items: center; /* Zentriert den Text */
+        justify-content: center;
+        padding: 5px 10px;
+        text-align: center;
+        position: relative; /* Damit der Stempel absolut platziert werden kann */
     }
 
-    /* Titel: Schriftgröße leicht reduziert für mehr Platz */
+    /* Titel optimieren: Erster Teil in einer Zeile, Mayen darunter */
     header h1 {
-        font-size: 4.5vw; /* Etwas kleiner für bessere Darstellung */
-        text-align: left; /* Links ausrichten */
+        font-size: 4.5vw;
         margin: 0;
-        flex-grow: 1; /* Nutzt gesamte Breite */
-        white-space: nowrap; /* Verhindert Umbruch */
-        overflow: hidden;
-        text-overflow: ellipsis; /* Falls zu lang, mit "..." kürzen */
+        line-height: 1.2;
+        text-align: center;
     }
 
-    /* Stempel über "Mayen" platzieren */
+    /* Stempel sichtbar machen und korrekt platzieren */
     .draft-stamp {
-        max-width: 50px; /* Kleinere Stempelgröße für Mobile */
+        max-width: 50px;
         height: auto;
         position: absolute;
-        right: 10px; /* Näher an den Text */
-        top: 50%; /* Position über "Mayen" */
-        transform: translateY(-50%) rotate(-10deg); /* Vertikal ausrichten + Drehung */
+        right: 10px;
+        top: 50%;
+        transform: translateY(-50%) rotate(-10deg);
         opacity: 0.85;
+        display: block; /* Falls es vorher versteckt war */
     }
 
     /* Navigation optimieren */
     nav ul {
-        gap: 4vw; /* Etwas weniger Abstand zwischen Links */
+        gap: 4vw;
     }
 
     /* Kachel-Anordnung */
     .tiles-container {
-        grid-template-columns: 1fr; /* 1 Spalte auf Smartphones */
-        gap: 12px; /* Weniger Abstand */
+        grid-template-columns: 1fr;
+        gap: 12px;
     }
 
     /* Navigation feintunen */
@@ -76,8 +74,8 @@
 
     /* Header-Abstand minimieren */
     .header-container {
-        gap: 1px; /* Kaum vertikaler Abstand */
-        padding: 3px 5px; /* Kleinere Innenabstände */
+        gap: 1px;
+        padding: 3px 5px;
     }
 
     /* Navigation näher am Titel */
