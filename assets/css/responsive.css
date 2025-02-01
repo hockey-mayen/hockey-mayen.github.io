@@ -3,7 +3,7 @@
 @media (max-width: 600px) {
     /* Logo optimieren: Näher an linken Rand rücken */
     .logo {
-        max-width: 18%;
+        max-width: 19%;
         padding-left: 10px;
     }
 
