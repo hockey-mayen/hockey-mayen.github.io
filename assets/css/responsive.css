@@ -46,4 +46,21 @@
         bottom: 15px;
         right: 15px;
     }
+
+    /*.training-image-container,*/
+    /*.turniere-image-container {*/
+    /*    aspect-ratio: 3 / 2; !* Stellt sicher, dass das Verhältnis bleibt *!*/
+    /*    height: auto; !* Keine feste Höhe, passt sich an *!*/
+    /*    max-height: 250px; !* Verhindert, dass Bilder zu groß werden *!*/
+    /*}*/
+
+    /*.training-image-container img,*/
+    /*.turniere-image-container img {*/
+    /*    position: absolute;*/
+    /*    width: 100%;*/
+    /*    height: 100%;*/
+    /*    object-fit: cover;*/
+    /*    border-radius: inherit; !* Abrundung übernehmen *!*/
+    /*}*/
+
 }

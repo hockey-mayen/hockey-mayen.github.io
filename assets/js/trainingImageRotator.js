@@ -22,6 +22,7 @@ document.addEventListener("DOMContentLoaded", function () {
     let currentImageIndex = Math.floor(Math.random() * images.length); // Zufälliges Startbild
     let nextImageIndex = (currentImageIndex + 1) % images.length;
 
+    // Zwei Bilder für den Crossfade vorbereiten
     let img1 = document.createElement("img");
     let img2 = document.createElement("img");
 
@@ -33,33 +34,34 @@ document.addEventListener("DOMContentLoaded", function () {
     trainingContainer.appendChild(img1);
     trainingContainer.appendChild(img2);
 
-    let wechselIntervall = 15000; // Bildwechsel alle 15 Sekunden
-    let startTime = performance.now(); // Startzeitpunkt
+    let isTransitioning = false; // Variable zur Sicherung gegen doppeltes Wechseln
 
-    function update() {
-        let elapsedTime = performance.now() - startTime; // Verstrichene Zeit berechnen
+    function changeImage() {
+        if (isTransitioning) return; // Verhindert doppelte Wechsel
 
-        if (elapsedTime >= wechselIntervall) {
-            startTime = performance.now(); // Timer zurücksetzen
+        isTransitioning = true; // Sperre Wechsel während der Animation
 
-            img1.classList.remove("active");
-            img2.classList.add("active");
+        img1.classList.remove("active");
+        img2.classList.add("active");
 
-            setTimeout(() => {
-                currentImageIndex = (currentImageIndex + 1) % images.length;
-                nextImageIndex = (currentImageIndex + 1) % images.length;
+        // Warte auf den sanften Übergang (CSS Transition Zeit + Sicherheit)
+        setTimeout(() => {
+            // Bildquelle wechseln für den nächsten Wechsel
+            currentImageIndex = (currentImageIndex + 1) % images.length;
+            nextImageIndex = (currentImageIndex + 1) % images.length;
 
-                img1.src = images[nextImageIndex];
-                img1.classList.add("fade");
-                img2.classList.remove("fade");
+            img1.src = images[nextImageIndex];
 
-                // Tausche die Rollen der Bilder
-                [img1, img2] = [img2, img1];
-            }, 2000); // Gleiche Zeit wie CSS Transition
-        }
+            // Tausche die Rollen der Bilder
+            img1.classList.add("fade");
+            img2.classList.remove("fade");
 
-        requestAnimationFrame(update); // Frame aktualisieren, um exakte Zeit zu messen
+            // Nach Wechsel ist wieder ein neuer Wechsel erlaubt
+            [img1, img2] = [img2, img1];
+
+            isTransitioning = false;
+        }, 2000); // Gleiche Zeit wie CSS Transition
     }
 
-    requestAnimationFrame(update); // Starte die Animation
+    setInterval(changeImage, 15000);
 });
