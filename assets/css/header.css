@@ -14,12 +14,16 @@ header {
     align-items: center; /* Zentriert Logo und Text vertikal */
     justify-content: center; /* Zentriert alles horizontal */
     gap: 15px; /* Abstand zwischen Logo und Überschrift */
+
+    height: 100px; /* Fixe Höhe für den Header, anpassen falls nötig */
+    overflow: hidden; /* Verhindert, dass Inhalte den Header sprengen */
 }
 
 /* Logo */
 .logo {
-    max-width: 60px; /* Logo-Größe für Desktop */
+    max-width: 100px; /* Logo-Größe für Desktop */
     height: auto; /* Erhält das Seitenverhältnis */
+    object-fit: contain; /* Verhindert Verzerrung */
 }
 
 /* Überschrift */
