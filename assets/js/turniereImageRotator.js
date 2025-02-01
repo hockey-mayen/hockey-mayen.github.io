@@ -1,3 +1,4 @@
+// js/turniereImageRotator.js
 document.addEventListener("DOMContentLoaded", function () {
     let turniereContainer = document.querySelector(".turniere-image-container");
 

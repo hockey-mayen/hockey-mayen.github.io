@@ -1,3 +1,4 @@
+// js/trainingImageRotator.js
 document.addEventListener("DOMContentLoaded", function () {
     let trainingContainer = document.querySelector(".training-image-container");
 

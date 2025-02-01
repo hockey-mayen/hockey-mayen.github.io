@@ -1,4 +1,6 @@
-/* Container für Kacheln */
+
+/* tiles.css: Container für Kacheln */
+
 .tiles-container {
     display: grid;
     grid-template-columns: repeat(2, 1fr); /* 2 Spalten */
@@ -17,6 +19,12 @@
     flex-direction: column; /* Inhalte vertikal anordnen */
     justify-content: space-between; /* Platz zwischen den Elementen */
     align-items: center; /* Zentriert Inhalte horizontal */
+}
+
+/* Zusätzliche Stile für Kachel-Titel und Beschreibung */
+.tile h3 {
+    font-size: 20px; /* Etwas kleinere Titel für Kacheln */
+    margin-top: 15px; /* Abstand oberhalb */
 }
 
 /* Kachel-Bild */

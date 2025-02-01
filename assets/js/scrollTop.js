@@ -1,3 +1,4 @@
+// js/scrollTop.js
 document.addEventListener("DOMContentLoaded", function() {
     let scrollBtn = document.getElementById("scrollTopBtn");
 

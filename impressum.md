@@ -8,8 +8,8 @@ permalink: /impressum
 
 **Hockey-Club Grün-Weiss TuS Mayen e.V.**  
 Musterstraße 12  
-12345 Musterstadt  
-<span class="email-highlight"><a href="mailto:info@testdomain.de">info@testdomain.de</a></span>  
+56727 Mayen  
+<span class="email-highlight"><a href="mailto:info@hockey-mayen.github.io">info@hockey-mayen.github.io</a></span>  
 
 
 **Vertreten durch den 1. Vorsitzenden  

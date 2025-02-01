@@ -1,4 +1,6 @@
-/* Mobile Anpassungen */
+
+/* responsive.css: Mobile Anpassungen */
+
 @media (max-width: 600px) {
     .logo {
         max-width: 17%;
@@ -34,6 +36,15 @@
 
     nav ul li {
         width: 100%;
+    }
+
+    #scrollTopBtn {
+        width: 40px;
+        height: 40px;
+        font-size: 28px; /* Größerer Pfeil für Mobile */
+        line-height: 40px; /* Vertikal ausrichten */
+        bottom: 15px;
+        right: 15px;
     }
 
     /* Höhe für das Training-Bild in der mobilen Ansicht */

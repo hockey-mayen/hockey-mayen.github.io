@@ -1,5 +1,4 @@
 title: "Hockey-Club Grün-Weiss TuS Mayen"
 description: "Offizielle Website des Vereins"
 baseurl: "" # Für GitHub Pages leer lassen
-url: "https://hockey-mayen.github.io" # URL deiner Website
-#theme: jekyll-theme-cayman
+url: "https://hockey-mayen.github.io" # URL der Website
