@@ -42,5 +42,5 @@ document.addEventListener("DOMContentLoaded", function () {
             img1.classList.add("active");
             img2.classList.remove("active");
         }, 5000);
-    }, 20000);
+    }, 10000);
 });

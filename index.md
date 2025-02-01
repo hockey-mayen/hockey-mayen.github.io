@@ -15,7 +15,7 @@ permalink: /
         <h3>{{ site.data.startseite.tiles[0].title }}</h3>
         <p>{{ site.data.startseite.tiles[0].description }}</p>
         <div class="training-image-container">
-            <img id="trainingImage" src="/assets/images/training/training1.jpg" alt="Training">
+            <img id="trainingImage">
         </div>
     </div>
 
@@ -24,7 +24,7 @@ permalink: /
         <h3>{{ site.data.startseite.tiles[1].title }}</h3>
         <p>{{ site.data.startseite.tiles[1].description }}</p>
         <div class="turniere-image-container">
-            <img id="turniereImage" src="/assets/images/turniere/turnier1.jpg" alt="Turniere">
+            <img id="turniereImage">
         </div>
     </div>
 
