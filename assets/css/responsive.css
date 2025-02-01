@@ -63,4 +63,13 @@
     /*    border-radius: inherit; !* Abrundung übernehmen *!*/
     /*}*/
 
+
+    .header-container {
+        flex-direction: column; /* Falls noch nicht gesetzt */
+        gap: 5px; /* Reduziert den Abstand zwischen Logo, Titel und Navigation */
+    }
+
+    nav {
+        margin-top: 5px; /* Weniger Abstand zur Navigation */
+    }
 }
