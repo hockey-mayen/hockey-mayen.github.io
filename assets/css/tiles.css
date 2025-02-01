@@ -19,6 +19,8 @@
     flex-direction: column; /* Inhalte vertikal anordnen */
     justify-content: space-between; /* Platz zwischen den Elementen */
     align-items: center; /* Zentriert Inhalte horizontal */
+    border-radius: 5px; /* Abgerundete Ecken für alle Kacheln */
+    overflow: hidden; /* Verhindert, dass Bilder aus der Kachel herausragen */
 }
 
 /* Zusätzliche Stile für Kachel-Titel und Beschreibung */
@@ -51,12 +53,13 @@
 .turniere-image-container {
     position: relative;
     width: 100%;
-    height: 400px; /* Falls nötig, anpassen */
+    aspect-ratio: 600 / 400; /* Stellt sicher, dass das Bild ein Seitenverhältnis von 16:9 hat */
     overflow: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-grow: 1;
+    border-radius: 5px; /* Abgerundete Ecken */
 }
 
 /* Alle Bilder im Container */
@@ -68,6 +71,7 @@
     object-fit: cover;
     opacity: 0;
     transition: opacity 2s ease-in-out;
+    border-radius: inherit; /* Erbt die abgerundeten Ecken vom Container */
 }
 
 /* Aktives Bild wird sichtbar */
