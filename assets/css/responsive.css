@@ -1,51 +1,62 @@
-
 /* responsive.css: Mobile Anpassungen */
 
 @media (max-width: 600px) {
+    /* Logo optimieren: Näher an linken Rand rücken */
     .logo {
-        max-width: 20%;
-        /*margin-left: 20px; !* Abstand vom linken Rand *!*/
-        /* Alternativ */
-         padding-left: 30px;
+        max-width: 18%;
+        padding-left: 10px; /* Weniger Abstand zum linken Rand */
     }
 
+    /* Title + Stempel korrekt platzieren */
     .title-container {
-        width: 100%; /* Nutzt die gesamte verfügbare Breite */
+        width: 100%; /* Maximale Breite */
         display: flex;
-        flex-direction: row; /* Hält Titel und Stempel in einer Linie */
-        justify-content: space-between; /* Stempel ganz nach rechts drücken */
+        flex-direction: row; /* Logo, Titel und Stempel in einer Reihe */
+        justify-content: space-between; /* Stempel ganz nach rechts */
         align-items: center;
-        padding: 0 10px; /* Verhindert zu viel Platz links */
+        padding: 0 5px; /* Reduzierter Innenabstand */
+        white-space: nowrap; /* Verhindert Zeilenumbruch des Titels */
+        overflow: hidden; /* Falls zu lang, wird abgeschnitten */
     }
 
-    .draft-stamp {
-        max-width: 15%;
-        left: 0; /* Keine unnötige Verschiebung */
-        top: 0;
-    }
-
+    /* Titel: Schriftgröße leicht reduziert für mehr Platz */
     header h1 {
-        font-size: 5vw; /* Größere Schrift auf kleinen Bildschirmen */
+        font-size: 4.5vw; /* Etwas kleiner für bessere Darstellung */
         text-align: left; /* Links ausrichten */
         margin: 0;
-        flex-grow: 1; /* Sorgt dafür, dass der Titel den verfügbaren Platz nutzt */
-
+        flex-grow: 1; /* Nutzt gesamte Breite */
+        white-space: nowrap; /* Verhindert Umbruch */
+        overflow: hidden;
+        text-overflow: ellipsis; /* Falls zu lang, mit "..." kürzen */
     }
 
+    /* Stempel über "Mayen" platzieren */
+    .draft-stamp {
+        max-width: 50px; /* Kleinere Stempelgröße für Mobile */
+        height: auto;
+        position: absolute;
+        right: 10px; /* Näher an den Text */
+        top: 50%; /* Position über "Mayen" */
+        transform: translateY(-50%) rotate(-10deg); /* Vertikal ausrichten + Drehung */
+        opacity: 0.85;
+    }
+
+    /* Navigation optimieren */
     nav ul {
-        gap: 5vw; /* Abstand zwischen Links als 5% der Bildschirmbreite */
+        gap: 4vw; /* Etwas weniger Abstand zwischen Links */
     }
 
+    /* Kachel-Anordnung */
     .tiles-container {
-        grid-template-columns: 1fr; /* 1 Spalte für kleine Bildschirme */
-        gap: 15px; /* Weniger Abstand auf kleinen Bildschirmen */
+        grid-template-columns: 1fr; /* 1 Spalte auf Smartphones */
+        gap: 12px; /* Weniger Abstand */
     }
 
-    /* Auf Smartphones: 2x2 Grid */
+    /* Navigation feintunen */
     .nav-grid {
         display: grid;
-        grid-template-columns: repeat(2, 1fr); /* Zwei Spalten */
-        grid-gap: 5px; /* Abstand zwischen den Elementen */
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 5px;
         text-align: center;
     }
 
@@ -53,38 +64,24 @@
         width: 100%;
     }
 
+    /* Scroll-Button für mobile Ansicht */
     #scrollTopBtn {
         width: 40px;
         height: 40px;
-        font-size: 28px; /* Größerer Pfeil für Mobile */
-        line-height: 40px; /* Vertikal ausrichten */
+        font-size: 28px;
+        line-height: 40px;
         bottom: 15px;
         right: 15px;
     }
 
-    /*.training-image-container,*/
-    /*.turniere-image-container {*/
-    /*    aspect-ratio: 3 / 2; !* Stellt sicher, dass das Verhältnis bleibt *!*/
-    /*    height: auto; !* Keine feste Höhe, passt sich an *!*/
-    /*    max-height: 250px; !* Verhindert, dass Bilder zu groß werden *!*/
-    /*}*/
-
-    /*.training-image-container img,*/
-    /*.turniere-image-container img {*/
-    /*    position: absolute;*/
-    /*    width: 100%;*/
-    /*    height: 100%;*/
-    /*    object-fit: cover;*/
-    /*    border-radius: inherit; !* Abrundung übernehmen *!*/
-    /*}*/
-
-
+    /* Header-Abstand minimieren */
     .header-container {
-        gap: 2px; /* Reduziert den vertikalen Abstand */
-        padding: 5px 10px; /* Reduziert den Abstand nach oben */
+        gap: 1px; /* Kaum vertikaler Abstand */
+        padding: 3px 5px; /* Kleinere Innenabstände */
     }
 
+    /* Navigation näher am Titel */
     nav {
-        margin-top: 5px; /* Weniger Abstand zur Navigation */
+        margin-top: 3px;
     }
 }
