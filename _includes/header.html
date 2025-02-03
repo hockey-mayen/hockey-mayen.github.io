@@ -5,15 +5,14 @@
         <div class="title-container">
             <img src="/assets/images/Logo_transparenter_Hintergrund_300dpi-300x300.png" alt="Vereinslogo" class="logo">
             <h1>Hockey-Club Grün-Weiss TuS Mayen</h1>
-<!--            <img src="/assets/images/draft.png" alt="Draft Stempel" class="draft-stamp">-->
         </div>
     </div>
     <nav>
         <ul class="nav-grid">
-            <li><a href="/">Über uns</a></li>
-            <li><a href="/training">Training</a></li>
-            <li><a href="/turniere">Turniere</a></li>
-            <li><a href="/anmeldung">Anmeldung</a></li>
+            <li><a href="/" class="{% if page.url == '/' %}active{% endif %}">Über uns</a></li>
+            <li><a href="/training" class="{% if page.url contains '/training' %}active{% endif %}">Training</a></li>
+            <li><a href="/turniere" class="{% if page.url contains '/turniere' %}active{% endif %}">Turniere</a></li>
+            <li><a href="/anmeldung" class="{% if page.url == '/anmeldung' %}active{% endif %}">Anmeldung</a></li>
         </ul>
     </nav>
 </header>

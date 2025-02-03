@@ -14,10 +14,17 @@ footer a {
     color: white; /* Gleiche Farbe wie der Standardtext im Footer */
     text-decoration: none;
     margin: 0 10px;
+    font-weight: normal; /* Normale Schriftstärke */
+    transition: color 0.3s; /* Weicher Farbwechsel */
 }
 
 footer a:hover {
-    text-decoration: underline; /* Unterstreicht den Link bei Hover */
+    color: #a3d9b2; /* Helles Grün */
+}
+
+/* Aktiver Link im Footer bleibt grün */
+footer a.active {
+    color: #a3d9b2 !important; /* Grüne Farbe für aktiven Link */
 }
 
 .footer-content {

@@ -55,12 +55,26 @@ nav ul li a {
     text-decoration: none;
     color: white;
     font-size: 18px;
+    font-weight: bold;
     transition: color 0.3s;
 }
 
 nav ul li a:hover {
     color: #a3d9b2; /* Helles Grün */
 }
+
+/* Aktiver Zustand - wenn die Seite aktiv ist */
+nav ul li a:focus,
+nav ul li a:active {
+    color: #a3d9b2; /* Bleibt grün nach dem Klicken */
+}
+
+/* Aktiver Navigationspunkt basierend auf der URL */
+nav ul li a.active {
+    color: #a3d9b2 !important; /* Bleibt grün, wenn die Seite aktiv ist */
+    font-weight: bold; /* Optional: Hebt den aktiven Link stärker hervor */
+}
+
 .draft-badge {
     display: inline-block;
     background-color: darkred;

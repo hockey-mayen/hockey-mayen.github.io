@@ -3,8 +3,16 @@
     <div class="footer-content">
         <img src="/assets/images/hockey-mayen-white.png" alt="Hockey Mayen Logo" class="footer-logo">
         <p>
-            <a href="/sportstaetten">Unsere Sportstätten</a> |
-            <a href="/impressum">Impressum</a>
+            <a href="/sportstaetten"
+               class="{% if page.url == '/sportstaetten' or page.url == '/sportstaetten/' %}active{% endif %}">
+                Unsere Sportstätten
+            </a>
+            <a href="/impressum"
+               class="{% if page.url == '/impressum' or page.url == '/impressum/' %}active{% endif %}">
+                Impressum
+            </a>
         </p>
+
+
     </div>
 </footer>
