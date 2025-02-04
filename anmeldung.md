@@ -6,9 +6,6 @@ useCaptcha: false
 ---
 
 ## Mitgliedsanmeldung
-
-Bitte wähle eine Option:
-
 <div class="tab-container">
     <button class="tab-button active" onclick="showTab('form-tab')">Online-Anmeldung</button>
     <button class="tab-button" onclick="showTab('download-tab')">PDF zum Drucken herunterladen</button>

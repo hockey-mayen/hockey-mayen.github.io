@@ -6,8 +6,8 @@ permalink: /veranstaltungen/
 
 <h2>Unsere Vereinsveranstaltungen – Gemeinsam mehr erleben!</h2>
 
-## 🏑Frühlingsfest „Anhockeln“ – Der Start in die Feldsaison
-Jedes Jahr im **April** feiern wir unser traditionelles **Frühlingsfest „Anhockeln“**.  
+## Frühlingsfest „Anhockeln“ – Der Start in die Feldsaison
+Jedes Jahr im **April** feiern wir mit unseren Kindern und Erwachsenenen unser traditionelles **Frühlingsfest „Anhockeln“**.  
 Auf unserem Kunstrasenplatz starten wir die Feldsaison mit **Spaß, Hockey und Grillen**.  
 Bei einem lockeren Turnier können sich Spieler aller Altersklassen austoben.  
 Dazu gibt es Steaks und Würstchen, Salate und natürlich kühle Getränke.
@@ -16,8 +16,8 @@ Dazu gibt es Steaks und Würstchen, Salate und natürlich kühle Getränke.
 
 [//]: # (---)
 
-## ☀️ Sommer-Camp – Drei Tage Natur & Hockey-Abenteuer
-Im **August** zieht es uns in die Natur! Bei unserem **Sommer-Camp** verbringen wir  
+## ☀️ Sommer-Camp – Drei Tage Natur & Abenteuer
+Im **August** zieht es uns in die Natur! Bei unserem **Sommer-Camp** in verbringen wir  
 **drei Tage voller Spaß, Lagerfeuer und Teamgeist**.  
 Neben sportlichen Aktivitäten gibt es **Nachtwanderungen, Zeltlager und Gemeinschaftsspiele**.
 
@@ -25,7 +25,7 @@ Neben sportlichen Aktivitäten gibt es **Nachtwanderungen, Zeltlager und Gemeins
 
 [//]: # (---)
 
-## 🌄 Team-Ausflüge – Mehr als nur Hockey
+## Team-Ausflüge – Mehr als nur Hockey
 Das ganze Jahr über unternehmen wir gemeinsam **spannende Ausflüge**.  
 Ob eine **Wanderung durch die Eifel**, ein Besuch im **Kletterpark oder Trampolin-Center**,  
 oder eine Runde **Bowling** – bei uns ist immer etwas los!
@@ -43,4 +43,4 @@ Zum Abschluss des Jahres feiern wir eine **Weihnachtsfeier** in unseres Sporthal
 
 [//]: # (---)
 
-✨ **Hast du Lust, dabei zu sein?** Dann komm vorbei und sei Teil unserer Hockey-Familie! 💚🏑
+✨ **Hast du Lust, dabei zu sein?** Dann komm vorbei und sei Teil unserer Hockey-Familie! 🏑
