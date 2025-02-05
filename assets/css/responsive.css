@@ -57,8 +57,13 @@
 
     /* Navigation optimieren */
     nav ul {
-        gap: 4vw;
+        gap: 2vw;
     }
+
+    nav ul li a {
+        font-size: 4vw; /* Gleiche oder kleinere Schriftgröße wie .club-title */
+    }
+
 
     /* Kachel-Anordnung */
     .tiles-container {
