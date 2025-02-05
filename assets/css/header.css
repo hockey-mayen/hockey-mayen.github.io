@@ -4,7 +4,7 @@ header {
     background: linear-gradient(135deg, #004d26, #088442);
 
     color: white;
-    padding: 20px 0;
+    padding: 15px 0;
     text-align: center;
 }
 
@@ -21,9 +21,11 @@ header {
 
 /* Logo */
 .logo {
-    max-width: 100px; /* Logo-Größe für Desktop */
-    height: auto; /* Erhält das Seitenverhältnis */
-    object-fit: contain; /* Verhindert Verzerrung */
+    max-width: 100px;
+    height: auto;
+    object-fit: contain;
+    display: flex;
+    align-items: center;
 }
 
 /* Überschrift */
@@ -84,23 +86,26 @@ nav ul li a.active {
 .title-text {
     display: flex;
     flex-direction: column;
-    justify-content: center; /* Vertikale Zentrierung */
-    align-items: center; /* Sicherstellen, dass beides mittig ist */
-    text-align: center;
-    height: 100%; /* Sicherstellen, dass der Container die volle Höhe nutzt */
-
+    justify-content: center; /* Vertikal zentrieren */
+    text-align: left;
 }
 
 .club-title {
-    margin: 0; /* Entfernt Standardabstand */
+    margin: 0;
     font-size: 28px;
     font-weight: bold;
     line-height: 1.2; /* Verhindert zu große Abstände */
+    display: flex;
+    align-items: center; /* Vertikale Zentrierung im Container */
+    height: 100%; /* Stellt sicher, dass der gesamte Bereich genutzt wird */
+    transform: translateY(0.55em); /* Verschiebt den Text um die halbe Höhe des "H" nach unten */
+
 }
 
 .subtitle {
     font-size: 14px;
     font-weight: normal;
-    margin-top: 0px; /* Kleiner Abstand zur Überschrift */
-    color: rgba(255, 255, 255, 0.8); /* Dezentes Weiß */
+    margin-top: 3px; /* Etwas Abstand unterhalb der Hauptzeile */
+    color: rgba(255, 255, 255, 0.8);
+    transform: translateY(0.45em); /* Verschiebt den Text um die halbe Höhe des "H" nach unten */
 }
