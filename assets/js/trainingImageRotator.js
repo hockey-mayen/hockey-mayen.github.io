@@ -60,8 +60,8 @@ document.addEventListener("DOMContentLoaded", function () {
             [img1, img2] = [img2, img1];
 
             isTransitioning = false;
-        }, 2000); // Gleiche Zeit wie CSS Transition
+        }, 3000); // Gleiche Zeit wie CSS Transition
     }
 
-    setInterval(changeImage, 15000);
+    setInterval(changeImage, 8000);
 });

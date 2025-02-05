@@ -70,7 +70,7 @@
     height: 100%;
     object-fit: cover;
     opacity: 0;
-    transition: opacity 2s ease-in-out;
+    transition: opacity 3s ease-in-out;
     border-radius: inherit; /* Erbt die abgerundeten Ecken vom Container */
 }
 

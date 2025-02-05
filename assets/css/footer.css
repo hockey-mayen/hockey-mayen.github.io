@@ -43,3 +43,17 @@ footer a.active {
 .footer-content p {
     margin: 5px 0;
 }
+
+/* Facebook-Icon */
+.footer-social-icon {
+    width: 50px; /* Größe anpassen */
+    height: auto;
+    vertical-align: middle; /* Damit das Logo auf gleicher Höhe wie der Text ist */
+    margin-left: 0px; /* Kleiner Abstand zum Text */
+    filter: brightness(0) saturate(100%) invert(100%); /* Weiß einfärben */
+    transition: opacity 0.3s;
+}
+
+.footer-social-icon:hover {
+    opacity: 0.7; /* Leichte Transparenz beim Hover */
+}
