@@ -8,31 +8,27 @@
         { "date": "02.02.2025", "location": "Trier" },
         { "date": "16.02.2025", "location": "Mainz" },
         { "date": "09.03.2025", "location": "Worms" }
-      ],
-      "image": "images/u8-jungs.jpg"
+      ]
     },
     {
       "title": "U12 Mädels",
       "details": [
         { "date": "09.02.2025", "location": "Mayen" },
         { "date": "09.03.25", "location": "Ausrichter noch unbekannt" }
-      ],
-      "image": "images/u12-maedels.jpg"
+      ]
     },
     {
       "title": "U12 Jungs",
       "details": [
         { "date": "09.02.2025", "location": "Koblenz" },
         { "date": "09.03.2025", "location": "Ausrichter noch unbekannt" }
-      ],
-      "image": "images/u12-jungs.jpg"
+      ]
     },
     {
       "title": "Erwachsene",
       "details": [
         { "date": "26.01.2025", "location": "Realschule Mayen" }
-      ],
-      "image": "images/herren.jpg"
+      ]
     }
   ]
 }

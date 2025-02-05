@@ -14,7 +14,7 @@ title: "Turniere"
         <h3>{{ tile.title }}</h3>
         {% if tile.details %}
             {% for detail in tile.details %}
-            <br>{{ detail.date }} - {{ detail.location }}
+            {{ detail.date }} - {{ detail.location }}<br>
             {% endfor %}
         {% endif %}
     </div>
