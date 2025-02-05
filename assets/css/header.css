@@ -1,4 +1,6 @@
-/* header.css: Header */
+@import url('https://fonts.googleapis.com/css2?family=Fruktur&display=swap'); /* header.css: Header */
+@import url('https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&display=swap');
+
 header {
     /*background-color: #004d26; !* Dunkelgrün *!*/
     background: linear-gradient(135deg, #004d26, #088442);
@@ -98,14 +100,15 @@ nav ul li a.active {
     display: flex;
     align-items: center; /* Vertikale Zentrierung im Container */
     height: 100%; /* Stellt sicher, dass der gesamte Bereich genutzt wird */
-    transform: translateY(0.55em); /* Verschiebt den Text um die halbe Höhe des "H" nach unten */
+    transform: translateY(0.80em); /* Verschiebt den Text um die halbe Höhe des "H" nach unten */
 
 }
 
 .subtitle {
-    font-size: 14px;
+    font-size: 19px;
     font-weight: normal;
     margin-top: 3px; /* Etwas Abstand unterhalb der Hauptzeile */
-    color: rgba(255, 255, 255, 0.8);
-    transform: translateY(0.45em); /* Verschiebt den Text um die halbe Höhe des "H" nach unten */
+    color: rgb(255, 255, 255);
+    transform: translateY(0.80em); /* Verschiebt den Text um die halbe Höhe des "H" nach unten */
+    font-family: 'UnifrakturMaguntia', cursive;
 }
