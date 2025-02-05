@@ -52,7 +52,7 @@
 
     /* Club-Titel optimieren */
     .club-title {
-        font-size: 5vw;
+        font-size: 5.3vw;
         font-weight: bold;
         margin: 0;
         line-height: 1.2;
@@ -60,7 +60,7 @@
 
     /* Untertitel in gotischer Schrift */
     .subtitle {
-        font-size: 4vw;
+        font-size: 4.3vw;
         font-family: 'UnifrakturMaguntia', cursive;
         color: rgba(255, 255, 255, 0.8);
     }
