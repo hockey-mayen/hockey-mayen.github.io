@@ -60,7 +60,7 @@
 
     /* Untertitel in gotischer Schrift */
     .subtitle {
-        font-size: 3.8vw;
+        font-size: 4vw;
         font-family: 'UnifrakturMaguntia', cursive;
         color: rgba(255, 255, 255, 0.8);
     }
@@ -93,7 +93,7 @@
     nav ul li a {
         text-decoration: none;
         color: white;
-        font-size: 4.5vw; /* Etwas größere Schrift für bessere Lesbarkeit */
+        font-size: 5vw; /* Etwas größere Schrift für bessere Lesbarkeit */
         font-weight: bold;
         transition: color 0.3s;
     }
