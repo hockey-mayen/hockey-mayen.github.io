@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Fruktur&display=swap'); /* header.css: Header */
+/* header.css: Header */
 @import url('https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&display=swap');
 
 header {
@@ -10,24 +10,41 @@ header {
     text-align: center;
 }
 
+/* Titel + Navigation in einer Spalte */
+/* Titel + Navigation in einer Spalte */
+.header-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Sorgt für horizontale Zentrierung */
+    text-align: center;
+    margin-bottom: auto; /* Drückt die Navigation nach unten */
+}
+
 /* Header-Container mit Flexbox */
 .header-container {
     display: flex;
-    align-items: center; /* Zentriert Logo und Text vertikal */
-    justify-content: center; /* Zentriert alles horizontal */
-    gap: 15px; /* Abstand zwischen Logo und Überschrift */
-
-    height: 100px; /* Fixe Höhe für den Header, anpassen falls nötig */
-    overflow: hidden; /* Verhindert, dass Inhalte den Header sprengen */
+    align-items: flex-start; /* Sorgt dafür, dass der Titel oben am Logo ausgerichtet wird */
+    justify-content: center; /* Alles horizontal im Header ausrichten */
+    gap: 15px; /* Abstand zwischen Logo und Titel */
+    padding-top: 5px; /* Falls nötig, anpassen */
 }
 
-/* Logo */
+/* Logo bleibt links */
+.logo-container {
+    display: flex;
+    align-items: flex-start; /* Oben bündig */
+}
+
+/* Logo fix links neben dem Titel */
 .logo {
     max-width: 100px;
     height: auto;
     object-fit: contain;
-    display: flex;
-    align-items: center;
+}
+
+/* Navigation feintunen */
+.nav-grid {
+    transform: translateY(-1.40em);
 }
 
 /* Überschrift */
@@ -39,16 +56,23 @@ header h1 {
 }
 
 /* Navigation */
+/* Navigation horizontal exakt mittig zum Titel ausrichten */
+/* Navigation genau unten ausrichten */
+/* Navigation genau unten ausrichten */
 nav {
-    margin-top: 10px; /* Abstand zwischen Überschrift und Navigation */
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: auto; /* Sorgt für perfekte Ausrichtung */
 }
 
 nav ul {
     list-style: none;
-    margin: 0;
     padding: 0;
-    display: inline-flex; /* Zentriert Navigationselemente horizontal */
-    gap: 20px; /* Abstand zwischen den Links */
+    margin: 0;
+    display: flex;
+    gap: 15px;
+    align-items: center;
 }
 
 nav ul li {
@@ -82,13 +106,13 @@ nav ul li a.active {
 /* Container für Titel + Stempel */
 .title-container {
     display: flex;
-    align-items: center; /* Stellt sicher, dass das Bild und die Überschrift auf einer Linie sind */
-    gap: 5px; /* Abstand zwischen Überschrift und Stempel */
+    align-items: center; /* Logo und Titel in einer Linie */
+    gap: 10px; /* Abstand zwischen Logo und Text */
 }
+/* Titel */
 .title-text {
     display: flex;
     flex-direction: column;
-    justify-content: center; /* Vertikal zentrieren */
     text-align: left;
 }
 
@@ -96,19 +120,14 @@ nav ul li a.active {
     margin: 0;
     font-size: 28px;
     font-weight: bold;
-    line-height: 1.2; /* Verhindert zu große Abstände */
-    display: flex;
-    align-items: center; /* Vertikale Zentrierung im Container */
-    height: 100%; /* Stellt sicher, dass der gesamte Bereich genutzt wird */
-    transform: translateY(0.80em); /* Verschiebt den Text um die halbe Höhe des "H" nach unten */
-
+    transform: translateY(-0.30em);
 }
 
 .subtitle {
     font-size: 19px;
     font-weight: normal;
-    margin-top: 3px; /* Etwas Abstand unterhalb der Hauptzeile */
-    color: rgb(255, 255, 255);
-    transform: translateY(0.80em); /* Verschiebt den Text um die halbe Höhe des "H" nach unten */
+    margin-top: 3px;
+    color: rgba(255, 255, 255, 0.8);
     font-family: 'UnifrakturMaguntia', cursive;
+    transform: translateY(-0.35em);
 }

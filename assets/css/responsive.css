@@ -1,38 +1,16 @@
 /* responsive.css: Mobile Anpassungen */
 
 @media (max-width: 600px) {
-    /* Logo optimieren: Näher an linken Rand rücken */
-    .logo {
-        max-width: 19%;
-        padding-left: 10px;
-        height: auto; /* Seitenverhältnis beibehalten */
-    }
 
-    /* Container für Titel + Stempel */
-    .title-container {
-        flex-direction: row; /* Logo + Text in einer Reihe */
-        align-items: center; /* Vertikal ausrichten */
-        justify-content: flex-start; /* Links ausrichten */
-        gap: 10px; /* Abstand zwischen Logo & Text */
-        width: 100%;
-        min-height: 80px; /* Sicherstellen, dass genug Platz da ist */
-        padding: 5px 10px;
-    }
-
-    .title-text {
+    /* Header flexbox für zentrierte Anordnung */
+    .header-container {
         display: flex;
-        justify-content: center; /* Vertikale Zentrierung */
-        align-items: center; /* Sicherstellen, dass beides mittig ist */
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
         text-align: center;
-    }
-
-    /* Kleinere Schrift für die mobile Ansicht */
-    .club-title {
-        font-size: 5vw;
-    }
-
-    .subtitle {
-        font-size: 3.5vw;
+        gap: 5px;
+        padding: 10px 5px;
     }
 
     /* Titel optimieren: Erster Teil in einer Zeile, Mayen darunter */
@@ -42,6 +20,50 @@
         line-height: 1.2;
         text-align: center;
     }
+
+    /* Logo mittig ausrichten */
+    .logo-container {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .logo {
+        max-width: 80px;
+        height: auto;
+        padding-left: 0;
+    }
+
+    /* Titel + Untertitel anpassen */
+    .title-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 2px;
+    }
+
+    /* Club-Titel kleiner machen & mittig setzen */
+    .title-text {
+        text-align: center;
+    }
+
+    /* Club-Titel optimieren */
+    .club-title {
+        font-size: 5vw;
+        font-weight: bold;
+        margin: 0;
+        line-height: 1.2;
+    }
+
+    /* Untertitel in gotischer Schrift */
+    .subtitle {
+        font-size: 3.8vw;
+        font-family: 'UnifrakturMaguntia', cursive;
+        color: rgba(255, 255, 255, 0.8);
+    }
+
+
 
     /* Stempel sichtbar machen und korrekt platzieren */
     .draft-stamp {
@@ -55,15 +77,27 @@
         display: block; /* Falls es vorher versteckt war */
     }
 
-    /* Navigation optimieren */
     nav ul {
-        gap: 2vw;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
     }
+
 
     nav ul li a {
-        font-size: 4.5vw; /* Gleiche oder kleinere Schriftgröße wie .club-title */
+        text-decoration: none;
+        color: white;
+        font-size: 4vw; /* Passt sich automatisch an die Bildschirmgröße an */
+        font-weight: bold;
+        transition: color 0.3s;
     }
-
+    nav ul li a:hover {
+        color: #a3d9b2;
+    }
 
     /* Kachel-Anordnung */
     .tiles-container {
@@ -80,8 +114,9 @@
     }
 
     nav ul li {
-        width: 100%;
+        width: auto;
     }
+
 
     /* Scroll-Button für mobile Ansicht */
     #scrollTopBtn {
@@ -93,14 +128,9 @@
         right: 15px;
     }
 
-    /* Header-Abstand minimieren */
-    .header-container {
-        gap: 1px;
-        padding: 3px 5px;
-    }
-
-    /* Navigation näher am Titel */
+    /* Navigation im mobilen Header untereinander */
     nav {
-        margin-top: 1px;
+        width: 100%;
+        margin-top: 10px;
     }
 }
