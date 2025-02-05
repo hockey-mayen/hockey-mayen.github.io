@@ -75,45 +75,31 @@ nav ul li a.active {
     font-weight: bold; /* Optional: Hebt den aktiven Link stärker hervor */
 }
 
-.draft-badge {
-    display: inline-block;
-    background-color: darkred;
-    color: white;
-    font-weight: bold;
-    padding: 5px 10px;
-    border-radius: 5px;
-    text-transform: uppercase;
-    font-size: 12px;
-    margin: 5px auto;
-    text-align: center;
-}
-
-.draft-label {
-    display: inline-block;
-    background-color: darkred;
-    color: white;
-    font-size: 12px;
-    font-weight: bold;
-    text-transform: uppercase;
-    padding: 3px 8px;
-    border-radius: 5px;
-    margin: 5px auto;
-    text-align: center;
-}
 /* Container für Titel + Stempel */
 .title-container {
     display: flex;
     align-items: center; /* Stellt sicher, dass das Bild und die Überschrift auf einer Linie sind */
-    gap: 10px; /* Abstand zwischen Überschrift und Stempel */
+    gap: 5px; /* Abstand zwischen Überschrift und Stempel */
+}
+.title-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Vertikale Zentrierung */
+    text-align: left; /* Links ausrichten */
+    height: 100%; /* Sicherstellen, dass der Container die volle Höhe nutzt */
+
 }
 
-/* Stempel direkt über den letzten Buchstaben des Titels */
-.draft-stamp {
-    max-width: 70px;
-    height: auto;
-    opacity: 0.85; /* Leichte Transparenz */
-    transform: rotate(-10deg); /* Leicht gedreht für realistischen Look */
-    position: relative;
-    left: -80px; /* Schiebt es nach links, um "yen" zu überlappen */
-    top: -0px; /* Verschiebt es leicht nach unten für bessere Platzierung */
+.club-title {
+    margin: 0; /* Entfernt Standardabstand */
+    font-size: 28px;
+    font-weight: bold;
+    line-height: 1.2; /* Verhindert zu große Abstände */
+}
+
+.subtitle {
+    font-size: 14px;
+    font-weight: normal;
+    margin-top: 0px; /* Kleiner Abstand zur Überschrift */
+    color: rgba(255, 255, 255, 0.8); /* Dezentes Weiß */
 }

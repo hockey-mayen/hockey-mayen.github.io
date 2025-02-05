@@ -7,7 +7,7 @@ permalink: /veranstaltungen/
 <h2>Unsere Vereinsveranstaltungen – Gemeinsam mehr erleben!</h2>
 
 ## Frühlingsfest „Anhockeln“ – Der Start in die Feldsaison
-Jedes Jahr im **April** feiern wir mit unseren Kindern und Erwachsenenen unser traditionelles **Frühlingsfest „Anhockeln“**.  
+Jedes Jahr im **April** feiern wir mit unseren Kindern und Erwachsenen unser traditionelles **Frühlingsfest „Anhockeln“**.  
 Auf unserem Kunstrasenplatz starten wir die Feldsaison mit **Spaß, Hockey und Grillen**.  
 Bei einem lockeren Turnier können sich Spieler aller Altersklassen austoben.  
 Dazu gibt es Steaks und Würstchen, Salate und natürlich kühle Getränke.
