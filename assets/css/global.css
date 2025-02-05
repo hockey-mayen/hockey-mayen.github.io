@@ -5,6 +5,8 @@ body {
     line-height: 1.6;
     min-height: 100vh; /* Stellt sicher, dass der Body mindestens die Höhe des Bildschirms hat */
     font-family: "Open Sans", Arial, sans-serif; /* Open Sans als Standardschrift */
+
+    background-color: #f4f4f4; /* Ein sehr dezentes Grau */
 }
 
 /* Verhindert das Springen durch den Scrollbalken */
