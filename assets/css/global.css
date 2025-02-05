@@ -87,7 +87,7 @@ iframe {
     border: none;
     border-radius: 50%;
     font-size: 32px; /* Größerer Pfeil */
-    font-weight: bold; /* Kräftigerer Pfeil */
+    font-weight: normal; /* Kräftigerer Pfeil */
     line-height: 50px; /* Zentriert den Pfeil vertikal */
     text-align: center;
     cursor: pointer;
