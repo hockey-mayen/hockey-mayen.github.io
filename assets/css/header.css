@@ -85,7 +85,8 @@ nav ul li a.active {
     display: flex;
     flex-direction: column;
     justify-content: center; /* Vertikale Zentrierung */
-    text-align: left; /* Links ausrichten */
+    align-items: center; /* Sicherstellen, dass beides mittig ist */
+    text-align: center;
     height: 100%; /* Sicherstellen, dass der Container die volle Höhe nutzt */
 
 }

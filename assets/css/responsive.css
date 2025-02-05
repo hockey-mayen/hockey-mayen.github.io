@@ -5,18 +5,34 @@
     .logo {
         max-width: 19%;
         padding-left: 10px;
+        height: auto; /* Seitenverhältnis beibehalten */
     }
 
     /* Container für Titel + Stempel */
     .title-container {
+        flex-direction: row; /* Logo + Text in einer Reihe */
+        align-items: center; /* Vertikal ausrichten */
+        justify-content: flex-start; /* Links ausrichten */
+        gap: 10px; /* Abstand zwischen Logo & Text */
         width: 100%;
-        display: flex;
-        flex-direction: column; /* Stapelt Titel und Stempel */
-        align-items: center; /* Zentriert den Text */
-        justify-content: center;
+        min-height: 80px; /* Sicherstellen, dass genug Platz da ist */
         padding: 5px 10px;
+    }
+
+    .title-text {
+        display: flex;
+        justify-content: center; /* Vertikale Zentrierung */
+        align-items: center; /* Sicherstellen, dass beides mittig ist */
         text-align: center;
-        position: relative; /* Damit der Stempel absolut platziert werden kann */
+    }
+
+    /* Kleinere Schrift für die mobile Ansicht */
+    .club-title {
+        font-size: 5vw;
+    }
+
+    .subtitle {
+        font-size: 3.5vw;
     }
 
     /* Titel optimieren: Erster Teil in einer Zeile, Mayen darunter */
