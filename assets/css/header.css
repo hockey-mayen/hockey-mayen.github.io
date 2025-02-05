@@ -44,7 +44,7 @@ header {
 
 /* Navigation feintunen */
 .nav-grid {
-    transform: translateY(-1.40em);
+    transform: translateY(-1.50em);
 }
 
 /* Überschrift */
@@ -120,7 +120,7 @@ nav ul li a.active {
     margin: 0;
     font-size: 28px;
     font-weight: bold;
-    transform: translateY(-0.30em);
+    transform: translateY(-0.15em);
 }
 
 .subtitle {

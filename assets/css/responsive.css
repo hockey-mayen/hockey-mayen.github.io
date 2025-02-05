@@ -28,10 +28,12 @@
         width: 100%;
     }
 
+    /* Logo etwas höher setzen ohne den Header zu verschieben */
     .logo {
         max-width: 80px;
         height: auto;
         padding-left: 0;
+        transform: translateY(-5px); /* Hebt das Logo leicht an */
     }
 
     /* Titel + Untertitel anpassen */
@@ -91,7 +93,7 @@
     nav ul li a {
         text-decoration: none;
         color: white;
-        font-size: 4vw; /* Passt sich automatisch an die Bildschirmgröße an */
+        font-size: 4.5vw; /* Etwas größere Schrift für bessere Lesbarkeit */
         font-weight: bold;
         transition: color 0.3s;
     }
