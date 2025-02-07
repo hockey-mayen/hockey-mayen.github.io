@@ -45,4 +45,4 @@ Zum Abschluss des Jahres feiern wir eine **Weihnachtsfeier** in unseres Sporthal
 
 **Hast du Lust, dabei zu sein?** Dann komm vorbei und sei Teil unserer Hockey-Familie! 🏑   
 
-<span class="email-highlight"><a href="mailto:info@hockey-mayen.de">info@hockey-mayen.de</a></span> 
+<span class="email-highlight"><a href="mailto:info@test-domain.de">info@test-domain.de</a></span> 

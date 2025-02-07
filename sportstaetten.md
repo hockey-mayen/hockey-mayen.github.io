@@ -6,8 +6,6 @@ permalink: /sportstaetten/
 
 ## Sportstätten
 
-Hockey ist eine Sportart, die sowohl draußen auf dem Feld als auch in der Halle gespielt wird  
-
 <div class="tiles-container">
     {% for tile in site.data.sportstaetten.tiles %}
     <div class="tile">
@@ -19,6 +17,6 @@ Hockey ist eine Sportart, die sowohl draußen auf dem Feld als auch in der Halle
 </div>
 
 <small>  
-    In der warmen Jahreszeit spielen wir Hockey auf dem Kunstrasenplatz im Stadion Nettetal – umgeben von frischer Luft und Natur.  
+    In der warmen Jahreszeit spielen wir Hockey auf dem Kunstrasenplatz im Stadion Nettetal.  
     In der kalten Jahreszeit wechseln wir in die Sporthalle der Albert-Schweitzer-Realschule, wo wir die Hallensaison bestreiten.  
 </small>

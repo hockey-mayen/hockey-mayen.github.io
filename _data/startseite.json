@@ -1,15 +1,16 @@
 {
   "title": "Feldhockey ist eine der schönsten Team-Sportarten",
-  "content": "Wir leben und lieben Hockey, komm vorbei und werde Teil unserer starken Gemeinschaft in der Eifelstadt Mayen und Umgebung",
+  "content": "Der Hockeyclub Grün-Weiß TuS Mayen e.V. ist ein traditionsreicher Sportverein für Feld- und Hallenhockey.<br>Gegründet im Jahr 1919, gehört er zu den etablierten Vereinen der rheinland-pfälzischen Hockeyszene.<br>Der Club legt Wert darauf, dass jedes Mitglied das Clubleben aktiv mitgestalten kann.<br>Komm vorbei und werde Teil unserer starken Gemeinschaft in der Eifelstadt Mayen und Umgebung.",
+
   "tiles": [
     {
       "title": "Training",
-      "description": "Kinder und Erwachsene, Anfänger und Fortgeschrittene, erhalten bei uns ein interessantes Training. Komm einfach zum Schnuppern. Unsere Trainer sind erfahrene Hockey Spieler.",
+      "description": "Kinder und Erwachsene, Anfänger und Fortgeschrittene, erhalten bei uns ein interessantes Training. Komm einfach zum Schnuppern.",
       "image": "/assets/images/training.jpg"
     },
     {
       "title": "Turniere",
-      "description": "In der Verbandsliga Rheinland-Pfalz-Saar nehmen unsere kleinen und großem Mitglieder regelmäßig und erfolgreich an spannenden Turnieren teil. Wir spielen auf dem Feld und in der Halle.",
+      "description": "In der Verbandsliga Rheinland-Pfalz-Saar nehmen unsere kleinen und großem Mitglieder regelmäßig an spannenden Turnieren teil.",
       "image": "/assets/images/turniere.jpg"
     },
     {
@@ -19,7 +20,7 @@
     },
     {
       "title": "Just for Fun",
-      "description": "Wir spielen Hockey auch ganz locker – bei uns zählt vor allem der Spaß am Spiel, und selbst absolute Anfänger fühlen sich sofort wohl!",
+      "description": "Wir spielen Hockey auch ganz locker – bei uns zählt vor allem der Spaß am Spiel.",
       "image": "/assets/images/justforfun.jpg"
     }
   ]

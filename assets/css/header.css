@@ -124,10 +124,10 @@ nav ul li a.active {
 }
 
 .subtitle {
-    font-size: 20px;
+    font-size: 21px;
     font-weight: normal;
     margin-top: 3px;
-    color: rgba(255, 255, 255, 0.8);
+    color: rgba(152, 196, 53, 0.6);
     font-family: 'UnifrakturMaguntia', cursive;
     transform: translateY(-0.35em);
 }
