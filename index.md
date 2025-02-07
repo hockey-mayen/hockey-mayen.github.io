@@ -5,9 +5,9 @@ permalink: /
 ---
 
 ## {{ site.data.startseite.title }}
-
+<p class="aligned-content">
 {{ site.data.startseite.content }}
-
+</p>
 <div class="tiles-container">
 
     <!-- Training-Kachel mit dynamischem Bildwechsel -->

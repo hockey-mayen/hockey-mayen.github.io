@@ -111,3 +111,8 @@ iframe {
     background-color: rgba(0, 0, 0, 0.5); /* Etwas weniger transparent beim Hover */
     opacity: 0.8;
 }
+.aligned-content {
+    text-align: center;
+    max-width: 800px; /* Optional: Setzt eine maximale Breite für bessere Lesbarkeit */
+    margin: 0 auto; /* Zentriert den Block, aber der Text bleibt linksbündig */
+}
