@@ -5,7 +5,7 @@
   "tiles": [
     {
       "title": "Training",
-      "description": "Kinder und Erwachsene, Anfänger und Fortgeschrittene, erhalten bei uns ein interessantes Training. Komm einfach zum Schnuppern.",
+      "description": "Kinder und Erwachsene, Anfänger und Fortgeschrittene, erhalten bei uns ein anspruchsvolles Training. Komm einfach zum Schnuppern.",
       "image": "/assets/images/training.jpg"
     },
     {
@@ -20,7 +20,7 @@
     },
     {
       "title": "Just for Fun",
-      "description": "Wir spielen Hockey auch ganz locker – bei uns zählt vor allem der Spaß am Spiel.",
+      "description": "Wir spielen Hockey auch ganz locker, bei uns zählt vor allem der Spaß.",
       "image": "/assets/images/justforfun.jpg"
     }
   ]
