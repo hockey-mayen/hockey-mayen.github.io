@@ -16,7 +16,7 @@ permalink: /chronik/
     const timelineContainer = document.getElementById("timeline");
 
     data.events.forEach(yearEntry => {
-        // Jahresüberschrift NICHT als <li>, sondern als <div> oder <h3>
+        // Jahresüberschrift als <div>
         let yearHeading = document.createElement("div");
         yearHeading.className = "year-heading";
         yearHeading.textContent = yearEntry.year;
