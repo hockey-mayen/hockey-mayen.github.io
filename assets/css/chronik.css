@@ -1,0 +1,124 @@
+/* chronik.css */
+.timeline-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    max-width: 700px;
+    margin: 40px auto;
+    position: relative;
+    padding-left: 50px; /* Platz für die Linie und Punkte */
+    /*opacity: 0.7; !* Leichte Transparenz *!*/
+}
+
+/* Jahr-Überschriften mit großem Punkt */
+.year-heading {
+    font-size: 22px;
+    font-weight: bold;
+    color: #007b5f;
+    margin: 20px 0 10px;
+    text-align: left;
+    width: 100%;
+    padding-left: 50px;
+    position: relative;
+}
+
+.year-heading::before {
+    content: "";
+    position: absolute;
+    left: -30px; /* Punkt genau mittig auf der Linie */
+    top: 50%;
+    transform: translateY(-50%);
+    width: 18px;
+    height: 18px;
+    background-color: #007b5f;
+    border-radius: 50%;
+}
+
+/* Liste der Ereignisse */
+.event-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Einzelne Ereignis-Einträge */
+.event-item {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+    padding-left: 50px;
+    position: relative;
+}
+
+/* Punkt für Ereignisse (kleiner als Jahr) */
+.event-item::before {
+    content: "";
+    position: absolute;
+    left: -26px;
+    top: 10px; /* Punkt nur bei Text */
+    width: 10px;
+    height: 10px;
+    background-color: #007b5f;
+    border-radius: 50%;
+}
+.event-details {
+    display: flex;
+    flex-direction: column;
+    max-width: 100%; /* Verhindert Überlauf */
+}
+/* Ereignis-Text */
+.event-text {
+    font-size: 16px;
+    color: #6c757d; /* Schönes Grau für Texte */
+    text-align: left;
+}
+.event-image {
+    margin-top: 10px;
+    width: 100%; /* Passt sich der Eintragsbreite an */
+}
+
+.event-image img {
+    max-width: 50%;
+    height: auto;
+    border-radius: 5px;
+    display: block;
+    margin: 0 auto; /* Bild mittig ausrichten */
+}
+.event-image::before {
+    content: none; /* Entfernt den Punkt für das Bild */
+}
+
+
+@media screen and (max-width: 768px) {
+    .timeline-container {
+        padding-left: 20px; /* Weniger Abstand links für Mobile */
+    }
+
+    .year-heading {
+        padding-left: 30px; /* Weniger Abstand für Jahr-Überschriften */
+        font-size: 18px; /* Kleinere Schriftgröße */
+    }
+
+    .year-heading::before {
+        left: -12px; /* Punkt näher an die Jahreszahl */
+        width: 14px;
+        height: 14px;
+    }
+
+    .event-item {
+        padding-left: 30px; /* Weniger Abstand für Events */
+    }
+
+    .event-item::before {
+        left: -10px; /* Punkt näher am Text */
+        width: 8px;
+        height: 8px;
+    }
+
+    .event-image img {
+        max-width: 80%; /* Größeres Bild für mobile Ansicht */
+    }
+
+
+}

@@ -1,0 +1,20 @@
+{
+  "events": [
+    {
+      "year": 2025,
+      "entries": [
+        { "month": "Februar", "event": "Erfolgreicher Spieltag für unsere U12-Mannschaft mit drei Siegen." },
+        { "month": "Januar", "event": "Neujahrsempfang mit Ehrung langjähriger Mitglieder." }
+      ]
+    },
+    {
+      "year": 2024,
+      "entries": [
+        { "month": "Oktober", "event": "Sommer-Camp war ein voller Erfolg mit über 30 Teilnehmern." },
+        { "month": "August", "event": "Jugendmeisterschaft gewonnen – U14-Team sichert sich den Titel!" },
+        { "month": "Juni", "event": "Teilnahme am internationalen Turnier in Koblenz." },
+        { "month": "April", "event": "Frühlingsfest 'Anhockeln' als Saisonauftakt mit großem Andrang." }
+      ]
+    }
+  ]
+}
