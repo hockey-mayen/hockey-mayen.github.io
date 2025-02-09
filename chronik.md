@@ -42,6 +42,13 @@ permalink: /chronik/
                                  </div>`;
             }
 
+            // Falls ein Link existiert, füge ihn mit Überschrift hinzu
+            if (entry.link && entry.linkTitle) {
+                eventContent += `<div class="event-link">
+                                    <a href="${entry.link}" target="_blank">${entry.linkTitle}</a>
+                                 </div>`;
+            }
+
             eventContent += `</div>`;
             eventItem.innerHTML = eventContent;
             eventList.appendChild(eventItem);

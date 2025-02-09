@@ -10,6 +10,14 @@
         {
           "month": "9. Februar",
           "event": "Jungs-Mannschaft der U12 unter der Führung von Oliver Hannus und Sven Albers gewinnt in Koblenz und sichert sich das Ticket für die Endrunde der Hallen-Saison."
+        },
+        {
+          "month": "22. Januar",
+          "event": "Mayener U8-Hockeymannschaft startet erstmals mit 2 Teams in in Bad Kreuznach. Trainer Mike Flinsch, Andreas Jung und und Co-Trainer Sergej Schatz couchen die Hockey Kinder durch 6 Turnier-Spiele.",
+          "link": "https://www.blick-aktuell.de/Sport/Mayener-U8-Hockeymannschaft-siegreich-in-der-Pfalz-616389.html",
+          "linkTitle": "Pressebericht",
+          "image": "/assets/images/chronik/U8Pfalz.JPEG"
+
         }
       ]
     },
@@ -210,7 +218,6 @@
           "month": "Januar",
           "event": "Gründung der Hockey-Abteilung „Grün-Weiss“ im Sportverein Rheinland Mayen 1914 e.V.",
           "image": "/assets/images/chronik/Logo_transparenter_Hintergrund_HCGW_Classic.png"
-
         }
       ]
     }

@@ -89,6 +89,23 @@
     content: none; /* Entfernt den Punkt für das Bild */
 }
 
+.event-link {
+    margin-top: 5px;
+    text-align: left;
+}
+
+.event-link a {
+    display: inline-block;
+    color: #007b5f; /* Vereinsgrün */
+    font-weight: bold;
+    font-size: 14px;
+    text-decoration: underline; /* Unterstrich */
+}
+
+.event-link a:hover {
+    color: #005f47; /* Dunkleres Grün bei Hover */
+}
+
 
 @media screen and (max-width: 768px) {
     .timeline-container {
@@ -120,4 +137,6 @@
     .event-image img {
         max-width: 80%; /* Größeres Bild für mobile Ansicht */
     }
+
+
 }
