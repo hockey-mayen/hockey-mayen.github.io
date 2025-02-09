@@ -92,7 +92,7 @@
 
 @media screen and (max-width: 768px) {
     .timeline-container {
-        padding-left: 10px; /* Weniger Abstand zum linken Rand */
+        padding-left: 0px; /* Weniger Abstand zum linken Rand */
         padding-right: 15px; /* Mehr Abstand zum rechten Rand */
     }
 
