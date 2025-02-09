@@ -92,11 +92,12 @@
 
 @media screen and (max-width: 768px) {
     .timeline-container {
-        padding-left: 20px; /* Weniger Abstand links für Mobile */
+        padding-left: 10px; /* Weniger Abstand zum linken Rand */
+        padding-right: 15px; /* Mehr Abstand zum rechten Rand */
     }
 
     .year-heading {
-        padding-left: 30px; /* Weniger Abstand für Jahr-Überschriften */
+        padding-left: 10px; /* Weniger Abstand für Jahr-Überschriften */
         font-size: 18px; /* Kleinere Schriftgröße */
     }
 
@@ -107,7 +108,7 @@
     }
 
     .event-item {
-        padding-left: 30px; /* Weniger Abstand für Events */
+        padding-left: 10px; /* Weniger Abstand für Events */
     }
 
     .event-item::before {
