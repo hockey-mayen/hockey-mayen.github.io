@@ -56,6 +56,14 @@ footer a.active {
     gap: 30px; /* Space between icons */
 }
 
+/* Responsive: Limit width on smartphones */
+@media (max-width: 600px) {
+    .footer-social-container {
+        max-width: 90vw; /* Limits the width to 90% of the viewport width */
+        gap: 20px; /* Reduce gap for smaller screens */
+    }
+}
+
 /* Shop Icon */
 .footer-shop-icon {
     width: 85px; /* Keep desired shop icon size */
