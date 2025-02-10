@@ -59,8 +59,8 @@ footer a.active {
 /* Responsive: Limit width on smartphones */
 @media (max-width: 600px) {
     .footer-social-container {
-        max-width: 90vw; /* Limits the width to 90% of the viewport width */
-        gap: 20px; /* Reduce gap for smaller screens */
+        max-width: 85vw; /* Limits the width to 90% of the viewport width */
+        gap: 10px; /* Reduce gap for smaller screens */
     }
 }
 
