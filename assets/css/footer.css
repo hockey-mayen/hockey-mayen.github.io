@@ -60,7 +60,7 @@ footer a.active {
 .footer-shop-icon {
     width: 80px; /* Keep desired shop icon size */
     height: auto;
-    transition: opacity 0.3s;
+    transition: opacity 0.31s;
 }
 
 .footer-shop-icon:hover {
@@ -72,7 +72,7 @@ footer a.active {
     width: 80px;
     height: auto;
     filter: brightness(0) saturate(100%) invert(100%);
-    transition: opacity 0.3s;
+    transition: opacity 0.31s;
 }
 
 .footer-social-icon:hover {
