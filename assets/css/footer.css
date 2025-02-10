@@ -58,7 +58,7 @@ footer a.active {
 
 /* Shop Icon */
 .footer-shop-icon {
-    width: 80px; /* Keep desired shop icon size */
+    width: 85px; /* Keep desired shop icon size */
     height: auto;
     transition: opacity 0.31s;
 }
