@@ -1,9 +1,7 @@
-
-/* footer.css: Footer */
-
+/* Footer Styling */
 footer {
     background: linear-gradient(135deg, #004d26, #088442);
-    color: white; /* Standardfarbe für den Text */
+    color: white;
     text-align: center;
     padding: 20px 10px;
     margin-top: 30px;
@@ -11,49 +9,71 @@ footer {
 }
 
 footer a {
-    color: white; /* Gleiche Farbe wie der Standardtext im Footer */
+    color: white;
     text-decoration: none;
     margin: 0 10px;
-    font-weight: normal; /* Normale Schriftstärke */
-    transition: color 0.3s; /* Weicher Farbwechsel */
+    font-weight: normal;
+    transition: color 0.3s;
 }
 
 footer a:hover {
-    color: #a3d9b2; /* Helles Grün */
+    color: #a3d9b2;
 }
 
-/* Aktiver Link im Footer bleibt grün */
 footer a.active {
-    color: #a3d9b2 !important; /* Grüne Farbe für aktiven Link */
+    color: #a3d9b2 !important;
 }
 
+/* Ensure the footer content is centered */
 .footer-content {
     display: flex;
     flex-direction: column;
-    align-items: center; /* Zentriert Inhalte im Footer */
-    gap: 10px; /* Abstand zwischen Bild und Text */
+    align-items: center;
+    gap: 15px; /* More space between elements */
+    width: 100%;
 }
 
+/* Keep logo size fixed */
 .footer-logo {
-    max-width: 240px; /* Reduzierte Breite für das Logo */
-    height: auto; /* Beibehaltung des Seitenverhältnisses */
+    width: 240px; /* Keep the same size */
+    height: auto;
     margin-bottom: 10px;
 }
 
+/* Center text links */
 .footer-content p {
     margin: 5px 0;
 }
 
-/* Facebook-Icon */
-.footer-social-icon {
-    width: 50px; /* Größe anpassen */
+/* Center the icons inside footer-social-container */
+.footer-social-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%; /* Ensures full width */
+    max-width: 350px; /* Prevents stretching */
+    gap: 30px; /* Space between icons */
+}
+
+/* Shop Icon */
+.footer-shop-icon {
+    width: 50px; /* Keep desired shop icon size */
     height: auto;
-    vertical-align: middle; /* Damit das Logo auf gleicher Höhe wie der Text ist */
-    margin-left: 0px; /* Kleiner Abstand zum Text */
-    filter: brightness(0) saturate(100%) invert(100%); /* Weiß einfärben */
+    transition: opacity 0.3s;
+}
+
+.footer-shop-icon:hover {
+    opacity: 0.7;
+}
+
+/* Facebook Icon */
+.footer-social-icon {
+    width: 80px;
+    height: auto;
+    filter: brightness(0) saturate(100%) invert(100%);
     transition: opacity 0.3s;
 }
 
 .footer-social-icon:hover {
-    opacity: 0.7; /* Leichte Transparenz beim Hover */
+    opacity: 0.7;
 }

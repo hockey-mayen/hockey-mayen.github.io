@@ -3,10 +3,6 @@
     <div class="footer-content">
         <img src="/assets/images/hockey-mayen-white.png" alt="Hockey Mayen Logo" class="footer-logo">
         <p>
-<!--            <a href="/sportstaetten"-->
-<!--               class="{% if page.url == '/sportstaetten' or page.url == '/sportstaetten/' %}active{% endif %}">-->
-<!--                Unsere Sportstätten-->
-<!--            </a>-->
             <a href="/anmeldung"
                class="{% if page.url == '/anmeldung' or page.url == '/anmeldung/' %}active{% endif %}">
                 Werde Mitglied
@@ -17,12 +13,15 @@
             </a>
         </p>
 
-        <!-- Facebook-Link in eine eigene Zeile setzen -->
-        <p>
+        <!-- Icons für Facebook & Shop nebeneinander setzen -->
+        <div class="footer-social-container">
+            <a href="https://www.hockeyfriends.com/" target="_blank">
+                <img src="/assets/images/shop/shop.png" alt="Hockey Shop" class="footer-shop-icon">
+            </a>
             <a href="https://www.facebook.com/HcGrunWeissMayen/?locale=de_DE" target="_blank">
                 <img src="/assets/images/facebook.png" alt="Facebook Logo" class="footer-social-icon">
             </a>
-        </p>
+        </div>
     </div>
 </footer>
 
