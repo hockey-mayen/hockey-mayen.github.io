@@ -4,7 +4,7 @@ title: "Chronik"
 permalink: /chronik/
 ---
 <h2>Vereinschronik</h2>
-(aktuell in Arbeit, Ergänzungen folgen nach weiteren Recherchen)
+<small>(in Arbeit, Ergänzungen folgen ..)</small>
 
 <div class="timeline-container">
     <ul id="timeline"></ul>
