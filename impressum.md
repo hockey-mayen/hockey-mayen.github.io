@@ -18,7 +18,7 @@ Sascha Flinsch
 **Schatzmeister**  Yannik Dietz   
 **Jugendwart** Mike Flinsch  
 Heike Hoffmann, Sven Albers, Ralf Heepenstrick, Oliver Hannus  
-Karl-Heinz Hannus, Katja Frank, Gabi Lotz, Michael Dietz, Justus, Jost Schäfer, Sergej Schatz  
+Karl-Heinz Hannus, Katja Frank, Gabi Lotz, Michael Dietz, Justus Sörger, Jost Schäfer, Sergej Schatz  
 
 <span class="email-highlight"><a href="mailto:info@test-domain.de">Kontakt</a></span>  
 <small>  
