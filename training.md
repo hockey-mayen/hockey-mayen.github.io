@@ -21,6 +21,7 @@ Komm einfach vorbei zu unseren Schnupper-Einheiten.
                     <strong>{{ time.day }},{{ time.time }}</strong>{{ time.location }}<br><br>
                 {% endfor %}
         {% endif %}
+        <em>{{ tile.trainer }}</em>
     </div>
     {% endfor %}
 </div>
@@ -28,5 +29,5 @@ Komm einfach vorbei zu unseren Schnupper-Einheiten.
 <small>Auf dem Kunstrasenplatz sind wir in der warmen Jahreszeit, und in der kalten Jahreszeit - in der Sporthalle</small>  
 <small>Hockey Schläger 🏑 in allen Größen stellen wir dir zum Schnupper-Training zur Verfügung</small>  
 <small>Du hast Fragen zu unserem Training und möchtest dich näher informieren ? Schreibe uns einfach!   
-<span class="email-highlight"><a href="mailto:info@test-domain.de">info@test-domain.de</a></span></small>
+<span class="email-highlight"><a href="mailto:info@test-domain.de">Kontaktformular</a></span></small>
 

@@ -13,7 +13,8 @@
           "time": "16:15 - 17:45 Uhr",
           "location": "Sporthalle Albert-Schweitzer-Realschule"
         }
-      ]
+      ],
+      "trainer": "Trainer: Mike Flinsch, Andreas Jung, Sascha Flinsch<br> Co-Trainer: Sergej Schatz"
     },
     {
       "title": "U10/U12 Mädels",
@@ -28,7 +29,8 @@
           "time": "17:00 - 18:30 Uhr",
           "location": "Sporthalle Albert-Schweitzer-Realschule"
         }
-      ]
+      ],
+      "trainer": "Trainerin: Nina Graeff<br>Trainer: Ralph Heepenstrick"
     },
     {
       "title": "U10/U12 Jungs",
@@ -43,7 +45,8 @@
           "time": "17:00 - 18:30 Uhr",
           "location": "Sporthalle Albert-Schweitzer-Realschule"
         }
-      ]
+      ],
+      "trainer": "Trainer: Oliver Hannus<br>Torwart-Trainer und Co-Trainer: Sven Albers"
     },
     {
       "title": "Jugend und Erwachsene<br>Just For Fun",
@@ -58,7 +61,8 @@
           "time": "20:00 - 21:30 Uhr",
           "location": "Sporthalle Albert-Schweitzer-Realschule"
         }
-      ]
+      ],
+      "trainer": "<br><br>"
     }
   ]
 }
