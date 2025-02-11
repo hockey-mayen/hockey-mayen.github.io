@@ -10,7 +10,7 @@ permalink: /impressum
 Am Barwinkel 26  
 56727 Mayen  
 
-**Vertreten durch den 1. Vorsitzenden**  
+**Vorsitzender**  
 Sascha Flinsch
 
 **Vorstand**  
@@ -18,7 +18,7 @@ Sascha Flinsch
 **Schatzmeister**  Yannik Dietz   
 **Jugendwart** Mike Flinsch  
 Heike Hoffmann, Sven Albers, Ralf Heepenstrick, Oliver Hannus  
-Katja Frank, Gabi Lotz, Michael Dietz, Justus, Jost Schäfer, Sergej Schatz  
+Karl-Heinz Hannus, Katja Frank, Gabi Lotz, Michael Dietz, Justus, Jost Schäfer, Sergej Schatz  
 
 <span class="email-highlight"><a href="mailto:info@test-domain.de">Kontakt</a></span>  
 <small>  
