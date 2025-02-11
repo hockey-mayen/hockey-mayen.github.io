@@ -90,7 +90,7 @@ footer a.active {
 
 /* Facebook Icon */
 .footer-social-icon {
-    width: 80px;
+    width: 50px;
     height: auto;
     filter: brightness(0) saturate(100%) invert(100%);
     transition: opacity 0.31s;
