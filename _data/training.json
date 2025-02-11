@@ -1,22 +1,6 @@
 {
   "tiles": [
     {
-      "title": "U8/U10 Kinder",
-      "times": [
-        {
-          "day": "Dienstag",
-          "time": "16:30 - 18:00 Uhr",
-          "location": "Kunstrasenplatz Stadion Nettetal"
-        },
-        {
-          "day": "Donnerstag",
-          "time": "16:15 - 17:45 Uhr",
-          "location": "Sporthalle Albert-Schweitzer-Realschule"
-        }
-      ],
-      "trainer": "Trainer: Mike Flinsch, Andreas Jung, Sascha Flinsch<br> Co-Trainer: Sergej Schatz"
-    },
-    {
       "title": "U10/U12 Mädels",
       "times": [
         {
@@ -47,6 +31,22 @@
         }
       ],
       "trainer": "Trainer: Oliver Hannus<br>Torwart-Trainer und Co-Trainer: Sven Albers"
+    },
+    {
+      "title": "U8/U10 Kinder",
+      "times": [
+        {
+          "day": "Dienstag",
+          "time": "16:30 - 18:00 Uhr",
+          "location": "Kunstrasenplatz Stadion Nettetal"
+        },
+        {
+          "day": "Donnerstag",
+          "time": "16:15 - 17:45 Uhr",
+          "location": "Sporthalle Albert-Schweitzer-Realschule"
+        }
+      ],
+      "trainer": "Trainer: Mike Flinsch, Andreas Jung, Sascha Flinsch<br> Co-Trainer: Sergej Schatz"
     },
     {
       "title": "Jugend und Erwachsene<br>Just For Fun",
