@@ -69,11 +69,10 @@ footer a.active {
     width: 85px; /* Keep desired shop icon size */
     height: auto;
     transition: opacity 0.31s;
-    opacity: 0.9;
 }
 
 .footer-shop-icon:hover {
-    opacity: 0.3;
+    opacity: 0.5;
 }
 
 /* RPS Icon */
@@ -81,11 +80,11 @@ footer a.active {
     width: 85px; /* Keep desired shop icon size */
     height: auto;
     transition: opacity 0.31s;
-    opacity: 0.75;
+    opacity: 0.9;
 }
 
 .footer-rps-icon:hover {
-    opacity: 0.3;
+    opacity: 0.5;
 }
 
 /* Facebook Icon */
@@ -94,9 +93,9 @@ footer a.active {
     height: auto;
     filter: brightness(0) saturate(100%) invert(100%);
     transition: opacity 0.31s;
-    opacity: 0.75;
+    opacity: 0.9;
 }
 
 .footer-social-icon:hover {
-    opacity: 0.3;
+    opacity: 0.5;
 }
