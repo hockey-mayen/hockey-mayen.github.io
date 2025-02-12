@@ -47,8 +47,10 @@ permalink: /chronik/
             }
 
             let eventContent = `<div class="event-details">
+                                    <span class="event-item-month short-text">${entry.month}</span>
                                     <span class="event-text short-text">${shortText}</span>
                                     <span class="event-text full-text" style="display: none;">${entry.event}</span>`;
+
 
             if (isLongText) {
                 eventContent += `<a href="#" class="toggle-text">Weiterlesen</a>`;
