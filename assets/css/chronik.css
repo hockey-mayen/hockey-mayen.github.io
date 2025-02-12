@@ -106,6 +106,34 @@
     color: #005f47; /* Dunkleres Grün bei Hover */
 }
 
+/* Button Styling */
+.read-more-btn {
+    background-color: transparent;
+    border: none;
+    color: #007b5f;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 5px 0;
+}
+
+.read-more-btn:hover {
+    color: #005f47;
+    text-decoration: underline;
+}
+/* Link "Weiterlesen" */
+.toggle-text {
+    color: #007b5f !important;
+    font-weight: bold;
+    text-decoration: none;
+    margin-left: 5px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.toggle-text:hover {
+    text-decoration: underline;
+}
+
 
 @media screen and (max-width: 768px) {
     .timeline-container {
@@ -135,7 +163,7 @@
     }
 
     .event-image img {
-        max-width: 80%; /* Größeres Bild für mobile Ansicht */
+        max-width: 100%; /* Größeres Bild für mobile Ansicht */
     }
 
     /* Textbereiche */
@@ -146,35 +174,4 @@
     .full-text {
         display: none;
     }
-
-    /* Button Styling */
-    .read-more-btn {
-        background-color: transparent;
-        border: none;
-        color: #007b5f;
-        font-weight: bold;
-        cursor: pointer;
-        padding: 5px 0;
-    }
-
-    .read-more-btn:hover {
-        color: #005f47;
-        text-decoration: underline;
-    }
-    /* Link "Weiterlesen" */
-    .toggle-text {
-        color: #007b5f !important;
-        font-weight: bold;
-        text-decoration: none;
-        margin-left: 5px;
-        cursor: pointer;
-        font-size: 14px;
-    }
-
-    .toggle-text:hover {
-        text-decoration: underline;
-    }
-
-
-
 }
