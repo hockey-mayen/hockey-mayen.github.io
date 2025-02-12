@@ -138,5 +138,43 @@
         max-width: 80%; /* Größeres Bild für mobile Ansicht */
     }
 
+    /* Textbereiche */
+    .short-text {
+        display: inline;
+    }
+
+    .full-text {
+        display: none;
+    }
+
+    /* Button Styling */
+    .read-more-btn {
+        background-color: transparent;
+        border: none;
+        color: #007b5f;
+        font-weight: bold;
+        cursor: pointer;
+        padding: 5px 0;
+    }
+
+    .read-more-btn:hover {
+        color: #005f47;
+        text-decoration: underline;
+    }
+    /* Link "Weiterlesen" */
+    .toggle-text {
+        color: #007b5f !important;
+        font-weight: bold;
+        text-decoration: none;
+        margin-left: 5px;
+        cursor: pointer;
+        font-size: 14px;
+    }
+
+    .toggle-text:hover {
+        text-decoration: underline;
+    }
+
+
 
 }
