@@ -11,7 +11,7 @@ permalink: /chronik/
 </div>
 
 <script>
-    async function loadChronik() {
+async function loadChronik() {
     const response = await fetch("/assets/data/chronik.json");
     const data = await response.json();
     const timelineContainer = document.getElementById("timeline");
@@ -33,33 +33,33 @@ permalink: /chronik/
 
             let isLongText = entry.event.length > maxLength;
             let shortText = entry.event;
+            let fullText = entry.event;
 
             if (isLongText) {
                 let trimmedText = entry.event.substring(0, maxLength);
-
-                // Sucht das letzte Leerzeichen vor dem Limit, um ein Wort nicht abzuschneiden
                 let lastSpaceIndex = trimmedText.lastIndexOf(" ");
                 if (lastSpaceIndex > -1) {
                     shortText = trimmedText.substring(0, lastSpaceIndex);
                 }
-
                 shortText += " ...";
             }
 
             let eventContent = `<div class="event-details">
-                                    <span class="event-item-month short-text">${entry.month}</span>
+                                    <span class="event-item-month">${entry.month}</span>
                                     <span class="event-text short-text">${shortText}</span>
-                                    <span class="event-text full-text" style="display: none;">${entry.event}</span>`;
-
+                                    <span class="event-text full-text" style="display: none;">${fullText}</span>`;
 
             if (isLongText) {
                 eventContent += `<a href="#" class="toggle-text">Weiterlesen</a>`;
             }
 
-            if (entry.image) {
-                eventContent += `<div class="event-image">
-                                    <img src="${entry.image}" alt="Event Image">
-                                </div>`;
+            // Falls mehrere Bilder existieren, Galerie erstellen
+            if (entry.images && entry.images.length > 0) {
+                eventContent += `<div class="event-gallery">`;
+                entry.images.forEach(image => {
+                    eventContent += `<div class="event-image"><img src="${image}" alt="Event Image"></div>`;
+                });
+                eventContent += `</div>`;
             }
 
             if (entry.link && entry.linkTitle) {
@@ -76,6 +76,7 @@ permalink: /chronik/
         timelineContainer.appendChild(eventList);
     });
 
+    // Fix für "Weiterlesen"-Funktion, damit der Monat erhalten bleibt
     document.querySelectorAll(".toggle-text").forEach(link => {
         link.style.color = "#007b5f";
         link.style.fontWeight = "bold";
@@ -104,6 +105,7 @@ permalink: /chronik/
 }
 
 document.addEventListener("DOMContentLoaded", loadChronik);
+
 
 </script>
 

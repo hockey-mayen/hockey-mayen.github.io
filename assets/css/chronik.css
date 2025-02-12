@@ -140,6 +140,19 @@
     text-decoration: underline;
 }
 
+.event-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.event-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    display: block;
+}
 
 @media screen and (max-width: 768px) {
     .timeline-container {
