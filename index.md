@@ -17,6 +17,7 @@ permalink: /
         <div class="training-image-container">
             <img id="trainingImage">
         </div>
+        <a href="/training/" class="tile-link">Hier findest du unsere Trainingszeiten</a>
     </div>
 
     <!-- Turniere-Kachel mit Bildwechsel -->
@@ -26,6 +27,7 @@ permalink: /
         <div class="turniere-image-container">
             <img id="turniereImage">
         </div>
+        <a href="/chronik/" class="tile-link">Hier in der Chronik findest du unsere Spielberichte</a>
     </div>
 
     <!-- Veranstaltungen-Kachel -->
