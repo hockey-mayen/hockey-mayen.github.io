@@ -45,7 +45,7 @@ async function loadChronik() {
             }
 
             let eventContent = `<div class="event-details">
-                                    <span class="event-item-month">${entry.month}</span>
+                                    <span class="event-item-headline">${entry.headline}</span>
                                     <span class="event-text short-text">${shortText}</span>
                                     <span class="event-text full-text" style="display: none;">${fullText}</span>`;
 
