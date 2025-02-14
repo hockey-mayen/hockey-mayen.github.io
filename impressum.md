@@ -48,54 +48,6 @@ Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unt
     </div>
 </div>
 
-<script>
-    function toggleCollapsible() {
-        let content = document.querySelector('.collapsible-content');
-        let arrow = document.querySelector('.arrow');
-        
-        if (content.style.display === "block") {
-            content.style.display = "none";
-            arrow.innerHTML = "&#9654;"; // Pfeil nach rechts
-        } else {
-            content.style.display = "block";
-            arrow.innerHTML = "&#9660;"; // Pfeil nach unten
-        }
-    }
-</script>
-
-<style>
-    .collapsible-container {
-        margin-top: 20px;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-        padding: 10px;
-        /*background-color: #f9f9f9;*/
-border: none; /* Entfernt den Rahmen */
-    }
-
-    .collapsible-header {
-        font-weight: bold;
-        color: #007b5f;
-        cursor: pointer;
-        display: flex;
-        align-items: center;
-        justify-content: center; /* Zentriert den Text und den Pfeil */
-        text-align: center;
-        padding: 10px 0;
-        
-    }
-
-    .arrow {
-        font-size: 16px;
-        margin-right: 8px;
-        transition: transform 0.2s;
-    }
-
-    .collapsible-content {
-      display: none;
-      padding: 10px;
-      font-size: 14px; /* Falls zu groß, kannst du es kleiner setzen */
-      color: gray; /* Farbe von der Website erben */
-    }
-</style>
+<!-- Binde das externe JS ein -->
+<script src="/assets/js/impressum.js" defer></script>
 
