@@ -17,6 +17,7 @@ Sascha Flinsch
 **Geschäftsführerin** Nina Graeff    
 **Schatzmeister**  Yannik Dietz   
 **Jugendwart** Mike Flinsch  
+
 Heike Hoffmann, Sven Albers, Ralf Heepenstrick, Oliver Hannus  
 Karl-Heinz Hannus, Katja Frank, Gabi Lotz, Michael Dietz, Justus Sörger, Jost Schäfer, Sergej Schatz  
 
