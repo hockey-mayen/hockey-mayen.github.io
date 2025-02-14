@@ -121,14 +121,14 @@
 
 
     /* Scroll-Button für mobile Ansicht */
-    #scrollTopBtn {
-        width: 40px;
-        height: 40px;
-        font-size: 28px;
-        line-height: 40px;
-        bottom: 15px;
-        right: 15px;
-    }
+    /*#scrollTopBtn {*/
+    /*    width: 40px;*/
+    /*    height: 40px;*/
+    /*    font-size: 28px;*/
+    /*    line-height: 40px;*/
+    /*    bottom: 15px;*/
+    /*    right: 15px;*/
+    /*}*/
 
     /* Navigation im mobilen Header untereinander */
     nav {
