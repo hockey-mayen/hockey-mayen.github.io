@@ -78,6 +78,7 @@ iframe {
 }
 
 #scrollTopBtn {
+    z-index: 9999;
     display: none; /* Standardmäßig versteckt */
     position: fixed;
     bottom: 20px;
