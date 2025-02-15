@@ -61,21 +61,6 @@ async function loadChronik() {
         });
 
         timelineContainer.appendChild(eventList);
-
-        let showYearNav = false;
-
-        if (showYearNav) {
-            let yearButton = document.createElement("button");
-            yearButton.className = "year-button";
-            yearButton.textContent = yearEntry.year;
-            yearButton.onclick = () => {
-                document.getElementById(`year-${yearEntry.year}`).scrollIntoView({
-                    behavior: "smooth",
-                    block: "start"
-                });
-            };
-            yearNavContainer.appendChild(yearButton);
-        }
     });
 
     document.querySelectorAll(".toggle-text").forEach(link => {
