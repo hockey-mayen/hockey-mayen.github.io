@@ -61,8 +61,16 @@ async function loadChronik() {
         });
 
         timelineContainer.appendChild(eventList);
+
+        // Jahr-Navigation Button erstellen
+        let yearButton = document.createElement("button");
+        yearButton.className = "year-button";
+        yearButton.textContent = yearEntry.year;
+        yearButton.onclick = () => fadeToYear(yearEntry.year);
+        yearNavContainer.appendChild(yearButton);
     });
 
+    // "Weiterlesen" Logik für lange Texte
     document.querySelectorAll(".toggle-text").forEach(link => {
         link.addEventListener("click", function (e) {
             e.preventDefault();
@@ -81,6 +89,27 @@ async function loadChronik() {
             }
         });
     });
+}
+
+// 🎨 **Sanftes Ausblenden, Sprung, dann Einblenden**
+function fadeToYear(year) {
+    const timeline = document.getElementById("timeline");
+    const targetSection = document.getElementById(`year-${year}`);
+
+    if (!targetSection) return;
+
+    // 1️⃣ **Langsam ausblenden**
+    timeline.style.transition = "opacity 0.9s ease-in-out";
+    timeline.style.opacity = "0.0";
+
+    setTimeout(() => {
+        // 2️⃣ **Sofort zum neuen Jahr springen, aber noch unsichtbar**
+        window.scrollTo({ top: targetSection.offsetTop - 100, behavior: "instant" });
+
+        // 3️⃣ **Langsam einblenden**
+        timeline.style.transition = "opacity 2.2s ease-in-out";
+        timeline.style.opacity = "1";
+    }, 900); // Warte, bis das Ausblenden vorbei ist
 }
 
 document.addEventListener("DOMContentLoaded", loadChronik);
