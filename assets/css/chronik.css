@@ -162,6 +162,7 @@
     max-width: 1100px; /* Begrenzte maximale Breite für bessere Optik */
     margin: 0 auto; /* Zentrierung */
     position: relative;
+    padding: 0 20px; /* Seitlicher Abstand für mehr Luft */
 }
 /* Jahr-Navigation: Jetzt kompakter & ohne Hintergrund */
 #year-nav-container {
@@ -174,9 +175,9 @@
 /* Jahr-Buttons */
 .year-nav {
     display: flex;
-    flex-direction: column; /* Vertikale Anordnung */
-    align-items: flex-start; /* Links ausgerichtet */
-    gap: 4px; /* Weniger Abstand zwischen den Jahren */
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
 }
 
 
@@ -184,23 +185,69 @@
 .year-button {
     background: none;
     border: none;
-    color: #007b5f; /* Vereinsfarbe */
+    color: rgba(0, 123, 95, 0.6); /* Weniger auffällig durch reduzierte Transparenz */
     font-size: 16px;
-    font-weight: bold;
+    font-weight: normal; /* Nicht fett, damit es dezenter wirkt */
     cursor: pointer;
     padding: 2px 5px;
-    transition: color 0.2s ease-in-out;
+    transition: color 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    text-decoration: none; /* Entfernt Unterstrich */
 }
 
 /* Hover-Effekt */
 .year-button:hover {
-    color: #042b26; /* Dunkleres Grün beim Hover */
-    text-decoration: underline;
+    color: #007b5f;
+    opacity: 1; /* Macht es beim Hover deutlicher sichtbar */
 }
 
 /* Aktives Jahr bleibt farblich hervorgehoben */
 .year-button.active {
-    color: #042b26 !important; /* Hover-Farbe dauerhaft für aktives Jahr */
+    color: #007b5f !important; /* Bleibt in Hover-Farbe */
     font-weight: bold;
-    text-decoration: underline;
+    opacity: 1; /* Kein Transparenz-Effekt für aktive Jahr */
+}
+
+
+
+/* 📱 Responsive Anpassung für Tablets & Smartphones */
+@media screen and (max-width: 1024px) {
+    .chronik-wrapper {
+        flex-direction: column; /* Stackt die Elemente untereinander */
+        align-items: center;
+        max-width: 90%; /* Auf Tablets schmaler */
+    }
+
+    /* Jahr-Navigation unter die Chronik setzen */
+    #year-nav-container {
+        position: relative; /* Fixierung aufheben */
+        left: auto;
+        top: auto;
+        margin-top: 20px;
+        text-align: center; /* Zentriert die Jahresleiste */
+    }
+
+    /* Jahresleiste auf kleineren Screens horizontal machen */
+    .year-nav {
+        flex-direction: row; /* Jahreszahlen nebeneinander */
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    /* Anpassung der Jahreszahlen */
+    .year-button {
+        font-size: 14px; /* Etwas kleiner für mobile */
+        padding: 5px 8px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .chronik-wrapper {
+        max-width: 95%; /* Noch mehr Luft auf Smartphones */
+    }
+
+    .year-button {
+        font-size: 12px; /* Noch kleiner für schmale Smartphones */
+        padding: 4px 6px;
+    }
 }
