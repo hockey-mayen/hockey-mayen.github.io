@@ -209,68 +209,39 @@
 
 
 
-/* 📱 Responsive Anpassung für Tablets & Smartphones */
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 768px) {
+    /* 🏑 Chronik-Wrapper: Weniger Abstand an den Seiten */
     .chronik-wrapper {
-        flex-direction: column; /* Stackt die Elemente untereinander */
-        align-items: center;
-        max-width: 90%; /* Auf Tablets schmaler */
+        padding: 0 10px; /* Kleinere Seitenränder */
+        max-width: 100%;
     }
 
-    /* Jahr-Navigation unter die Chronik setzen */
-    #year-nav-container {
-        position: relative; /* Fixierung aufheben */
-        left: auto;
-        top: auto;
-        margin-top: 20px;
-        text-align: center; /* Zentriert die Jahresleiste */
-    }
-
-    /* Jahresleiste auf kleineren Screens horizontal machen */
-    .year-nav {
-        flex-direction: row; /* Jahreszahlen nebeneinander */
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 10px;
-    }
-
-    /* Anpassung der Jahreszahlen */
-    .year-button {
-        font-size: 14px; /* Etwas kleiner für mobile */
-        padding: 5px 8px;
-    }
-}
-
-@media screen and (max-width: 600px) {
-    .chronik-wrapper {
-        max-width: 95%; /* Noch mehr Luft auf Smartphones */
-    }
-
-    .year-button {
-        font-size: 12px; /* Noch kleiner für schmale Smartphones */
-        padding: 4px 6px;
-    }
-}
-
-/* 📱 Besseres Responsive-Design für ältere Handys */
-@media screen and (max-width: 480px) {
-    .chronik-wrapper {
-        max-width: 100%; /* Volle Breite nutzen */
-        padding: 0 10px; /* Leichter Abstand an den Seiten */
-        overflow-x: hidden; /* Kein horizontales Scrollen */
-    }
-
+    /* 📏 Reduziere linken Abstand */
     .timeline-container {
-        max-width: 100%; /* Sorgt dafür, dass nichts abgeschnitten wird */
-        padding-left: 20px; /* Weniger Abstand links */
-        padding-right: 10px; /* Falls Text zu nah am Rand ist */
+        padding-left: 15px; /* Weniger Abstand links */
+        padding-right: 5px; /* Falls rechts zu eng */
     }
 
+    /* 📍 Punkte und Jahr-Überschrift näher an den Rand */
     .year-heading {
-        padding-left: 30px; /* Punkt nicht zu weit links */
+        padding-left: 20px; /* Weniger Abstand */
+        font-size: 20px; /* Etwas kleiner für bessere Platznutzung */
     }
 
+    .year-heading::before {
+        left: -12px; /* Punkt näher an die Jahreszahl */
+        width: 12px; /* Kleineren Punkt für kompakteres Layout */
+        height: 12px;
+    }
+
+    /* 📍 Ereignis-Punkte und Inhalte dichter zusammen */
     .event-item {
-        padding-left: 30px; /* Einheitlicher Abstand */
+        padding-left: 20px; /* Reduziert zu großen linken Abstand */
+    }
+
+    .event-item::before {
+        left: -10px; /* Punkt näher an den Text */
+        width: 8px;
+        height: 8px;
     }
 }
