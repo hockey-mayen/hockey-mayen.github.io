@@ -170,6 +170,12 @@
     left: calc(50% + 400px); /* Position bleibt neben den Events */
     top: 320px; /* Abstand zur Überschrift */
     z-index: 1000;
+    padding: 10px; /* Innenabstand für bessere Optik */
+    border: 2px solid rgba(0, 123, 95, 0.4); /* Dünne, dezente Border */
+    border-radius: 10px; /* Abgerundete Ecken */
+    background-color: rgba(255, 255, 255, 0.9); /* Leicht transparent für eleganten Look */
+    box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.1); /* Sanfter Schatten für 3D-Effekt */
+
 }
 
 /* Jahr-Buttons */
@@ -185,19 +191,21 @@
 .year-button {
     background: none;
     border: none;
-    color: rgba(0, 123, 95, 0.6); /* Weniger auffällig durch reduzierte Transparenz */
+    color: rgba(0, 123, 95, 0.3); /* Weniger auffällig durch reduzierte Transparenz */
     font-size: 16px;
-    font-weight: normal; /* Nicht fett, damit es dezenter wirkt */
+    font-weight: bold; /* **Jetzt auch fette Schrift für inaktive Jahre** */
     cursor: pointer;
     padding: 2px 5px;
     transition: color 0.3s ease-in-out, opacity 0.3s ease-in-out;
     text-decoration: none; /* Entfernt Unterstrich */
 }
 
+
 /* Hover-Effekt */
 .year-button:hover {
     color: #007b5f;
     opacity: 1; /* Macht es beim Hover deutlicher sichtbar */
+    transform: translateX(3px); /* Leichtes Verschieben für Interaktivität */
 }
 
 /* Aktives Jahr bleibt farblich hervorgehoben */
@@ -205,6 +213,10 @@
     color: #007b5f !important; /* Bleibt in Hover-Farbe */
     font-weight: bold;
     opacity: 1; /* Kein Transparenz-Effekt für aktive Jahr */
+
+    background: linear-gradient(to right, rgba(0, 123, 95, 0.2), rgba(0, 123, 95, 0));
+    padding-left: 8px; /* Leicht nach rechts eingerückt */
+    border-left: 3px solid #007b5f; /* Schlanke Markierung */
 }
 
 
