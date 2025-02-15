@@ -3,8 +3,7 @@ footer {
     background: linear-gradient(135deg, #004d26, #088442);
     color: white;
     text-align: center;
-    padding: 20px 10px;
-    margin-top: 30px;
+    padding: 10px 10px;
     font-size: 14px;
 }
 
@@ -29,7 +28,7 @@ footer a.active {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 15px; /* More space between elements */
+    gap: 5px; /* More space between elements */
     width: 100%;
 }
 
