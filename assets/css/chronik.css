@@ -211,13 +211,8 @@
 
 @media screen and (max-width: 768px) {
     /* 🏑 Chronik-Wrapper: Keine unnötigen Ränder */
-    .main{
-        margin-left: 0;
-    }
-
     .chronik-wrapper {
-        padding: 0 5px; /* Noch weniger Seitenabstand */
-        max-width: 100%;
+        padding: 0 0;
     }
 
     /* 📏 Noch schmalere Timeline */
