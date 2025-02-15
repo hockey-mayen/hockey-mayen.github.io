@@ -110,7 +110,7 @@ function fadeToYear(year) {
     if (!targetSection) return;
 
     // 1️⃣ **Langsam ausblenden**
-    timeline.style.transition = "opacity 0.9s ease-in-out";
+    timeline.style.transition = "opacity 0.4s ease-in-out";
     timeline.style.opacity = "0.0";
 
     setTimeout(() => {
@@ -118,14 +118,14 @@ function fadeToYear(year) {
         window.scrollTo({ top: targetSection.offsetTop - 100, behavior: "instant" });
 
         // 3️⃣ **Langsam einblenden**
-        timeline.style.transition = "opacity 1.5s ease-in-out";
+        timeline.style.transition = "opacity 0.6s ease-in-out";
         timeline.style.opacity = "1";
 
         // 🟢 Nach dem Sprung das aktive Jahr in der Navigation setzen
         document.querySelectorAll(".year-button").forEach(btn => btn.classList.remove("active"));
         document.querySelector(`.year-button[data-year='${year}']`).classList.add("active");
 
-    }, 700); // Warte, bis das Ausblenden vorbei ist
+    }, 400); // Warte, bis das Ausblenden vorbei ist
 }
 
 // 🏑 **Scroll-Tracking: Automatische Hervorhebung des aktuellen Jahres**
