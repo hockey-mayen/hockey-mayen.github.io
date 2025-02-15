@@ -251,3 +251,26 @@
         padding: 4px 6px;
     }
 }
+
+/* 📱 Besseres Responsive-Design für ältere Handys */
+@media screen and (max-width: 480px) {
+    .chronik-wrapper {
+        max-width: 100%; /* Volle Breite nutzen */
+        padding: 0 10px; /* Leichter Abstand an den Seiten */
+        overflow-x: hidden; /* Kein horizontales Scrollen */
+    }
+
+    .timeline-container {
+        max-width: 100%; /* Sorgt dafür, dass nichts abgeschnitten wird */
+        padding-left: 20px; /* Weniger Abstand links */
+        padding-right: 10px; /* Falls Text zu nah am Rand ist */
+    }
+
+    .year-heading {
+        padding-left: 30px; /* Punkt nicht zu weit links */
+    }
+
+    .event-item {
+        padding-left: 30px; /* Einheitlicher Abstand */
+    }
+}
