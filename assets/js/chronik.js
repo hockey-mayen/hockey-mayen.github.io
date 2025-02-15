@@ -62,15 +62,23 @@ async function loadChronik() {
 
         timelineContainer.appendChild(eventList);
 
-        // Jahr-Navigation Button erstellen
+        // 🎯 Jahr-Navigation Eintrag erstellen
         let yearButton = document.createElement("button");
         yearButton.className = "year-button";
         yearButton.textContent = yearEntry.year;
+        yearButton.setAttribute("data-year", yearEntry.year);
         yearButton.onclick = () => fadeToYear(yearEntry.year);
         yearNavContainer.appendChild(yearButton);
     });
 
-    // "Weiterlesen" Logik für lange Texte
+    // 🌟 Setze das neueste Jahr als aktiv beim Laden der Chronik
+    const newestYear = data.events[0].year;
+    document.querySelector(`.year-button[data-year='${newestYear}']`).classList.add("active");
+
+    // 🔍 Starte Scroll-Tracking
+    window.addEventListener("scroll", highlightCurrentYear);
+
+    // 📖 "Weiterlesen"-Logik
     document.querySelectorAll(".toggle-text").forEach(link => {
         link.addEventListener("click", function (e) {
             e.preventDefault();
@@ -89,6 +97,9 @@ async function loadChronik() {
             }
         });
     });
+
+    // 🟢 Direkt das erste Jahr markieren
+    highlightCurrentYear();
 }
 
 // 🎨 **Sanftes Ausblenden, Sprung, dann Einblenden**
@@ -107,9 +118,37 @@ function fadeToYear(year) {
         window.scrollTo({ top: targetSection.offsetTop - 100, behavior: "instant" });
 
         // 3️⃣ **Langsam einblenden**
-        timeline.style.transition = "opacity 2.2s ease-in-out";
+        timeline.style.transition = "opacity 1.5s ease-in-out";
         timeline.style.opacity = "1";
-    }, 800); // Warte, bis das Ausblenden vorbei ist
+
+        // 🟢 Nach dem Sprung das aktive Jahr in der Navigation setzen
+        document.querySelectorAll(".year-button").forEach(btn => btn.classList.remove("active"));
+        document.querySelector(`.year-button[data-year='${year}']`).classList.add("active");
+
+    }, 700); // Warte, bis das Ausblenden vorbei ist
 }
 
+// 🏑 **Scroll-Tracking: Automatische Hervorhebung des aktuellen Jahres**
+function highlightCurrentYear() {
+    let yearHeadings = document.querySelectorAll(".year-heading");
+    let scrollPosition = window.scrollY + 200; // Puffer, damit das Jahr früh erkannt wird
+
+    let currentYear = null;
+
+    yearHeadings.forEach(heading => {
+        if (heading.offsetTop <= scrollPosition) {
+            currentYear = heading.id.replace("year-", "");
+        }
+    });
+
+    if (currentYear) {
+        document.querySelectorAll(".year-button").forEach(btn => btn.classList.remove("active"));
+        let activeButton = document.querySelector(`.year-button[data-year='${currentYear}']`);
+        if (activeButton) {
+            activeButton.classList.add("active");
+        }
+    }
+}
+
+// 🎯 Chronik laden, wenn Seite geladen wird
 document.addEventListener("DOMContentLoaded", loadChronik);

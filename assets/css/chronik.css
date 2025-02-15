@@ -163,98 +163,50 @@
     margin: 0 auto; /* Zentrierung */
     position: relative;
 }
-/* Fixierte Jahr-Navigation direkt neben den Chronik-Texten */
+/* Jahr-Navigation: Jetzt kompakter & ohne Hintergrund */
 #year-nav-container {
     position: fixed;
-    right: auto; /* Entfernt das feste Rechts-Alignment */
-    left: calc(50% + 400px); /* Positioniert sie direkt neben dem Text */
-    top: 200px; /* Erhöht den Abstand nach unten */
-    width: 120px; /* Schmalere Navigation für bessere Platzierung */
-    background-color: white;
+    left: calc(50% + 400px); /* Position bleibt neben den Events */
+    top: 320px; /* Abstand zur Überschrift */
     z-index: 1000;
-    padding: 10px;
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-    max-height: 80vh; /* Begrenzte Höhe für viele Jahre */
-    overflow-y: auto; /* Scrollbar bei zu vielen Jahren */
 }
 
 /* Jahr-Buttons */
 .year-nav {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 8px;
+    flex-direction: column; /* Vertikale Anordnung */
+    align-items: flex-start; /* Links ausgerichtet */
+    gap: 4px; /* Weniger Abstand zwischen den Jahren */
 }
 
 
+/* Standard-Jahr-Button */
 .year-button {
-    background-color: #007b5f;
-    color: white;
+    background: none;
     border: none;
-    padding: 8px 12px;
-    font-size: 14px;
-    cursor: pointer;
-    border-radius: 5px;
-    transition: background-color 0.3s, transform 0.2s;
-    width: 100%;
-    text-align: center;
-}
-
-.year-button:hover {
-    background-color: #005f47;
-    transform: scale(1.05);
-}
-
-/* Chronik-Inhalt */
-.timeline-container {
-    flex-grow: 1;
-    max-width: 700px;
-    padding-left: 50px;
-}
-
-/* Jahr-Überschriften */
-.year-heading {
-    font-size: 22px;
+    color: #007b5f; /* Vereinsfarbe */
+    font-size: 16px;
     font-weight: bold;
-    color: #007b5f;
-    margin: 20px 0 10px;
-    text-align: left;
-    width: 100%;
-    padding-left: 50px;
-    position: relative;
+    cursor: pointer;
+    padding: 2px 5px;
+    transition: color 0.2s ease-in-out;
 }
 
-.year-heading::before {
-    content: "";
-    position: absolute;
-    left: -30px;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 18px;
-    height: 18px;
-    background-color: #007b5f;
-    border-radius: 50%;
+/* Hover-Effekt */
+.year-button:hover {
+    color: #042b26; /* Dunkleres Grün beim Hover */
+    text-decoration: underline;
 }
 
+/* Aktives Jahr bleibt farblich hervorgehoben */
+.year-button.active {
+    color: #042b26 !important; /* Hover-Farbe dauerhaft für aktives Jahr */
+    font-weight: bold;
+    text-decoration: underline;
+}
 
 
 @media screen and (max-width: 768px) {
-    .timeline-container {
-        padding-left: 0px; /* Weniger Abstand zum linken Rand */
-        padding-right: 15px; /* Mehr Abstand zum rechten Rand */
-    }
-
-    .year-heading {
-        padding-left: 10px; /* Weniger Abstand für Jahr-Überschriften */
-        font-size: 18px; /* Kleinere Schriftgröße */
-    }
-
-    .year-heading::before {
-        left: -12px; /* Punkt näher an die Jahreszahl */
-        width: 14px;
-        height: 14px;
-    }
 
     .event-item {
         padding-left: 10px; /* Weniger Abstand für Events */
