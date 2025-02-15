@@ -7,7 +7,7 @@
     max-width: 700px;
     margin: 10px auto;
     position: relative;
-    padding-left: 50px; /* Platz für die Linie und Punkte */
+    /*padding-left: 50px; !* Platz für die Linie und Punkte *!*/
     /*opacity: 0.7; !* Leichte Transparenz *!*/
 }
 
@@ -203,31 +203,4 @@
     color: #042b26 !important; /* Hover-Farbe dauerhaft für aktives Jahr */
     font-weight: bold;
     text-decoration: underline;
-}
-
-
-@media screen and (max-width: 768px) {
-
-    .event-item {
-        padding-left: 10px; /* Weniger Abstand für Events */
-    }
-
-    .event-item::before {
-        left: -10px; /* Punkt näher am Text */
-        width: 8px;
-        height: 8px;
-    }
-
-    .event-image img {
-        max-width: 100%; /* Größeres Bild für mobile Ansicht */
-    }
-
-    /* Textbereiche */
-    .short-text {
-        display: inline;
-    }
-
-    .full-text {
-        display: none;
-    }
 }
