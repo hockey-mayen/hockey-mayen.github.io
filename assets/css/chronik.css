@@ -211,6 +211,10 @@
 
 @media screen and (max-width: 768px) {
     /* 🏑 Chronik-Wrapper: Keine unnötigen Ränder */
+    .main{
+        margin-left: 0;
+    }
+
     .chronik-wrapper {
         padding: 0 5px; /* Noch weniger Seitenabstand */
         max-width: 100%;
@@ -218,7 +222,7 @@
 
     /* 📏 Noch schmalere Timeline */
     .timeline-container {
-        padding-left: 5px; /* Reduziert den linken Abstand fast komplett */
+        /*padding-left: 5px; !* Reduziert den linken Abstand fast komplett *!*/
         padding-right: 5px; /* Falls rechts zu eng */
     }
 
@@ -229,7 +233,7 @@
     }
 
     .year-heading::before {
-        left: -5px; /* Punkt näher an die Jahreszahl schieben */
+        /*left: -5px; !* Punkt näher an die Jahreszahl schieben *!*/
         width: 10px; /* Kleineren Punkt für kompakteres Layout */
         height: 10px;
     }
@@ -240,7 +244,7 @@
     }
 
     .event-item::before {
-        left: -8px; /* Punkt näher an den Text */
+        /*left: -8px; !* Punkt näher an den Text *!*/
         width: 7px;
         height: 7px;
     }
