@@ -109,7 +109,7 @@ function fadeToYear(year) {
         // 3️⃣ **Langsam einblenden**
         timeline.style.transition = "opacity 2.2s ease-in-out";
         timeline.style.opacity = "1";
-    }, 900); // Warte, bis das Ausblenden vorbei ist
+    }, 800); // Warte, bis das Ausblenden vorbei ist
 }
 
 document.addEventListener("DOMContentLoaded", loadChronik);
