@@ -168,7 +168,7 @@
 #year-nav-container {
     position: fixed;
     left: calc(50% + 400px); /* Position bleibt neben den Events */
-    top: 320px; /* Abstand zur Überschrift */
+    top: 210px; /* Abstand zur Überschrift */
     z-index: 1000;
     padding: 10px; /* Innenabstand für bessere Optik */
     border: 2px solid rgba(0, 123, 95, 0.4); /* Dünne, dezente Border */
@@ -192,10 +192,10 @@
     background: none;
     border: none;
     color: rgba(0, 123, 95, 0.3); /* Weniger auffällig durch reduzierte Transparenz */
-    font-size: 16px;
+    font-size: 14px;
     font-weight: bold; /* **Jetzt auch fette Schrift für inaktive Jahre** */
     cursor: pointer;
-    padding: 2px 5px;
+    padding: 1px 3px;
     transition: color 0.3s ease-in-out, opacity 0.3s ease-in-out;
     text-decoration: none; /* Entfernt Unterstrich */
 }

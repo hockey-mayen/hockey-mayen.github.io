@@ -2,11 +2,10 @@
 @import url('https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&display=swap');
 
 header {
-    /*background-color: #004d26; !* Dunkelgrün *!*/
     background: linear-gradient(135deg, #004d26, #088442);
-
     color: white;
-    padding: 15px 0;
+    padding-top: 10px;
+    padding-bottom: 5px;
     text-align: center;
 }
 
@@ -25,8 +24,6 @@ header {
     display: flex;
     align-items: flex-start; /* Sorgt dafür, dass der Titel oben am Logo ausgerichtet wird */
     justify-content: center; /* Alles horizontal im Header ausrichten */
-    gap: 15px; /* Abstand zwischen Logo und Titel */
-    padding-top: 5px; /* Falls nötig, anpassen */
 }
 
 /* Logo bleibt links */
@@ -44,7 +41,7 @@ header {
 
 /* Navigation feintunen */
 .nav-grid {
-    transform: translateY(-1.75em);
+    transform: translateY(-0.75em);
 }
 
 /* Überschrift */
@@ -55,23 +52,14 @@ header h1 {
     text-align: left; /* Text linksbündig */
 }
 
-/* Navigation */
-/* Navigation horizontal exakt mittig zum Titel ausrichten */
-/* Navigation genau unten ausrichten */
-/* Navigation genau unten ausrichten */
-nav {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    margin-top: auto; /* Sorgt für perfekte Ausrichtung */
-}
+
 
 nav ul {
     list-style: none;
     padding: 0;
     margin: 0;
     display: flex;
-    gap: 15px;
+    gap: 10px;
     align-items: center;
 }
 
@@ -107,7 +95,7 @@ nav ul li a.active {
 .title-container {
     display: flex;
     align-items: center; /* Logo und Titel in einer Linie */
-    gap: 10px; /* Abstand zwischen Logo und Text */
+    gap: 15px; /* Abstand zwischen Logo und Text */
 }
 /* Titel */
 .title-text {
@@ -126,7 +114,8 @@ nav ul li a.active {
 .subtitle {
     font-size: 21px;
     font-weight: normal;
-    margin-top: 3px;
+    margin-top: 0px;
+    margin-bottom: 1px;
     color: rgba(152, 196, 53, 0.6);
     font-family: 'UnifrakturMaguntia', cursive;
     transform: translateY(-0.35em);
