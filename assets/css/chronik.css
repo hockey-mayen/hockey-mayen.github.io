@@ -210,38 +210,38 @@
 
 
 @media screen and (max-width: 768px) {
-    /* 🏑 Chronik-Wrapper: Weniger Abstand an den Seiten */
+    /* 🏑 Chronik-Wrapper: Keine unnötigen Ränder */
     .chronik-wrapper {
-        padding: 0 10px; /* Kleinere Seitenränder */
+        padding: 0 5px; /* Noch weniger Seitenabstand */
         max-width: 100%;
     }
 
-    /* 📏 Reduziere linken Abstand */
+    /* 📏 Noch schmalere Timeline */
     .timeline-container {
-        padding-left: 15px; /* Weniger Abstand links */
+        padding-left: 5px; /* Reduziert den linken Abstand fast komplett */
         padding-right: 5px; /* Falls rechts zu eng */
     }
 
-    /* 📍 Punkte und Jahr-Überschrift näher an den Rand */
+    /* 📍 Jahreszahlen & Punkte kompakter */
     .year-heading {
-        padding-left: 20px; /* Weniger Abstand */
-        font-size: 20px; /* Etwas kleiner für bessere Platznutzung */
+        padding-left: 10px; /* Weniger Abstand zwischen Rand und Jahreszahl */
+        font-size: 18px; /* Etwas kleiner für bessere Lesbarkeit */
     }
 
     .year-heading::before {
-        left: -12px; /* Punkt näher an die Jahreszahl */
-        width: 12px; /* Kleineren Punkt für kompakteres Layout */
-        height: 12px;
+        left: -5px; /* Punkt näher an die Jahreszahl schieben */
+        width: 10px; /* Kleineren Punkt für kompakteres Layout */
+        height: 10px;
     }
 
-    /* 📍 Ereignis-Punkte und Inhalte dichter zusammen */
+    /* 📍 Ereignis-Einträge: Weniger Abstand links */
     .event-item {
-        padding-left: 20px; /* Reduziert zu großen linken Abstand */
+        padding-left: 10px; /* Noch dichter an den Rand */
     }
 
     .event-item::before {
-        left: -10px; /* Punkt näher an den Text */
-        width: 8px;
-        height: 8px;
+        left: -8px; /* Punkt näher an den Text */
+        width: 7px;
+        height: 7px;
     }
 }
