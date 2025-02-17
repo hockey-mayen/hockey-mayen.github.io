@@ -120,7 +120,7 @@ nav ul li a.active {
     transform: translateY(-0.35em);
 }
 
-@media (max-width: 770px) {
+@media (max-width: 710px) {
     /* Header flexbox für zentrierte Anordnung */
     .header-container {
         display: flex;
@@ -198,7 +198,7 @@ nav ul li a.active {
     nav ul li a {
         text-decoration: none;
         color: white;
-        font-size: 5vw; /* Etwas größere Schrift für bessere Lesbarkeit */
+        /*font-size: 5vw; !* Etwas größere Schrift für bessere Lesbarkeit *!*/
         font-weight: bold;
         transition: color 0.3s;
     }
