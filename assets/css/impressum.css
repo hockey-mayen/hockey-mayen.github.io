@@ -1,11 +1,8 @@
-
+/*impressum.css*/
 .collapsible-container {
     margin-top: 20px;
-    border: 1px solid #ccc;
     border-radius: 5px;
     padding: 10px;
-    /*background-color: #f9f9f9;*/
-    border: none; /* Entfernt den Rahmen */
 }
 
 .collapsible-header {

@@ -1,6 +1,6 @@
 
-/* tiles.css: Container für Kacheln */
 
+/* tiles.css: Container für Kacheln */
 .tiles-container {
     display: grid;
     grid-template-columns: repeat(2, 1fr); /* 2 Spalten */
@@ -10,8 +10,6 @@
     margin-left: auto; /* Zentriert den Container horizontal */
     margin-right: auto;
     max-width: 1200px; /* Begrenze die Breite auf maximal 1200px */
-
-
     padding: 20px; /* Etwas Innenabstand für bessere Optik */
     border-radius: 8px; /* Leicht abgerundete Ecken für den Container */
 }
@@ -26,12 +24,6 @@
     /*border-radius: 5px; !* Abgerundete Ecken für alle Kacheln *!*/
     overflow: hidden; /* Verhindert, dass Bilder aus der Kachel herausragen */
 
-    /*schatten!*/
-    /*background-color: rgba(254, 252, 252, 0.84); !* Ein sehr dezentes Grau *!*/
-    /*border-radius: 8px; !* Abgerundete Ecken *!*/
-    /*box-shadow: 4px 4px 15px 5px rgba(0, 0, 0, 0.1);*/
-    /*transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;*/
-    /*padding: 15px;*/
 }
 
 /* Hover-Effekt: Kachel hebt sich leicht */
@@ -64,7 +56,6 @@
 .tile a:hover {
     text-decoration: underline;
 }
-
 
 .training-image-container,
 .turniere-image-container {
@@ -106,5 +97,13 @@
 .tile-link {
     margin-top: 10px;
     color: #007b5f;
+}
+
+@media (max-width: 600px) {
+    /* Kachel-Anordnung */
+    .tiles-container {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
 }
 

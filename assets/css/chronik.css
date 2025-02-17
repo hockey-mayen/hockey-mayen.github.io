@@ -7,8 +7,6 @@
     max-width: 700px;
     margin: 10px auto;
     position: relative;
-    /*padding-left: 50px; !* Platz für die Linie und Punkte *!*/
-    /*opacity: 0.7; !* Leichte Transparenz *!*/
 }
 
 /* Jahr-Überschriften mit großem Punkt */
@@ -56,7 +54,6 @@
     font-weight: bold;
 }
 
-
 /* Punkt für Ereignisse (kleiner als Jahr) */
 .event-item::before {
     content: "";
@@ -89,8 +86,8 @@
     height: auto;
     border-radius: 5px;
     display: block;
-    margin: 0 auto; /* Bild mittig ausrichten */
 }
+
 .event-image::before {
     content: none; /* Entfernt den Punkt für das Bild */
 }
@@ -147,12 +144,7 @@
     margin-top: 10px;
 }
 
-.event-image img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 5px;
-    display: block;
-}
+
 
 /*Container für Chronik und Navigation */
 /* Container für Chronik und Navigation */
@@ -219,8 +211,6 @@
     border-left: 3px solid #007b5f; /* Schlanke Markierung */
 }
 
-
-
 @media screen and (max-width: 768px) {
     /* 🏑 Chronik-Wrapper: Keine unnötigen Ränder */
     .chronik-wrapper {
@@ -237,7 +227,6 @@
         padding-left: 10px; /* Weniger Abstand zwischen Rand und Jahreszahl */
         font-size: 18px; /* Etwas kleiner für bessere Lesbarkeit */
     }
-
 
     .year-heading::before {
         left: -10px; /* Punkt näher an die Jahreszahl schieben */
