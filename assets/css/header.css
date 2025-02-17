@@ -31,6 +31,8 @@ header h1 {
     display: flex;
     align-items: flex-start; /* Sorgt dafür, dass der Titel oben am Logo ausgerichtet wird */
     justify-content: center; /* Alles horizontal im Header ausrichten */
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 /* Logo bleibt links */
@@ -118,7 +120,7 @@ nav ul li a.active {
     transform: translateY(-0.35em);
 }
 
-@media (max-width: 600px) {
+@media (max-width: 770px) {
     /* Header flexbox für zentrierte Anordnung */
     .header-container {
         display: flex;
