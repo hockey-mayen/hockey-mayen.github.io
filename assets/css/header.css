@@ -184,7 +184,7 @@ nav ul li a.active {
 
     /* Untertitel in gotischer Schrift */
     .subtitle {
-        /*font-size: 4.5vw;*/
+        font-size: 4.5vw;
         font-family: 'UnifrakturMaguntia', cursive;
         color: rgba(152, 196, 53, 0.6);
     }
