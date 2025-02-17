@@ -187,6 +187,7 @@ nav ul li a.active {
         font-size: 4.5vw;
         font-family: 'UnifrakturMaguntia', cursive;
         color: rgba(152, 196, 53, 0.6);
+        transform: translateY(-0.15em);
     }
 
     nav ul {
