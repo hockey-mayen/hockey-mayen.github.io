@@ -11,10 +11,14 @@ permalink: /sportstaetten/
     <div class="tile">
         <h3>{{ tile.title }}</h3>
         <p>{{ tile.description }}</p>
-        <a href="{{ tile.map_link }}" target="_blank">Google Maps Navigation</a>
+        <a href="{{ tile.map_link }}" target="_blank">
+            <img src="../assets/images/navigation.png" alt="Link-Bild" style="width: 100px; height: auto;"><br>
+            Google Maps Navigation
+        </a>
     </div>
     {% endfor %}
 </div>
+
 
 <small>  
     In der warmen Jahreszeit spielen wir Hockey auf dem Kunstrasenplatz im Stadion Nettetal.  

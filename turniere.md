@@ -17,6 +17,16 @@ title: "Turniere"
             {{ detail.date }} - {{ detail.location }}<br>
             {% endfor %}
         {% endif %}
+        {% if tile.link %}
+        <div class="link-container">
+            <a href="{{ tile.link.url }}" target="_blank">
+                <img src="{{ tile.link.image }}" alt="Link-Bild" style="width: 40px; height: auto;">
+                <div class="link-title">{{ tile.link.title }}</div>
+            </a>
+        </div>
+        {% endif %}
     </div>
     {% endfor %}
 </div>
+
+
