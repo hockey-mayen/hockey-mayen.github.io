@@ -1,0 +1,84 @@
+.aktuell-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+}
+
+.tile-aktuell {
+    background: white;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    width: 45%;
+    min-height: 500px; /* Mindestens 500px Höhe, damit sich nichts verschiebt */
+    max-height: 500px;
+    overflow: hidden; /* Stabiler Bereich für Text & Bilder */
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Nachrichten-Kachel */
+.news-tile {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+/* Nachrichten-Text */
+#news-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    min-height: 250px;
+    text-align: left;
+    width: 100%;
+    overflow: hidden; /* Verhindert plötzliche Größenänderungen */
+}
+
+/* Text-Styling */
+#news-content p {
+    text-align: left;
+    font-size: 20px;
+    font-family: "Georgia", serif;
+    line-height: 1.5;
+    padding: 10px;
+    margin: 0;
+    word-wrap: break-word;
+}
+
+/* 📌 Bilder sollen mittig, aber Text linksbündig bleiben */
+#news-content img {
+    display: block;
+    width: 100%;
+    max-height: 250px;
+    object-fit: contain;
+    border-radius: 5px;
+    opacity: 1;
+    margin: 10px auto; /* ✅ Bild mittig setzen */
+}
+
+/* 📌 Container für Bilder */
+.news-image-container {
+    width: 100%;
+    height: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* Animationen für das sanfte Wechseln von Text zu Bild */
+.news-image {
+    max-width: 100%;
+    max-height: 250px;
+    object-fit: contain;
+    border-radius: 5px;
+    display: block;
+    margin: auto;
+}
