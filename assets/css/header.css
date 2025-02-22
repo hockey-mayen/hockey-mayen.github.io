@@ -116,17 +116,6 @@ nav ul li a.active {
     transform: translateY(-0.0em);
 }
 
-@keyframes subtitleFlicker {
-    0%   { filter: brightness(1) saturate(1); opacity: 1; text-shadow: 0px 0px 6px rgba(152, 196, 53, 0.3); }
-    10%  { filter: brightness(1.08) saturate(1.05); opacity: 0.85; text-shadow: 0px 0px 10px rgba(152, 196, 53, 0.35); }
-    25%  { filter: brightness(0.95) saturate(0.95); opacity: 0.7; text-shadow: 0px 0px 8px rgba(152, 196, 53, 0.3); }
-    40%  { filter: brightness(1.1) saturate(1.08); opacity: 0.5; text-shadow: 0px 0px 12px rgba(152, 196, 53, 0.4); }
-    55%  { filter: brightness(0.92) saturate(0.98); opacity: 0.4; text-shadow: 0px 0px 5px rgba(152, 196, 53, 0.2); }
-    70%  { filter: brightness(1.05) saturate(1.02); opacity: 0.3; text-shadow: 0px 0px 7px rgba(152, 196, 53, 0.25); }
-    85%  { filter: brightness(0.9) saturate(0.95); opacity: 0.15; text-shadow: 0px 0px 3px rgba(152, 196, 53, 0.15); }
-    100% { filter: brightness(1) saturate(1); opacity: 0; text-shadow: 0px 0px 0px rgba(152, 196, 53, 0); }
-}
-
 .subtitle {
     font-size: 21px;
     font-weight: normal;
@@ -135,7 +124,6 @@ nav ul li a.active {
     color: rgba(152, 196, 53, 0.8);
     font-family: 'UnifrakturMaguntia', cursive;
     transform: translateY(-0.35em);
-    animation: subtitleFlicker 7s infinite alternate cubic-bezier(0.4, 0, 0.6, 1);
 }
 
 @media (max-width: 800px) {
