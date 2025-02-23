@@ -127,8 +127,8 @@ async function loadNews() {
     // 🆕 Funktion für **direkte** Bildanzeige (KEINE Übergänge!)
     function displayImages(images, callback) {
         let imageIndex = 0;
-        const contentElement = document.getElementById("news-content"); // Stelle sicher, dass Bilder in "Nachrichten" angezeigt werden
-        contentElement.innerHTML = ""; // Vorherigen Text/Bilder löschen
+        const contentElement = document.getElementById("news-content");
+        contentElement.innerHTML = ""; // Vorherigen Inhalt löschen
 
         function showNextImage() {
             if (imageIndex >= images.length) {
@@ -143,8 +143,10 @@ async function loadNews() {
             img.onload = () => {
                 console.log(`🖼 Bild geladen & eingefügt: ${images[imageIndex]}`);
 
-                contentElement.innerHTML = ""; // Löscht vorherigen Inhalt (Text/Bild)
+                contentElement.innerHTML = "";
                 contentElement.appendChild(img);
+
+                setTimeout(() => img.classList.add("show"), 50); // 🔥 Sanftes Einblenden
             };
 
             img.onerror = () => {
@@ -154,14 +156,24 @@ async function loadNews() {
             };
 
             setTimeout(() => {
-                contentElement.innerHTML = ""; // Entferne Bild nach Ablauf der Anzeigezeit
-                imageIndex++;
-                showNextImage();
+                console.log(`📉 Starte Ausblenden von Bild ${imageIndex + 1}`);
+                img.classList.remove("show");
+
+                setTimeout(() => {
+                    img.classList.add("fadeOut"); // 🔥 Sanftes Ausblenden aktivieren
+                    setTimeout(() => {
+                        contentElement.innerHTML = "";
+                        imageIndex++;
+                        showNextImage();
+                    }, 600); // Diese Zeit muss mit der CSS-Animation `fadeOut` übereinstimmen
+                }, 50);
             }, imageDisplayDuration);
         }
 
         showNextImage();
     }
+
+
 
 
 

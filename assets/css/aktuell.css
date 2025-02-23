@@ -81,12 +81,7 @@
 /* Animationen für das sanfte Wechseln von Text zu Bild */
 /* 📷 Bild langsam einblenden */
 .news-image {
-    max-width: 100%;
-    max-height: 250px;
-    object-fit: contain;
-    border-radius: 5px;
-    display: block;
-    margin: auto;
+
     opacity: 0;
     transition: opacity 0.6s ease-in-out;
 }
@@ -123,4 +118,10 @@
 .typing-effect {
     opacity: 0;
     animation: fadeIn 0.5s ease-in-out forwards;
+}
+
+/* ✨ Sanftes Ausblenden */
+.news-image.fadeOut {
+    opacity: 0;
+    transition: opacity 0.6s ease-in-out;
 }
