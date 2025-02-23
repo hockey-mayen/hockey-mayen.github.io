@@ -2,7 +2,7 @@
 const typingSpeed = 65; // Tippgeschwindigkeit (langsamer für angenehmes Lesen)
 const delayBeforeNext = 2500; // Verzögerung nach vollständigem Text
 const sentencePause = 800; // Pause nach Satzenden (leicht verlängert für Natürlichkeit)
-const maxLength = 450; // Maximale Zeichenanzahl vor "Weiterlesen"-Link
+const maxLength = 50; // Maximale Zeichenanzahl vor "Weiterlesen"-Link
 const imageDisplayDuration = 2500; // 🆕 Dauer, wie lange ein Bild sichtbar bleibt (in ms)
 
 async function loadNews() {
@@ -114,11 +114,13 @@ async function loadNews() {
                 }
             } else {
                 setTimeout(() => {
+                    element.classList.add("visible"); // ✅ Text sichtbar machen
                     if (callback) callback();
                 }, delayBeforeNext);
             }
         }
 
+        element.classList.remove("visible"); // Verhindert sofortige Anzeige
         type();
     }
 

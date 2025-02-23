@@ -1,3 +1,6 @@
+/* Verbesserte Schriftart und flüssiges Tippen */
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&display=swap');
+
 .aktuell-container {
     display: flex;
     justify-content: space-around;
@@ -44,13 +47,16 @@
 /* Text-Styling */
 #news-content p {
     text-align: left;
-    font-size: 20px;
-    font-family: "Georgia", serif;
-    line-height: 1.5;
-    padding: 10px;
+    font-size: 22px; /* Etwas größere Schrift für bessere Lesbarkeit */
+    font-family: "Merriweather", serif; /* Elegante, gut lesbare Serifenschrift */
+    font-weight: 400;
+    line-height: 1.6; /* Angenehmer Zeilenabstand für flüssiges Lesen */
+    padding: 12px;
     margin: 0;
     word-wrap: break-word;
+    color: #333; /* Dunkler für besseren Kontrast */
 }
+
 
 /* 📌 Bilder sollen mittig, aber Text linksbündig bleiben */
 #news-content img {
@@ -63,7 +69,7 @@
     margin: 10px auto; /* ✅ Bild mittig setzen */
 }
 
-/* 📌 Container für Bilder */
+/* 📌 Container für Bilder (damit Platz reserviert bleibt) */
 .news-image-container {
     width: 100%;
     height: 250px;
@@ -72,8 +78,8 @@
     align-items: center;
     overflow: hidden;
 }
-
 /* Animationen für das sanfte Wechseln von Text zu Bild */
+/* 📷 Bild langsam einblenden */
 .news-image {
     max-width: 100%;
     max-height: 250px;
@@ -81,4 +87,40 @@
     border-radius: 5px;
     display: block;
     margin: auto;
+    opacity: 0;
+    transition: opacity 0.6s ease-in-out;
+}
+
+/* 📷 Falls ein Bild aktiv wird, sanft einblenden */
+.news-image.show {
+    opacity: 1;
+}
+
+/* Sanfte Transparenz beim Tippen */
+@keyframes fadeInText {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* ✨ Sanftes Einblenden */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* ✨ Sanftes Ausblenden */
+@keyframes fadeOut {
+    from { opacity: 1; }
+    to { opacity: 0; }
+}
+
+.typing-effect span {
+    opacity: 0;
+    animation: fadeInText 0.3s forwards ease-in-out;
+}
+
+/* 💬 Text langsam einblenden */
+.typing-effect {
+    opacity: 0;
+    animation: fadeIn 0.5s ease-in-out forwards;
 }
