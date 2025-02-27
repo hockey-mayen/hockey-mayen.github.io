@@ -1,3 +1,4 @@
+/*aktuell.css*/
 /* Verbesserte Schriftart und flüssiges Tippen */
 @import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&display=swap');
 
@@ -25,103 +26,47 @@
     justify-content: space-between;
 }
 
-/* Nachrichten-Kachel */
-.news-tile {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-}
+/*-*/
+/*Highlights*/
+/*-*/
 
-/* Nachrichten-Text */
-#news-content {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-    min-height: 250px;
-    text-align: left;
-    width: 100%;
-    overflow: hidden; /* Verhindert plötzliche Größenänderungen */
-}
-
-/* Text-Styling */
-#news-content p {
-    text-align: left;
-    font-size: 22px; /* Etwas größere Schrift für bessere Lesbarkeit */
-    font-family: "Merriweather", serif; /* Elegante, gut lesbare Serifenschrift */
-    font-weight: 400;
-    line-height: 1.6; /* Angenehmer Zeilenabstand für flüssiges Lesen */
-    padding: 12px;
-    margin: 0;
-    word-wrap: break-word;
-    color: #333; /* Dunkler für besseren Kontrast */
-}
-
-
-/* 📌 Bilder sollen mittig, aber Text linksbündig bleiben */
-#news-content img {
-    display: block;
-    width: 100%;
-    max-height: 250px;
-    object-fit: contain;
+/* Scrollbarer Bereich für vergangene Highlights */
+.highlight-container {
+    max-height: 400px;
+    overflow-y: auto;
+    border: 1px solid #ddd;
+    padding: 10px;
     border-radius: 5px;
-    opacity: 1;
-    margin: 10px auto; /* ✅ Bild mittig setzen */
+    color: #004d26;
 }
 
-/* 📌 Container für Bilder (damit Platz reserviert bleibt) */
-.news-image-container {
-    width: 100%;
-    height: 250px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-}
-/* Animationen für das sanfte Wechseln von Text zu Bild */
-/* 📷 Bild langsam einblenden */
-.news-image {
-
-    opacity: 0;
-    transition: opacity 0.6s ease-in-out;
+/* Einzelner Chronik-Eintrag */
+.chronik-entry {
+    padding: 10px;
+    border-bottom: 1px solid #eee;
 }
 
-/* 📷 Falls ein Bild aktiv wird, sanft einblenden */
-.news-image.show {
-    opacity: 1;
+.chronik-entry h4 {
+    margin: 5px 0;
+    font-size: 18px;
 }
 
-/* Sanfte Transparenz beim Tippen */
-@keyframes fadeInText {
-    from { opacity: 0; }
-    to { opacity: 1; }
+.chronik-entry p {
+    text-align: left;
+    margin: 5px 0;
+    font-size: 14px;
+    color: #6c757d; /* Schönes Grau für Texte */
 }
 
-/* ✨ Sanftes Einblenden */
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
+/* Bilder im Eintrag */
+.chronik-images {
+    margin-top: 10px;
 }
 
-/* ✨ Sanftes Ausblenden */
-@keyframes fadeOut {
-    from { opacity: 1; }
-    to { opacity: 0; }
-}
-
-.typing-effect span {
-    opacity: 0;
-    animation: fadeInText 0.3s forwards ease-in-out;
-}
-
-/* 💬 Text langsam einblenden */
-.typing-effect {
-    opacity: 0;
-    animation: fadeIn 0.5s ease-in-out forwards;
-}
-
-/* ✨ Sanftes Ausblenden */
-.news-image.fadeOut {
-    opacity: 0;
-    transition: opacity 0.6s ease-in-out;
+.chronik-images img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin-bottom: 5px;
+    border-radius: 5px;
 }

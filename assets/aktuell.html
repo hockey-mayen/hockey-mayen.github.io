@@ -4,24 +4,22 @@ title: "Aktuell"
 permalink: /aktuell/
 ---
 
-<h2>Aktuelles</h2>
 
 <div class="aktuell-container">
-    <!-- Nachrichten-Kachel -->
-    <div class="tile-aktuell news-tile">
-        <h3>Nachrichten</h3>
-        <p id="news-content"></p>
-    </div>
 
     <!-- Kommende Veranstaltungen-Kachel -->
-    <div class="tile-aktuell news-tile">
-        <h3>Kommende Veranstaltungen</h3>
-        <div class="event-image-container">
-            <img id="eventImage" src="" alt="Veranstaltungs-Flyer">
+    <div class="tile-aktuell">
+        <h3>Kommende Events</h3>
+    </div>
+
+    <div class="tile-aktuell">
+        <h3>Highlights</h3>
+        <div class="highlight-container">
+            <div class="highlight-list" id="chronik-list">
+                <!-- Chronik-Einträge werden hier eingefügt -->
+            </div>
         </div>
     </div>
-</div>
 
-<!-- Externe JavaScript-Dateien laden -->
-<script src="/assets/js/newsRotator.js" defer></script>
-<script src="/assets/js/eventRotator.js" defer></script>
+    <script src="/assets/js/highlights.js" defer></script>
+</div>
