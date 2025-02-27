@@ -1,5 +1,4 @@
 /*aktuell.css*/
-/* Verbesserte Schriftart und flüssiges Tippen */
 @import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&display=swap');
 
 .aktuell-container {
@@ -31,6 +30,7 @@
 /*-*/
 
 /* Scrollbarer Bereich für vergangene Highlights */
+/* Scrollbarer Bereich für vergangene Highlights */
 .highlight-container {
     max-height: 400px;
     overflow-y: auto;
@@ -38,7 +38,30 @@
     padding: 10px;
     border-radius: 5px;
     color: #004d26;
+    scrollbar-width: thin; /* Für Firefox */
+    scrollbar-color: #008f5a #bdddcc; /* Griff / Hintergrund */
 }
+
+/* Webkit-basiertes Styling (Chrome, Edge, Safari) */
+.highlight-container::-webkit-scrollbar {
+    width: 8px;
+}
+
+.highlight-container::-webkit-scrollbar-track {
+    background: #e0f2e9; /* Sanftes Grün als inaktiver Hintergrund */
+    border-radius: 4px;
+}
+
+.highlight-container::-webkit-scrollbar-thumb {
+    background: #008f5a; /* Aktiver Griff in dunklem Grün */
+    border-radius: 4px;
+    border: 2px solid #e0f2e9; /* Kleiner Rand für besseren Look */
+}
+
+.highlight-container::-webkit-scrollbar-thumb:hover {
+    background: #006837; /* Etwas helleres Grün beim Hover */
+}
+
 
 /* Einzelner Chronik-Eintrag */
 .chronik-entry {

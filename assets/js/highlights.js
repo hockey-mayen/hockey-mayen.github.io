@@ -1,3 +1,4 @@
+// highlights.js
 document.addEventListener("DOMContentLoaded", async function () {
     const chronikList = document.getElementById("chronik-list");
 
