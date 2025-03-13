@@ -1,0 +1,46 @@
+.event-slider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 100%;
+    height: 450px;  /* Passe die Höhe an, damit das Bild komplett sichtbar bleibt */
+    max-height: 100%;
+    padding: 10px;
+    overflow: hidden;  /* Verhindert Überlauf */
+}
+
+.event-image {
+    width: 100%;  /* Die volle Breite des Containers nutzen */
+    height: 100%; /* Sicherstellen, dass die Höhe angepasst wird */
+    object-fit: contain; /* Bild vollständig einpassen, ohne Beschnitt */
+}
+
+.event-nav {
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background 0.3s;
+    z-index: 10;
+}
+
+.event-nav:hover {
+    background: rgba(0, 0, 0, 0.8);
+}
+
+.event-nav.left {
+    position: absolute;
+    left: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.event-nav.right {
+    position: absolute;
+    right: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+}

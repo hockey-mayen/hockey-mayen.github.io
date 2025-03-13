@@ -7,13 +7,13 @@
     align-items: flex-start;
     flex-wrap: wrap;
     gap: 20px;
-    padding: 20px;
+    padding: 10px;
 }
 
 .tile-aktuell {
     background: white;
     border-radius: 10px;
-    padding: 15px;
+    padding: 10px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
     width: 45%;
     min-height: 500px; /* Mindestens 500px Höhe, damit sich nichts verschiebt */
@@ -25,18 +25,11 @@
     justify-content: space-between;
 }
 
-/*-*/
-/*Highlights*/
-/*-*/
-
-/* Scrollbarer Bereich für vergangene Highlights */
 /* Scrollbarer Bereich für vergangene Highlights */
 .highlight-container {
     max-height: 400px;
     overflow-y: auto;
-    border: 1px solid #ddd;
     padding: 10px;
-    border-radius: 5px;
     color: #004d26;
     scrollbar-width: thin; /* Für Firefox */
     scrollbar-color: #008f5a #bdddcc; /* Griff / Hintergrund */
