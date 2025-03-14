@@ -16,7 +16,7 @@
 }
 
 .event-nav {
-    background-color: #008f5a;
+    background-color: rgba(2, 11, 53, 0.17);
     color: white;
     border: none;
     padding: 10px 15px;
@@ -33,11 +33,10 @@
 }
 
 .event-nav:hover {
-    background: rgba(0, 0, 0, 0.8);
+    background: rgba(2, 11, 53, 0.17);
 }
 
 .event-nav.left {
-    background-color: rgba(0, 0, 0, 0.1);
     position: absolute;
     left: 30px;
     top: 50%;
@@ -45,7 +44,6 @@
 }
 
 .event-nav.right {
-    background-color: rgba(0, 0, 0, 0.1);
     position: absolute;
     right: 30px;
     top: 50%;
