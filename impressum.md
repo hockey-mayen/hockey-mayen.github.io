@@ -29,7 +29,7 @@ Ralf Heepenstrick, Jost Schäfer, Oliver Hannus, Sergej Schatz
 Karl-Heinz Hannus
 
 
-<span class="email-highlight"><a href="mailto:info@test-domain.de">Kontakt</a></span>  
+<span class="email-highlight"><a href="/kontakt/">Kontaktformular</a></span>  
 <small>  
 **Urheberrecht**  
 Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht.
