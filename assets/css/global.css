@@ -116,3 +116,13 @@ iframe {
     max-width: 800px; /* Optional: Setzt eine maximale Breite für bessere Lesbarkeit */
     margin: 0 auto; /* Zentriert den Block, aber der Text bleibt linksbündig */
 }
+
+.download-link {
+    color: #004d26;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.download-link:hover {
+    text-decoration: underline;
+}
