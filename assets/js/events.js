@@ -73,35 +73,5 @@ document.addEventListener("DOMContentLoaded", async function () {
     document.querySelector(".tile-aktuell:first-child").appendChild(eventContainer);
     document.querySelector(".tile-aktuell:first-child").appendChild(dotsContainer);
 
-    // ** Swipe-Funktionalität für mobile Geräte **
-    let startX = 0;
-    let endX = 0;
 
-    eventContainer.addEventListener("touchstart", (event) => {
-        startX = event.touches[0].clientX;
-        event.preventDefault(); // Verhindert das Scrollen der Seite
-    });
-
-    eventContainer.addEventListener("touchmove", (event) => {
-        event.preventDefault(); // Verhindert das Scrollen während der Geste
-    });
-
-    eventContainer.addEventListener("touchend", (event) => {
-        endX = event.changedTouches[0].clientX;
-        handleSwipe();
-    });
-
-    function handleSwipe() {
-        let swipeThreshold = 50; // Mindestbewegung, um als Swipe zu gelten
-
-        if (startX - endX > swipeThreshold) {
-            // Nach links wischen (nächstes Bild)
-            currentIndex = (currentIndex + 1) % events.length;
-        } else if (endX - startX > swipeThreshold) {
-            // Nach rechts wischen (vorheriges Bild)
-            currentIndex = (currentIndex - 1 + events.length) % events.length;
-        }
-
-        updateImage();
-    }
 });
