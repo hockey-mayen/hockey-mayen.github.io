@@ -79,6 +79,11 @@ document.addEventListener("DOMContentLoaded", async function () {
 
     eventContainer.addEventListener("touchstart", (event) => {
         startX = event.touches[0].clientX;
+        event.preventDefault(); // Verhindert das Scrollen der Seite
+    });
+
+    eventContainer.addEventListener("touchmove", (event) => {
+        event.preventDefault(); // Verhindert das Scrollen während der Geste
     });
 
     eventContainer.addEventListener("touchend", (event) => {
