@@ -37,7 +37,7 @@
 }
 
 .event-nav.left {
-    background-color: #008f5a;
+    background-color: rgba(0, 0, 0, 0.1);
     position: absolute;
     left: 30px;
     top: 50%;
@@ -45,7 +45,7 @@
 }
 
 .event-nav.right {
-    background-color: #008f5a;
+    background-color: rgba(0, 0, 0, 0.1);
     position: absolute;
     right: 30px;
     top: 50%;
@@ -77,4 +77,39 @@
     width: 14px;
     height: 14px;
     margin: -26px 5px 0;
+}
+
+@media screen and (max-width: 600px) {
+    .tile-aktuell {
+        width: 100%; /* Volle Breite nutzen */
+        max-width: 100%; /* Sicherstellen, dass nichts begrenzt */
+        margin: 0; /* Falls es außen Platz gibt, diesen entfernen */
+    }
+
+    .event-slider {
+        width: 100%; /* Damit der Slider nicht schmal bleibt */
+    }
+
+    .event-image {
+        max-width: 100%; /* Volle Breite nutzen */
+        height: auto; /* Verhältnis beibehalten */
+    }
+
+    .event-nav {
+        width: 35px; /* Kleinere Navigation für bessere Optik */
+        height: 35px;
+        padding: 8px;
+    }
+
+    .event-nav.left {
+        left: 10px;
+    }
+
+    .event-nav.right {
+        right: 10px;
+    }
+
+    .event-dots {
+        margin-top: -5px; /* Dots näher an das Bild setzen */
+    }
 }
