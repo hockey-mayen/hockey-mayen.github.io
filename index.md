@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Hockey-Club Grün-Weiss TuS Mayen
-permalink: /
+permalink: /verein/
 ---
 
 ## {{ site.data.startseite.title }}
