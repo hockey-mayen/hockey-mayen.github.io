@@ -2,7 +2,10 @@
 @import url('https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&display=swap');
 
 header {
-    background: linear-gradient(135deg, #004d26, #088442);
+    background: linear-gradient(135deg, rgba(7, 100, 51, 0.8), rgba(8, 132, 66, 0.3));
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     color: white;
     padding-top: 10px;
     padding-bottom: 5px;
@@ -121,7 +124,7 @@ nav ul li a.active {
     font-weight: normal;
     margin-top: 0px;
     margin-bottom: 1px;
-    color: rgba(152, 196, 53, 0.8);
+    color: rgba(152, 196, 53, 1 );
     font-family: 'UnifrakturMaguntia', cursive;
     transform: translateY(-0.35em);
 }
@@ -186,7 +189,7 @@ nav ul li a.active {
     .subtitle {
         font-size: 4.5vw;
         font-family: 'UnifrakturMaguntia', cursive;
-        color: rgba(152, 196, 53, 0.6);
+        color: rgba(152, 196, 53, 1);
         transform: translateY(-0.15em);
     }
 
