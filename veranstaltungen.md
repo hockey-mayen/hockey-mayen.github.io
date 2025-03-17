@@ -6,7 +6,7 @@ permalink: /veranstaltungen/
 
 <h2>Unsere Vereinsveranstaltungen – Gemeinsam mehr erleben!</h2>
 
-## Frühlingsfest „Anhockeln“ – Der Start in die Feldsaison
+## 🏑 Frühlingsfest „Anhockeln“ – Der Start in die Feldsaison
 Jedes Jahr im **Frühling** feiern wir mit unseren Gästen unser traditionelles **Frühlingsfest „Anhockeln“**.  
 Auf unserem Kunstrasenplatz starten wir die Feldsaison mit **Spaß, Hockey und Grillen**.  
 Bei einem lockeren Turnier können sich Spieler aller Altersklassen austoben.  
@@ -25,7 +25,7 @@ Neben sportlichen Aktivitäten gibt es **Nachtwanderungen, Zeltlager und Gemeins
 
 [//]: # (---)
 
-## Team-Ausflüge – Mehr als nur Hockey
+## 🚀 Team-Ausflüge – Mehr als nur Hockey
 Das ganze Jahr über unternehmen wir gemeinsam **spannende Ausflüge**.  
 Ob eine **Wanderung durch die Eifel**, ein Besuch im **Kletterpark oder Trampolin-Center**,  
 oder eine Runde **Bowling** – bei uns ist immer etwas los!
@@ -45,4 +45,4 @@ Zum Abschluss des Jahres feiern wir eine **Weihnachtsfeier** in unseres Sporthal
 
 **Hast du Lust, dabei zu sein?** Dann komm vorbei und sei Teil unserer Hockey-Familie! 🏑   
 
-<span class="email-highlight"><a href="mailto:info@test-domain.de">info@test-domain.de</a></span> 
+<span class="email-highlight"><a href="/kontakt/">Kontaktformular</a></span>  
