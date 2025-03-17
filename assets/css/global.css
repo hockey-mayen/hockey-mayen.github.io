@@ -10,11 +10,16 @@ body {
     background-image: url("/assets/images/hintergrund-desktop.jpeg"); /* Passe den Pfad an */
     background-size: cover; /* Bild soll die gesamte Seite abdecken */
     background-position: center; /* Bild zentrieren */
-    background-attachment: scroll;
+    background-attachment: fixed; /* Hintergrund bleibt beim Scrollen fixiert */
     background-repeat: no-repeat; /* Verhindert Wiederholung des Bildes */
 }
 
-
+/* Für Smartphones */
+@media screen and (max-width: 768px) {
+    body {
+        background-attachment: scroll; /* Fixiertes Hintergrundbild kann auf Mobile zu Problemen führen */
+    }
+}
 
 /* Verhindert das Springen durch den Scrollbalken */
 html {
