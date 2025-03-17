@@ -1,0 +1,9 @@
+.training-time {
+    padding: 5px 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.training-time.inactive {
+    opacity: 0.35; /* Halbtransparent für ausgegraute Einträge */
+    color: #777; /* Leicht graue Schrift */
+}

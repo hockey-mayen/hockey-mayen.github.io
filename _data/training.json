@@ -1,38 +1,6 @@
 {
   "tiles": [
     {
-      "title": "U10/U12 Mädels",
-      "times": [
-        {
-          "day": "Dienstag",
-          "time": "16:30 - 18:00 Uhr",
-          "location": "Kunstrasenplatz Stadion Nettetal"
-        },
-        {
-          "day": "Dienstag",
-          "time": "17:00 - 18:30 Uhr",
-          "location": "Sporthalle Albert-Schweitzer-Realschule"
-        }
-      ],
-      "trainer": "Trainerin: Nina Graeff<br>Trainer: Ralph Heepenstrick"
-    },
-    {
-      "title": "U10/U12 Jungs",
-      "times": [
-        {
-          "day": "Dienstag",
-          "time": "16:30 - 19:30 Uhr",
-          "location": "Kunstrasenplatz Stadion Nettetal"
-        },
-        {
-          "day": "Dienstag",
-          "time": "17:00 - 18:30 Uhr",
-          "location": "Sporthalle Albert-Schweitzer-Realschule"
-        }
-      ],
-      "trainer": "Trainer: Oliver Hannus<br>Torwart-Trainer und Co-Trainer: Sven Albers"
-    },
-    {
       "title": "U8/U10 Kinder",
       "times": [
         {
@@ -46,7 +14,39 @@
           "location": "Sporthalle Albert-Schweitzer-Realschule"
         }
       ],
-      "trainer": "Trainer: Mike Flinsch, Andreas Jung, Sascha Flinsch, Sergej Schatz"
+      "trainer": "Training: Mike Flinsch, Andreas Jung, Sergej Schatz"
+    },
+    {
+      "title": "U10/U12 Mädels",
+      "times": [
+        {
+          "day": "Dienstag",
+          "time": "16:30 - 18:00 Uhr",
+          "location": "Kunstrasenplatz Stadion Nettetal"
+        },
+        {
+          "day": "Dienstag",
+          "time": "16:30 - 18:30 Uhr",
+          "location": "Sporthalle Albert-Schweitzer-Realschule"
+        }
+      ],
+      "trainer": "Training: Nina Graeff, Ralph Heepenstrick"
+    },
+    {
+      "title": "U10/U12 Jungs",
+      "times": [
+        {
+          "day": "Dienstag",
+          "time": "16:30 - 19:30 Uhr",
+          "location": "Kunstrasenplatz Stadion Nettetal"
+        },
+        {
+          "day": "Dienstag",
+          "time": "17:30 - 19:30 Uhr",
+          "location": "Sporthalle Albert-Schweitzer-Realschule"
+        }
+      ],
+      "trainer": "Training: Oliver Hannus, Sven Albers"
     },
     {
       "title": "Jugend und Erwachsene<br>Just For Fun",
