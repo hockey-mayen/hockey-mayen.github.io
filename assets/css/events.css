@@ -1,3 +1,22 @@
+
+.tile-aktuell {
+    background: rgba(255, 255, 255, 0.4);
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    width: 45%;
+
+    min-height: 500px; /* Mindesthöhe beibehalten */
+    height: 100%; /* Kachel nutzt volle Höhe von `.aktuell-container` */
+    /*max-height: calc(100vh - 200px); !* Begrenzung der maximalen Höhe *!*/
+
+    overflow: hidden;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
 .event-slider {
     display: flex;
     align-items: center;
@@ -10,45 +29,12 @@
 }
 
 .event-image {
-    width: 100%;  /* Die volle Breite des Containers nutzen */
-    height: 100%; /* Sicherstellen, dass die Höhe angepasst wird */
-    object-fit: contain; /* Bild vollständig einpassen, ohne Beschnitt */
+    border-radius: 5px;
+    width: auto;
+    height: 100%;
+    object-fit: cover; /* Falls nötig, um das Bild in den Container einzupassen */
 }
 
-.event-nav {
-    background-color: rgba(2, 11, 53, 0.17);
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    font-size: 18px;
-    cursor: pointer;
-    transition: background 0.3s;
-    z-index: 10;
-    border-radius: 50%; /* Macht die Buttons rund */
-    width: 40px; /* Gleiche Breite und Höhe für Kreisform */
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.event-nav:hover {
-    background: rgba(2, 11, 53, 0.17);
-}
-
-.event-nav.left {
-    position: absolute;
-    left: 30px;
-    top: 50%;
-    transform: translateY(-50%);
-}
-
-.event-nav.right {
-    position: absolute;
-    right: 30px;
-    top: 50%;
-    transform: translateY(-50%);
-}
 
 /* Container für die Punkte unter dem Slider */
 .event-dots {
@@ -84,27 +70,9 @@
         margin: 0; /* Falls es außen Platz gibt, diesen entfernen */
     }
 
-    .event-slider {
-        width: 100%; /* Damit der Slider nicht schmal bleibt */
-    }
-
     .event-image {
         max-width: 100%; /* Volle Breite nutzen */
         height: auto; /* Verhältnis beibehalten */
-    }
-
-    .event-nav {
-        width: 35px; /* Kleinere Navigation für bessere Optik */
-        height: 35px;
-        padding: 8px;
-    }
-
-    .event-nav.left {
-        left: 10px;
-    }
-
-    .event-nav.right {
-        right: 10px;
     }
 
     .event-dots {
