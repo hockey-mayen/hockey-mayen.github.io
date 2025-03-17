@@ -3,11 +3,11 @@
   "content": "Hier findest du die aktuellen Turniertermine und Veranstaltungsorte für unsere Teams",
   "tiles": [
     {
-      "title": "U8 Kinder",
+      "title": "U10 Kinder",
       "link": {
         "url": "https://www.rps-hockey.de/VVI-web/default.asp?lokal=RPS&innen=/VVI-web/RPS-Hockey/CD-Spieltage.asp&auswahl=Halle&gruppe=4",
-        "title": "U8 Termine auf Verbandsliga-Seiten",
-        "image": "assets/images/Logo-RPS.png"
+        "title": "U10 Termine auf Verbandsliga-Seiten",
+        "image": "assets/images/turniere/turnier-U10-kinder.png"
       },
 
       "details": [
@@ -21,7 +21,7 @@
       "link": {
         "url": "https://rps.prd.dhb.digital/spielbetrieb/hallensaison-jugend/verbandsliga-weibliche-u12",
         "title": "Mehr Infos zur Mayener WU12 auf Verbandsliga",
-        "image": "assets/images/Logo-RPS.png"
+        "image": "assets/images/turniere/turnier-U12-maedels.png"
       },
       "details": [
         { "date": "09.02.2025", "location": "Mayen" },
@@ -33,7 +33,7 @@
       "link": {
         "url": "https://rps.prd.dhb.digital/spielbetrieb/hallensaison-jugend/verbandsliga-maennliche-u12",
         "title": "Mehr Infos zur Mayener MU12 auf Verbandsliga",
-        "image": "assets/images/Logo-RPS.png"
+        "image": "assets/images/turniere/turnier-U12-jungs.png"
       },
       "details": [
         { "date": "09.02.2025", "location": "Koblenz" },
@@ -45,7 +45,7 @@
       "link": {
         "url": "https://rps.prd.dhb.digital/spielbetrieb/hallensaison-erwachsene/4-verbandsliga-herren",
         "title": "Verbandsliga-Link der SG Koblenz-Mayen",
-        "image": "assets/images/Logo-RPS.png"
+        "image": "assets/images/turniere/turnier-SG.png"
       },
       "details": [
         { "date": "26.01.2025", "location": "Realschule Mayen" }
