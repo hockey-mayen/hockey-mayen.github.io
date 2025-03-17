@@ -27,7 +27,8 @@ Neben sportlichen Aktivitäten gibt es **Nachtwanderungen, Zeltlager und Gemeins
 
 ## 🚀 Team-Ausflüge – Mehr als nur Hockey
 Das ganze Jahr über unternehmen wir gemeinsam **spannende Ausflüge**.  
-Ob eine **Wanderung durch die Eifel**, ein Besuch im **Kletterpark oder Trampolin-Center**,  
+Ob eine **Wanderung durch die Eifel**, Fahrt zu Spielen der **Hockeybundesliga**,  
+ein Besuch im **Kletterpark oder Trampolin-Center**,  
 oder eine Runde **Bowling** – bei uns ist immer etwas los!
 
 [//]: # (![Kletterpark]&#40;/assets/images/veranstaltungen/kletterpark.jpg&#41;{: .left})

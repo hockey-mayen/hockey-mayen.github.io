@@ -3,41 +3,48 @@
   "content": "Hier findest du die aktuellen Turniertermine und Veranstaltungsorte für unsere Teams",
   "tiles": [
     {
-      "title": "U10 Kinder",
+      "title": "U10 Jungs",
       "link": {
         "url": "https://www.rps-hockey.de/VVI-web/default.asp?lokal=RPS&innen=/VVI-web/RPS-Hockey/CD-Spieltage.asp&auswahl=Halle&gruppe=4",
         "title": "U10 Termine auf Verbandsliga-Seiten",
-        "image": "assets/images/turniere/turnier-U10-kinder.png"
+        "image": "assets/images/turniere/turnier-U10-jungs.png"
       },
 
       "details": [
-        { "date": "02.02.2025", "location": "Trier" },
-        { "date": "16.02.2025", "location": "Mainz" },
-        { "date": "09.03.2025", "location": "Worms" }
+        { "date": "10.05.2025", "location": "Mayen Kunstrasenplatz Nettetal" }
+      ]
+    },
+    {
+      "title": "U10 Mädels",
+      "link": {
+        "url": "https://www.rps-hockey.de/VVI-web/default.asp?lokal=RPS&innen=/VVI-web/RPS-Hockey/CD-Spieltage.asp&auswahl=Halle&gruppe=4",
+        "title": "Mehr Infos zur Mayener WU10 auf Verbandsliga",
+        "image": "assets/images/turniere/turnier-U10-maedels.png"
+      },
+      "details": [
+        { "date": "10.05.2025", "location": "Mayen Kunstrasenplatz Nettetal" }
       ]
     },
     {
       "title": "U12 Mädels",
       "link": {
-        "url": "https://rps.prd.dhb.digital/spielbetrieb/hallensaison-jugend/verbandsliga-weibliche-u12",
+        "url": "https://rps.prd.dhb.digital/spielbetrieb/jugend-feld-2024/verbandsliga-wu12",
         "title": "Mehr Infos zur Mayener WU12 auf Verbandsliga",
         "image": "assets/images/turniere/turnier-U12-maedels.png"
       },
       "details": [
-        { "date": "09.02.2025", "location": "Mayen" },
-        { "date": "09.03.25", "location": "Ausrichter noch unbekannt" }
+        { "date": "11.05.2025", "location": "Mayen Kunstrasenplatz Nettetal" }
       ]
     },
     {
       "title": "U12 Jungs",
       "link": {
-        "url": "https://rps.prd.dhb.digital/spielbetrieb/hallensaison-jugend/verbandsliga-maennliche-u12",
+        "url": "https://rps.prd.dhb.digital/spielbetrieb/jugend-feld-2024/verbandsliga-mu12",
         "title": "Mehr Infos zur Mayener MU12 auf Verbandsliga",
         "image": "assets/images/turniere/turnier-U12-jungs.png"
       },
       "details": [
-        { "date": "09.02.2025", "location": "Koblenz" },
-        { "date": "09.03.2025", "location": "Ausrichter noch unbekannt" }
+        { "date": "21.09.2025", "location": "Mayen Kunstrasenplatz Nettetal" }
       ]
     },
     {
@@ -48,7 +55,7 @@
         "image": "assets/images/turniere/turnier-SG.png"
       },
       "details": [
-        { "date": "26.01.2025", "location": "Realschule Mayen" }
+        { "date": "xx.xx.2025", "location": "Ausrichter noch unbekannt" }
       ]
     }
   ]
