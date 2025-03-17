@@ -7,10 +7,10 @@ body {
     font-family: "Open Sans", Arial, sans-serif; /* Open Sans als Standardschrift */
     background-color: #f4f4f4; /* Ein sehr dezentes Grau */
 
-    background-image: url("/assets/images/hintergrund.jpeg"); /* Passe den Pfad an */
+    background-image: url("/assets/images/hintergrund-desktop.jpeg"); /* Passe den Pfad an */
     background-size: cover; /* Bild soll die gesamte Seite abdecken */
     background-position: center; /* Bild zentrieren */
-    background-attachment: fixed; /* Hintergrund bleibt beim Scrollen fixiert */
+    background-attachment: scroll;
     background-repeat: no-repeat; /* Verhindert Wiederholung des Bildes */
 }
 
