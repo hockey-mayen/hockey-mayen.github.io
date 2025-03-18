@@ -90,6 +90,17 @@ footer a.active {
     opacity: 0.5;
 }
 
+/* RPS Icon */
+.footer-DHB-icon {
+    width: 120px; /* Keep desired shop icon size */
+    height: auto;
+    transition: opacity 0.31s;
+    opacity: 0.8;
+}
+.footer-DHB-icon:hover {
+    opacity: 0.5;
+}
+
 /* Facebook Icon */
 .footer-social-icon {
     width: 45px;

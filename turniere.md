@@ -22,7 +22,7 @@ title: "Turniere"
         {% if tile.link %}
         <div class="link-container">
             <a href="{{ tile.link.url }}" target="_blank">
-                <img src="{{ tile.link.image }}" alt="Link-Bild" style="width: 200px; height: auto;">
+                <img src="{{ tile.link.image }}" alt="Link-Bild" style="width: 120px; height: auto;">
                 <div class="link-title">{{ tile.link.title }}</div>
             </a>
         </div>
