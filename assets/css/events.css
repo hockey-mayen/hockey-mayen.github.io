@@ -92,10 +92,18 @@
 }
 
 /* Responsive Anpassungen für kleinere Bildschirme */
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 1300px) {
     .tile-aktuell {
         width: 100%; /* Volle Breite nutzen */
         max-width: 100%; /* Sicherstellen, dass nichts begrenzt */
         margin: 0; /* Falls es außen Platz gibt, diesen entfernen */
+    }
+}
+
+/* Responsive Anpassungen für kleinere Bildschirme */
+@media screen and (max-width: 700px) {
+    /* Bild */
+    .event-image {
+        width: 90%;
     }
 }

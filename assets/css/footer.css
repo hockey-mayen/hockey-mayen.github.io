@@ -33,7 +33,7 @@ footer a.active {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 5px; /* More space between elements */
+    gap: 4px; /* More space between elements */
     width: 100%;
 }
 
