@@ -2,39 +2,31 @@
 
 /* tiles.css: Container für Kacheln */
 .tiles-container {
-
-
-
-
     display: grid;
     grid-template-columns: repeat(2, 1fr); /* 2 Spalten */
-    gap: 20px; /* Abstand zwischen den Kacheln */
-    margin-top: 20px;
-    width: 90%; /* Nutze 90% der Breite des Containers */
+    gap: 15px; /* Abstand zwischen den Kacheln */
+    /*margin-top: 20px;*/
+    width: 100%; /* Nutze 90% der Breite des Containers */
     margin-left: auto; /* Zentriert den Container horizontal */
     margin-right: auto;
-    max-width: 1200px; /* Begrenze die Breite auf maximal 1200px */
+    max-width: 1300px; /* Begrenze die Breite auf maximal 1200px */
     padding: 20px; /* Etwas Innenabstand für bessere Optik */
     border-radius: 8px; /* Leicht abgerundete Ecken für den Container */
 }
 
 /* Einzelne Kachel */
 .tile {
-
-    /*background: white;*/
     background: rgba(255, 255, 255, 0.4);
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
-    padding: 15px;
+    padding: 10px;
 
     color: #6c757d; /* Grauer Farbton wie bei anderen Texten */
     display: flex;
     flex-direction: column; /* Inhalte vertikal anordnen */
     justify-content: space-between; /* Platz zwischen den Elementen */
     align-items: center; /* Zentriert Inhalte horizontal */
-    /*border-radius: 5px; !* Abgerundete Ecken für alle Kacheln *!*/
     overflow: hidden; /* Verhindert, dass Bilder aus der Kachel herausragen */
-
 }
 
 /* Hover-Effekt: Kachel hebt sich leicht */
@@ -46,7 +38,7 @@
 /* Zusätzliche Stile für Kachel-Titel und Beschreibung */
 .tile h3 {
     font-size: 20px; /* Etwas kleinere Titel für Kacheln */
-    margin-top: 15px; /* Abstand oberhalb */
+    margin-top: 5px; /* Abstand oberhalb */
 }
 
 /* Kachel-Bild */
@@ -58,7 +50,6 @@
 }
 .tile a {
     display: inline-block;
-    margin-top: 10px;
     color: #004d26;
     font-weight: bold;
     text-decoration: none;
