@@ -44,9 +44,9 @@ footer a.active {
 }
 
 
-/* RPS Icon */
+/* DHB Icon */
 .footer-DHB-icon {
-    width: 75px; /* Keep desired shop icon size */
+    width: 95px; /* Keep desired shop icon size */
     height: auto;
     transition: opacity 0.31s;
     opacity: 0.8;
@@ -109,7 +109,7 @@ footer a.active {
     align-items: center;
     width: 100%; /* Ensures full width */
     max-width: 350px; /* Prevents stretching */
-    gap: 30px; /* Space between icons */
+    /*gap: 30px; !* Space between icons *!*/
 }
 
 /* Responsive: Limit width on smartphones */

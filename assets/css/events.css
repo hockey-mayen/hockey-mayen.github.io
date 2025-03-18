@@ -51,7 +51,7 @@
 
 /* Navigationsbuttons */
 .event-nav {
-    background: rgba(160, 155, 155, 0.64);
+    background: rgb(6, 139, 66);
     color: #ffffff;
     border: none;
     cursor: pointer;
@@ -66,7 +66,7 @@
 }
 
 .event-nav:hover {
-    background: rgb(101, 160, 124);
+    background: rgb(3, 56, 28);
 }
 
 /* Dots-Container */

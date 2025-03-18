@@ -4,8 +4,8 @@ body {
     padding: 0;
     line-height: 1.6;
     min-height: 100vh; /* Stellt sicher, dass der Body mindestens die Höhe des Bildschirms hat */
-    font-family: "Open Sans", Arial, sans-serif; /* Open Sans als Standardschrift */
-
+    font-family: "Oswald", Arial, sans-serif;/* als Standardschrift *!*/
+    color: #595f69; /* Schönes Grau für Texte */
     position: relative; /* Basis für das Pseudo-Element */
     overflow-x: hidden; /* Verhindert horizontales Scrollen */
 }
@@ -30,21 +30,6 @@ main {
     text-align: center;
     overflow: hidden;/
 }
-/* 🔥 Neuer Hintergrund nur für den Content-Bereich */
-/*main::before {*/
-/*    content: "";*/
-/*    position: fixed;*/
-/*    top: 0;*/
-/*    left: 0;*/
-/*    width: 100vw;*/
-/*    height: 100vh;*/
-/*    background-image: url("/assets/images/hintergrund-desktop.jpeg");*/
-/*    background-size: cover;*/
-/*    background-position: center;*/
-/*    background-repeat: no-repeat;*/
-/*    z-index: -1;*/
-/*    will-change: transform;*/
-/*}*/
 
 /* ✅ Hintergrund NUR für den Content fixieren */
 html::before {
@@ -76,12 +61,16 @@ h2, h3, .tile h3 {
     text-align: center; /* Optional: Zentriert die Titel */
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap');
+
 /* Inhalte und Beschreibungen */
 p, .tile p {
-    color: #6c757d; /* Schönes Grau für Texte */
-    font-family: "Open Sans", Arial, sans-serif;
+    color: #595f69; /* Schönes Grau für Texte */
+    /*font-family: "Open Sans", Arial, sans-serif;*/
+    font-family: "Oswald", Arial, sans-serif;
+    font-weight: 500; /* Macht die Schrift dicker */
     line-height: 1.6; /* Etwas mehr Zeilenhöhe für bessere Lesbarkeit */
-    font-size: 16px; /* Standard-Schriftgröße */
+    font-size: 18px; /* Standard-Schriftgröße */
     text-align: center; /* Optional: Zentriert die Inhalte */
 }
 
@@ -111,11 +100,6 @@ iframe {
     color: #014022 !important; /* Etwas dunkleres Grün beim Hover */
 }
 
-.small-text {
-    font-size: 14px; /* Kleinere Schriftgröße */
-    color: #555; /* Dezentes Grau für bessere Lesbarkeit */
-    line-height: 1.5; /* Zeilenhöhe für bessere Lesbarkeit */
-}
 
 #scrollTopBtn {
     z-index: 9999;
@@ -154,7 +138,7 @@ iframe {
 }
 .aligned-content {
     text-align: center;
-    max-width: 800px; /* Optional: Setzt eine maximale Breite für bessere Lesbarkeit */
+    max-width: 1000px; /* Optional: Setzt eine maximale Breite für bessere Lesbarkeit */
     margin: 0 auto; /* Zentriert den Block, aber der Text bleibt linksbündig */
 }
 
