@@ -8,28 +8,9 @@ body {
 
     position: relative; /* Basis für das Pseudo-Element */
     overflow-x: hidden; /* Verhindert horizontales Scrollen */
-    background-color: #004d26; /* Sicherstellen, dass der Rest nicht transparent ist */
+    /*background-color: #004d26; !* Sicherstellen, dass der Rest nicht transparent ist *!*/
 
 }
-
-/* Ersetzt background-attachment: fixed für mobile Geräte */
-/*body::before {*/
-/*    content: "";*/
-/*    position: fixed;*/
-/*    top: 0;*/
-/*    left: 0;*/
-/*    width: 100vw;*/
-/*    height: 100vh;*/
-/*    background-image: url("/assets/images/hintergrund-desktop.jpeg");*/
-/*    background-size: cover;*/
-/*    background-position: center;*/
-/*    background-repeat: no-repeat;*/
-/*    z-index: -1;*/
-
-/*    !* 🚀 Wichtige Optimierungen gegen das "Springen" *!*/
-/*    will-change: transform;*/
-/*    transform: translateZ(0);*/
-/*}*/
 
 /* Für Smartphones & Tablets */
 @media screen and (max-width: 1024px) {
