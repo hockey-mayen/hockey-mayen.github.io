@@ -17,6 +17,43 @@ document.addEventListener("DOMContentLoaded", function () {
         "/assets/images/turniere/turnier8.jpg",
         "/assets/images/turniere/turnier9.jpg",
         "/assets/images/turniere/turnier10.jpg",
+        "/assets/images/turniere/turnier11.jpg",
+        "/assets/images/turniere/turnier12.jpg",
+        "/assets/images/turniere/turnier13.jpg",
+        "/assets/images/turniere/turnier14.jpg",
+        "/assets/images/turniere/turnier15.jpg",
+        "/assets/images/turniere/turnier16.jpg",
+
+        "/assets/images/turniere/turnier17.jpg",
+        "/assets/images/turniere/turnier18.jpg",
+        "/assets/images/turniere/turnier19.jpg",
+        "/assets/images/turniere/turnier20.jpg",
+
+        "/assets/images/turniere/turnier21.jpg",
+        "/assets/images/turniere/turnier22.jpg",
+        "/assets/images/turniere/turnier23.jpg",
+        "/assets/images/turniere/turnier24.jpg",
+        "/assets/images/turniere/turnier25.jpg",
+        "/assets/images/turniere/turnier26.jpg",
+        "/assets/images/turniere/turnier27.jpg",
+        "/assets/images/turniere/turnier28.jpg",
+        "/assets/images/turniere/turnier29.jpg",
+
+        "/assets/images/turniere/turnier30.jpg",
+        "/assets/images/turniere/turnier31.jpg",
+        "/assets/images/turniere/turnier32.jpg",
+        "/assets/images/turniere/turnier33.jpg",
+        "/assets/images/turniere/turnier34.jpg",
+        "/assets/images/turniere/turnier35.jpg",
+        "/assets/images/turniere/turnier36.jpg",
+        "/assets/images/turniere/turnier37.jpg",
+        "/assets/images/turniere/turnier38.jpg",
+        "/assets/images/turniere/turnier39.jpg",
+
+        "/assets/images/turniere/turnier40.jpg",
+        "/assets/images/turniere/turnier41.jpg",
+        "/assets/images/turniere/turnier42.jpg",
+
     ];
 
     let currentImageIndex = Math.floor(Math.random() * images.length);

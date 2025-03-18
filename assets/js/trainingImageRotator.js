@@ -16,7 +16,26 @@ document.addEventListener("DOMContentLoaded", function () {
         "/assets/images/training/training7.jpg",
         "/assets/images/training/training8.jpg",
         "/assets/images/training/training9.jpg",
-        "/assets/images/training/training10.jpg",
+        "/assets/images/training/training11.jpg",
+        "/assets/images/training/training12.jpg",
+        "/assets/images/training/training13.jpg",
+        "/assets/images/training/training14.jpg",
+        "/assets/images/training/training15.jpg",
+        "/assets/images/training/training16.jpg",
+        "/assets/images/training/training17.jpg",
+        "/assets/images/training/training18.jpg",
+        "/assets/images/training/training19.jpg",
+        "/assets/images/training/training20.jpg",
+
+        "/assets/images/training/training21.jpg",
+        "/assets/images/training/training22.jpg",
+        "/assets/images/training/training23.jpg",
+        "/assets/images/training/training24.jpg",
+        "/assets/images/training/training25.jpg",
+        "/assets/images/training/training26.jpg",
+        "/assets/images/training/training27.jpg",
+        "/assets/images/training/training28.jpg",
+
     ];
 
     let currentImageIndex = Math.floor(Math.random() * images.length);
