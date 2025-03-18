@@ -6,15 +6,14 @@ body {
     min-height: 100vh; /* Stellt sicher, dass der Body mindestens die Höhe des Bildschirms hat */
     font-family: "Open Sans", Arial, sans-serif; /* Open Sans als Standardschrift */
 
-    /* Hintergrund über ein Pseudo-Element fixieren */
-    background: none; /* Standard-Hintergrund entfernen */
     position: relative; /* Basis für das Pseudo-Element */
+    overflow-x: hidden; /* Verhindert horizontales Scrollen */
 }
 
 /* Ersetzt background-attachment: fixed für mobile Geräte */
 body::before {
     content: "";
-    position: fixed; /* Statt background-attachment */
+    position: fixed;
     top: 0;
     left: 0;
     width: 100vw;
@@ -23,13 +22,22 @@ body::before {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    z-index: -1; /* Stellt sicher, dass der Hintergrund hinter dem Content bleibt */
+    z-index: -1;
+
+    /* 🚀 Wichtige Optimierungen gegen das "Springen" */
+    will-change: transform;
+    transform: translateZ(0);
 }
 
 /* Für Smartphones & Tablets */
 @media screen and (max-width: 1024px) {
+    html, body {
+        overscroll-behavior: none; /* 🚀 Verhindert Bounce-Effekt */
+    }
+
     body::before {
-        background-size: auto; /* Alternativ: "contain" wenn nötig */
+        background-size: cover; /* Sicherstellen, dass es den Viewport abdeckt */
+        transform: translate3d(0, 0, 0); /* 🚀 GPU Rendering erzwungen */
     }
 }
 
