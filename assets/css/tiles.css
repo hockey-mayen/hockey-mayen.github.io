@@ -71,6 +71,16 @@
     flex-grow: 1;
     border-radius: 5px; /* Abgerundete Ecken */
 }
+/* Progress-Bar */
+.progress-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 5px;
+    background-color: #069d4a;
+    transition: width 10s linear;
+}
 
 /* Alle Bilder im Container */
 .training-image-container img,
@@ -83,6 +93,7 @@
     transition: opacity 3s ease-in-out;
     border-radius: inherit; /* Erbt die abgerundeten Ecken vom Container */
 }
+
 
 /* Aktives Bild wird sichtbar */
 .training-image-container img.active,

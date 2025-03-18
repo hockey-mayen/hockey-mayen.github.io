@@ -15,6 +15,7 @@ permalink: /verein/
         <h3>{{ site.data.startseite.tiles[0].title }}</h3>
         <p>{{ site.data.startseite.tiles[0].description }}</p>
         <div class="training-image-container">
+            <div class="progress-bar"></div>
             <img id="trainingImage">
         </div>
     </div>

@@ -19,10 +19,9 @@ document.addEventListener("DOMContentLoaded", function () {
         "/assets/images/training/training10.jpg",
     ];
 
-    let currentImageIndex = Math.floor(Math.random() * images.length); // Zufälliges Startbild
+    let currentImageIndex = Math.floor(Math.random() * images.length);
     let nextImageIndex = (currentImageIndex + 1) % images.length;
 
-    // Zwei Bilder für den Crossfade vorbereiten
     let img1 = document.createElement("img");
     let img2 = document.createElement("img");
 
@@ -34,34 +33,63 @@ document.addEventListener("DOMContentLoaded", function () {
     trainingContainer.appendChild(img1);
     trainingContainer.appendChild(img2);
 
-    let isTransitioning = false; // Variable zur Sicherung gegen doppeltes Wechseln
+    // Fortschrittsbalken erstellen und hinzufügen
+    let progressBar = document.createElement("div");
+    progressBar.classList.add("progress-bar");
+    trainingContainer.appendChild(progressBar);
+
+    console.log("Progress-Bar wurde hinzugefügt:", progressBar); // Debugging
+
+    let isTransitioning = false;
 
     function changeImage() {
-        if (isTransitioning) return; // Verhindert doppelte Wechsel
-
-        isTransitioning = true; // Sperre Wechsel während der Animation
+        if (isTransitioning) return;
+        isTransitioning = true;
 
         img1.classList.remove("active");
         img2.classList.add("active");
 
-        // Warte auf den sanften Übergang (CSS Transition Zeit + Sicherheit)
         setTimeout(() => {
-            // Bildquelle wechseln für den nächsten Wechsel
             currentImageIndex = (currentImageIndex + 1) % images.length;
             nextImageIndex = (currentImageIndex + 1) % images.length;
 
             img1.src = images[nextImageIndex];
 
-            // Tausche die Rollen der Bilder
             img1.classList.add("fade");
             img2.classList.remove("fade");
 
-            // Nach Wechsel ist wieder ein neuer Wechsel erlaubt
             [img1, img2] = [img2, img1];
 
             isTransitioning = false;
-        }, 3000); // Gleiche Zeit wie CSS Transition
+
+            // **Ladebalken genau jetzt starten!**
+            startProgressBar();
+
+        }, 3000); // **3s Bildwechsel abwarten**
     }
 
-    setInterval(changeImage, 8000);
+    function startProgressBar() {
+        progressBar.style.width = "0%";
+        progressBar.style.transition = "none"; // Direkt resetten
+
+        setTimeout(() => {
+            progressBar.style.transition = "width 10s linear"; // Jetzt startet die Animation
+            progressBar.style.width = "100%";
+        }, 50);
+    }
+
+    function resetProgressBar() {
+        progressBar.style.transition = "none";
+        progressBar.style.width = "0%";
+    }
+
+    function cycleImages() {
+        resetProgressBar(); // **Balken zurücksetzen**
+        changeImage(); // **Bild wechseln**
+    }
+
+    setInterval(cycleImages, 13000); // 3s Bildwechsel + 10s Fortschrittsbalken = **13s pro Durchlauf**
+
+    // **Starte direkt mit der Progress-Bar nach dem ersten Bild**
+    startProgressBar();
 });
