@@ -8,8 +8,6 @@ body {
 
     position: relative; /* Basis für das Pseudo-Element */
     overflow-x: hidden; /* Verhindert horizontales Scrollen */
-    /*background-color: #004d26; !* Sicherstellen, dass der Rest nicht transparent ist *!*/
-
 }
 
 /* Für Smartphones & Tablets */
@@ -22,6 +20,9 @@ body {
 /* Verhindert das Springen durch den Scrollbalken */
 html {
     overflow-y: scroll; /* Scrollbalken immer anzeigen */
+
+    overscroll-behavior: none; /* Verhindert Scrollverhalten bei Touch-Geräten */
+    touch-action: none; /* 🚀 Blockiert versehentliches Scrollen auf Mobile */
 }
 
 main {
