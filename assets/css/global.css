@@ -8,10 +8,51 @@ body {
 
     position: relative; /* Basis für das Pseudo-Element */
     overflow-x: hidden; /* Verhindert horizontales Scrollen */
+    background-color: #004d26; /* Sicherstellen, dass der Rest nicht transparent ist */
+
 }
 
 /* Ersetzt background-attachment: fixed für mobile Geräte */
-body::before {
+/*body::before {*/
+/*    content: "";*/
+/*    position: fixed;*/
+/*    top: 0;*/
+/*    left: 0;*/
+/*    width: 100vw;*/
+/*    height: 100vh;*/
+/*    background-image: url("/assets/images/hintergrund-desktop.jpeg");*/
+/*    background-size: cover;*/
+/*    background-position: center;*/
+/*    background-repeat: no-repeat;*/
+/*    z-index: -1;*/
+
+/*    !* 🚀 Wichtige Optimierungen gegen das "Springen" *!*/
+/*    will-change: transform;*/
+/*    transform: translateZ(0);*/
+/*}*/
+
+/* Für Smartphones & Tablets */
+@media screen and (max-width: 1024px) {
+    main::before {
+        background-size: cover;
+        transform: translate3d(0, 0, 0);
+    }
+}
+/* Verhindert das Springen durch den Scrollbalken */
+html {
+    overflow-y: scroll; /* Scrollbalken immer anzeigen */
+}
+
+main {
+    position: relative;
+    max-width: 1300px;
+    margin: 20px auto;
+    padding: 0 20px;
+    text-align: center;
+    overflow: hidden;/
+}
+/* 🔥 Neuer Hintergrund nur für den Content-Bereich */
+main::before {
     content: "";
     position: fixed;
     top: 0;
@@ -23,37 +64,8 @@ body::before {
     background-position: center;
     background-repeat: no-repeat;
     z-index: -1;
-
-    /* 🚀 Wichtige Optimierungen gegen das "Springen" */
     will-change: transform;
-    transform: translateZ(0);
 }
-
-/* Für Smartphones & Tablets */
-@media screen and (max-width: 1024px) {
-    html, body {
-        /*overscroll-behavior: contain; !* ✅ Stoppt Bounce, aber erlaubt Pull-to-Refresh *!*/
-    }
-
-    body::before {
-        background-size: cover; /* Sicherstellen, dass es den Viewport abdeckt */
-        transform: translate3d(0, 0, 0); /* 🚀 GPU Rendering erzwungen */
-    }
-}
-
-/* Verhindert das Springen durch den Scrollbalken */
-html {
-    overflow-y: scroll; /* Scrollbalken immer anzeigen */
-}
-
-main {
-    max-width: 1300px;
-    margin: 20px auto;
-    padding: 0 20px;
-    text-align: center;
-    overflow: hidden; /* Verhindert, dass Inhalte abgeschnitten werden */
-}
-
 main h2 {
     font-size: 24px;
     margin-top: 20px;
