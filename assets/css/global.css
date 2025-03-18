@@ -32,7 +32,7 @@ body::before {
 /* Für Smartphones & Tablets */
 @media screen and (max-width: 1024px) {
     html, body {
-        overscroll-behavior: none; /* 🚀 Verhindert Bounce-Effekt */
+        overscroll-behavior: contain; /* ✅ Stoppt Bounce, aber erlaubt Pull-to-Refresh */
     }
 
     body::before {
