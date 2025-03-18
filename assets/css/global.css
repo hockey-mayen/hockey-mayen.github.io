@@ -17,7 +17,7 @@ body {
 /* Für Smartphones */
 @media screen and (max-width: 768px) {
     body {
-        background-attachment: scroll; /* Fixiertes Hintergrundbild kann auf Mobile zu Problemen führen */
+        /*background-attachment: scroll; !* Fixiertes Hintergrundbild kann auf Mobile zu Problemen führen *!*/
     }
 }
 
