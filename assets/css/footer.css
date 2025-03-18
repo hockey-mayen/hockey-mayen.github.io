@@ -39,7 +39,7 @@ footer a.active {
 
 /* Keep logo size fixed */
 .footer-logo {
-    width: 150px; /* Keep the same size */
+    width: 250px; /* Keep the same size */
     height: auto;
 }
 
