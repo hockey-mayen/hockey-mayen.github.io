@@ -6,7 +6,7 @@
     grid-template-columns: repeat(2, 1fr); /* 2 Spalten */
     gap: 15px; /* Abstand zwischen den Kacheln */
     /*margin-top: 20px;*/
-    width: 100%; /* Nutze 90% der Breite des Containers */
+    width: 90%; /* Nutze 90% der Breite des Containers */
     margin-left: auto; /* Zentriert den Container horizontal */
     margin-right: auto;
     max-width: 1300px; /* Begrenze die Breite auf maximal 1200px */
