@@ -15,9 +15,10 @@ body {
 }
 
 /* Für Smartphones */
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1300px) {
     body {
-        /*background-attachment: scroll; !* Fixiertes Hintergrundbild kann auf Mobile zu Problemen führen *!*/
+        background-image: none; /* Entfernt das Hintergrundbild */
+        background-color: #b3d5f5; /* Setzt eine Hintergrundfarbe, z.B. Weiß */
     }
 }
 
