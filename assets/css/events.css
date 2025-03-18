@@ -1,81 +1,110 @@
-
-.tile-aktuell {
-    background: rgba(255, 255, 255, 0.4);
+/* Event-Kachel */
+.tile-aktuell, .tile-highlight {
+    background: rgba(255, 255, 255, 0.3);
     border-radius: 10px;
-    padding: 10px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
     width: 45%;
 
-    min-height: 500px; /* Mindesthöhe beibehalten */
-    height: 100%; /* Kachel nutzt volle Höhe von `.aktuell-container` */
-    /*max-height: calc(100vh - 200px); !* Begrenzung der maximalen Höhe *!*/
+    min-height: 50vh;
+    height: 65vh;
+    max-height: 80vh;
 
-    overflow: hidden;
-    text-align: left;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    text-align: center;
+
+    flex-grow: 1;
 }
 
-.event-slider {
+/* Wrapper für das Bild */
+.event-container {
     display: flex;
     align-items: center;
     justify-content: center;
-    position: relative;
     width: 100%;
-    height: 450px;  /* Passe die Höhe an, damit das Bild komplett sichtbar bleibt */
-    max-height: 100%;
-    overflow: hidden;  /* Verhindert Überlauf */
+    height: 88%; /* Bild hat weniger Platz, damit Navigation sichtbar bleibt */
 }
 
+/* Bild */
 .event-image {
     border-radius: 5px;
     width: auto;
     height: 100%;
-    object-fit: cover; /* Falls nötig, um das Bild in den Container einzupassen */
+    object-fit: contain;
 }
 
-
-/* Container für die Punkte unter dem Slider */
-.event-dots {
+/* Container für Navigation (Buttons + Dots) */
+.event-nav-container {
     display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 7%; /* Platz über dem Bild reservieren */
+    position: relative;
+    gap: 20px; /* Abstand zwischen Buttons und Dots */
+}
+
+/* Navigationsbuttons */
+.event-nav {
+    background: rgb(8, 132, 66);
+    color: #ffffff;
+    border: none;
+    cursor: pointer;
+    font-size: 18px; /* Größere Pfeile */
+    border-radius: 50%;
+    transition: background 0.3s;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
     justify-content: center;
 }
 
-/* Styling der Punkte */
+.event-nav:hover {
+    background: rgb(101, 160, 124);
+}
+
+/* Dots-Container */
+.event-dots {
+    display: flex;
+    justify-content: center;
+    gap: 12px; /* Abstand zwischen den Punkten */
+}
+
+/* Dots */
 .dot {
+    background: rgba(255, 255, 255, 0.93);
     width: 12px;
     height: 12px;
-    background-color: #bbb;
     border-radius: 50%;
     display: inline-block;
     transition: background-color 0.3s;
     cursor: pointer;
-    /* Hebt die Dots näher ans Bild */
-    margin: -25px 5px 0;
 }
 
-/* Aktiver Punkt */
 .dot.active {
-    background-color: #008f5a; /* Farbe für aktiven Punkt */
-    width: 14px;
-    height: 14px;
-    margin: -26px 5px 0;
+    background-color: #008f5a;
+    width: 12px;
+    height: 12px;
 }
 
+/* Responsive Anpassungen für kleinere Bildschirme */
 @media screen and (max-width: 600px) {
     .tile-aktuell {
-        width: 100%; /* Volle Breite nutzen */
-        max-width: 100%; /* Sicherstellen, dass nichts begrenzt */
-        margin: 0; /* Falls es außen Platz gibt, diesen entfernen */
+        width: 100%;
+        max-width: 100%;
+        margin: 0;
     }
 
     .event-image {
-        max-width: 100%; /* Volle Breite nutzen */
-        height: auto; /* Verhältnis beibehalten */
+        width: 95%;
+        height: auto;
     }
 
-    .event-dots {
-        margin-top: -5px; /* Dots näher an das Bild setzen */
+    .event-nav-container {
+        gap: 5px; /* Weniger Abstand auf kleinen Bildschirmen */
     }
 }

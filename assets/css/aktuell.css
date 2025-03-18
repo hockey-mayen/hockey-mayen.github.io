@@ -4,9 +4,7 @@
 .aktuell-container {
     display: flex;
     justify-content: space-around;
-    align-items: flex-start;
+    align-items: stretch;
     flex-wrap: wrap;
     gap: 10px;
-    padding: 5px;
-
 }

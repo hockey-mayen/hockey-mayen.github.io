@@ -1,33 +1,14 @@
-/*aktuell.css*/
+/*highlights.css*/
 @import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&display=swap');
-
-
-.tile-highlight {
-    background: rgba(255, 255, 255, 0.4);
-    border-radius: 10px;
-    padding: 10px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-    width: 45%;
-
-    min-height: 500px; /* Mindesthöhe beibehalten */
-    height: 100%; /* Kachel nutzt volle Höhe von `.aktuell-container` */
-    max-height: calc(100vh - 200px); /* Begrenzung der maximalen Höhe */
-
-    overflow: hidden;
-    text-align: left;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
 
 /* Scrollbarer Bereich für vergangene Highlights */
 .highlight-container {
-    max-height: 450px;
     overflow-y: auto;
     padding: 10px;
     color: #004d26;
     scrollbar-width: thin; /* Für Firefox */
     scrollbar-color: #008f5a #bdddcc; /* Griff / Hintergrund */
+    height: 94%; /* Höhe bleibt proportional */
 }
 
 /* Webkit-basiertes Styling (Chrome, Edge, Safari) */

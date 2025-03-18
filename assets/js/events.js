@@ -1,10 +1,23 @@
 document.addEventListener("DOMContentLoaded", async function () {
-    const eventContainer = document.createElement("div");
-    eventContainer.classList.add("event-slider");
+    const tileAktuell = document.querySelector(".tile-aktuell");
+    if (!tileAktuell) return;
+
+    const container = document.createElement("div");
+    container.classList.add("event-container");
+
+    const navContainer = document.createElement("div");
+    navContainer.classList.add("event-nav-container");
+
+    const leftButton = document.createElement("button");
+    leftButton.classList.add("event-nav", "left");
+    leftButton.innerHTML = "&lt;"; // "<"
+
+    const rightButton = document.createElement("button");
+    rightButton.classList.add("event-nav", "right");
+    rightButton.innerHTML = "&gt;"; // ">"
 
     const imageElement = document.createElement("img");
     imageElement.classList.add("event-image");
-
 
     const dotsContainer = document.createElement("div");
     dotsContainer.classList.add("event-dots");
@@ -20,22 +33,19 @@ document.addEventListener("DOMContentLoaded", async function () {
             throw new Error("Keine Events gefunden.");
         }
 
-        // Funktion zur Aktualisierung des Bildes und der aktiven Punkte
         function updateImage() {
             imageElement.src = events[currentIndex].image;
             imageElement.alt = events[currentIndex].title;
 
-            // Punkte aktualisieren
             document.querySelectorAll(".dot").forEach((dot, index) => {
                 dot.classList.toggle("active", index === currentIndex);
             });
         }
 
-        // Punkte erstellen
         events.forEach((_, index) => {
             const dot = document.createElement("span");
             dot.classList.add("dot");
-            if (index === 0) dot.classList.add("active"); // Erster Punkt aktiv
+            if (index === 0) dot.classList.add("active");
             dot.addEventListener("click", () => {
                 currentIndex = index;
                 updateImage();
@@ -43,16 +53,28 @@ document.addEventListener("DOMContentLoaded", async function () {
             dotsContainer.appendChild(dot);
         });
 
-        updateImage(); // Erstes Bild setzen
+        leftButton.addEventListener("click", function () {
+            currentIndex = (currentIndex - 1 + events.length) % events.length;
+            updateImage();
+        });
+
+        rightButton.addEventListener("click", function () {
+            currentIndex = (currentIndex + 1) % events.length;
+            updateImage();
+        });
+
+        updateImage();
 
     } catch (error) {
         console.error("Fehler beim Laden der Events:", error);
     }
 
-    eventContainer.appendChild(imageElement);
+    // Buttons und Dots direkt nebeneinander setzen
+    navContainer.appendChild(leftButton);
+    navContainer.appendChild(dotsContainer);
+    navContainer.appendChild(rightButton);
 
-    document.querySelector(".tile-aktuell:first-child").appendChild(eventContainer);
-    document.querySelector(".tile-aktuell:first-child").appendChild(dotsContainer);
-
-
+    tileAktuell.appendChild(navContainer);
+    tileAktuell.appendChild(container);
+    container.appendChild(imageElement);
 });
