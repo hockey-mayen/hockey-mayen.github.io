@@ -34,6 +34,8 @@
     width: auto;
     height: 100%;
     object-fit: contain;
+    max-width: 100%; /* Passt sich maximal der Breite des Containers an */
+
 }
 
 /* Container für Navigation (Buttons + Dots) */
