@@ -91,98 +91,11 @@
     height: 12px;
 }
 
-
-/* Standardgröße für größere Bildschirme */
-@media screen and (max-width: 1024px) {
-    .tile-aktuell, .tile-highlight {
-        width: 90%;  /* Kacheln breiter auf Tablets */
-        min-height: 45vh;
-        height: 60vh;
-        max-height: 75vh;
-    }
-
-    .event-container {
-        height: 85%; /* Etwas mehr Platz für das Bild */
-    }
-
-    .event-nav-container {
-        height: 10%; /* Mehr Platz für Navigation */
-        gap: 10px; /* Reduzierter Abstand */
-    }
-
-    .event-nav {
-        width: 30px;
-        height: 30px;
-        font-size: 16px;
-    }
-
-    .dot {
-        width: 10px;
-        height: 10px;
-    }
-}
-
-/* Smartphone-Ansicht */
-@media screen and (max-width: 768px) {
-    .aktuell-container {
-        flex-direction: column; /* Kacheln untereinander statt nebeneinander */
-        align-items: center;
-    }
-
-    .tile-aktuell, .tile-highlight {
-        width: 95%; /* Volle Breite nutzen */
-        min-height: 40vh;
-        height: 50vh;
-        max-height: 65vh;
-    }
-
-    .event-container {
-        height: 80%; /* Mehr Platz für Bild */
-    }
-
-    .event-nav-container {
-        height: 12%; /* Genügend Platz für Navigation */
-        gap: 8px; /* Weniger Abstand */
-    }
-
-    .event-nav {
-        width: 28px;
-        height: 28px;
-        font-size: 14px; /* Kleinere Buttons */
-    }
-
-    .dot {
-        width: 9px;
-        height: 9px;
-    }
-}
-
-/* Kleine Smartphones (z. B. iPhone SE) */
-@media screen and (max-width: 480px) {
-    .tile-aktuell, .tile-highlight {
+/* Responsive Anpassungen für kleinere Bildschirme */
+@media screen and (max-width: 600px) {
+    .tile-aktuell {
         width: 100%; /* Volle Breite nutzen */
-        min-height: 35vh;
-        height: 45vh;
-        max-height: 60vh;
-    }
-
-    .event-container {
-        height: 78%; /* Mehr Platz für Bild */
-    }
-
-    .event-nav-container {
-        height: 14%; /* Mehr Platz für Navigation */
-        gap: 6px; /* Noch weniger Abstand */
-    }
-
-    .event-nav {
-        width: 25px;
-        height: 25px;
-        font-size: 12px; /* Kleinere Buttons */
-    }
-
-    .dot {
-        width: 8px;
-        height: 8px;
+        max-width: 100%; /* Sicherstellen, dass nichts begrenzt */
+        margin: 0; /* Falls es außen Platz gibt, diesen entfernen */
     }
 }
