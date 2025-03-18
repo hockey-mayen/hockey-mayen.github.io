@@ -6,7 +6,7 @@
     width: 45%;
 
     min-height: 50vh;
-    height: 65vh;
+    height: 70vh;
     max-height: 80vh;
 
     display: flex;
@@ -49,7 +49,7 @@
 
 /* Navigationsbuttons */
 .event-nav {
-    background: rgb(8, 132, 66);
+    background: rgba(160, 155, 155, 0.64);
     color: #ffffff;
     border: none;
     cursor: pointer;
@@ -100,7 +100,7 @@
     }
 
     .event-image {
-        width: 95%;
+        width: 80%;
         height: auto;
     }
 
