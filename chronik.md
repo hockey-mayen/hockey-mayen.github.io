@@ -14,7 +14,10 @@ permalink: /chronik/
 
     <!-- Fixierte Jahr-Navigation direkt neben den Chronik-Texten -->
     <div id="year-nav-container">
-        <div id="year-nav" class="year-nav"></div>
+        <div id="year-nav" class="year-nav">
+            <div class="year-column" id="year-column-left"></div>
+            <div class="year-column" id="year-column-right"></div>
+        </div>
     </div>
 </div>
 

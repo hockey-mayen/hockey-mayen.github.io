@@ -2,7 +2,15 @@ async function loadChronik() {
     const response = await fetch("/assets/data/chronik.json");
     const data = await response.json();
     const timelineContainer = document.getElementById("timeline");
-    const yearNavContainer = document.getElementById("year-nav");
+    const yearColumnLeft = document.getElementById("year-column-left");
+    const yearColumnRight = document.getElementById("year-column-right");
+
+    const years = data.events.map(event => event.year);
+
+// In zwei Spalten aufteilen (erste Hälfte links, zweite Hälfte rechts)
+    const midIndex = Math.floor(years.length / 2);
+    const leftYears = years.slice(0, midIndex); // Erste Hälfte (Neueste Jahre)
+    const rightYears = years.slice(midIndex); // Zweite Hälfte (ältere Jahre)
 
     data.events.forEach(yearEntry => {
         let yearHeading = document.createElement("div");
@@ -18,28 +26,9 @@ async function loadChronik() {
             let eventItem = document.createElement("li");
             eventItem.className = "event-item";
 
-            const maxLength = 450;
-            let isLongText = entry.event.length > maxLength;
-            let shortText = entry.event;
-            let fullText = entry.event;
-
-            if (isLongText) {
-                let trimmedText = entry.event.substring(0, maxLength);
-                let lastSpaceIndex = trimmedText.lastIndexOf(" ");
-                if (lastSpaceIndex > -1) {
-                    shortText = trimmedText.substring(0, lastSpaceIndex);
-                }
-                shortText += " ...";
-            }
-
             let eventContent = `<div class="event-details">
                                     <span class="event-item-headline">${entry.headline}</span>
-                                    <span class="event-text short-text">${shortText}</span>
-                                    <span class="event-text full-text" style="display: none;">${fullText}</span>`;
-
-            if (isLongText) {
-                eventContent += `<a href="#" class="toggle-text">Weiterlesen</a>`;
-            }
+                                    <span class="event-text">${entry.event}</span>`;
 
             if (entry.images && entry.images.length > 0) {
                 eventContent += `<div class="event-gallery">`;
@@ -49,58 +38,43 @@ async function loadChronik() {
                 eventContent += `</div>`;
             }
 
-            if (entry.link && entry.linkTitle) {
-                eventContent += `<div class="event-link">
-                                    <a href="${entry.link}" target="_blank">${entry.linkTitle}</a>
-                                </div>`;
-            }
-
             eventContent += `</div>`;
             eventItem.innerHTML = eventContent;
             eventList.appendChild(eventItem);
         });
 
         timelineContainer.appendChild(eventList);
+    });
 
-        // 🎯 Jahr-Navigation Eintrag erstellen
+    // Buttons für linke Spalte
+    leftYears.forEach(year => {
         let yearButton = document.createElement("button");
         yearButton.className = "year-button";
-        yearButton.textContent = yearEntry.year;
-        yearButton.setAttribute("data-year", yearEntry.year);
-        yearButton.onclick = () => fadeToYear(yearEntry.year);
-        yearNavContainer.appendChild(yearButton);
+        yearButton.textContent = year;
+        yearButton.setAttribute("data-year", year);
+        yearButton.onclick = () => fadeToYear(year);
+        yearColumnLeft.appendChild(yearButton);
     });
 
-    // 🌟 Setze das neueste Jahr als aktiv beim Laden der Chronik
-    const newestYear = data.events[0].year;
-    document.querySelector(`.year-button[data-year='${newestYear}']`).classList.add("active");
+    // Buttons für rechte Spalte (älteste Jahre)
+    rightYears.forEach(year => {
+        let yearButton = document.createElement("button");
+        yearButton.className = "year-button";
+        yearButton.textContent = year;
+        yearButton.setAttribute("data-year", year);
+        yearButton.onclick = () => fadeToYear(year);
+        yearColumnRight.appendChild(yearButton);
+    });
 
-    // 🔍 Starte Scroll-Tracking
+    // Erstes Jahr automatisch aktiv setzen
+    document.querySelector(`.year-button[data-year='${years[0]}']`).classList.add("active");
+
+    // Scroll-Tracking aktivieren
     window.addEventListener("scroll", highlightCurrentYear);
-
-    // 📖 "Weiterlesen"-Logik
-    document.querySelectorAll(".toggle-text").forEach(link => {
-        link.addEventListener("click", function (e) {
-            e.preventDefault();
-            const parent = this.parentElement;
-            const shortText = parent.querySelector(".short-text");
-            const fullText = parent.querySelector(".full-text");
-
-            if (shortText.style.display === "none") {
-                shortText.style.display = "inline";
-                fullText.style.display = "none";
-                this.textContent = "Weiterlesen";
-            } else {
-                shortText.style.display = "none";
-                fullText.style.display = "inline";
-                this.textContent = "Weniger anzeigen";
-            }
-        });
-    });
-
-    // 🟢 Direkt das erste Jahr markieren
-    highlightCurrentYear();
 }
+
+document.addEventListener("DOMContentLoaded", loadChronik);
+
 
 // 🎨 **Sanftes Ausblenden, Sprung, dann Einblenden**
 function fadeToYear(year) {

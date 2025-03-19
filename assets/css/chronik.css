@@ -173,23 +173,31 @@
 /* Jahr-Buttons */
 .year-nav {
     display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 4px;
+    flex-wrap: wrap;
+    justify-content: space-between; /* Verteilt auf zwei Spalten */
+    max-width: 220px; /* Anpassung für kleinere Displays */
+    gap: 10px;
 }
 
-
+/* Jede Spalte */
+.year-column {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    flex: 1; /* Beide Spalten haben gleiche Breite */
+}
 /* Standard-Jahr-Button */
 .year-button {
     background: none;
     border: none;
-    color: rgba(0, 123, 95, 0.3); /* Weniger auffällig durch reduzierte Transparenz */
+    color: rgba(0, 123, 95, 0.7);
     font-size: 14px;
-    font-weight: bold; /* **Jetzt auch fette Schrift für inaktive Jahre** */
+    font-weight: bold;
     cursor: pointer;
-    padding: 1px 3px;
+    padding: 2px 5px;
     transition: color 0.3s ease-in-out, opacity 0.3s ease-in-out;
-    text-decoration: none; /* Entfernt Unterstrich */
+    text-decoration: none;
+    text-align: left;
 }
 
 
