@@ -34,10 +34,22 @@
 
 /* Responsive Anpassung des Iframes */
 .kontakt-formular iframe {
-    width: 100%;
-    height: 100%;
-    border-radius: 8px;
-    max-width: 100vw; /* Maximale Breite auf kleinen Bildschirmen */
+    /*width: 100%;*/
+    /*height: 100%;*/
+    /*border-radius: 8px;*/
+    /*max-width: 100vw; !* Maximale Breite auf kleinen Bildschirmen *!*/
 
 
 }
+/* Für kleinere Bildschirme (z.B. Smartphones) */
+/*@media (max-width: 600px) {*/
+/*    .kontakt-formular {*/
+/*        !*height: 600px; !* Kleinere Höhe für Mobilgeräte *!*!*/
+/*    }*/
+
+/*    .kontakt-formular iframe {*/
+/*        height: 100%;*/
+/*    }*/
+
+
+/*}*/
