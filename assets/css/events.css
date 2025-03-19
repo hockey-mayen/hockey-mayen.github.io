@@ -57,7 +57,7 @@
     align-items: center;
     justify-content: center;
     gap: 15px; /* Abstand zwischen Download, Pfeilen und Dots */
-    margin-left: -70px; /* Schiebt die gesamte Gruppe leicht nach links */
+    margin-left: -60px; /* Schiebt die gesamte Gruppe leicht nach links */
 }
 
 /* Navigationsbuttons */
