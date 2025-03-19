@@ -1,4 +1,5 @@
 /* Event-Kachel */
+/* events.css */
 .tile-aktuell, .tile-highlight {
     background: rgba(255, 255, 255, 0.3);
     border-radius: 10px;
@@ -39,14 +40,24 @@
 }
 
 /* Container für Navigation (Buttons + Dots) */
+/* Container für Navigation (Buttons + Dots) */
 .event-nav-container {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: center; /* Hält alles in der Mitte */
     width: 100%;
-    height: 7%; /* Platz über dem Bild reservieren */
+    height: 7%;
     position: relative;
-    gap: 20px; /* Abstand zwischen Buttons und Dots */
+    gap: 20px;
+}
+
+/* Wrapper für die Button-Gruppe */
+.event-nav-group {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px; /* Abstand zwischen Download, Pfeilen und Dots */
+    margin-left: -70px; /* Schiebt die gesamte Gruppe leicht nach links */
 }
 
 /* Navigationsbuttons */
@@ -93,6 +104,51 @@
     height: 12px;
 }
 
+.event-download {
+    width: 45px;  /* Größe anpassen */
+    height: 45px;
+    cursor: pointer;
+    transition: opacity 0.3s;
+    justify-content: center;
+    /* Umfärben von Schwarz zu Grün */
+    filter: invert(38%) sepia(73%) saturate(386%) hue-rotate(122deg) brightness(90%) contrast(95%);
+    transform: translateY(5px);
+}
+
+.event-download:hover {
+    opacity: 0.7;
+}
+
+.event-download-container {
+    position: relative;
+    display: inline-block;
+}
+
+/* Tooltip-Text */
+.event-download-container::after {
+    content: "Flyer herunterladen"; /* Hier den Tooltip-Text anpassen */
+    position: absolute;
+    bottom: 120%; /* Position über dem Button */
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(6, 139, 66, 0.9); /* Grüner Hintergrund */
+    color: white;
+    padding: 5px 10px;
+    font-size: 14px;
+    border-radius: 5px;
+    white-space: nowrap;
+    opacity: 0;
+    transition: opacity 0.3s, transform 0.3s;
+    pointer-events: none;
+}
+
+/* Zeigt den Tooltip beim Hover */
+.event-download-container:hover::after {
+    opacity: 1;
+    transform: translateX(-120%) translateY(100%);
+}
+
+
 /* Responsive Anpassungen für kleinere Bildschirme */
 @media screen and (max-width: 1300px) {
     .tile-aktuell {
@@ -101,6 +157,8 @@
         margin: 0; /* Falls es außen Platz gibt, diesen entfernen */
     }
 }
+
+
 
 /* Responsive Anpassungen für kleinere Bildschirme */
 @media screen and (max-width: 700px) {

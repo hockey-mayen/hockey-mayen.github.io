@@ -8,6 +8,22 @@ document.addEventListener("DOMContentLoaded", async function () {
     const navContainer = document.createElement("div");
     navContainer.classList.add("event-nav-container");
 
+    // Download-Button mit Flyout-Text erstellen
+    const downloadContainer = document.createElement("div");
+    downloadContainer.classList.add("event-download-container"); // Container für Tooltip
+
+    const downloadButton = document.createElement("img");
+    downloadButton.classList.add("event-download");
+    downloadButton.src = "/assets/images/download-button.png";
+    downloadButton.alt = "Download";
+
+    // Link-Button zum tatsächlichen Download
+    const downloadLink = document.createElement("a");
+    downloadLink.setAttribute("download", "");
+    downloadLink.appendChild(downloadButton);
+
+    downloadContainer.appendChild(downloadLink); // Button in Container setzen
+
     const leftButton = document.createElement("button");
     leftButton.classList.add("event-nav", "left");
     leftButton.innerHTML = "&lt;"; // "<"
@@ -34,9 +50,16 @@ document.addEventListener("DOMContentLoaded", async function () {
         }
 
         function updateImage() {
-            imageElement.src = events[currentIndex].image;
+            const currentImagePath = events[currentIndex].image;
+            imageElement.src = currentImagePath;
             imageElement.alt = events[currentIndex].title;
 
+            // Download-Pfad korrigieren
+            const cleanFileName = currentImagePath.replace("-web", ""); // Entfernt "-web"
+            const downloadPath = cleanFileName.replace("/web/", "/"); // Eine Ebene höher
+            downloadLink.href = downloadPath;
+
+            // Markiere den aktiven Punkt
             document.querySelectorAll(".dot").forEach((dot, index) => {
                 dot.classList.toggle("active", index === currentIndex);
             });
@@ -70,9 +93,15 @@ document.addEventListener("DOMContentLoaded", async function () {
     }
 
     // Buttons und Dots direkt nebeneinander setzen
-    navContainer.appendChild(leftButton);
-    navContainer.appendChild(dotsContainer);
-    navContainer.appendChild(rightButton);
+    const navGroup = document.createElement("div");
+    navGroup.classList.add("event-nav-group"); // Neue Gruppe für zentrierte Buttons
+
+    navGroup.appendChild(downloadContainer); // Download-Button zuerst
+    navGroup.appendChild(leftButton);
+    navGroup.appendChild(dotsContainer);
+    navGroup.appendChild(rightButton);
+
+    navContainer.appendChild(navGroup); // Die gesamte Gruppe ins navContainer einfügen
 
     tileAktuell.appendChild(navContainer);
     tileAktuell.appendChild(container);
