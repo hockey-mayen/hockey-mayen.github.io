@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     // Nur auf Smartphones scrollen (Bildschirmbreite < 768px)
-    if (window.innerWidth < 768) {
+    if (window.innerWidth < 1025) {
         setTimeout(() => {
             kontaktContainer.scrollIntoView({ behavior: "smooth", block: "start" });
         }, 300); // Kleine Verzögerung, um das Rendering abzuwarten
