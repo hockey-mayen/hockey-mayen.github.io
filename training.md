@@ -6,13 +6,18 @@ permalink: /training/
 
 ## Training
 
-<strong>am 26.3.2025 startet die Feldsaison, und wir trainieren auf dem Kunstrasenplatz !</strong>
+<div class="aligned-content">
+<strong>am 26.3.2025 startet die Feldsaison, und wir trainieren auf dem Kunstrasenplatz !  </strong>   <br>
+
 
 <strong>
 Dein Kind möchte den Hockeysport ausprobieren? Du selbst willst den Schläger schwingen ?
 </strong>  
+<br>
 Jung oder alt, Anfänger oder Fortgeschrittene – bei uns findet jeder das passende Training!  
+<br>
 Komm einfach vorbei zu unseren Schnupper-Einheiten.
+</div>
 
 <div class="tiles-container">
     {% assign datumWechselHalleZuFeld = "2025-03-26" %}

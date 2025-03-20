@@ -137,7 +137,9 @@ iframe {
     opacity: 0.8;
 }
 .aligned-content {
-    text-align: center;
+    padding-left: 15px;
+    padding-right: 15px;
+    /*text-align: center;*/
     max-width: 1000px; /* Optional: Setzt eine maximale Breite für bessere Lesbarkeit */
     margin: 0 auto; /* Zentriert den Block, aber der Text bleibt linksbündig */
 }

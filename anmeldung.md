@@ -10,7 +10,7 @@ useCaptcha: false
 <!-- Tab-Inhalt -->
 
 
-<div id="download-tab" class="tab-content">
+<div id="download-tab" class="aligned-content">
     <h3>Anmeldeformular herunterladen</h3>
     <p>
         Hier kannst du das Anmeldeformular als PDF herunterladen.
