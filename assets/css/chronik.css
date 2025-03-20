@@ -258,33 +258,33 @@
     box-shadow: 0px 0px 8px rgba(0, 123, 95, 0.4);
 }
 
-/* 📌 Styling für die Scrollbar (nur sichtbar, wenn viele Jahre vorhanden sind) */
+/* 🎨 Scrollbar für moderne Browser (Webkit-basierte, Safari, Chrome, Edge) */
 .year-dropdown::-webkit-scrollbar {
-    width: 10px; /* Breite des Scrollbalkens */
+    width: 10px;
 }
 
-/* Track (Hintergrund der Scrollbar) */
+/* Hintergrund der Scrollbar */
 .year-dropdown::-webkit-scrollbar-track {
-    background: #e0e0e0;
+    background: #007b5f;
     border-radius: 5px;
 }
 
 /* Griff (der bewegliche Teil) */
 .year-dropdown::-webkit-scrollbar-thumb {
-    background: #007b5f; /* Vereinsgrün */
+    background: #007b5f;
     border-radius: 5px;
-    border: 2px solid #5a96c1; /* Umrandung für mehr Tiefe */
+    border: 2px solid #5a96c1;
 }
 
-/* Hover-Effekt für Scrollbar-Griff */
+/* Scrollbar-Griff beim Hover */
 .year-dropdown::-webkit-scrollbar-thumb:hover {
     background: #005f47;
 }
 
-/* Falls du das für Firefox auch möchtest */
+/* 📌 Fallback für Android/Touchscreens */
 .year-dropdown {
-    scrollbar-color: #007b5f #e0e0e0; /* Farbe für Firefox (Daumen | Track) */
-    scrollbar-width: thin;
+    scrollbar-width: thin;  /* Unterstützt Firefox */
+    scrollbar-color: #007b5f #088442;
 }
 
 
@@ -333,5 +333,15 @@
 
     #year-nav-container {
         display: none; /* Versteckt die Desktop-Jahr-Leiste */
+    }
+
+    .year-dropdown {
+        overflow-y: auto; /* Falls es nicht automatisch aktiviert ist */
+        -webkit-overflow-scrolling: touch; /* Flüssigeres Scrollen auf Android/iOS */
+    }
+
+    /* Spezielles Android-Scrollbar-Styling */
+    .year-dropdown::-webkit-scrollbar {
+        display: none; /* Versteckt den Scrollbalken, aber behält das Scrollen */
     }
 }
