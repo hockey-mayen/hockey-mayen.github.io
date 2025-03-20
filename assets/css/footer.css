@@ -46,7 +46,7 @@ footer a.active {
 
 /* DHB Icon */
 .footer-DHB-icon {
-    width: 95px; /* Keep desired shop icon size */
+    width: 100px; /* Keep desired shop icon size */
     height: auto;
     transition: opacity 0.31s;
     opacity: 0.8;
@@ -67,8 +67,6 @@ footer a.active {
 .footer-rps-icon:hover {
     opacity: 0.5;
 }
-
-
 
 /* Shop Icon */
 .footer-shop-icon {
@@ -118,6 +116,37 @@ footer a.active {
         max-width: 75vw; /* Limits the width to 90% of the viewport width */
         gap: 1px; /* Reduce gap for smaller screens */
     }
+
+    .footer-content {
+        gap: 0px; /* More space between elements */
+    }
+
+
+    /* Keep logo size fixed */
+    .footer-logo {
+        width: 150px; /* Keep the same size */
+    }
+
+    /* DHB Icon */
+    .footer-DHB-icon {
+        width: 65px; /* Keep desired shop icon size */
+    }
+
+    /* RPS Icon */
+    .footer-rps-icon {
+        width: 45px; /* Keep desired shop icon size */
+    }
+
+    /* Shop Icon */
+    .footer-shop-icon {
+        width: 40px; /* Keep desired shop icon size */
+    }
+    /* Facebook Icon */
+    .footer-social-icon {
+        width: 25px;
+    }
+
+
 }
 
 
