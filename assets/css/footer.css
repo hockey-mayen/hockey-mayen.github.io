@@ -115,7 +115,7 @@ footer a.active {
     .footer-social-container {
         max-width: 75vw; /* Limits the width to 90% of the viewport width */
         gap: 1px; /* Reduce gap for smaller screens */
-        padding-bottom: 50px;
+        padding-bottom: 55px;
     }
 
     .footer-content {
