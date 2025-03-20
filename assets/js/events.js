@@ -56,7 +56,7 @@ document.addEventListener("DOMContentLoaded", async function () {
 
             // Download-Pfad korrigieren
             const cleanFileName = currentImagePath.replace("-web", ""); // Entfernt "-web"
-            const downloadPath = cleanFileName.replace("/web/", "/"); // Eine Ebene höher
+            const downloadPath = cleanFileName.replace("/web/", "/").replace(".jpg", ".png"); // Eine Ebene höher & ersetzt .png mit .jpg
             downloadLink.href = downloadPath;
 
             // Markiere den aktiven Punkt
