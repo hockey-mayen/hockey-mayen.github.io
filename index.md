@@ -4,10 +4,13 @@ title: Hockey-Club Grün-Weiss TuS Mayen
 permalink: /verein/
 ---
 
-## {{ site.data.startseite.title }}
-<p class="aligned-content">
+<div class="aligned-content">
+<h2>{{ site.data.startseite.title }}</h2>
+
+<p> 
 {{ site.data.startseite.content }}
 </p>
+</div>
 <div class="tiles-container">
 
     <!-- Training-Kachel mit dynamischem Bildwechsel -->
