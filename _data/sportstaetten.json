@@ -3,13 +3,13 @@
     {
       "title": "Kunstrasenplatz Stadion Nettetal",
       "description": "Bürresheimer Straße <br> 56727 Mayen",
-      "map_link": "https://www.google.com/maps?q=Bürresheimer+Straße,+56727+Mayen",
+      "map_link": "https://www.google.com/maps/place/50%C2%B020'07.7%22N+7%C2%B012'53.4%22E/@50.3352086,7.2147672,177m/data=!3m1!1e3!4m4!3m3!8m2!3d50.3354722!4d7.2148333?hl=de&entry=ttu&g_ep=EgoyMDI1MDMxOC4wIKXMDSoASAFQAw%3D%3D",
       "image_link": "../assets/images/sportstaetten/feld.webp"
     },
     {
       "title": "Sporthalle Albert-Schweitzer-Realschule",
       "description": "Joignystraße 5 <br> 56727 Mayen",
-      "map_link": "https://www.google.com/maps?q=Joignystraße+5,+56727+Mayen",
+      "map_link": "https://www.google.com/maps/place/50%C2%B019'19.6%22N+7%C2%B013'08.3%22E/@50.3221054,7.218333,192m/data=!3m2!1e3!4b1!4m4!3m3!8m2!3d50.3221054!4d7.2189767?entry=ttu&g_ep=EgoyMDI1MDMxOC4wIKXMDSoASAFQAw%3D%3D",
       "image_link": "../assets/images/sportstaetten/halle.webp"
     }
   ]
