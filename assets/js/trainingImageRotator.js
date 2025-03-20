@@ -5,6 +5,7 @@ document.addEventListener("DOMContentLoaded", function () {
         console.error("Fehler: .training-image-container nicht gefunden!");
         return;
     }
+
     let images = [
         "/assets/images/training/training1.webp",
         "/assets/images/training/training2.webp",
