@@ -168,4 +168,21 @@
         width: auto; /* Erhält das Seitenverhältnis */
         display: block; /* Verhindert unerwünschte Zusatzeffekte */
     }
+
+    /* Wrapper für die Button-Gruppe */
+    .event-nav-group {
+        gap: 5px; /* Abstand zwischen Download, Pfeilen und Dots */
+    }
+
+    /* Navigationsbuttons */
+    .event-nav {
+        font-size: 16px; /* Größere Pfeile */
+        width: 25px;
+        height: 25px;
+    }
+
+    .event-download {
+        width: 35px;  /* Größe anpassen */
+        height: 35px;
+    }
 }
