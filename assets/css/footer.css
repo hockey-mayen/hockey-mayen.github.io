@@ -46,7 +46,7 @@ footer a.active {
 
 /* DHB Icon */
 .footer-DHB-icon {
-    width: 100px; /* Keep desired shop icon size */
+    width: 110px; /* Keep desired shop icon size */
     height: auto;
     transition: opacity 0.31s;
     opacity: 0.8;
@@ -58,7 +58,7 @@ footer a.active {
 
 /* RPS Icon */
 .footer-rps-icon {
-    width: 60px; /* Keep desired shop icon size */
+    width: 70px; /* Keep desired shop icon size */
     height: auto;
     transition: opacity 0.31s;
     opacity: 0.9;
@@ -70,7 +70,7 @@ footer a.active {
 
 /* Shop Icon */
 .footer-shop-icon {
-    width: 55px; /* Keep desired shop icon size */
+    width: 65px; /* Keep desired shop icon size */
     height: auto;
     transition: opacity 0.31s;
 }
@@ -82,7 +82,7 @@ footer a.active {
 
 /* Facebook Icon */
 .footer-social-icon {
-    width: 30px;
+    width: 35px;
     height: auto;
     filter: brightness(0) saturate(100%) invert(100%);
     transition: opacity 0.31s;
