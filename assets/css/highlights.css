@@ -3,10 +3,11 @@
 
 /* Scrollbarer Bereich für vergangene Highlights */
 .highlight-container {
-    overflow-y: auto;
+    overflow-y: scroll !important; /* Immer scrollbar */
+    -webkit-overflow-scrolling: auto; /* Verhindert das automatische Ausblenden auf iOS */
     padding: 10px;
     color: #004d26;
-    scrollbar-width: thin; /* Für Firefox */
+    scrollbar-width: thin; /* Firefox */
     scrollbar-color: #008f5a #bdddcc; /* Griff / Hintergrund */
     height: 94%; /* Höhe bleibt proportional */
 }
@@ -14,6 +15,7 @@
 /* Webkit-basiertes Styling (Chrome, Edge, Safari) */
 .highlight-container::-webkit-scrollbar {
     width: 8px;
+    display: block !important; /* Scrollbar bleibt aktiv */
 }
 
 .highlight-container::-webkit-scrollbar-track {
@@ -85,5 +87,9 @@
         width: 100%; /* Volle Breite nutzen */
         max-width: 100%; /* Sicherstellen, dass nichts begrenzt */
         margin: 0; /* Falls es außen Platz gibt, diesen entfernen */
+    }
+    .highlight-container {
+        overflow-y: scroll !important;
+        -webkit-overflow-scrolling: auto !important; /* Verhindert das sanfte Scrollen auf iOS */
     }
 }
