@@ -172,13 +172,15 @@
     /* Wrapper für die Button-Gruppe */
     .event-nav-group {
         gap: 10px; /* Abstand zwischen Download, Pfeilen und Dots */
+        margin-left: -40px; /* Schiebt die gesamte Gruppe leicht nach links */
+
     }
 
     /* Navigationsbuttons */
     .event-nav {
         font-size: 16px; /* Größere Pfeile */
-        width: 25px;
-        height: 25px;
+        width: 30px;
+        height: 30px;
     }
 
     .event-download {
