@@ -26,7 +26,6 @@ document.addEventListener("DOMContentLoaded", function () {
         "/assets/images/training/training18.webp",
         "/assets/images/training/training19.webp",
         "/assets/images/training/training20.webp",
-
         "/assets/images/training/training21.webp",
         "/assets/images/training/training22.webp",
         "/assets/images/training/training23.webp",
