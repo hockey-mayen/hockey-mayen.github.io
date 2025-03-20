@@ -157,7 +157,7 @@ nav ul li a.active {
 
     /* Logo etwas höher setzen ohne den Header zu verschieben */
     .logo {
-        max-width: 80px;
+        max-width: 110px;
         height: auto;
         padding-left: 0;
         transform: translateY(-5px); /* Hebt das Logo leicht an */
