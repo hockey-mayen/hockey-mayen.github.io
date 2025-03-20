@@ -171,7 +171,7 @@
 
     /* Wrapper für die Button-Gruppe */
     .event-nav-group {
-        gap: 5px; /* Abstand zwischen Download, Pfeilen und Dots */
+        gap: 10px; /* Abstand zwischen Download, Pfeilen und Dots */
     }
 
     /* Navigationsbuttons */
@@ -182,7 +182,12 @@
     }
 
     .event-download {
-        width: 35px;  /* Größe anpassen */
-        height: 35px;
+        width: 30px;  /* Größe anpassen */
+        height: 30px;
+    }
+
+    /* Dots-Container */
+    .event-dots {
+        gap: 5px; /* Abstand zwischen den Punkten */
     }
 }
