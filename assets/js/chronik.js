@@ -4,6 +4,7 @@ async function loadChronik() {
     const timelineContainer = document.getElementById("timeline");
     const yearColumnLeft = document.getElementById("year-column-left");
     const yearColumnRight = document.getElementById("year-column-right");
+    const yearDropdown = document.getElementById("year-dropdown"); // Dropdown-Menü
 
     const years = data.events.map(event => event.year);
 
@@ -91,6 +92,19 @@ async function loadChronik() {
         yearColumnRight.appendChild(yearButton);
     });
 
+    // 📌 Dropdown mit Jahren befüllen (nur für mobile Ansicht)
+    years.forEach(year => {
+        let option = document.createElement("option");
+        option.value = year;
+        option.textContent = year;
+        yearDropdown.appendChild(option);
+    });
+
+    // Event-Listener für das Dropdown-Menü
+    yearDropdown.addEventListener("change", function () {
+        fadeToYear(this.value);
+    });
+
     // Erstes Jahr automatisch aktiv setzen
     document.querySelector(`.year-button[data-year='${years[0]}']`).classList.add("active");
 
@@ -118,9 +132,6 @@ async function loadChronik() {
     window.addEventListener("scroll", highlightCurrentYear);
 }
 
-document.addEventListener("DOMContentLoaded", loadChronik);
-
-
 // 🎨 **Sanftes Ausblenden, Sprung, dann Einblenden**
 function fadeToYear(year) {
     const timeline = document.getElementById("timeline");
@@ -142,7 +153,7 @@ function fadeToYear(year) {
 
         // 🟢 Nach dem Sprung das aktive Jahr in der Navigation setzen
         document.querySelectorAll(".year-button").forEach(btn => btn.classList.remove("active"));
-        document.querySelector(`.year-button[data-year='${year}']`).classList.add("active");
+        document.querySelector(`.year-button[data-year='${year}']`)?.classList.add("active");
 
     }, 400); // Warte, bis das Ausblenden vorbei ist
 }
@@ -153,7 +164,6 @@ function highlightCurrentYear() {
     let scrollPosition = window.scrollY + 200; // Puffer, damit das Jahr früh erkannt wird
 
     let currentYear = null;
-
     yearHeadings.forEach(heading => {
         if (heading.offsetTop <= scrollPosition) {
             currentYear = heading.id.replace("year-", "");
@@ -168,3 +178,6 @@ function highlightCurrentYear() {
         }
     }
 }
+
+// 🎯 Chronik laden, wenn Seite geladen wird
+document.addEventListener("DOMContentLoaded", loadChronik);

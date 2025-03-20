@@ -219,10 +219,79 @@
     border-left: 3px solid #007b5f; /* Schlanke Markierung */
 }
 
+.year-dropdown {
+    display: none; /* Standardmäßig ausblenden */
+    width: 100%;
+    max-width: 200px;
+    padding: 8px;
+    font-size: 16px;
+    border: 2px solid #007b5f;
+    border-radius: 5px;
+    background: linear-gradient(to bottom, #76b1d8, #5a96c1); /* Schöner Farbverlauf */
+    cursor: pointer;
+    color: rgb(2, 65, 33);
+    font-weight: bold;
+    appearance: none; /* Versteckt das Standard-Dropdown-Styling */
+    -webkit-appearance: none; /* Safari Fix */
+    -moz-appearance: none; /* Firefox Fix */
+}
+
+/* 🎨 Dropdown-Pfeil durch eigenes Symbol ersetzen */
+.year-dropdown::after {
+    content: "▼"; /* Alternativer Pfeil */
+    font-size: 14px;
+    position: absolute;
+    right: 10px;
+    color: #007b5f;
+}
+
+/* Hover-Effekt */
+.year-dropdown:hover {
+    background: linear-gradient(to bottom, #5a96c1, #76b1d8); /* Umgekehrter Verlauf */
+    border-color: #005f47;
+}
+
+/* Aktives (fokussiertes) Dropdown */
+.year-dropdown:focus {
+    outline: none;
+    border: 2px solid #005f47;
+    box-shadow: 0px 0px 8px rgba(0, 123, 95, 0.4);
+}
+
+/* 📌 Styling für die Scrollbar (nur sichtbar, wenn viele Jahre vorhanden sind) */
+.year-dropdown::-webkit-scrollbar {
+    width: 10px; /* Breite des Scrollbalkens */
+}
+
+/* Track (Hintergrund der Scrollbar) */
+.year-dropdown::-webkit-scrollbar-track {
+    background: #e0e0e0;
+    border-radius: 5px;
+}
+
+/* Griff (der bewegliche Teil) */
+.year-dropdown::-webkit-scrollbar-thumb {
+    background: #007b5f; /* Vereinsgrün */
+    border-radius: 5px;
+    border: 2px solid #5a96c1; /* Umrandung für mehr Tiefe */
+}
+
+/* Hover-Effekt für Scrollbar-Griff */
+.year-dropdown::-webkit-scrollbar-thumb:hover {
+    background: #005f47;
+}
+
+/* Falls du das für Firefox auch möchtest */
+.year-dropdown {
+    scrollbar-color: #007b5f #e0e0e0; /* Farbe für Firefox (Daumen | Track) */
+    scrollbar-width: thin;
+}
+
+
 @media screen and (max-width: 768px) {
     /* 🏑 Chronik-Wrapper: Keine unnötigen Ränder */
     .chronik-wrapper {
-        padding: 0 0;
+        padding: 10px;
     }
 
     /* 📏 Noch schmalere Timeline */
@@ -254,5 +323,15 @@
     }
     ul {
        padding-left: 15px;
+    }
+
+
+    .year-dropdown {
+        display: block;
+        margin: 10px auto;
+    }
+
+    #year-nav-container {
+        display: none; /* Versteckt die Desktop-Jahr-Leiste */
     }
 }

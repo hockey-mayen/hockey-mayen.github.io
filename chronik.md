@@ -4,7 +4,13 @@ title: "Chronik"
 permalink: /chronik/
 ---
 
+
 <h2>Vereinschronik</h2>
+
+<select id="year-dropdown" class="year-dropdown">
+
+[//]: # (<option value="">Jahr auswählen</option>)
+[//]: # (</select>)
 
 <div class="chronik-wrapper">
     <!-- Chronik-Inhalt -->
