@@ -36,7 +36,7 @@ document.addEventListener("DOMContentLoaded", async function () {
                     : ''
                 }
                     ${entry.link
-                    ? `<p><a href="${entry.link}" target="_blank">${entry.linkTitle || "Mehr erfahren"}</a></p>`
+                    ? `<div class="event-link"><a href="${entry.link}" target="_blank">${entry.linkTitle || "Mehr erfahren"}</a></div>`
                     : ''}
                 `;
 
