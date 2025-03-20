@@ -35,6 +35,7 @@ document.addEventListener("DOMContentLoaded", function () {
         "/assets/images/training/training26.jpg",
         "/assets/images/training/training27.jpg",
         "/assets/images/training/training28.jpg",
+        "/assets/images/training/training29.jpg",
 
     ];
 

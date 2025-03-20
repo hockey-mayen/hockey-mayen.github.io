@@ -53,6 +53,7 @@ document.addEventListener("DOMContentLoaded", function () {
         "/assets/images/turniere/turnier40.jpg",
         "/assets/images/turniere/turnier41.jpg",
         "/assets/images/turniere/turnier42.jpg",
+        "/assets/images/turniere/turnier43.jpg",
 
     ];
 
