@@ -16,6 +16,8 @@
 
 /* Einzelne Kachel */
 .tile {
+
+    max-width: 600px;
     background: rgba(255, 255, 255, 0.4);
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
