@@ -21,35 +21,75 @@ document.addEventListener("DOMContentLoaded", async function () {
         allEntries.sort((a, b) => new Date(b.date || b.headline) - new Date(a.date || a.headline));
 
         function loadEntries() {
+            const maxLength = 450;
             let nextEntries = allEntries.slice(displayedEntries, displayedEntries + entriesPerLoad);
+
             nextEntries.forEach(entry => {
                 const entryDiv = document.createElement("div");
                 entryDiv.classList.add("chronik-entry");
 
-                entryDiv.innerHTML = `
-                    <h4>${entry.headline}</h4>
-                    <p>${entry.event}</p>
-                    ${entry.images && entry.images.length > 0
+                let isLongText = entry.event.length > maxLength;
+                let shortText = entry.event;
+                let fullText = entry.event;
+
+                if (isLongText) {
+                    let trimmedText = entry.event.substring(0, maxLength);
+                    let lastSpaceIndex = trimmedText.lastIndexOf(" ");
+                    if (lastSpaceIndex > -1) {
+                        shortText = trimmedText.substring(0, lastSpaceIndex);
+                    }
+                    shortText += " ...";
+                }
+
+                let html = `
+            <h4>${entry.headline}</h4>
+            <p>
+                <span class="short-text">${shortText}</span>
+                <span class="full-text" style="display: none;">${fullText}</span>
+                ${isLongText ? `<a href="#" class="toggle-text">Weiterlesen</a>` : ""}
+            </p>
+            ${entry.images && entry.images.length > 0
                     ? `<div class="chronik-images">
-                              ${entry.images.map(img => `<img src="${img}" alt="Bild zu ${entry.headline}">`).join('')}
-                          </div>`
+                        ${entry.images.map(img => `<img src="${img}" alt="Bild zu ${entry.headline}">`).join('')}
+                   </div>`
                     : ''
                 }
-                    ${entry.link
+            ${entry.link
                     ? `<div class="event-link"><a href="${entry.link}" target="_blank">${entry.linkTitle || "Mehr erfahren"}</a></div>`
                     : ''}
-                `;
+        `;
 
+                entryDiv.innerHTML = html;
                 chronikList.appendChild(entryDiv);
             });
 
             displayedEntries += entriesPerLoad;
 
-            // Button ausblenden, wenn keine weiteren Einträge vorhanden sind
+            // 🔁 Event-Handler für neue "Weiterlesen"-Links setzen
+            document.querySelectorAll(".toggle-text").forEach(link => {
+                link.addEventListener("click", function (e) {
+                    e.preventDefault();
+                    const parent = this.parentElement;
+                    const shortText = parent.querySelector(".short-text");
+                    const fullText = parent.querySelector(".full-text");
+
+                    if (shortText.style.display === "none") {
+                        shortText.style.display = "inline";
+                        fullText.style.display = "none";
+                        this.textContent = "Weiterlesen";
+                    } else {
+                        shortText.style.display = "none";
+                        fullText.style.display = "inline";
+                        this.textContent = "Weniger anzeigen";
+                    }
+                });
+            });
+
             if (displayedEntries >= allEntries.length) {
                 loadMoreButton.style.display = "none";
             }
         }
+
 
         // Erste 5 Einträge laden (neuste zuerst)
         loadEntries();
