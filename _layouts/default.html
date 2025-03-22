@@ -36,6 +36,30 @@
     <!-- JavaScript laden -->
     <script src="/assets/js/scrollTop.js"></script>
 
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const logo = document.querySelector(".logo");
+            const colorPicker = document.getElementById("bgColorPicker");
+
+            // Doppelklick auf das Logo → Colorpicker anzeigen
+            logo.addEventListener("dblclick", () => {
+                colorPicker.click();
+            });
+
+            // Wenn eine Farbe ausgewählt wird → Hintergrundbild ausblenden & Farbe setzen
+            colorPicker.addEventListener("input", (event) => {
+                const color = event.target.value;
+
+                // Hintergrundbild entfernen (html::before → über body mit Hintergrund ersetzen)
+                document.documentElement.style.setProperty("--custom-bg", color);
+
+                // Entfernt das Pseudo-Element per Klasse
+                document.documentElement.classList.add("custom-background");
+            });
+        });
+    </script>
+
+
     {% include header.html %}
     <main>
         {{ content }}

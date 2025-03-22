@@ -153,3 +153,27 @@ iframe {
 .download-link:hover {
     text-decoration: underline;
 }
+
+/* Standardmäßig: Hintergrundbild */
+html::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-image: url("/assets/images/hintergrund-desktop.webp");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: -1;
+}
+
+/* Wenn benutzerdefinierte Hintergrundfarbe aktiv ist */
+html.custom-background::before {
+    display: none;
+}
+
+html.custom-background {
+    background-color: var(--custom-bg, #ffffff);
+}
