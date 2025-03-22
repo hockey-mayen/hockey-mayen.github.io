@@ -39,7 +39,7 @@ html::before {
     left: 0;
     width: 100vw;
     height: 100vh;
-    background-image: url("/assets/images/hintergrund-desktop.webp");
+    /*background-image: url("/assets/images/hintergrund-desktop.webp");*/
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -165,12 +165,20 @@ html::before {
     left: 0;
     width: 100vw;
     height: 100vh;
-    background-image: url("/assets/images/hintergrund-desktop.webp");
+    /*background-image: url("/assets/images/hintergrund-desktop.webp");*/
+
+    /*background-color: rgba(160, 155, 155, 0.42);*/
+
+    /*background-color: rgba(0, 123, 95, 0.15);*/
+    /*background-color: rgba(240, 235, 225, 0.6);*/
+
+    background-color: rgba(200, 220, 210, 0.5);
+
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     z-index: -1;
-    opacity: 0.75;
+    /*opacity: 0.75;*/
 }
 
 /* Wenn benutzerdefinierte Hintergrundfarbe aktiv ist */

@@ -12,3 +12,9 @@ convert "U8-heimturnier-14.1.2024.png" -quality 80 "U8-heimturnier-14.1.2024.web
 💡 Noch besser: srcset nutzen?
 Wenn du willst, kann ich dir auch zeigen, wie man srcset einsetzt, 
 um je nach Bildschirmgröße und Pixeldichte automatisch das passende Bild zu laden (für noch bessere Ladezeiten + Qualität).
+
+
+text-align: left;
+
+#BABBCA
+#BBC9BE
