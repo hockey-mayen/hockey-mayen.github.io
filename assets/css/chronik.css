@@ -49,6 +49,7 @@
     position: relative;
 }
 .event-item-headline {
+    font-size: 20px;
     color: #007b5f;
     text-align: left;
     font-weight: bold;
@@ -73,7 +74,7 @@
 /* Ereignis-Text */
 .event-text {
     font-size: 18px;
-    color: #6c757d; /* Schönes Grau für Texte */
+    color: #555c5f; /* Schönes Grau für Texte */
     text-align: left;
 }
 .event-image {
@@ -130,7 +131,7 @@
     text-decoration: none;
     margin-left: 5px;
     cursor: pointer;
-    font-size: 14px;
+    font-size: 16px;
 }
 
 .toggle-text:hover {

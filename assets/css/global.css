@@ -5,7 +5,7 @@ body {
     line-height: 1.6;
     min-height: 100vh; /* Stellt sicher, dass der Body mindestens die Höhe des Bildschirms hat */
     font-family: "Oswald", Arial, sans-serif;/* als Standardschrift *!*/
-    color: #595f69; /* Schönes Grau für Texte */
+    color: #555c5f; /* Schönes Grau für Texte */
     position: relative; /* Basis für das Pseudo-Element */
     overflow-x: hidden; /* Verhindert horizontales Scrollen */
 }
@@ -65,7 +65,7 @@ h2, h3, .tile h3 {
 
 /* Inhalte und Beschreibungen */
 p, .tile p {
-    color: #595f69; /* Schönes Grau für Texte */
+    color: #555c5f; /* Schönes Grau für Texte */
     /*font-family: "Open Sans", Arial, sans-serif;*/
     font-family: "Oswald", Arial, sans-serif;
     font-weight: 500; /* Macht die Schrift dicker */

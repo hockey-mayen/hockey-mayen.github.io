@@ -23,7 +23,7 @@
     border-radius: 10px;
     padding: 10px;
 
-    color: #6c757d; /* Grauer Farbton wie bei anderen Texten */
+    color: #555c5f; /* Grauer Farbton wie bei anderen Texten */
     display: flex;
     flex-direction: column; /* Inhalte vertikal anordnen */
     justify-content: space-between; /* Platz zwischen den Elementen */
