@@ -154,7 +154,10 @@ iframe {
     text-decoration: underline;
 }
 
-/* Standardmäßig: Hintergrundbild */
+/*
+test colorpicker special! begin
+*/
+/*Standardmäßig: Hintergrundbild */
 html::before {
     content: "";
     position: fixed;
@@ -167,6 +170,7 @@ html::before {
     background-position: center;
     background-repeat: no-repeat;
     z-index: -1;
+    opacity: 0.75;
 }
 
 /* Wenn benutzerdefinierte Hintergrundfarbe aktiv ist */
@@ -177,3 +181,6 @@ html.custom-background::before {
 html.custom-background {
     background-color: var(--custom-bg, #ffffff);
 }
+/*
+test colorpicker special! end
+*/
