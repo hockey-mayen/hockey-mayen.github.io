@@ -5,7 +5,6 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr); /* 2 Spalten */
     gap: 15px; /* Abstand zwischen den Kacheln */
-    /*margin-top: 20px;*/
     width: 90%; /* Nutze 90% der Breite des Containers */
     margin-left: auto; /* Zentriert den Container horizontal */
     margin-right: auto;
@@ -19,7 +18,10 @@
 
     max-width: 600px;
     background: rgba(255, 255, 255, 0.4);
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    /* Neuer Box-Shadow */
+    box-shadow:
+            0 4px 6px rgba(0, 0, 0, 0.1),
+            0 8px 20px rgba(0, 0, 0, 0.15);
     border-radius: 10px;
     padding: 10px;
 
