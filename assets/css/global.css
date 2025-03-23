@@ -1,4 +1,4 @@
-/* global.scc: Allgemeine Stile */
+/*@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap'); !* global.scc: Allgemeine Stile *!*/
 body {
     margin: 0;
     padding: 0;
@@ -10,13 +10,7 @@ body {
     overflow-x: hidden; /* Verhindert horizontales Scrollen */
 }
 
-/* Für Smartphones & Tablets */
-@media screen and (max-width: 1024px) {
-    main::before {
-        background-size: cover;
-        transform: translate3d(0, 0, 0);
-    }
-}
+
 /* Verhindert das Springen durch den Scrollbalken */
 html {
     overflow-y: scroll; /* Scrollbalken immer anzeigen */
@@ -39,7 +33,20 @@ html::before {
     left: 0;
     width: 100vw;
     height: 100vh;
+
     /*background-image: url("/assets/images/hintergrund-desktop.webp");*/
+    /*opacity: 0.55;*/
+
+    /*background-color: rgba(160, 155, 155, 0.42);*/
+
+    /*background-color: rgba(0, 123, 95, 0.15);*/
+    /*background-color: rgba(240, 235, 225, 0.6);*/
+
+    /* !!! */
+    background-color: rgba(200, 220, 210, 0.5);
+
+
+
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -60,8 +67,6 @@ h2, h3, .tile h3 {
     margin-bottom: 10px; /* Abstand nach unten */
     text-align: center; /* Optional: Zentriert die Titel */
 }
-
-@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap');
 
 /* Inhalte und Beschreibungen */
 p, .tile p {
@@ -154,41 +159,32 @@ iframe {
     text-decoration: underline;
 }
 
-/*
-test colorpicker special! begin
-*/
-/*Standardmäßig: Hintergrundbild */
-html::before {
-    content: "";
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    /*background-image: url("/assets/images/hintergrund-desktop.webp");*/
+/* Für Smartphones & Tablets */
+@media screen and (max-width: 1024px) {
+    main::before {
+        background-size: cover;
+        transform: translate3d(0, 0, 0);
+    }
 
-    /*background-color: rgba(160, 155, 155, 0.42);*/
-
-    /*background-color: rgba(0, 123, 95, 0.15);*/
-    /*background-color: rgba(240, 235, 225, 0.6);*/
-
-    background-color: rgba(200, 220, 210, 0.5);
-
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    z-index: -1;
-    /*opacity: 0.75;*/
 }
 
-/* Wenn benutzerdefinierte Hintergrundfarbe aktiv ist */
-html.custom-background::before {
-    display: none;
-}
+/* Für Smartphones & Tablets */
+@media screen and (max-width: 800px) {
+    main::before {
+        background-size: cover;
+        transform: translate3d(0, 0, 0);
+    }
 
-html.custom-background {
-    background-color: var(--custom-bg, #ffffff);
+    html::before {
+        background-image: none;
+        /*opacity: 0.60;*/
+
+        /*background-color: rgba(160, 155, 155, 0.42);*/
+
+        /*background-color: rgba(0, 123, 95, 0.15);*/
+        /*background-color: rgba(240, 235, 225, 0.6);*/
+
+        /* !!! */
+        background-color: rgba(200, 220, 210, 0.5);
+    }
 }
-/*
-test colorpicker special! end
-*/

@@ -287,7 +287,24 @@
     scrollbar-width: thin;  /* Unterstützt Firefox */
     scrollbar-color: #007b5f #088442;
 }
+@media screen and (max-width: 1100px) {
+    .year-dropdown {
+        display: block;
+        margin: 10px auto;
+        overflow-y: auto; /* Falls es nicht automatisch aktiviert ist */
+        -webkit-overflow-scrolling: touch; /* Flüssigeres Scrollen auf Android/iOS */
+    }
 
+    #year-nav-container {
+        display: none; /* Versteckt die Desktop-Jahr-Leiste */
+    }
+
+
+    /* Spezielles Android-Scrollbar-Styling */
+    .year-dropdown::-webkit-scrollbar {
+        display: none; /* Versteckt den Scrollbalken, aber behält das Scrollen */
+    }
+}
 
 @media screen and (max-width: 768px) {
     /* 🏑 Chronik-Wrapper: Keine unnötigen Ränder */
@@ -327,22 +344,5 @@
     }
 
 
-    .year-dropdown {
-        display: block;
-        margin: 10px auto;
-    }
 
-    #year-nav-container {
-        display: none; /* Versteckt die Desktop-Jahr-Leiste */
-    }
-
-    .year-dropdown {
-        overflow-y: auto; /* Falls es nicht automatisch aktiviert ist */
-        -webkit-overflow-scrolling: touch; /* Flüssigeres Scrollen auf Android/iOS */
-    }
-
-    /* Spezielles Android-Scrollbar-Styling */
-    .year-dropdown::-webkit-scrollbar {
-        display: none; /* Versteckt den Scrollbalken, aber behält das Scrollen */
-    }
 }
