@@ -105,7 +105,7 @@ document.addEventListener("DOMContentLoaded", function () {
         changeImage(); // **Bild wechseln**
     }
 
-    setInterval(cycleImages, 10000); // 3s Bildwechsel + 10s Fortschrittsbalken = **13s pro Durchlauf**
+    setInterval(cycleImages, 13000); // 3s Bildwechsel + 10s Fortschrittsbalken = **13s pro Durchlauf**
 
     // **Starte direkt mit der Progress-Bar nach dem ersten Bild**
     startProgressBar();
