@@ -198,3 +198,57 @@
         gap: 5px; /* Abstand zwischen den Punkten */
     }
 }
+
+/* Animationen für Flyer-Wechsel */
+@keyframes slide-in-right {
+    0% {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slide-in-left {
+    0% {
+        opacity: 0;
+        transform: translateX(-5px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slide-in-right {
+    0% {
+        opacity: 0;
+        transform: translateX(10px); /* statt 100% → z. B. 30px */
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Allgemeine Animation */
+.event-image.animate-slide-in {
+    animation-duration: 0.5s;
+    animation-timing-function: ease-out;
+}
+
+/* Richtungsspezifische Klassen */
+.slide-from-right {
+    animation-name: slide-in-right;
+}
+
+.slide-from-left {
+    animation-name: slide-in-left;
+}
+
+/* Verstecken vor Animation */
+.event-image.hidden {
+    opacity: 0;
+}
