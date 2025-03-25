@@ -14,7 +14,4 @@ Wenn du willst, kann ich dir auch zeigen, wie man srcset einsetzt,
 um je nach Bildschirmgröße und Pixeldichte automatisch das passende Bild zu laden (für noch bessere Ladezeiten + Qualität).
 
 
-text-align: left;
-
-#BABBCA
-#BBC9BE
+./build-css.sh

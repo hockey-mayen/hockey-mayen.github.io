@@ -48,5 +48,4 @@ permalink: /verein/
 
 </div>
 
-<script src="/assets/js/trainingImageRotator.js"></script>
-<script src="/assets/js/turniereImageRotator.js"></script>
+

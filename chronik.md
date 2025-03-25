@@ -27,5 +27,4 @@ permalink: /chronik/
     </div>
 </div>
 
-<!-- Externe JavaScript-Datei -->
-<script src="/assets/js/chronik.js" defer></script>
+
