@@ -11,8 +11,14 @@
     <link rel="icon" type="image/png" href="/assets/images/Logo_transparenter_Hintergrund_300dpi-300x300.png">
     <link rel="icon" type="image/x-icon" href="/assets/images/Logo_transparenter_Hintergrund_300dpi-300x300.ico">
     <link rel="apple-touch-icon" href="/assets/images/Logo_transparenter_Hintergrund_300dpi-300x300.png">
-    <!-- scc -->
+
+    <!-- css -->
+    {% if jekyll.environment == "production" %}
+    <link rel="stylesheet" href="/assets/css/min/global.min.css">
+    {% else %}
     <link rel="stylesheet" href="/assets/css/global.css">
+    {% endif %}
+
     <link rel="stylesheet" href="/assets/css/header.css">
     <link rel="stylesheet" href="/assets/css/aktuell.css">
     <link rel="stylesheet" href="/assets/css/footer.css">
