@@ -235,7 +235,7 @@
 
 /* Allgemeine Animation */
 .event-image.animate-slide-in {
-    animation-duration: 0.5s;
+    animation-duration: 0.8s;
     animation-timing-function: ease-out;
 }
 
