@@ -10,10 +10,6 @@ body {
     overflow-x: hidden; /* Verhindert horizontales Scrollen */
 }
 
-[data-aos="fade-up"] {
-    transform: translate3d(0, 0px, 0); /* Kürzere Strecke 100px is default */
-}
-
 /* Verhindert das Springen durch den Scrollbalken */
 html {
     overflow-y: scroll; /* Scrollbalken immer anzeigen */
