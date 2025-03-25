@@ -1,0 +1,79 @@
+---
+layout: default
+title: "Kontakt"
+permalink: /sportstaetten/
+---
+
+<h2>Sportstätten</h2>
+
+<div class="tiles-container">
+    {% for tile in site.data.sportstaetten.tiles %}
+    <div class="tile">
+        <h3>{{ tile.title }}</h3>
+
+        <img src="{{ tile.image_link }}" alt="{{ tile.title }}" class="sportstaetten-image">
+
+        <p>{{ tile.description }}</p>
+
+        <div class="gps-container">
+            GPS: <code class="gps-text">{{ tile.gps }}</code>
+            <button class="copy-gps-btn">Kopieren</button>
+        </div>
+
+        <br>
+
+        <a href="{{ tile.map_link }}" target="_blank">
+            <img src="../assets/images/navigation.png" alt="Navigation" style="width: 100px; height: auto;"><br>
+            Google Maps Navigation
+        </a>
+    </div>
+    {% endfor %}
+</div>
+
+<small>
+    In der warmen Jahreszeit spielen wir Hockey auf dem Kunstrasenplatz im Stadion Nettetal.
+    In der kalten Jahreszeit wechseln wir in die Sporthalle der Albert-Schweitzer-Realschule, wo wir die Hallensaison bestreiten.
+</small>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const buttons = document.querySelectorAll(".copy-gps-btn");
+
+        buttons.forEach(button => {
+            button.addEventListener("click", () => {
+                const gpsText = button.parentElement.querySelector(".gps-text").textContent;
+
+                // ✅ Versuche zuerst moderne API
+                if (navigator.clipboard && navigator.clipboard.writeText) {
+                    navigator.clipboard.writeText(gpsText).then(() => {
+                        button.textContent = "✔ Kopiert!";
+                        setTimeout(() => button.textContent = "Kopieren", 2000);
+                    }).catch(err => {
+                        fallbackCopy(gpsText, button);
+                    });
+                } else {
+                    fallbackCopy(gpsText, button);
+                }
+            });
+        });
+
+        function fallbackCopy(text, button) {
+            const tempInput = document.createElement("input");
+            tempInput.style.position = "absolute";
+            tempInput.style.left = "-9999px";
+            tempInput.value = text;
+            document.body.appendChild(tempInput);
+            tempInput.select();
+            try {
+                document.execCommand("copy");
+                button.textContent = "✔ Kopiert!";
+            } catch (err) {
+                console.error("Fallback fehlgeschlagen:", err);
+                button.textContent = "Fehler";
+            }
+            setTimeout(() => button.textContent = "Kopieren", 2000);
+            document.body.removeChild(tempInput);
+        }
+    });
+</script>
+
