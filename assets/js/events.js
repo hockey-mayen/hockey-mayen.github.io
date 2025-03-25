@@ -8,26 +8,29 @@ document.addEventListener("DOMContentLoaded", async function () {
     const navContainer = document.createElement("div");
     navContainer.classList.add("event-nav-container");
 
+    // Download-Button mit Flyout-Text erstellen
     const downloadContainer = document.createElement("div");
-    downloadContainer.classList.add("event-download-container");
+    downloadContainer.classList.add("event-download-container"); // Container für Tooltip
 
     const downloadButton = document.createElement("img");
     downloadButton.classList.add("event-download");
     downloadButton.src = "/assets/images/download-button.png";
     downloadButton.alt = "Download";
 
+    // Link-Button zum tatsächlichen Download
     const downloadLink = document.createElement("a");
     downloadLink.setAttribute("download", "");
     downloadLink.appendChild(downloadButton);
-    downloadContainer.appendChild(downloadLink);
+
+    downloadContainer.appendChild(downloadLink); // Button in Container setzen
 
     const leftButton = document.createElement("button");
     leftButton.classList.add("event-nav", "left");
-    leftButton.innerHTML = "&lt;";
+    leftButton.innerHTML = "&lt;"; // "<"
 
     const rightButton = document.createElement("button");
     rightButton.classList.add("event-nav", "right");
-    rightButton.innerHTML = "&gt;";
+    rightButton.innerHTML = "&gt;"; // ">"
 
     const imageElement = document.createElement("img");
     imageElement.classList.add("event-image");
@@ -42,79 +45,64 @@ document.addEventListener("DOMContentLoaded", async function () {
         const response = await fetch("/assets/data/events.json");
         events = await response.json();
 
-        if (events.length === 0) throw new Error("Keine Events gefunden.");
-
-        // Bild aktualisieren mit Richtung
-        function updateImage(direction = "right") {
-            const currentImagePath = events[currentIndex].image;
-
-            // Animation zurücksetzen
-            imageElement.classList.remove("animate-slide-in", "slide-from-left", "slide-from-right");
-            imageElement.classList.add("hidden");
-
-            // Lade-Handler vorbereiten
-            const tempImg = new Image();
-            tempImg.src = currentImagePath;
-            tempImg.onload = () => {
-                // Erst wenn das Bild vollständig geladen ist, ersetzen wir es
-                imageElement.src = tempImg.src;
-                imageElement.alt = events[currentIndex].title;
-
-                const cleanFileName = currentImagePath.replace("-web", "");
-                const downloadPath = cleanFileName.replace("/web/", "/").replace(".webp", ".png");
-                downloadLink.href = downloadPath;
-
-                // Animation starten
-                imageElement.classList.remove("hidden");
-                imageElement.classList.add("animate-slide-in");
-                imageElement.classList.add(direction === "left" ? "slide-from-left" : "slide-from-right");
-
-                // Dots aktualisieren
-                document.querySelectorAll(".dot").forEach((dot, index) => {
-                    dot.classList.toggle("active", index === currentIndex);
-                });
-            };
+        if (events.length === 0) {
+            throw new Error("Keine Events gefunden.");
         }
 
+        function updateImage() {
+            const currentImagePath = events[currentIndex].image;
+            imageElement.src = currentImagePath;
+            imageElement.alt = events[currentIndex].title;
+
+            // Download-Pfad korrigieren
+            const cleanFileName = currentImagePath.replace("-web", ""); // Entfernt "-web"
+            const downloadPath = cleanFileName.replace("/web/", "/").replace(".webp", ".png"); // Eine Ebene höher & ersetzt .png mit .jpg
+            downloadLink.href = downloadPath;
+
+            // Markiere den aktiven Punkt
+            document.querySelectorAll(".dot").forEach((dot, index) => {
+                dot.classList.toggle("active", index === currentIndex);
+            });
+        }
 
         events.forEach((_, index) => {
             const dot = document.createElement("span");
             dot.classList.add("dot");
             if (index === 0) dot.classList.add("active");
             dot.addEventListener("click", () => {
-                const direction = index > currentIndex ? "right" : "left";
                 currentIndex = index;
-                updateImage(direction);
+                updateImage();
             });
             dotsContainer.appendChild(dot);
         });
 
         leftButton.addEventListener("click", function () {
-            const oldIndex = currentIndex;
             currentIndex = (currentIndex - 1 + events.length) % events.length;
-            updateImage("left");
+            updateImage();
         });
 
         rightButton.addEventListener("click", function () {
-            const oldIndex = currentIndex;
             currentIndex = (currentIndex + 1) % events.length;
-            updateImage("right");
+            updateImage();
         });
 
-        updateImage(); // Initial anzeigen
+        updateImage();
 
     } catch (error) {
         console.error("Fehler beim Laden der Events:", error);
     }
 
+    // Buttons und Dots direkt nebeneinander setzen
     const navGroup = document.createElement("div");
-    navGroup.classList.add("event-nav-group");
-    navGroup.appendChild(downloadContainer);
+    navGroup.classList.add("event-nav-group"); // Neue Gruppe für zentrierte Buttons
+
+    navGroup.appendChild(downloadContainer); // Download-Button zuerst
     navGroup.appendChild(leftButton);
     navGroup.appendChild(dotsContainer);
     navGroup.appendChild(rightButton);
 
-    navContainer.appendChild(navGroup);
+    navContainer.appendChild(navGroup); // Die gesamte Gruppe ins navContainer einfügen
+
     tileAktuell.appendChild(navContainer);
     tileAktuell.appendChild(container);
     container.appendChild(imageElement);
