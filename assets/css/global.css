@@ -11,7 +11,7 @@ body {
 }
 
 [data-aos="fade-up"] {
-    transform: translate3d(0, 10px, 0); /* Kürzere Strecke 100px is default */
+    transform: translate3d(0, 0px, 0); /* Kürzere Strecke 100px is default */
 }
 
 /* Verhindert das Springen durch den Scrollbalken */
