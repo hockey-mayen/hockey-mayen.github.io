@@ -8,6 +8,9 @@ body {
     color: #555c5f; /* Schönes Grau für Texte */
     position: relative; /* Basis für das Pseudo-Element */
     overflow-x: hidden; /* Verhindert horizontales Scrollen */
+
+    background-color: rgba(200, 220, 210, 0.5);
+
 }
 
 /* Verhindert das Springen durch den Scrollbalken */
@@ -42,7 +45,7 @@ html::before {
     /*background-color: rgba(240, 235, 225, 0.6);*/
 
     /* !!! */
-    background-color: rgba(200, 220, 210, 0.5);
+    /*background-color: rgba(200, 220, 210, 0.5);*/
 
 
 
@@ -158,6 +161,31 @@ iframe {
     text-decoration: underline;
 }
 
+
+.gps-container {
+    display: flex;
+    flex-direction: column; /* 👈 sorgt dafür, dass der Button unter dem Text erscheint */
+    align-items: center;     /* optional: zentriert beides */
+    margin-top: 10px;        /* etwas Abstand nach oben */
+    gap: 5px;                /* kleiner Abstand zwischen Zeilen */
+}
+
+.copy-gps-btn {
+    padding: 5px 10px;
+    font-size: 14px;
+    border: none;
+    background-color: #007b5f;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.copy-gps-btn:hover {
+    background-color: #005f44;
+}
+
+
 /* Für Smartphones & Tablets */
 @media screen and (max-width: 1024px) {
     main::before {
@@ -188,26 +216,3 @@ iframe {
     }
 }
 
-
-.gps-container {
-    display: flex;
-    flex-direction: column; /* 👈 sorgt dafür, dass der Button unter dem Text erscheint */
-    align-items: center;     /* optional: zentriert beides */
-    margin-top: 10px;        /* etwas Abstand nach oben */
-    gap: 5px;                /* kleiner Abstand zwischen Zeilen */
-}
-
-.copy-gps-btn {
-    padding: 5px 10px;
-    font-size: 14px;
-    border: none;
-    background-color: #007b5f;
-    color: white;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.copy-gps-btn:hover {
-    background-color: #005f44;
-}
