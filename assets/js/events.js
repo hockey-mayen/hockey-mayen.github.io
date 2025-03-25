@@ -48,27 +48,34 @@ document.addEventListener("DOMContentLoaded", async function () {
         function updateImage(direction = "right") {
             const currentImagePath = events[currentIndex].image;
 
-            // Reset Animation
+            // Animation zurücksetzen
             imageElement.classList.remove("animate-slide-in", "slide-from-left", "slide-from-right");
             imageElement.classList.add("hidden");
 
-            setTimeout(() => {
-                imageElement.src = currentImagePath;
+            // Lade-Handler vorbereiten
+            const tempImg = new Image();
+            tempImg.src = currentImagePath;
+            tempImg.onload = () => {
+                // Erst wenn das Bild vollständig geladen ist, ersetzen wir es
+                imageElement.src = tempImg.src;
                 imageElement.alt = events[currentIndex].title;
 
                 const cleanFileName = currentImagePath.replace("-web", "");
                 const downloadPath = cleanFileName.replace("/web/", "/").replace(".webp", ".png");
                 downloadLink.href = downloadPath;
 
+                // Animation starten
                 imageElement.classList.remove("hidden");
                 imageElement.classList.add("animate-slide-in");
-                imageElement.classList.add(direction === "left" ? "slide-from-left" : "slide-from-left");
+                imageElement.classList.add(direction === "left" ? "slide-from-left" : "slide-from-right");
 
+                // Dots aktualisieren
                 document.querySelectorAll(".dot").forEach((dot, index) => {
                     dot.classList.toggle("active", index === currentIndex);
                 });
-            }, 50);
+            };
         }
+
 
         events.forEach((_, index) => {
             const dot = document.createElement("span");

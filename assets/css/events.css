@@ -225,7 +225,7 @@
 @keyframes slide-in-right {
     0% {
         opacity: 0;
-        transform: translateX(10px); /* statt 100% → z. B. 30px */
+        transform: translateX(20px); /* statt 100% → z. B. 30px */
     }
     100% {
         opacity: 1;
