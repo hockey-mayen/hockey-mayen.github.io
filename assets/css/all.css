@@ -189,6 +189,29 @@ iframe {
     }
 }
 
+
+.gps-container {
+    display: flex;
+    flex-direction: column; /* 👈 sorgt dafür, dass der Button unter dem Text erscheint */
+    align-items: center;     /* optional: zentriert beides */
+    margin-top: 10px;        /* etwas Abstand nach oben */
+    gap: 5px;                /* kleiner Abstand zwischen Zeilen */
+}
+
+.copy-gps-btn {
+    padding: 5px 10px;
+    font-size: 14px;
+    border: none;
+    background-color: #007b5f;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.copy-gps-btn:hover {
+    background-color: #005f44;
+}
 /* header.css */
 /* header.css: Header */
 
