@@ -191,25 +191,23 @@ iframe {
 
 .gps-container {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    margin-top: 8px;
-    font-size: 14px;
-    font-family: monospace;
+    flex-direction: column; /* 👈 sorgt dafür, dass der Button unter dem Text erscheint */
+    align-items: center;     /* optional: zentriert beides */
+    margin-top: 10px;        /* etwas Abstand nach oben */
+    gap: 5px;                /* kleiner Abstand zwischen Zeilen */
 }
 
 .copy-gps-btn {
-    padding: 4px 10px;
-    font-size: 12px;
+    padding: 5px 10px;
+    font-size: 14px;
+    border: none;
     background-color: #007b5f;
     color: white;
-    border: none;
-    border-radius: 4px;
+    border-radius: 5px;
     cursor: pointer;
-    transition: background 0.3s;
+    transition: background-color 0.3s ease;
 }
 
 .copy-gps-btn:hover {
-    background-color: #014022;
+    background-color: #005f44;
 }
