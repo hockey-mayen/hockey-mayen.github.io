@@ -15,3 +15,4 @@ um je nach Bildschirmgröße und Pixeldichte automatisch das passende Bild zu la
 
 
 ./build-css.sh
+./build-js.sh
