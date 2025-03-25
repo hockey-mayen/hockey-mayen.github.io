@@ -430,8 +430,6 @@ nav ul li a.active {
 }
 /* aktuell.css */
 /*aktuell.css*/
-@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&display=swap');
-
 .aktuell-container {
     display: flex;
     justify-content: space-around;
@@ -1312,8 +1310,6 @@ footer a.active {
 
 /* highlights.css */
 /*highlights.css*/
-@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&display=swap');
-
 /* Scrollbarer Bereich für vergangene Highlights */
 .highlight-container {
     overflow-y: auto;
