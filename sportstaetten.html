@@ -14,9 +14,10 @@ permalink: /sportstaetten/
         <img src="{{ tile.image_link }}" alt="{{ tile.title }}" class="sportstaetten-image">
 
         <p>{{ tile.description }}</p>
+        {{ tile.details }}
 
         <div class="gps-container">
-            <div>GPS: <code class="gps-text">{{ tile.gps }}</code></div>
+            <div>Parken GPS: <code class="gps-text">{{ tile.gps }}</code></div>
             <button class="copy-gps-btn">Kopieren</button>
         </div>
 
