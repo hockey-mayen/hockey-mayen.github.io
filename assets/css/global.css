@@ -13,6 +13,10 @@ body {
 
 }
 
+[data-aos="fade-up"] {
+    transform: translate3d(0, 15px, 0); /* Kürzere Strecke 100px is default */
+}
+
 /* Verhindert das Springen durch den Scrollbalken */
 html {
     overflow-y: scroll; /* Scrollbalken immer anzeigen */
