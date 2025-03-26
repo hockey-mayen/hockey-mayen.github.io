@@ -6,7 +6,8 @@
       "details": "Großer Parkplatz zwischen dem Sportfeld und dem Viadukt.",
       "map_link": "https://www.google.com/maps/place/50%C2%B020'07.7%22N+7%C2%B012'53.4%22E/@50.3352086,7.2147672,177m/data=!3m1!1e3!4m4!3m3!8m2!3d50.3354722!4d7.2148333?hl=de&entry=ttu&g_ep=EgoyMDI1MDMxOC4wIKXMDSoASAFQAw%3D%3D",
       "image_link": "../assets/images/sportstaetten/feld.webp",
-      "gps": "50°20'07.7\"N 7°12'53.4\"E"
+      "gps": "50°20'07.7\"N 7°12'53.4\"E",
+      "delay": "10"
     },
     {
       "title": "Sporthalle Albert-Schweitzer-Realschule",
@@ -14,7 +15,8 @@
       "details": "Beim Training ist der Eingang oben - Treppe hoch und dann rechts.",
       "map_link": "https://www.google.com/maps/place/50%C2%B019'19.6%22N+7%C2%B013'11.0%22E/@50.3221128,7.2184347,419m/data=!3m2!1e3!4b1!4m4!3m3!8m2!3d50.3221111!4d7.2197222?entry=ttu&g_ep=EgoyMDI1MDMyMy4wIKXMDSoASAFQAw%3D%3D",
       "image_link": "../assets/images/sportstaetten/halle.webp",
-      "gps": "50°19'19.6\"N 7°13'11.0\"E"
+      "gps": "50°19'19.6\"N 7°13'11.0\"E",
+      "delay": "10"
     }
   ]
 }
