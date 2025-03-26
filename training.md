@@ -17,10 +17,8 @@ Dein Kind möchte den Hockeysport ausprobieren? Du selbst willst den Schläger s
 Jung oder alt, Anfänger oder Fortgeschrittene – bei uns findet jeder das passende Training!  
 <br>
 Komm einfach vorbei zu unseren Schnupper-Einheiten.
-
-<div class="aligned-content" data-aos="fade-up" data-aos-delay="200">
-<img src="../assets/images/training/trixie_with_a_hockey_stick.png" style="width: 80px; height: auto;"  />
-<img src="../assets/images/training/Blueys-mum-with-hockey-stick-194x300.png" style="width: 70px; height: auto;" />
+<div class="aligned-content" data-aos="fade-up" data-aos-delay="200" >
+<img src="../assets/images/training/schnuppern.png" style="width: 120px; height: auto; transform: translateY(10px);" />
 </div>
 
 
