@@ -11,7 +11,13 @@
       },
 
       "details": [
-        { "date": "10.05.2025", "location": "Mayen Kunstrasenplatz Nettetal" }
+        { "date": "10.05.2025", "location": "Mayen Kunstrasenplatz Nettetal" },
+        { "date": "24.05.2025", "location": "&lt;Ort wird noch bekanntgegeben&gt;" },
+        { "date": "14.06.2025", "location": "PST Trier, Moselstadion" },
+        { "date": "23.08.2025", "location": "&lt;Ort wird noch bekanntgegeben&gt;" },
+        { "date": "30.08.2025", "location": "&lt;Ort wird noch bekanntgegeben&gt;" },
+        { "date": "13.09.2025", "location": "&lt;Ort wird noch bekanntgegeben&gt;"},
+        { "date": "27.09.2025", "location": "&lt;Ort wird noch bekanntgegeben&gt;"}
       ]
     },
     {
@@ -22,7 +28,13 @@
         "image": "assets/images/turniere/turnier-U10-maedels.png"
       },
       "details": [
-        { "date": "10.05.2025", "location": "Mayen Kunstrasenplatz Nettetal" }
+        { "date": "10.05.2025", "location": "Mayen Kunstrasenplatz Nettetal" },
+        { "date": "24.05.2025", "location": "&lt;Ort wird noch bekanntgegeben&gt;"},
+        { "date": "14.06.2025", "location": "&lt;Ort wird noch bekanntgegeben&gt;"},
+        { "date": "23.08.2025", "location": "SC Idar-Oberstein"},
+        { "date": "30.08.2025", "location": "&lt;Ort wird noch bekanntgegeben&gt;"},
+        { "date": "13.09.2025", "location": "&lt;Ort wird noch bekanntgegeben&gt;"},
+        { "date": "27.09.2025", "location": "&lt;Ort wird noch bekanntgegeben&gt;"}
       ]
     },
     {

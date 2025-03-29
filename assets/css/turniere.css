@@ -1,0 +1,32 @@
+.detail-row {
+    display: flex;
+    justify-content: space-between;
+    width: 75%;
+    margin-bottom: 4px;
+    font-size: 0.95em;
+    gap: 10px;
+}
+
+.detail-row:nth-child(even) {
+    background-color: #b8dac5;
+    padding: 2px 4px;
+    border-radius: 4px;
+}
+
+.detail-row .date,
+.detail-row .location {
+    display: inline-block;
+    width: 48%;
+}
+
+.detail-row .date {
+    width: 40%;
+    text-align: left;
+    font-weight: 500;
+}
+
+.detail-row .location {
+    width: 60%;
+    text-align: right;
+    font-style: italic;
+}

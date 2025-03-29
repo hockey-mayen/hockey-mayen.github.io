@@ -4,9 +4,11 @@ title: "Turniere"
 ---
 
 <h2>Turniertermine</h2>
+<div class ="aligned-content">
 <p>Wir spielen In der Verbandsliga Rheinland-Pfalz-Saar.</p>
 <p><strong>Und wir sind hartnäckig wie Basalt. Mayener Basalt – hau!</strong></p>
 <p>Hier findest du die Turniertermine für unsere Teams:</p>
+</div>
 
 <div class="tiles-container">
     {% for tile in site.data.turniere.tiles %}
@@ -15,7 +17,10 @@ title: "Turniere"
 
         {% if tile.details %}
             {% for detail in tile.details %}
-            {{ detail.date }} - {{ detail.location }}<br>
+            <div class="detail-row">
+              <span class="date">{{ detail.date }}</span>
+              <span class="location">{{ detail.location }}</span>
+            </div>
             {% endfor %}
         {% endif %}
 
@@ -30,5 +35,4 @@ title: "Turniere"
     </div>
     {% endfor %}
 </div>
-
 
