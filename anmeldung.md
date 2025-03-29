@@ -11,7 +11,6 @@ useCaptcha: false
 
 
 <div id="download-tab" class="aligned-content">
-    <h3>Anmeldeformular herunterladen</h3>
     <p>
         Hier kannst du das Anmeldeformular als PDF herunterladen.
     </p>
