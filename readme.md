@@ -5,7 +5,7 @@ https://mobiletest.me/iphone_5_emulator/?u=https://hockey-mayen.github.io/chroni
 
 // "https://ik.imagekit.io/mvxy6ljtip/training/training1.webp?updatedAt=1742544137565",
 // "https://ik.imagekit.io/mvxy6ljtip/training/training2.webp?updatedAt=1742544137561"
-
+https://imagekit.io/dashboard/media-library
 
 convert "U8-heimturnier-14.1.2024.png" -quality 80 "U8-heimturnier-14.1.2024.webp"
 
@@ -18,3 +18,6 @@ um je nach Bildschirmgröße und Pixeldichte automatisch das passende Bild zu la
 ./build-js.sh
 
 https://ch.maswitzerland.com/de
+
+
+https://pagespeed.web.dev/?utm_source=psi&utm_medium=redirect
