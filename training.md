@@ -7,7 +7,7 @@ permalink: /training/
 ## Training
 
 <div class="aligned-content">
-<strong>am 26.3.2025 startet die Feldsaison, und wir trainieren auf dem Kunstrasenplatz !  </strong>   <br>
+<strong>am 30.10.2025 startet die Hallensaison, und wir trainieren in der Halle !  </strong>   <br>
 
 
 <strong>
@@ -59,6 +59,8 @@ Komm einfach vorbei zu unseren Schnupper-Einheiten.
             {% endfor %}
         {% endif %}
         <em>{{ tile.trainer }}</em>
+        <br/>
+        <em>{{ tile.kontakt }}</em>
     </div>
     {% endfor %}
 </div>

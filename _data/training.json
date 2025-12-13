@@ -1,7 +1,7 @@
 {
   "tiles": [
     {
-      "title": "U8/U10 Kinder",
+      "title": "Mini/U8/U10 Kinder",
       "times": [
         {
           "day": "Mittwoch",
@@ -14,7 +14,8 @@
           "location": "Sporthalle Albert-Schweitzer-Realschule"
         }
       ],
-      "trainer": "Training: Mike Flinsch, Andreas Jung, Sergej Schatz"
+      "trainer": "Training: Mike Flinsch, Sergej Schatz",
+      "kontakt": "<strong>Kontakt & Info:</strong> 📩 mikeflinsch@gmx.de"
     },
     {
       "title": "U10/U12 Mädels",
@@ -30,10 +31,11 @@
           "location": "Sporthalle Albert-Schweitzer-Realschule"
         }
       ],
-      "trainer": "Training: Nina Graeff, Ralph Heepenstrick"
+      "trainer": "Training: Nina Graeff, Ralph Heepenstrick",
+      "kontakt": "<strong>Kontakt & Info: </strong> 📩 nina@diegraeffs.de"
     },
     {
-      "title": "U10/U12 Jungs",
+      "title": "U14 Jungs",
       "times": [
         {
           "day": "Mittwoch",
@@ -46,10 +48,11 @@
           "location": "Sporthalle Albert-Schweitzer-Realschule"
         }
       ],
-      "trainer": "Training: Oliver Hannus, Sven Albers"
+      "trainer": "Training: Oliver Hannus, Sven Albers",
+      "kontakt": "<strong>Kontakt & Info:</strong> 📩 oh@hockey-tus-mayen.de"
     },
     {
-      "title": "Jugend und Erwachsene<br>Just For Fun",
+      "title": "Training Jugend und Erwachsene<br>Just For Fun",
       "times": [
         {
           "day": "Dienstag",
@@ -62,7 +65,8 @@
           "location": "Sporthalle Albert-Schweitzer-Realschule"
         }
       ],
-      "trainer": "<br><br>"
+      "trainer": "Training: Yannik Dietz",
+      "kontakt": "<strong>Kontakt & Info:</strong> 📩 ya.dietz@icloud.com"
     }
   ]
 }

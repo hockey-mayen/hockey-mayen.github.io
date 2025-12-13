@@ -42,7 +42,7 @@
 }
 
 .chronik-entry p {
-    text-align: left;
+    text-align: center;
     margin: 5px 0;
     font-size: 18px;
     color: #6c757d; /* Schönes Grau für Texte */
@@ -57,8 +57,8 @@
     max-width: 100%;
     height: auto;
     display: block;
-    margin-bottom: 5px;
     border-radius: 5px;
+    margin: 0 auto 5px auto; /* ⬅️ horizontal zentriert */
 }
 
 .load-more-btn {
