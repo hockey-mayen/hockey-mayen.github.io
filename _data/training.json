@@ -15,7 +15,8 @@
         }
       ],
       "trainer": "Training: Mike Flinsch, Sergej Schatz",
-      "kontakt": "<strong>Kontakt & Info:</strong> 📩 mikeflinsch@gmx.de"
+      "mailUser": "mikeflinsch",
+      "mailDomain": "gmx.de"
     },
     {
       "title": "U10/U12 Mädels",
@@ -32,7 +33,8 @@
         }
       ],
       "trainer": "Training: Nina Graeff, Ralph Heepenstrick",
-      "kontakt": "<strong>Kontakt & Info: </strong> 📩 nina@diegraeffs.de"
+      "mailUser": "nina",
+      "mailDomain": "diegraeffs.de"
     },
     {
       "title": "U14 Jungs",
@@ -49,7 +51,8 @@
         }
       ],
       "trainer": "Training: Oliver Hannus, Sven Albers",
-      "kontakt": "<strong>Kontakt & Info:</strong> 📩 oh@hockey-tus-mayen.de"
+      "mailUser": "oh",
+      "mailDomain": "hockey-tus-mayen.de"
     },
     {
       "title": "Training Jugend und Erwachsene<br>Just For Fun",
@@ -66,7 +69,8 @@
         }
       ],
       "trainer": "Training: Yannik Dietz",
-      "kontakt": "<strong>Kontakt & Info:</strong> 📩 ya.dietz@icloud.com"
+      "mailUser": "ya.dietz",
+      "mailDomain": "icloud.com"
     }
   ]
 }

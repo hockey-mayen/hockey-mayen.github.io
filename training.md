@@ -60,7 +60,15 @@ Komm einfach vorbei zu unseren Schnupper-Einheiten.
         {% endif %}
         <em>{{ tile.trainer }}</em>
         <br/>
-        <em>{{ tile.kontakt }}</em>
+        <em>
+          <strong>Kontakt &amp; Info:</strong>
+          📩
+          <span
+            class="js-email"
+            data-user="{{ tile.mailUser }}"
+            data-domain="{{ tile.mailDomain }}">
+          </span>
+        </em>
     </div>
     {% endfor %}
 </div>
