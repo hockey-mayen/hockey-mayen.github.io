@@ -65,8 +65,8 @@ Komm einfach vorbei zu unseren Schnupper-Einheiten.
           📩
         <span
         class="js-e"
-        data-mu="{{ tile.mu }}"
-        data-md="{{ tile.md }}">
+        data-mu="{{ tile.mu_ }}"
+        data-md="{{ tile.md_ }}">
         </span>
         </em>
     </div>
