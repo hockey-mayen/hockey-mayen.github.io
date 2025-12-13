@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
-    document.querySelectorAll('.js-email').forEach(el => {
-        const user = el.dataset.user;
-        const domain = el.dataset.domain;
+    document.querySelectorAll('.js-e').forEach(el => {
+        const user = el.dataset.mu;
+        const domain = el.dataset.md;
 
         if (!user || !domain) return;
 

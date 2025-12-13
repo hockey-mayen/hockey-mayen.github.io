@@ -63,11 +63,11 @@ Komm einfach vorbei zu unseren Schnupper-Einheiten.
         <em>
           <strong>Kontakt &amp; Info:</strong>
           📩
-          <span
-            class="js-email"
-            data-user="{{ tile.mailUser }}"
-            data-domain="{{ tile.mailDomain }}">
-          </span>
+        <span
+        class="js-e"
+        data-mu="{{ tile.mu }}"
+        data-md="{{ tile.md }}">
+        </span>
         </em>
     </div>
     {% endfor %}
