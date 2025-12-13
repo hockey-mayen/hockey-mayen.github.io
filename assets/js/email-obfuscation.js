@@ -1,27 +1,21 @@
 document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('.js-mail').forEach((a) => {
-        let revealed = false;
+        const encoded = a.dataset.x;
+        if (!encoded) return;
 
-        a.addEventListener('click', (e) => {
-            // Beim ersten Klick nur anzeigen
-            if (!revealed) {
-                e.preventDefault();
+        let email;
+        try {
+            email = atob(encoded);
+        } catch {
+            return;
+        }
 
-                const encoded = a.dataset.x;
-                if (!encoded) return;
+        // Mail direkt anzeigen
+        a.textContent = email;
+        a.href = `mailto:${email}`;
 
-                let email;
-                try {
-                    email = atob(encoded);
-                } catch {
-                    return;
-                }
-
-                a.textContent = email;
-                a.href = `mailto:${email}`;
-                revealed = true;
-            }
-            // beim zweiten Klick → normales mailto
-        });
+        // optional: extern behandeln
+        a.target = '_blank';
+        a.rel = 'noopener';
     });
 });

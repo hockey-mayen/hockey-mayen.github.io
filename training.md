@@ -82,14 +82,4 @@ Hockey Schläger 🏑 in allen Größen stellen wir dir zum Schnupper-Training z
 Du hast Fragen zu unserem Training und möchtest dich näher informieren? Schreibe uns einfach!
 </div>
 
-<span class="email-highlight"><a href="/kontakt/">Kontaktformular</a></span>
-
-<div class="aligned-content">
-Auf dem Kunstrasenplatz sind wir in der warmen Jahreszeit, und in der kalten Jahreszeit - in der Sporthalle. 
-
-Hockey Schläger 🏑 in allen Größen stellen wir dir zum Schnupper-Training zur Verfügung.
-
-Du hast Fragen zu unserem Training und möchtest dich näher informieren? Schreibe uns einfach!  
-</div>
-<span class="email-highlight"><a href="/kontakt/">Kontaktformular</a></span>
 
