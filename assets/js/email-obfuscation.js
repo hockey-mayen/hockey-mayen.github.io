@@ -1,12 +1,27 @@
 document.addEventListener('DOMContentLoaded', () => {
-    document.querySelectorAll('.js-e').forEach(el => {
-        const user = el.dataset.mu;
-        const domain = el.dataset.md;
+    document.querySelectorAll('.js-mail').forEach((a) => {
+        let revealed = false;
 
-        if (!user || !domain) return;
+        a.addEventListener('click', (e) => {
+            // Beim ersten Klick nur anzeigen
+            if (!revealed) {
+                e.preventDefault();
 
-        const email = `${user}@${domain}`;
+                const encoded = a.dataset.x;
+                if (!encoded) return;
 
-        el.innerHTML = `<a href="mailto:${email}">${email}</a>`;
+                let email;
+                try {
+                    email = atob(encoded);
+                } catch {
+                    return;
+                }
+
+                a.textContent = email;
+                a.href = `mailto:${email}`;
+                revealed = true;
+            }
+            // beim zweiten Klick → normales mailto
+        });
     });
 });
