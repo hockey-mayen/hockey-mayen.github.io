@@ -22,7 +22,6 @@ permalink: /kontakt/
       <option value="jugendwart">Jugendwart – Mike Flinsch (Training)</option>
       <option value="webmaster">Webmaster – Sergej Schatz</option>
     </select>
-
     <small id="recipientError" style="display:none; color:#c0392b; margin-top:6px;">Bitte einen Ansprechpartner auswählen.</small>
 
     <label for="name">Ihr Name</label>
@@ -50,21 +49,22 @@ permalink: /kontakt/
       Bitte schreiben Sie eine Nachricht mit mindestens 20 Zeichen.
     </small>
 
-    <!-- Turnstile -->
-    <div style="margin-top:14px;">
+    <!-- Turnstile (genau EINMAL auf der Seite!) -->
+    <div style="margin: 18px 0;">
       <div
-        id="turnstileWidget"
+        id="turnstile"
         class="cf-turnstile"
         data-sitekey="0x4AAAAAACGxbJt0GUzQbP8g"
-        data-theme="light"
+        data-callback="onTurnstileSuccess"
+        data-expired-callback="onTurnstileExpired"
+        data-error-callback="onTurnstileError"
       ></div>
-      <small id="turnstileError" style="display:none; color:#c0392b; margin-top:6px;">
+      <small id="turnstileError" style="display:none; color:#c0392b; margin-top:8px;">
         Bitte bestätigen Sie kurz, dass Sie kein Bot sind.
       </small>
     </div>
 
     <button id="submitBtn" type="submit" class="load-more-btn" disabled>Senden</button>
-
     <p id="formHint" style="margin-top:10px; font-size:14px; color:#6c757d;"></p>
   </form>
 
@@ -74,26 +74,20 @@ permalink: /kontakt/
 
     <div id="summaryBox" style="background:#f6fbf8; border:1px solid #bdddcc; border-radius:10px; padding:12px;"></div>
 
-    <div style="margin-top:14px;">
-      <a id="sendAnotherLink" class="load-more-btn" href="/kontakt/">Noch eine Nachricht senden</a>
-    </div>
+    <p style="margin-top:14px;">
+      <a href="/kontakt/" class="load-more-btn" style="display:inline-block; text-decoration:none;">Noch eine Nachricht senden</a>
+    </p>
   </div>
 </div>
 
-<!-- Turnstile Script -->
+<!-- Turnstile Script (genau EINMAL) -->
 <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 
-<!-- Mini-CSS, damit disabled auch sichtbar ist + Link style -->
+<!-- Mini-CSS, damit disabled auch sichtbar ist -->
 <style>
   #submitBtn:disabled {
     opacity: 0.55;
     cursor: not-allowed;
     filter: grayscale(15%);
   }
-  #sendAnotherLink {
-    display: inline-block;
-    text-decoration: none;
-  }
 </style>
-
-<script src="/assets/js/contact-form.js"></script>
