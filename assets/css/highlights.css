@@ -1,18 +1,20 @@
 /*highlights.css*/
 /* Scrollbarer Bereich für vergangene Highlights */
 .highlight-container {
-    overflow-y: auto;
+    overflow-y: visible;   /* oder einfach: overflow: visible; */
+    height: auto;          /* wichtig: keine feste Höhe */
+    max-height: none;      /* falls irgendwo geerbt/gesetzt */
     padding: 10px;
     color: #004d26;
-    scrollbar-width: thin; /* Für Firefox */
-    scrollbar-color: #008f5a #bdddcc; /* Griff / Hintergrund */
-    height: 94%; /* Höhe bleibt proportional */
 }
-
+.tile-highlight {
+    height: auto;
+    max-height: none;
+}
 /* Webkit-basiertes Styling (Chrome, Edge, Safari) */
-.highlight-container::-webkit-scrollbar {
-    width: 8px;
-}
+/*.highlight-container::-webkit-scrollbar {*/
+/*    width: 8px;*/
+/*}*/
 
 .highlight-container::-webkit-scrollbar-track {
     background: #e0f2e9; /* Sanftes Grün als inaktiver Hintergrund */
