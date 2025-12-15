@@ -1,20 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
-    /**
-     * TODO: HIER EINTRAGEN
-     * Power Automate HTTP Trigger URL (mit sig=...)
-     */
-    // const POWER_AUTOMATE_URL =
-    //     'https://default70c2dfc9c58e49c6a07ce225223e1f.87.environment.api.powerplatform.com:443/powerautomate/automations/direct/workflows/0c0a313922b74506a150cf9f3d41eb47/triggers/manual/paths/invoke?api-version=1&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=_emNsEutw_nagUeo1Zsi1Nkf4hs5Wr8fXiyBhJse2Ko';
-    const POWER_AUTOMATE_URL =
-        'https://hockey-mayen-contact.sergej-schatz.workers.dev';
-    /**
-     * Muss zu deiner Flow-Condition passen (secret == ...)
-     */
-    const FLOW_SECRET = 'HCM_CONTACT_2025';
+    // Worker Endpoint (öffentlich ok)
+    const WORKER_URL = 'https://hockey-mayen-contact.sergej-schatz.workers.dev';
 
-    /**
-     * Für die E-Mail: was im Flow später verwendet wird
-     */
     const RECIPIENT_LABELS = {
         geschaeftsfuehrung: 'Geschäftsführung',
         vorsitz: 'Vorsitz',
@@ -44,8 +31,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const thankYouBox = document.getElementById('thankYouBox');
     const summaryBox = document.getElementById('summaryBox');
 
+    const turnstileError = document.getElementById('turnstileError');
+
     const sanitizeText = (v) => String(v ?? '').trim();
     const isValidEmail = (value) => /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(String(value).trim());
+
+    // Turnstile token wird hier gespeichert
+    let turnstileToken = '';
 
     function setError(el, show) {
         if (!el) return;
@@ -84,16 +76,20 @@ document.addEventListener('DOMContentLoaded', () => {
         const msgVal = sanitizeText(messageEl.value);
         const msgOk = msgVal.length >= MIN_MESSAGE_LEN;
 
+        // Turnstile token vorhanden?
+        const turnstileOk = !!sanitizeText(turnstileToken);
+
         setError(recipientError, !recipientOk);
         setError(nameError, nameVal.length > 0 && !nameOk);
         setError(emailError, emailVal.length > 0 && !emailOk);
         setError(messageError, msgVal.length > 0 && !msgOk);
+        setError(turnstileError, !turnstileOk);
 
         if (hint) {
             hint.textContent = recipientOk ? `Empfänger: ${RECIPIENT_LABELS[recipientVal] || recipientVal}` : '';
         }
 
-        const allOk = recipientOk && nameOk && emailOk && msgOk;
+        const allOk = recipientOk && nameOk && emailOk && msgOk && turnstileOk;
         setSubmitEnabled(allOk);
         return allOk;
     }
@@ -122,6 +118,43 @@ document.addEventListener('DOMContentLoaded', () => {
     `;
     }
 
+    // ---- Turnstile Hook: sobald Turnstile geladen ist, Token holen ----
+    // Turnstile (Cloudflare) setzt global "turnstile". Wir pollen kurz, bis es da ist.
+    function wireTurnstile() {
+        const el = document.getElementById('turnstileWidget');
+        if (!el) return;
+
+        const tryInit = () => {
+            if (!window.turnstile || typeof window.turnstile.render !== 'function') {
+                setTimeout(tryInit, 150);
+                return;
+            }
+
+            // Widget rendern (wenn Cloudflare es nicht automatisch getan hat)
+            // Wenn es schon gerendert ist, ist render() idempotent je nach Browser – safe.
+            const widgetId = window.turnstile.render(el, {
+                sitekey: el.getAttribute('data-sitekey'),
+                callback: (token) => {
+                    turnstileToken = token || '';
+                    validateForm();
+                },
+                'expired-callback': () => {
+                    turnstileToken = '';
+                    validateForm();
+                },
+                'error-callback': () => {
+                    turnstileToken = '';
+                    validateForm();
+                },
+            });
+
+            // Optional: für Debug
+            // console.log('Turnstile widgetId', widgetId);
+        };
+
+        tryInit();
+    }
+
     // Events
     recipient.addEventListener('change', validateForm);
     nameEl.addEventListener('input', validateForm);
@@ -136,71 +169,87 @@ document.addEventListener('DOMContentLoaded', () => {
     // Init
     updateMessageCounter();
     setSubmitEnabled(false);
+    wireTurnstile();
     validateForm();
 
     form.addEventListener('submit', async (e) => {
         e.preventDefault();
 
-        // Honeypot gefüllt? -> Bot
+        // Honeypot gefüllt? -> Bot (still)
         if (honeypotEl && sanitizeText(honeypotEl.value)) {
+            return;
+        }
+
+        // Wenn Token fehlt: Fehlermeldung zeigen
+        if (!sanitizeText(turnstileToken)) {
+            setError(turnstileError, true);
             return;
         }
 
         if (!validateForm()) return;
 
-        if (!POWER_AUTOMATE_URL || POWER_AUTOMATE_URL.includes('PASTE_YOUR_POWER_AUTOMATE_TRIGGER_URL_HERE')) {
-            alert('Power Automate URL ist noch nicht gesetzt.');
-            return;
-        }
-
         const recipientKey = sanitizeText(recipient.value);
+
         const payload = {
-            secret: FLOW_SECRET,
+            // Turnstile
+            turnstileToken,
+
+            // Honeypot
             honeypot: honeypotEl ? sanitizeText(honeypotEl.value) : '',
+
+            // Form data
             recipient: recipientKey,
             recipientLabel: RECIPIENT_LABELS[recipientKey] || recipientKey,
             name: sanitizeText(nameEl.value),
             email: sanitizeText(emailEl.value),
             phone: sanitizeText(phoneEl.value),
             message: sanitizeText(messageEl.value),
+            page: window.location.href,
         };
 
         try {
             setSubmitEnabled(false);
             submitBtn.textContent = 'Sende...';
 
-            const res = await fetch(POWER_AUTOMATE_URL, {
+            const res = await fetch(WORKER_URL, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(payload),
             });
 
-            if (!res.ok) {
-                throw new Error(`HTTP ${res.status}`);
-            }
-
-            // Response kann z.B. {"ok":true} sein
-            // (nicht zwingend nötig auszuwerten, aber nice)
             let data = null;
             try {
                 data = await res.json();
             } catch {
-                // falls Response kein JSON ist
+                // ignore
             }
 
-            // Optional: wenn Flow {ok:false} liefert
-            if (data && data.ok === false) {
-                throw new Error('Flow returned ok:false');
+            if (!res.ok || (data && data.ok === false)) {
+                throw new Error(`Worker failed: HTTP ${res.status}`);
             }
 
             renderSummary(payload);
             form.style.display = 'none';
             thankYouBox.style.display = 'block';
+
+            // Turnstile Token nach Erfolg „verbrauchen“ (verhindert double-submit)
+            turnstileToken = '';
+            if (window.turnstile && typeof window.turnstile.reset === 'function') {
+                try { window.turnstile.reset(); } catch {}
+            }
         } catch (err) {
             console.error(err);
             alert('Leider konnte die Nachricht nicht gesendet werden. Bitte versuchen Sie es später erneut.');
+
             submitBtn.textContent = 'Senden';
             updateMessageCounter();
+
+            // Turnstile resetten (neues Token)
+            turnstileToken = '';
+            if (window.turnstile && typeof window.turnstile.reset === 'function') {
+                try { window.turnstile.reset(); } catch {}
+            }
+
             validateForm();
         }
     });
