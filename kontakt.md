@@ -57,7 +57,11 @@ permalink: /kontakt/
         class="cf-turnstile"
         data-sitekey="0x4AAAAAACGxbJt0GUzQbP8g"
         data-theme="light"
+        data-callback="onTurnstileSuccess"
+        data-expired-callback="onTurnstileExpired"
+        data-error-callback="onTurnstileError"
       ></div>
+    
       <small id="turnstileError" style="display:none; color:#c0392b; margin-top:6px;">
         Bitte bestätigen Sie kurz, dass Sie kein Bot sind.
       </small>
