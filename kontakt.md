@@ -96,4 +96,4 @@ permalink: /kontakt/
   }
 </style>
 
-<script src="/assets/js/contact-form.js"></script>
+<script src="/assets/js/kontakt-form.js"></script>
