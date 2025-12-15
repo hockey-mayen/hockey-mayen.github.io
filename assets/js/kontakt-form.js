@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const WORKER_URL = 'https://hockey-mayen-contact.sergej-schatz.workers.dev';
+    const WORKER_URL = 'https://hockey-mayen-contact.sergej-schatz.workers.dev/?debug=1';
 
     const RECIPIENT_LABELS = {
         geschaeftsfuehrung: 'Geschäftsführung',
