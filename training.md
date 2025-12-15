@@ -59,17 +59,6 @@ Komm einfach vorbei zu unseren Schnupper-Einheiten.
 
         <em>{{ tile.trainer }}</em>
         <br/>
-
-        <em>
-          <strong>Kontakt &amp; Info:</strong>
-          📩
-          <a href="#"
-             class="js-mail"
-             data-x="{{ tile.mx }}"
-             aria-label="E-Mail Adresse anzeigen">
-             E-Mail anzeigen
-          </a>
-        </em>
     </div>
     {% endfor %}
 </div>
@@ -80,6 +69,8 @@ Auf dem Kunstrasenplatz sind wir in der warmen Jahreszeit, und in der kalten Jah
 Hockey Schläger 🏑 in allen Größen stellen wir dir zum Schnupper-Training zur Verfügung.
 
 Du hast Fragen zu unserem Training und möchtest dich näher informieren? Schreibe uns einfach!
+
+    <p class="email-highlight"><a href="/kontakt/">Kontaktformular</a></p>
 </div>
 
 

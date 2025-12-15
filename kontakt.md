@@ -74,11 +74,8 @@ permalink: /kontakt/
 
     <div id="summaryBox" style="background:#f6fbf8; border:1px solid #bdddcc; border-radius:10px; padding:12px;"></div>
 
-    <div style="margin-top:14px;">
-      <a id="sendAnotherLink" class="load-more-btn" href="/kontakt/">Noch eine Nachricht senden</a>
-    </div>
   </div>
-</div>
+</div> 
 
 <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 <script src="/assets/js/kontakt-form.js"></script>

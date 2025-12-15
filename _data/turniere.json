@@ -5,69 +5,54 @@
     {
       "title": "U10 Jungs",
       "link": {
-        "url": "https://www.rps-hockey.de/VVI-web/default.asp?lokal=RPS&innen=/VVI-web/RPS-Hockey/CD-Spieltage.asp&auswahl=Halle&gruppe=4",
+        "url": "https://www.deutscher-hockey-bund.de/VVI-web/default.asp?lokal=RPS&innen=/VVI-web/RPS-Hockey/CD-Spieltage.asp&auswahl=Halle&gruppe=3",
         "title": "U10 Termine auf Verbandsliga-Seiten",
         "image": "assets/images/turniere/turnier-U10-jungs.png"
       },
 
       "details": [
-        { "date": "10.05.2025", "location": "Mayen Kunstrasenplatz Nettetal" },
-        { "date": "24.05.2025", "location": "&lt;Ort wird noch bekanntgegeben&gt;" },
-        { "date": "14.06.2025", "location": "PST Trier, Moselstadion" },
-        { "date": "23.08.2025", "location": "&lt;Ort wird noch bekanntgegeben&gt;" },
-        { "date": "30.08.2025", "location": "&lt;Ort wird noch bekanntgegeben&gt;" },
-        { "date": "13.09.2025", "location": "&lt;Ort wird noch bekanntgegeben&gt;"},
-        { "date": "27.09.2025", "location": "&lt;Ort wird noch bekanntgegeben&gt;"}
+        { "date": "15.11.2025", "location": "Mayen" },
+        { "date": "29.11.2025", "location": "Koblenz" },
+        { "date": "10.01.2026", "location": "Koblenz" },
+        { "date": "24.01.2026", "location": "Mainz" }
       ]
     },
     {
       "title": "U10 Mädels",
       "link": {
-        "url": "https://www.rps-hockey.de/VVI-web/default.asp?lokal=RPS&innen=/VVI-web/RPS-Hockey/CD-Spieltage.asp&auswahl=Halle&gruppe=4",
+        "url": "https://www.deutscher-hockey-bund.de/VVI-web/default.asp?lokal=RPS&innen=/VVI-web/RPS-Hockey/CD-Spieltage.asp&auswahl=Halle&gruppe=3",
         "title": "Mehr Infos zur Mayener WU10 auf Verbandsliga",
         "image": "assets/images/turniere/turnier-U10-maedels.png"
       },
       "details": [
-        { "date": "10.05.2025", "location": "Mayen Kunstrasenplatz Nettetal" },
-        { "date": "24.05.2025", "location": "&lt;Ort wird noch bekanntgegeben&gt;"},
-        { "date": "14.06.2025", "location": "&lt;Ort wird noch bekanntgegeben&gt;"},
-        { "date": "23.08.2025", "location": "SC Idar-Oberstein"},
-        { "date": "30.08.2025", "location": "&lt;Ort wird noch bekanntgegeben&gt;"},
-        { "date": "13.09.2025", "location": "&lt;Ort wird noch bekanntgegeben&gt;"},
-        { "date": "27.09.2025", "location": "&lt;Ort wird noch bekanntgegeben&gt;"}
+        { "date": "15.11.2025", "location": "Mainz" },
+        { "date": "29.11.2025", "location": "Bad Kreuznach"},
+        { "date": "10.01.2026", "location": "Mainz"},
+        { "date": "24.01.2026", "location": "SC Idar-Oberstein"}
       ]
     },
     {
       "title": "U12 Mädels",
       "link": {
-        "url": "https://rps.prd.dhb.digital/spielbetrieb/jugend-feld-2024/verbandsliga-wu12",
+        "url": "https://rps.hockey.de/spielbetrieb/hallensaison-jugend/verbandsliga-weibliche-u12",
         "title": "Mehr Infos zur Mayener WU12 auf Verbandsliga",
         "image": "assets/images/turniere/turnier-U12-maedels.png"
       },
       "details": [
-        { "date": "11.05.2025", "location": "Mayen Kunstrasenplatz Nettetal" }
+        { "date": "07.12.2025", "location": "Mayen" },
+        { "date": "18.01.2026", "location": "Mayen" }
       ]
     },
     {
-      "title": "U12 Jungs",
+      "title": "U14 Jungs",
       "link": {
         "url": "https://rps.prd.dhb.digital/spielbetrieb/jugend-feld-2024/verbandsliga-mu12",
         "title": "Mehr Infos zur Mayener MU12 auf Verbandsliga",
         "image": "assets/images/turniere/turnier-U12-jungs.png"
       },
       "details": [
-        { "date": "21.09.2025", "location": "Mayen Kunstrasenplatz Nettetal" }
-      ]
-    },
-    {
-      "title": "Spielgemeinschaft Koblenz-Mayen Erwachsene",
-      "link": {
-        "url": "https://rps.prd.dhb.digital/spielbetrieb/hallensaison-erwachsene/4-verbandsliga-herren",
-        "title": "Verbandsliga-Link der SG Koblenz-Mayen",
-        "image": "assets/images/turniere/turnier-SG.png"
-      },
-      "details": [
-        { "date": "xx.xx.2025", "location": "Ausrichter noch unbekannt" }
+        { "date": "22.11.2025", "location": "Gau-Algesheim" },
+        { "date": "10.01.2026", "location": "Mayen" }
       ]
     }
   ]
