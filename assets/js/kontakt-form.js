@@ -3,9 +3,10 @@ document.addEventListener('DOMContentLoaded', () => {
      * TODO: HIER EINTRAGEN
      * Power Automate HTTP Trigger URL (mit sig=...)
      */
+    // const POWER_AUTOMATE_URL =
+    //     'https://default70c2dfc9c58e49c6a07ce225223e1f.87.environment.api.powerplatform.com:443/powerautomate/automations/direct/workflows/0c0a313922b74506a150cf9f3d41eb47/triggers/manual/paths/invoke?api-version=1&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=_emNsEutw_nagUeo1Zsi1Nkf4hs5Wr8fXiyBhJse2Ko';
     const POWER_AUTOMATE_URL =
-        'https://default70c2dfc9c58e49c6a07ce225223e1f.87.environment.api.powerplatform.com:443/powerautomate/automations/direct/workflows/0c0a313922b74506a150cf9f3d41eb47/triggers/manual/paths/invoke?api-version=1&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=_emNsEutw_nagUeo1Zsi1Nkf4hs5Wr8fXiyBhJse2Ko';
-
+        'https://hockey-mayen-contact.sergej-schatz.workers.dev';
     /**
      * Muss zu deiner Flow-Condition passen (secret == ...)
      */
