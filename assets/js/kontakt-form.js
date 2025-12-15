@@ -1,6 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const POWER_AUTOMATE_URL = 'https://hockey-mayen-contact.sergej-schatz.workers.dev';
-    const FLOW_SECRET = 'HCM_CONTACT_2025';
+    const WORKER_URL = 'https://hockey-mayen-contact.sergej-schatz.workers.dev';
 
     const RECIPIENT_LABELS = {
         geschaeftsfuehrung: 'Geschäftsführung',
@@ -32,22 +31,18 @@ document.addEventListener('DOMContentLoaded', () => {
     const summaryBox = document.getElementById('summaryBox');
 
     const turnstileError = document.getElementById('turnstileError');
-
-    // Turnstile Token (wird per Callback gesetzt)
     let turnstileToken = '';
 
-    // Turnstile callbacks müssen global sein (weil data-callback="...")
+    // Turnstile callbacks (müssen global sein!)
     window.onTurnstileSuccess = (token) => {
         turnstileToken = String(token || '');
         if (turnstileError) turnstileError.style.display = 'none';
         validateForm();
     };
-
     window.onTurnstileExpired = () => {
         turnstileToken = '';
         validateForm();
     };
-
     window.onTurnstileError = () => {
         turnstileToken = '';
         if (turnstileError) turnstileError.style.display = 'block';
@@ -55,7 +50,8 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     const sanitizeText = (v) => String(v ?? '').trim();
-    const isValidEmail = (value) => /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(String(value).trim());
+    const isValidEmail = (value) =>
+        /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(String(value).trim());
 
     function setError(el, show) {
         if (!el) return;
@@ -101,11 +97,10 @@ document.addEventListener('DOMContentLoaded', () => {
         setError(emailError, emailVal.length > 0 && !emailOk);
         setError(messageError, msgVal.length > 0 && !msgOk);
 
-        // Turnstile-Fehlertext nur anzeigen, wenn User schon versucht zu senden -> machen wir beim Submit.
-        // Hier lassen wir ihn ruhig, damit es nicht nervt.
-
         if (hint) {
-            hint.textContent = recipientOk ? `Empfänger: ${RECIPIENT_LABELS[recipientVal] || recipientVal}` : '';
+            hint.textContent = recipientOk
+                ? `Empfänger: ${RECIPIENT_LABELS[recipientVal] || recipientVal}`
+                : '';
         }
 
         const allOk = recipientOk && nameOk && emailOk && msgOk && captchaOk;
@@ -137,7 +132,6 @@ document.addEventListener('DOMContentLoaded', () => {
     `;
     }
 
-    // Events
     recipient.addEventListener('change', validateForm);
     nameEl.addEventListener('input', validateForm);
     emailEl.addEventListener('input', validateForm);
@@ -148,7 +142,6 @@ document.addEventListener('DOMContentLoaded', () => {
         validateForm();
     });
 
-    // Init
     updateMessageCounter();
     setSubmitEnabled(false);
     validateForm();
@@ -156,28 +149,23 @@ document.addEventListener('DOMContentLoaded', () => {
     form.addEventListener('submit', async (e) => {
         e.preventDefault();
 
-        // Honeypot gefüllt? -> Bot (still)
-        if (honeypotEl && sanitizeText(honeypotEl.value)) {
-            return;
-        }
+        // Honeypot gefüllt => Bot (still)
+        if (honeypotEl && sanitizeText(honeypotEl.value)) return;
 
-        // Wenn captcha fehlt: Fehltext zeigen
+        // Captcha fehlt => Fehltext zeigen
         if (!turnstileToken) {
-            if (turnstileError) turnstileError.style.display = 'block';
+            if (turnstileError) {
+                turnstileError.textContent = 'Bitte bestätigen Sie kurz, dass Sie kein Bot sind.';
+                turnstileError.style.display = 'block';
+            }
             validateForm();
             return;
         }
 
         if (!validateForm()) return;
 
-        if (!POWER_AUTOMATE_URL) {
-            alert('Worker URL ist noch nicht gesetzt.');
-            return;
-        }
-
         const recipientKey = sanitizeText(recipient.value);
         const payload = {
-            secret: FLOW_SECRET,
             honeypot: honeypotEl ? sanitizeText(honeypotEl.value) : '',
             recipient: recipientKey,
             recipientLabel: RECIPIENT_LABELS[recipientKey] || recipientKey,
@@ -185,40 +173,35 @@ document.addEventListener('DOMContentLoaded', () => {
             email: sanitizeText(emailEl.value),
             phone: sanitizeText(phoneEl.value),
             message: sanitizeText(messageEl.value),
-            turnstileToken, // <-- wichtig
+            turnstileToken,
         };
 
         try {
             setSubmitEnabled(false);
             submitBtn.textContent = 'Sende...';
 
-            const res = await fetch(POWER_AUTOMATE_URL, {
+            const res = await fetch(WORKER_URL, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(payload),
             });
 
             let data = null;
-            try {
-                data = await res.json();
-            } catch {
-                // ignore
-            }
+            try { data = await res.json(); } catch {}
 
             if (!res.ok || (data && data.ok === false)) {
-                // typischer Fall: Turnstile abgelaufen/ungültig => 403
                 if (res.status === 403) {
+                    // Turnstile ungültig/abgelaufen
                     turnstileToken = '';
                     if (turnstileError) {
                         turnstileError.textContent = 'Captcha ungültig/abgelaufen. Bitte erneut bestätigen.';
                         turnstileError.style.display = 'block';
                     }
-                    // optional: Turnstile reset, falls verfügbar
                     if (window.turnstile && typeof window.turnstile.reset === 'function') {
                         window.turnstile.reset();
                     }
                 }
-                throw new Error(`HTTP ${res.status}`);
+                throw new Error(`HTTP ${res.status} ${data ? JSON.stringify(data) : ''}`);
             }
 
             renderSummary(payload);

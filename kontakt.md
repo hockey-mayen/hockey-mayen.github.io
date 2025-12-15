@@ -16,13 +16,11 @@ permalink: /kontakt/
     <label for="recipient">Ansprechpartner</label>
     <select id="recipient" name="recipient" required>
       <option value="" disabled selected>Bitte auswählen…</option>
-
       <option value="vorsitz">1. Vorsitzender – Sascha Flinsch</option>
       <option value="geschaeftsfuehrung">Geschäftsführerin – Nina Graeff</option>
       <option value="jugendwart">Jugendwart – Mike Flinsch (Training)</option>
       <option value="webmaster">Webmaster – Sergej Schatz</option>
     </select>
-
     <small id="recipientError" style="display:none; color:#c0392b; margin-top:6px;">Bitte einen Ansprechpartner auswählen.</small>
 
     <label for="name">Ihr Name</label>
@@ -42,7 +40,6 @@ permalink: /kontakt/
     <label for="message">Ihre Nachricht</label>
     <textarea id="message" name="message" rows="7" required placeholder="Ihre Nachricht…"></textarea>
 
-    <!-- Zeichen-Zähler -->
     <small id="messageCounter" style="display:block; color:#6c757d; margin-top:6px;">
       0/20 Zeichen (mindestens 20)
     </small>
@@ -61,14 +58,13 @@ permalink: /kontakt/
         data-expired-callback="onTurnstileExpired"
         data-error-callback="onTurnstileError"
       ></div>
-    
+
       <small id="turnstileError" style="display:none; color:#c0392b; margin-top:6px;">
         Bitte bestätigen Sie kurz, dass Sie kein Bot sind.
       </small>
     </div>
 
     <button id="submitBtn" type="submit" class="load-more-btn" disabled>Senden</button>
-
     <p id="formHint" style="margin-top:10px; font-size:14px; color:#6c757d;"></p>
   </form>
 
@@ -84,10 +80,9 @@ permalink: /kontakt/
   </div>
 </div>
 
-<!-- Turnstile Script -->
 <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+<script src="/assets/js/kontakt-form.js"></script>
 
-<!-- Mini-CSS, damit disabled auch sichtbar ist + Link style -->
 <style>
   #submitBtn:disabled {
     opacity: 0.55;
@@ -99,5 +94,3 @@ permalink: /kontakt/
     text-decoration: none;
   }
 </style>
-
-<script src="/assets/js/kontakt-form.js"></script>
