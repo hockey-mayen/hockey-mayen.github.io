@@ -29,3 +29,22 @@
     font-size: 14px; /* Falls zu groß, kannst du es kleiner setzen */
     color: gray; /* Farbe von der Website erben */
 }
+
+/* Cloudflare Hinweis im Impressum */
+.security-info {
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    padding: 6px 0;
+}
+
+.security-content {
+    justify-content: center;
+    font-size: 13px;
+    color: #6c757d;
+}
+
+.security-content img {
+    height: 40px;
+    opacity: 1.0;
+}
