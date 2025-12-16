@@ -7,7 +7,7 @@ permalink: /kontakt/
 ## Kontakt
 
 <div class="aligned-content">
-  <p>Schreib uns – wir melden uns so schnell wie möglich zurück.</p>
+  <p>Schreiben Sie uns – wir melden uns so schnell wie möglich zurück.</p>
 
   <form id="contactForm" novalidate>
     <!-- Honeypot (gegen einfache Bots) -->
