@@ -80,4 +80,15 @@
     text-align: center;
 }
 
+.cf-turnstile {
+    max-width: 100%;
+    overflow: hidden;
+}
+
+@media (max-width: 380px) {
+    .cf-turnstile {
+        /*transform: scale(0.92);*/
+        transform-origin: 0 0;
+    }
+}
 
