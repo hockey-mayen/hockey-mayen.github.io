@@ -54,6 +54,7 @@ permalink: /kontakt/
         class="cf-turnstile"
         data-sitekey="0x4AAAAAACGxbJt0GUzQbP8g"
         data-theme="light"
+        data-size="compact"
         data-callback="onTurnstileSuccess"
         data-expired-callback="onTurnstileExpired"
         data-error-callback="onTurnstileError"
