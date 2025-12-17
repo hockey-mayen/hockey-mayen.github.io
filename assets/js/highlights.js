@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", async function () {
 
     let allEntries = [];
     let displayedEntries = 0;
-    let entriesPerLoad = 5;
+    let entriesPerLoad = 3;
 
     try {
         const response = await fetch("/assets/data/chronik.json");
