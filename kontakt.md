@@ -19,7 +19,7 @@ permalink: /kontakt/
       <option value="vorsitz">1. Vorsitzender – Sascha Flinsch (Club Organisation)</option>
       <option value="geschaeftsfuehrung">Geschäftsführerin – Nina Graeff (Veranstaltungen)</option>
       <option value="jugendwart">Jugendwart – Mike Flinsch (Training)</option>
-      <option value="webmaster">Webmaster – Sergej Schatz (Internetpräsenz und Medien)</option>
+      <option value="webmaster">Webmaster – Sergej Schatz (Internetpräsenz)</option>
     </select>
     <small id="recipientError" style="display:none; color:#c0392b; margin-top:6px;">Bitte einen Ansprechpartner auswählen.</small>
 
