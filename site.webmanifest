@@ -1,6 +1,9 @@
 {
-  "name": "MyWebSite",
-  "short_name": "MySite",
+  "name": "Hockey Club Mayen",
+  "short_name": "Hockey Mayen",
+  "description": "Offizielle Website des Hockey Club Grün-Weiss TuS Mayen e.V. 1919",
+  "lang": "de-DE",
+  "categories": ["sports", "community"],
   "icons": [
     {
       "src": "/web-app-manifest-192x192.png",
