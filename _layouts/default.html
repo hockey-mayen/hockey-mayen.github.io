@@ -71,14 +71,16 @@
         }
     </script>
 
-    <script>
+    <script defer>
         if ('serviceWorker' in navigator) {
-            navigator.serviceWorker.register('/sw.js');
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw.js');
+            });
         }
     </script>
 
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
+    <script defer src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script defer>
         document.addEventListener("DOMContentLoaded", function () {
             AOS.init({
                 offset: 20,       // Scroll-Trigger-Versatz
@@ -91,16 +93,16 @@
     </script>
 
     <!-- JavaScript laden -->
-    <script src="/assets/js/scrollTop.js"></script>
-    <script src="/assets/js/events.js" defer></script>
-    <script src="/assets/js/highlights.js" defer></script>
-    <script src="/assets/js/trainingImageRotator.js"></script>
-    <script src="/assets/js/turniereImageRotator.js"></script>
-    <script src="/assets/js/chronik.js" defer></script>
-    <script src="/assets/js/impressum.js" defer></script>
-    <script src="/assets/js/kontaktScroll.js"></script>
-    <script src="/assets/js/email-obfuscation.js" defer></script>
-    <script src="/assets/js/kontakt-form.js" defer></script>
+    <script defer src="/assets/js/scrollTop.js"></script>
+    <script defer src="/assets/js/events.js"></script>
+    <script defer src="/assets/js/highlights.js"></script>
+    <script defer src="/assets/js/trainingImageRotator.js"></script>
+    <script defer src="/assets/js/turniereImageRotator.js"></script>
+    <script defer src="/assets/js/chronik.js"></script>
+    <script defer src="/assets/js/impressum.js"></script>
+    <script defer src="/assets/js/kontaktScroll.js"></script>
+    <script defer src="/assets/js/email-obfuscation.js"></script>
+    <script defer src="/assets/js/kontakt-form.js"></script>
 
 </head>
 
