@@ -21,7 +21,7 @@
     <meta property="og:locale" content="de_DE" />
 
 
-        <!-- Favicon für Browser-Tabs -->
+    <!-- Favicon für Browser-Tabs -->
     <link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon/favicon-48x48.png">
     <link rel="icon" type="image/png" sizes="96x96" href="/assets/favicon/favicon-96x96.png">
     <link rel="icon" href="/assets/favicon/favicon.ico">
@@ -33,7 +33,6 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-
 
     <!-- css -->
     <link rel="stylesheet" href="/assets/css/global.css">
@@ -50,11 +49,7 @@
     <link rel="stylesheet" href="/assets/css/training.css">
     <link rel="stylesheet" href="/assets/css/turniere.css">
 
-    <!-- css min -->
-<!--    <link rel="stylesheet" href="/assets/css/all.min.css">-->
-
     <!-- title -->
-
     <title>Hockey-Club Grün-Weiss TuS Mayen e.V. 1919 | Feld- & Hallenhockey Mayen</title>
     <!-- Strukturierte Daten für Google -->
     <script type="application/ld+json">
@@ -75,31 +70,25 @@
             }
         }
     </script>
-</head>
 
-<script>
-    if ('serviceWorker' in navigator) {
-        navigator.serviceWorker.register('/sw.js');
-    }
-</script>
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('/sw.js');
+        }
+    </script>
 
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script>
-    document.addEventListener("DOMContentLoaded", function () {
-        AOS.init({
-            offset: 20,       // Scroll-Trigger-Versatz
-            duration: 800,     // Dauer in Millisekunden
-            easing: 'ease-out', // Easing-Funktion
-            delay: 0,
-            once: true         // Animation nur beim ersten Scrollen
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            AOS.init({
+                offset: 20,       // Scroll-Trigger-Versatz
+                duration: 800,     // Dauer in Millisekunden
+                easing: 'ease-out', // Easing-Funktion
+                delay: 0,
+                once: true         // Animation nur beim ersten Scrollen
+            });
         });
-    });
-</script>
-
-
-<body>
-    <!-- Scroll-Button -->
-    <button id="scrollTopBtn" onclick="scrollToTop()">&#8679;</button>
+    </script>
 
     <!-- JavaScript laden -->
     <script src="/assets/js/scrollTop.js"></script>
@@ -113,8 +102,11 @@
     <script src="/assets/js/email-obfuscation.js" defer></script>
     <script src="/assets/js/kontakt-form.js" defer></script>
 
+</head>
 
-<!--    <script src="/assets/js/all.min.js" defer></script>-->
+<body>
+    <!-- Scroll-Button -->
+    <button id="scrollTopBtn" onclick="scrollToTop()">&#8679;</button>
 
 
 

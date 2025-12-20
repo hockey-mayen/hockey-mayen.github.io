@@ -10,10 +10,10 @@ document.addEventListener("DOMContentLoaded", async function () {
 
     try {
         const response = await fetch("/assets/data/chronik.json");
-        const chronikData = await response.json();
+        const chronicData = await response.json();
 
         // Alle Einträge aus allen Jahren sammeln
-        chronikData.events.forEach(eventYear => {
+        chronicData.events.forEach(eventYear => {
             allEntries = allEntries.concat(eventYear.entries);
         });
 
