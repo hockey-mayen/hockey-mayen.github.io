@@ -15,6 +15,8 @@ JS_FILES=(
   "chronik.js"
   "impressum.js"
   "kontaktScroll.js"
+  "email-obfuscation.js"
+  "kontakt-form.js"
 )
 
 # Leere die Zieldatei

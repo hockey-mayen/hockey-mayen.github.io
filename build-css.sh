@@ -18,6 +18,7 @@ CSS_FILES=(
   "highlights.css"
   "kontakt.css"
   "training.css"
+  "turniere.css"
 )
 
 # Leere die Zieldatei
