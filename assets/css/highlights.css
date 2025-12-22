@@ -34,6 +34,10 @@
 
 /* Einzelner Chronik-Eintrag */
 .chronik-entry {
+
+    max-width: 1140px;   /* nimm z.B. 800/900/1000 – passend zu deinen Bildern */
+    margin: 0 auto;     /* zentriert */
+
     padding: 10px;
     border-bottom: 1px solid #eee;
 }
@@ -44,10 +48,15 @@
 }
 
 .chronik-entry p {
-    text-align: center;
+    text-align:start;
     margin: 5px 0;
     font-size: 18px;
     color: #6c757d; /* Schönes Grau für Texte */
+}
+
+.chronik-entry p, .chronik-entry h4 {
+    margin-left: auto;
+    margin-right: auto;
 }
 
 /* Bilder im Eintrag */

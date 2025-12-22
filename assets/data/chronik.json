@@ -4,25 +4,35 @@
       "year": "2025",
       "entries": [
         {
-          "headline": "Neue Clublinie zum Erfolg",
-          "event": "<b>Mayen, 7 Dezember 2025</b><br>In neuen Trikots spielt das U12-Mädchenteam zuhause in Mayen und setzt sich durch gegen den Kreuznacher Hockey Club mit 1:0 <br> nach shootout, und gegen den VfL mit 1:0 in der regulären Spielzeit. <br>Trainerin Nina Graeff und Trainer Ralf Heepenstrick sind stolz auf die Leistung der Mädels.",
+          "headline": "Erfolgreicher Auftritt in den Trikots der neuen Clublinie",
+          "event": "<b>Mayen, 7 Dezember 2025</b><br>In neuen Trikots spielt das U12-Mädchenteam zuhause in Mayen und setzt sich durch gegen den Kreuznacher Hockey Club mit 1:0 nach shootout, und gegen den VfL mit 1:0 in der regulären Spielzeit. Trainerin Nina Graeff und Trainer Ralf Heepenstrick sind stolz auf die Leistung der Mädels.",
           "images": [
             "/assets/images/chronik/WU12-neue-trikots-1.webp"
           ]
         },
         {
           "headline": "Jugendtrainer",
-          "event": "<b>Mayen, 15 November 2025</b><br>Jugendtrainer und U12 Meister Hanno Frank und Torwart Ole Frank unterstützen die Mayener U10 Jungs bei ihrem Heimturnier!",
+          "event": "<b>Mayen, 15 November 2025</b><br>Jugendtrainer und U12 Meister Hanno Frank und Torwart Ole Frank unterstützen die Mayener U10 Jungs bei ihrem Heimturnier! <br>Das U10 Team (v.l.n.r): Alex Turez, Lorenz Runkel, Matti Dreiser, Anton Kulinna, Jugendtrainer Hanno Frank, Joost Hannus, JR Hoss, Leon Weiler, Liam Preuschoff, Jugendrtainer Ole Frank, Theo Kohns und Torwart Philip Schatz.",
           "images": [
             "/assets/images/chronik/mu10-15-nov.2025-1.webp"
           ]
         },
         {
           "headline": "U12 Jungs sind Vize-Meister",
-          "event": "<b>Mayen, 21 September 2025</b><br> bei der Rheinland-Pfalz-Saar Meisterschaft in der Verbandsliga erreichen die Mayener U12 Jungs den zweiten Platz",
+          "event": "<b>Mayen, 21 September 2025</b><br> bei der Rheinland-Pfalz-Saar Meisterschaft in der Verbandsliga erreichen die Mayener U12 Jungs den zweiten Platz.",
           "images": [
             "/assets/images/chronik/u12-vize-1.webp"
           ]
+        },
+        {
+          "headline": "Junge U10 Debut",
+          "event": "<b>Mayen, Mai und Juni 2025</b><br> Die männliche U10 des Hockey-Club „Grün-Weiss“ TuS Mayen absolvierte unter der Leitung von Mike Flinsch, Andi Jung und Sergej Schatz ihre ersten Heimturniere der Feldsaison – und das mit beachtlichen Leistungen und viel Einsatzfreude. Zum ersten mal spielt die junge neue U10 auf Kleinfeld, zum ersten mal mit Tormann! ",
+          "images": [
+            "/assets/images/chronik/MU10_debut_2025_1200.webp",
+            "/assets/images/chronik/MU10_debut_2_2025_1200.webp"
+          ],
+          "link": "https://www.blick-aktuell.de/Sport/Erfolgreiches-Heimturnier-fuer-die-maennliche-U10-631545.html",
+          "linkTitle": "Pressebericht: Heimturnier für die U10 war ein voller Erfolg – und macht Lust auf mehr."
         },
         {
           "headline": "Heimspielturnier der Mädels",
@@ -41,7 +51,9 @@
           "event": "<b>Am 26. Januar 2025</b> fand das Heimturnier der Spielgemeinschaft HC Grün-Weiss TuS Mayen und Rot-Weiß Koblenz statt. Die Mannschaft konnte zwei beeindruckende Siege verbuchen. Im ersten Spiel setzten sie sich mit einem 4:2 gegen den SV Saar 05 Saarbrücken durch. Die Spieler zeigten eine starke Offensive und eine solide Verteidigung, die den Gegner immer wieder unter Druck setzte.\n\nIm zweiten Spiel des Tages triumphierte die Spielgemeinschaft mit einem klaren 4:0 über die SG Westerwald. Die Mannschaft dominierte das Spiel von Anfang an und ließ dem Gegner kaum Chancen. Besonders hervorzuheben sind die schnellen Konterangriffe und die sichere Abwehrarbeit, die den Grundstein für den Erfolg legten. Die Heimspieltage in der Realschulhalle Mayen waren ein voller Erfolg und zeigten das Potenzial und die Leidenschaft der jungen Hockeyspielerinnen und -spieler. Die Zuschauer konnten spannende Spiele und großartige Leistungen erleben, die Lust auf mehr machen.",
           "images": [
             "/assets/images/turniere/turnier36.webp"
-          ]
+          ],
+          "link": "https://www.blick-aktuell.de/Sport/Hockeyspieler-nutzen-Heimvorteil-617669.html",
+          "linkTitle": "Pressebericht: Hockeyspieler nutzen Heimvorteil."
         },
         {
           "headline": "U10 Mädchenmannschaft glänzt gegen VfL Bad Kreuznach",
