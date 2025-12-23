@@ -90,9 +90,42 @@
 }
 
 @media screen and (max-width: 600px) {
+
+
+    /* Deine Kachel wirklich auf Bildschirmbreite */
     .tile-highlight {
-        width: 100%; /* Volle Breite nutzen */
-        max-width: 100%; /* Sicherstellen, dass nichts begrenzt */
-        margin: 0; /* Falls es außen Platz gibt, diesen entfernen */
+        width: 100vw !important;
+        max-width: 100vw !important;
+        margin-left: calc(50% - 50vw) !important;  /* zentriert auf viewport */
+        margin-right: calc(50% - 50vw) !important;
+        border-radius: 0 !important;               /* optional, aber meist nötig */
+    }
+
+    /* 1) Kachel/Container soll nicht links/rechts einschränken */
+    main {
+        margin: 0;              /* statt 20px auto */
+        max-width: 100%;
+    }
+
+    .highlight-container {
+        padding: 0;             /* war 10px */
+    }
+
+    .chronik-entry {
+        padding: 10px;          /* Text-Padding bleibt */
+        max-width: 100%;
+    }
+
+    /* 2) Bild "full bleed": raus aus dem Padding */
+    .chronik-images {
+        margin-left: -10px;     /* entspricht .chronik-entry padding */
+        margin-right: -10px;
+    }
+
+    .chronik-images img {
+        width: 100%;
+        max-width: none;        /* wichtig */
+        border-radius: 0;       /* damit es wirklich bis zum Rand geht */
+        display: block;
     }
 }
