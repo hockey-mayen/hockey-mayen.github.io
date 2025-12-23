@@ -81,7 +81,7 @@
     cursor: pointer;
     border-radius: 5px;
     margin-top: 10px;
-    width: 100%;
+    width: 98%;
     text-align: center;
 }
 
@@ -128,7 +128,7 @@
 
     /* 2) Bild "full bleed": raus aus dem Padding */
     .chronik-images {
-        margin-left: -16px;   /* statt -10px */
+        margin-left: -20px;   /* statt -10px */
         margin-right: -16px;
         margin-top: 12px;
     }
