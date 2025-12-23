@@ -115,12 +115,6 @@
         padding: 0;             /* war 10px */
     }
 
-    /* Überschrift/Datum/Fließtext lesbarer */
-    .chronik-entry h4 {
-        font-size: 20px;
-        line-height: 1.25;
-    }
-
     .chronik-entry {
         padding: 16px;          /* Text-Padding bleibt */
         max-width: 100%;

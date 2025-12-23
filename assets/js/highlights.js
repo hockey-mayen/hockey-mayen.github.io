@@ -98,7 +98,7 @@ document.addEventListener("DOMContentLoaded", async function () {
                     : "";
 
                 const html = `
-          <h4>${entry.headline}</h4>
+          <h2>${entry.headline}</h2>
           <p>
             <span class="short-text">${shortText}</span>
             <span class="full-text" style="display: none;">${fullText}</span>
