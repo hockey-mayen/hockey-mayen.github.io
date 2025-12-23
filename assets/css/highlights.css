@@ -116,7 +116,9 @@
     }
 
     .chronik-entry {
-        padding: 16px;          /* Text-Padding bleibt */
+        padding-left: 20px;          /* Text-Padding bleibt */
+        padding-right: 16px;          /* Text-Padding bleibt */
+        padding-top: 0;
         max-width: 100%;
     }
 
