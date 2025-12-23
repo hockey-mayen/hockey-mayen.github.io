@@ -122,7 +122,7 @@ nav ul li a.active {
 .subtitle {
     font-size: 21px;
     font-weight: normal;
-    margin-top: 0px;
+    margin-top: 0;
     margin-bottom: 1px;
     color: rgba(152, 196, 53, 1 );
     font-family: 'UnifrakturMaguntia', cursive;
@@ -130,6 +130,10 @@ nav ul li a.active {
 }
 
 @media (max-width: 800px) {
+
+    header {
+         padding-bottom: 0;
+    }
     /* Header flexbox für zentrierte Anordnung */
     .header-container {
         display: flex;
@@ -138,6 +142,7 @@ nav ul li a.active {
         justify-content: center;
         text-align: center;
         gap: 5px;
+        margin-bottom: 0;
     }
 
     /* Titel optimieren: Erster Teil in einer Zeile, Mayen darunter */
@@ -233,6 +238,5 @@ nav ul li a.active {
     /* Navigation im mobilen Header untereinander */
     nav {
         width: 100%;
-        margin-top: 10px;
     }
 }

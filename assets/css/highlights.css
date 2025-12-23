@@ -91,7 +91,9 @@
 
 @media screen and (max-width: 600px) {
 
-
+    .aktuell-container {
+        padding-top: 0;
+    }
     /* Deine Kachel wirklich auf Bildschirmbreite */
     .tile-highlight {
         width: 100vw !important;
@@ -99,11 +101,13 @@
         margin-left: calc(50% - 50vw) !important;  /* zentriert auf viewport */
         margin-right: calc(50% - 50vw) !important;
         border-radius: 0 !important;               /* optional, aber meist nötig */
+        margin-top: 0 !important;
     }
 
     /* 1) Kachel/Container soll nicht links/rechts einschränken */
     main {
         margin: 0;              /* statt 20px auto */
+        padding: 0;        /* neu */
         max-width: 100%;
     }
 
@@ -111,15 +115,26 @@
         padding: 0;             /* war 10px */
     }
 
+    /* Überschrift/Datum/Fließtext lesbarer */
+    .chronik-entry h4 {
+        font-size: 20px;
+        line-height: 1.25;
+    }
+
     .chronik-entry {
-        padding: 10px;          /* Text-Padding bleibt */
+        padding: 16px;          /* Text-Padding bleibt */
         max-width: 100%;
+    }
+
+    .chronik-entry p {
+        line-height: 1.6;
     }
 
     /* 2) Bild "full bleed": raus aus dem Padding */
     .chronik-images {
-        margin-left: -10px;     /* entspricht .chronik-entry padding */
-        margin-right: -10px;
+        margin-left: -16px;   /* statt -10px */
+        margin-right: -16px;
+        margin-top: 12px;
     }
 
     .chronik-images img {
