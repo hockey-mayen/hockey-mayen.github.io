@@ -71,15 +71,18 @@ document.addEventListener("DOMContentLoaded", async function () {
                                 const loading = isHero ? "eager" : "lazy";
                                 const fetchPriority = isHero ? "high" : "low";
 
-                                return `<img src="${img}"
-                      alt="Bild zu ${entry.headline}"
-                      loading="${loading}"
-                      decoding="async"
-                      fetchpriority="${fetchPriority}">`;
-                            })
-                            .join("")}
-              </div>`
-                        : "";
+                                return `
+                                  <div class="img-wrap" data-img="${img}">
+                                    <div class="img-skeleton" aria-hidden="true"></div>
+                                    <img src="${img}"
+                                      alt="Bild zu ${entry.headline}"
+                                      loading="${loading}"
+                                      decoding="async"
+                                      fetchpriority="${fetchPriority}">
+                                     </div>
+                                        `;}).join("")}
+                                    </div>`
+                                    : "";
 
                 const linkHtml = entry.link
                     ? `<div class="event-link">
@@ -101,6 +104,7 @@ document.addEventListener("DOMContentLoaded", async function () {
         `;
 
                 chronikList.appendChild(entryDiv);
+                wireImageLoaders(entryDiv);
             });
 
             displayedEntries += entriesPerLoad;
@@ -113,5 +117,27 @@ document.addEventListener("DOMContentLoaded", async function () {
         chronikList.parentNode.appendChild(loadMoreButton);
     } catch (error) {
         console.error("Fehler beim Laden der Chronik:", error);
+    }
+    function wireImageLoaders(rootEl) {
+        const wraps = rootEl.querySelectorAll(".img-wrap");
+
+        wraps.forEach((wrap) => {
+            const img = wrap.querySelector("img");
+            if (!img) return;
+
+            const done = (ok) => {
+                wrap.classList.add(ok ? "is-loaded" : "is-error");
+                img.classList.add("is-loaded");
+            };
+
+            // Wenn Bild evtl. schon aus Cache da ist
+            if (img.complete && img.naturalWidth > 0) {
+                done(true);
+                return;
+            }
+
+            img.addEventListener("load", () => done(true), { once: true });
+            img.addEventListener("error", () => done(false), { once: true });
+        });
     }
 });

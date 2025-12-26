@@ -72,6 +72,73 @@
     margin: 0 auto 5px auto; /* ⬅️ horizontal zentriert */
 }
 
+/* --- Image Loader (Skeleton / Shimmer) --- */
+.chronik-images .img-wrap {
+    position: relative;
+    overflow: hidden;
+    border-radius: 5px;
+    margin: 0 auto 5px auto;
+}
+
+/* Skeleton block (nimmt Platz ein, bevor Bild da ist) */
+.chronik-images .img-skeleton {
+    width: 100%;
+    aspect-ratio: 16 / 9; /* Default; bei Portraits trotzdem ok */
+    background: #e9ecef;
+    position: relative;
+}
+
+/* Shimmer Animation */
+.chronik-images .img-skeleton::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    transform: translateX(-60%);
+    background: linear-gradient(
+            90deg,
+            rgba(233,236,239,0) 0%,
+            rgba(255,255,255,0.65) 50%,
+            rgba(233,236,239,0) 100%
+    );
+    animation: shimmer 1.2s infinite;
+}
+
+@keyframes shimmer {
+    0%   { transform: translateX(-60%); }
+    100% { transform: translateX(60%); }
+}
+
+/* Bild startet unsichtbar, wird beim Laden eingeblendet */
+.chronik-images img {
+    opacity: 0;
+    transition: opacity 280ms ease;
+}
+
+.chronik-images img.is-loaded {
+    opacity: 1;
+}
+
+/* Wenn geladen: Skeleton ausblenden */
+.chronik-images .img-wrap.is-loaded .img-skeleton {
+    display: none;
+}
+
+/* Optional: Error-Overlay */
+.chronik-images .img-wrap.is-error .img-skeleton {
+    animation: none;
+}
+.chronik-images .img-wrap.is-error::after {
+    content: "Bild konnte nicht geladen werden";
+    position: absolute;
+    inset: 0;
+    display: grid;
+    place-items: center;
+    color: #6c757d;
+    font-size: 13px;
+    background: #f8f9fa;
+}
+
+
 .load-more-btn {
     background: #008f5a;
     color: white;
@@ -138,5 +205,8 @@
         max-width: none;        /* wichtig */
         border-radius: 0;       /* damit es wirklich bis zum Rand geht */
         display: block;
+    }
+    .chronik-images .img-wrap {
+        border-radius: 0;
     }
 }
