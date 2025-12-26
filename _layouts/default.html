@@ -82,10 +82,18 @@
         {
             "@context": "https://schema.org",
             "@type": "SportsOrganization",
+            "areaServed": {
+                "@type": "City",
+                "name": "Mayen"
+            },
+            "memberOf": {
+                "@type": "SportsOrganization",
+                "name": "Sportvereine in Mayen"
+            },
             "name": "Hockey Club Grün-Weiss TuS Mayen e.V. 1919",
             "url": "https://hockey-mayen.de",
             "logo": "https://hockey-mayen.de/assets/images/Logo_transparenter_Hintergrund_300dpi-300x300.png",
-            "sport": "FeldHockey Hallenhockey",
+            "sport": ["Feldhockey", "Hallenhockey"],
             "foundingDate": "1919",
             "address": {
                 "@type": "PostalAddress",
@@ -93,6 +101,25 @@
                 "postalCode": "56727",
                 "addressLocality": "Mayen",
                 "addressCountry": "DE"
+            },
+            "sameAs": [
+                "https://www.facebook.com/HcGrunWeissMayen/",
+                "https://verband.hockey.de/",
+                "https://rps.prd.dhb.digital/"
+            ],
+            "knowsAbout": [
+                "Hockey",
+                "Feldhockey",
+                "Hallenhockey",
+                "Jugendsport",
+                "Vereinssport in Mayen",
+                "Sport in Mayen"
+            ],
+            "contactPoint": {
+                "@type": "ContactPoint",
+                "contactType": "Kontakt",
+                "url": "https://hockey-mayen.de/kontakt/",
+                "availableLanguage": ["de"]
             }
         }
     </script>
