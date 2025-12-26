@@ -2,6 +2,9 @@
 layout: default
 title: Hockey-Club Grün-Weiss TuS Mayen
 permalink: /verein/
+scripts:
+  - /assets/js/trainingImageRotator.js
+  - /assets/js/turniereImageRotator.js
 ---
 
 <div class="aligned-content">

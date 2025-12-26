@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const WORKER_URL = 'https://hockey-mayen-contact.sergej-schatz.workers.dev/?debug=1';
+    const WORKER_URL = 'https://hockey-mayen-contact.sergej-schatz.workers.dev/';
 
     const RECIPIENT_LABELS = {
         geschaeftsfuehrung: 'Geschäftsführung',
@@ -8,9 +8,11 @@ document.addEventListener('DOMContentLoaded', () => {
         webmaster: 'Webmaster',
     };
 
-    const MIN_MESSAGE_LEN = 20;
+    const MIN_MESSAGE_LEN = 25;
 
     const form = document.getElementById('contactForm');
+    if (!form) return;
+
     const recipient = document.getElementById('recipient');
     const nameEl = document.getElementById('name');
     const emailEl = document.getElementById('email');
@@ -29,25 +31,39 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const thankYouBox = document.getElementById('thankYouBox');
     const summaryBox = document.getElementById('summaryBox');
-
     const turnstileError = document.getElementById('turnstileError');
-    let turnstileToken = '';
 
-    // Turnstile callbacks (müssen global sein!)
-    window.onTurnstileSuccess = (token) => {
-        turnstileToken = String(token || '');
-        if (turnstileError) turnstileError.style.display = 'none';
-        validateForm();
-    };
-    window.onTurnstileExpired = () => {
-        turnstileToken = '';
-        validateForm();
-    };
-    window.onTurnstileError = () => {
-        turnstileToken = '';
-        if (turnstileError) turnstileError.style.display = 'block';
-        validateForm();
-    };
+    let turnstileToken = '';
+    let isSubmitting = false;
+
+    // =========================
+    // ✅ HARD DEBUG (Console + UI)
+    // =========================
+    const DEBUG =
+        new URLSearchParams(window.location.search).get('debug') === '1';
+
+    function dbg(...args) {
+        if (!DEBUG) return;
+        console.log('[contactForm]', ...args);
+    }
+
+    // Kleine Debug-Box unten am Formular (nur wenn DEBUG=true)
+    let debugBox = document.getElementById('contactDebugBox');
+    if (!debugBox && DEBUG) {
+        debugBox = document.createElement('pre');
+        debugBox.id = 'contactDebugBox';
+        debugBox.style.cssText =
+            'margin-top:12px;padding:10px;border-radius:10px;background:#fff;' +
+            'border:1px dashed #bbb;font-size:12px;line-height:1.35;white-space:pre-wrap;' +
+            'color:#333;max-height:220px;overflow:auto;';
+        debugBox.textContent = 'Debug aktiviert…';
+        form.appendChild(debugBox);
+    }
+
+    function writeDebug(text) {
+        if (!DEBUG || !debugBox) return;
+        debugBox.textContent = text;
+    }
 
     const sanitizeText = (v) => String(v ?? '').trim();
     const isValidEmail = (value) =>
@@ -58,15 +74,23 @@ document.addEventListener('DOMContentLoaded', () => {
         el.style.display = show ? 'block' : 'none';
     }
 
-    function setSubmitEnabled(enabled) {
-        submitBtn.disabled = !enabled;
-        if (!enabled) submitBtn.setAttribute('disabled', 'disabled');
+    function setSubmitEnabled(enabled, reason = '') {
+        if (!submitBtn) return;
+        const shouldEnable = !!enabled && !isSubmitting;
+
+        const before = submitBtn.disabled;
+        submitBtn.disabled = !shouldEnable;
+        if (!shouldEnable) submitBtn.setAttribute('disabled', 'disabled');
         else submitBtn.removeAttribute('disabled');
+
+        if (DEBUG && before !== submitBtn.disabled) {
+            dbg('button changed', { disabled: submitBtn.disabled, reason });
+        }
     }
 
     function updateMessageCounter() {
+        if (!messageEl || !messageCounter) return;
         const len = sanitizeText(messageEl.value).length;
-        if (!messageCounter) return;
 
         if (len >= MIN_MESSAGE_LEN) {
             messageCounter.textContent = `${len}/${MIN_MESSAGE_LEN} Zeichen ✅`;
@@ -77,7 +101,39 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    function validateForm() {
+    function snapshot(reason) {
+        const recipientVal = sanitizeText(recipient?.value);
+        const nameVal = sanitizeText(nameEl?.value);
+        const emailVal = sanitizeText(emailEl?.value);
+        const msgVal = sanitizeText(messageEl?.value);
+
+        const snap = {
+            reason,
+            recipientVal,
+            recipientOk: !!recipientVal,
+            nameLen: nameVal.length,
+            nameOk: nameVal.length >= 2,
+            emailVal,
+            emailOk: isValidEmail(emailVal),
+            msgLen: msgVal.length,
+            msgOk: msgVal.length >= MIN_MESSAGE_LEN,
+            tokenLen: (turnstileToken || '').length,
+            captchaOk: !!turnstileToken,
+            isSubmitting,
+            btnDisabled: submitBtn?.disabled,
+        };
+
+        dbg('snapshot', snap);
+        writeDebug(JSON.stringify(snap, null, 2));
+        return snap;
+    }
+
+    function validateForm(reason = 'validate') {
+        if (!recipient || !nameEl || !emailEl || !messageEl) {
+            dbg('validate aborted: missing elements');
+            return false;
+        }
+
         const recipientVal = sanitizeText(recipient.value);
         const recipientOk = !!recipientVal;
 
@@ -104,7 +160,11 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         const allOk = recipientOk && nameOk && emailOk && msgOk && captchaOk;
-        setSubmitEnabled(allOk);
+
+        // Wichtig: hier schreiben wir IMMER einen Snapshot, damit du es siehst
+        snapshot(`${reason} => allOk=${allOk}`);
+
+        setSubmitEnabled(allOk, reason);
         return allOk;
     }
 
@@ -118,6 +178,8 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function renderSummary(payload) {
+        if (!summaryBox) return;
+
         const telLine = payload.phone
             ? `<div><strong>Telefon:</strong> ${escapeHtml(payload.phone)}</div>`
             : '';
@@ -132,37 +194,95 @@ document.addEventListener('DOMContentLoaded', () => {
     `;
     }
 
-    recipient.addEventListener('change', validateForm);
-    nameEl.addEventListener('input', validateForm);
-    emailEl.addEventListener('input', validateForm);
-    phoneEl.addEventListener('input', validateForm);
+    // ✅ Turnstile callbacks (global!)
+    window.onTurnstileSuccess = (token) => {
+        turnstileToken = String(token || '');
+        if (turnstileError) turnstileError.style.display = 'none';
+        dbg('turnstile success', { tokenLen: turnstileToken.length });
+        validateForm('turnstileSuccess');
+    };
 
-    messageEl.addEventListener('input', () => {
-        updateMessageCounter();
-        validateForm();
+    window.onTurnstileExpired = () => {
+        turnstileToken = '';
+        dbg('turnstile expired');
+        validateForm('turnstileExpired');
+    };
+
+    window.onTurnstileError = () => {
+        turnstileToken = '';
+        dbg('turnstile error');
+        if (turnstileError) turnstileError.style.display = 'block';
+        validateForm('turnstileError');
+    };
+
+    // ✅ Events
+    function hook(el, label) {
+        if (!el) return;
+        ['input', 'change', 'keyup', 'blur'].forEach((evt) => {
+            el.addEventListener(evt, () => {
+                dbg(`event ${label}:${evt}`);
+                updateMessageCounter();
+                validateForm(`${label}:${evt}`);
+            });
+        });
+    }
+
+    hook(recipient, 'recipient');
+    hook(nameEl, 'name');
+    hook(emailEl, 'email');
+    hook(phoneEl, 'phone');
+    hook(messageEl, 'message');
+
+    // Extra: wenn disabled bleibt, sieht man warum
+    submitBtn?.addEventListener('click', () => {
+        dbg('submit button clicked', { disabled: submitBtn.disabled });
+        snapshot('button clicked');
     });
 
-    updateMessageCounter();
-    setSubmitEnabled(false);
-    validateForm();
+    // Autofill / iOS / Browser-Specials
+    requestAnimationFrame(() => {
+        updateMessageCounter();
+        validateForm('RAF');
+    });
 
+    setTimeout(() => {
+        updateMessageCounter();
+        validateForm('t+300ms');
+    }, 300);
+
+    setTimeout(() => {
+        updateMessageCounter();
+        validateForm('t+1200ms');
+    }, 1200);
+
+    // 🔁 Heartbeat: schreibt regelmäßig Status (wichtig für "sporadisch")
+    setInterval(() => {
+        updateMessageCounter();
+        validateForm('heartbeat');
+    }, 800);
+
+    // Initial
+    updateMessageCounter();
+    setSubmitEnabled(false, 'init');
+    validateForm('init');
+
+    // ✅ Submit
     form.addEventListener('submit', async (e) => {
         e.preventDefault();
+        if (isSubmitting) return;
 
-        // Honeypot gefüllt => Bot (still)
         if (honeypotEl && sanitizeText(honeypotEl.value)) return;
 
-        // Captcha fehlt => Fehltext zeigen
         if (!turnstileToken) {
             if (turnstileError) {
                 turnstileError.textContent = 'Bitte bestätigen Sie kurz, dass Sie kein Bot sind.';
                 turnstileError.style.display = 'block';
             }
-            validateForm();
+            validateForm('submit blocked: no token');
             return;
         }
 
-        if (!validateForm()) return;
+        if (!validateForm('submit validate')) return;
 
         const recipientKey = sanitizeText(recipient.value);
         const payload = {
@@ -177,8 +297,10 @@ document.addEventListener('DOMContentLoaded', () => {
         };
 
         try {
-            setSubmitEnabled(false);
-            submitBtn.textContent = 'Sende...';
+            isSubmitting = true;
+            setSubmitEnabled(false, 'submitting');
+            if (submitBtn) submitBtn.textContent = 'Sende...';
+            snapshot('submitting');
 
             const res = await fetch(WORKER_URL, {
                 method: 'POST',
@@ -191,7 +313,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
             if (!res.ok || (data && data.ok === false)) {
                 if (res.status === 403) {
-                    // Turnstile ungültig/abgelaufen
                     turnstileToken = '';
                     if (turnstileError) {
                         turnstileError.textContent = 'Captcha ungültig/abgelaufen. Bitte erneut bestätigen.';
@@ -206,13 +327,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
             renderSummary(payload);
             form.style.display = 'none';
-            thankYouBox.style.display = 'block';
+            if (thankYouBox) thankYouBox.style.display = 'block';
+            snapshot('submit success');
         } catch (err) {
             console.error(err);
             alert('Leider konnte die Nachricht nicht gesendet werden. Bitte versuchen Sie es später erneut.');
-            submitBtn.textContent = 'Senden';
-            updateMessageCounter();
-            validateForm();
+            if (submitBtn) submitBtn.textContent = 'Senden';
+            isSubmitting = false;
+            validateForm('submit error');
+        } finally {
+            if (!thankYouBox || thankYouBox.style.display !== 'block') {
+                isSubmitting = false;
+                if (submitBtn) submitBtn.textContent = 'Senden';
+                validateForm('submit finally');
+            }
         }
     });
 });

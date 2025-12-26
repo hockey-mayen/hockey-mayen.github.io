@@ -1,6 +1,7 @@
 ---
 layout: default
 title: "Turniere"
+permalink: /turniere/
 ---
 
 <h2>Turniertermine</h2>

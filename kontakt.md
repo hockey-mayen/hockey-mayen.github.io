@@ -2,6 +2,8 @@
 layout: default
 title: "Kontakt"
 permalink: /kontakt/
+scripts:
+  - /assets/js/kontakt-form.js
 ---
 
 ## Kontakt
@@ -15,7 +17,8 @@ permalink: /kontakt/
 
     <label for="recipient">Ansprechpartner</label>
     <select id="recipient" name="recipient" required>
-      <option value="" disabled selected>Bitte auswählen…</option>
+      <!-- WICHTIG: nicht disabled, sonst “sporadisch” kein Value -->
+      <option value="" selected>Bitte auswählen…</option>
       <option value="vorsitz">1. Vorsitzender – Sascha Flinsch (Club Organisation)</option>
       <option value="geschaeftsfuehrung">Geschäftsführerin – Nina Graeff (Veranstaltungen)</option>
       <option value="jugendwart">Jugendwart – Mike Flinsch (Training)</option>
@@ -41,10 +44,10 @@ permalink: /kontakt/
     <textarea id="message" name="message" rows="7" required placeholder="Ihre Nachricht…"></textarea>
 
     <small id="messageCounter" style="display:block; color:#6c757d; margin-top:6px;">
-      0/20 Zeichen (mindestens 20)
+      0/22 Zeichen (mindestens 22)
     </small>
     <small id="messageError" style="display:none; color:#c0392b; margin-top:6px;">
-      Bitte schreiben Sie eine Nachricht mit mindestens 20 Zeichen.
+      Bitte schreiben Sie eine Nachricht mit mindestens 22 Zeichen.
     </small>
 
     <!-- Turnstile -->
@@ -74,20 +77,16 @@ permalink: /kontakt/
     <p>Ihre Nachricht wurde gesendet. Hier ist eine Zusammenfassung:</p>
 
     <div id="summaryBox" style="background:#f6fbf8; border:1px solid #bdddcc; border-radius:10px; padding:12px;"></div>
-
   </div>
-</div> 
+</div>
 
-<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+<!-- Turnstile Script -->
+<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" defer></script>
 
 <style>
   #submitBtn:disabled {
     opacity: 0.55;
     cursor: not-allowed;
     filter: grayscale(15%);
-  }
-  #sendAnotherLink {
-    display: inline-block;
-    text-decoration: none;
   }
 </style>

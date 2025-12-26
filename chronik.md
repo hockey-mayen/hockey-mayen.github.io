@@ -2,6 +2,8 @@
 layout: default
 title: "Chronik"
 permalink: /chronik/
+scripts:
+  - /assets/js/chronik.js
 ---
 
 

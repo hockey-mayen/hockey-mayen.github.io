@@ -7,7 +7,7 @@
       "link": {
         "url": "https://www.deutscher-hockey-bund.de/VVI-web/default.asp?lokal=RPS&innen=/VVI-web/RPS-Hockey/CD-Spieltage.asp&auswahl=Halle&gruppe=3",
         "title": "U10 Termine auf rps.hockey.de",
-        "image": "assets/images/turniere/turnier-U10-jungs.png"
+        "image": "/assets/images/turniere/turnier-U10-jungs.png"
       },
 
       "details": [
@@ -22,7 +22,7 @@
       "link": {
         "url": "https://www.deutscher-hockey-bund.de/VVI-web/default.asp?lokal=RPS&innen=/VVI-web/RPS-Hockey/CD-Spieltage.asp&auswahl=Halle&gruppe=3",
         "title": "Mehr Infos zur Mayener WU10 auf rps.hockey.de",
-        "image": "assets/images/turniere/turnier-U12-maedels.png"
+        "image": "/assets/images/turniere/turnier-U12-maedels.png"
       },
       "details": [
         { "date": "15.11.2025", "location": "Mainz" },
@@ -36,7 +36,7 @@
       "link": {
         "url": "https://rps.hockey.de/spielbetrieb/hallensaison-jugend/verbandsliga-weibliche-u12",
         "title": "Mehr Infos zur Mayener WU12 auf rps.hockey.de",
-        "image": "assets/images/turniere/turnier-U12-maedels.png"
+        "image": "/assets/images/turniere/turnier-U12-maedels.png"
       },
       "details": [
         { "date": "07.12.2025", "location": "Mayen" },
@@ -48,7 +48,7 @@
       "link": {
         "url": "https://rps.prd.dhb.digital/spielbetrieb/jugend-feld-2024/verbandsliga-mu12",
         "title": "Mehr Infos zur Mayener MU14 auf rps.hockey.de",
-        "image": "assets/images/turniere/turnier-U12-jungs.png"
+        "image": "/assets/images/turniere/turnier-U12-jungs.png"
       },
       "details": [
         { "date": "22.11.2025", "location": "Gau-Algesheim" },
