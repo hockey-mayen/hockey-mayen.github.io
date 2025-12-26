@@ -70,7 +70,8 @@ Hockey Schläger 🏑 in allen Größen stellen wir dir zum Schnupper-Training z
 
 Du hast Fragen zu unserem Training und möchtest dich näher informieren? Schreibe uns einfach!
 
-    <p class="email-highlight"><a href="/kontakt/">Kontaktformular</a></p>
+    <p class="email-highlight"><a href="/kontakt/?recipient=jugendwart">Kontaktformular</a></p>
+
 </div>
 
 

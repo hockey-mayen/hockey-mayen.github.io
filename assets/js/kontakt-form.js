@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let isSubmitting = false;
 
     // =========================
-    // ✅ HARD DEBUG (Console + UI)
+    // ✅ DEBUG per URL: ?debug=1
     // =========================
     const DEBUG =
         new URLSearchParams(window.location.search).get('debug') === '1';
@@ -161,10 +161,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const allOk = recipientOk && nameOk && emailOk && msgOk && captchaOk;
 
-        // Wichtig: hier schreiben wir IMMER einen Snapshot, damit du es siehst
         snapshot(`${reason} => allOk=${allOk}`);
-
         setSubmitEnabled(allOk, reason);
+
         return allOk;
     }
 
@@ -185,13 +184,49 @@ document.addEventListener('DOMContentLoaded', () => {
             : '';
 
         summaryBox.innerHTML = `
-      <div><strong>Ansprechpartner:</strong> ${escapeHtml(payload.recipientLabel)}</div>
-      <div><strong>Name:</strong> ${escapeHtml(payload.name)}</div>
-      <div><strong>E-Mail:</strong> ${escapeHtml(payload.email)}</div>
-      ${telLine}
-      <div style="margin-top:10px;"><strong>Nachricht:</strong></div>
-      <div style="white-space:pre-wrap;">${escapeHtml(payload.message)}</div>
-    `;
+          <div><strong>Ansprechpartner:</strong> ${escapeHtml(payload.recipientLabel)}</div>
+          <div><strong>Name:</strong> ${escapeHtml(payload.name)}</div>
+          <div><strong>E-Mail:</strong> ${escapeHtml(payload.email)}</div>
+          ${telLine}
+          <div style="margin-top:10px;"><strong>Nachricht:</strong></div>
+          <div style="white-space:pre-wrap;">${escapeHtml(payload.message)}</div>
+        `;
+    }
+
+    // ==========================================
+    // ✅ NEW: Recipient aus URL setzen (?recipient=...)
+    // ==========================================
+    function applyRecipientFromUrl() {
+        try {
+            const params = new URLSearchParams(window.location.search);
+            const r = (params.get('recipient') || '').trim();
+            if (!r) return;
+
+            // Whitelist: nur bekannte Werte
+            if (!Object.prototype.hasOwnProperty.call(RECIPIENT_LABELS, r)) return;
+
+            // Wert setzen + change triggern
+            if (recipient) {
+                recipient.value = r;
+                recipient.dispatchEvent(new Event('change', { bubbles: true }));
+                dbg('applyRecipientFromUrl', { recipient: r });
+            }
+        } catch (e) {
+            dbg('applyRecipientFromUrl error', e);
+        }
+    }
+
+    // Optional: Query wieder entfernen (URL sauber)
+    function cleanUrlQuery() {
+        try {
+            const url = new URL(window.location.href);
+            if (url.searchParams.has('recipient')) {
+                url.searchParams.delete('recipient');
+                history.replaceState({}, '', url.pathname + (url.search ? url.search : '') + url.hash);
+            }
+        } catch (e) {
+            dbg('cleanUrlQuery error', e);
+        }
     }
 
     // ✅ Turnstile callbacks (global!)
@@ -233,13 +268,12 @@ document.addEventListener('DOMContentLoaded', () => {
     hook(phoneEl, 'phone');
     hook(messageEl, 'message');
 
-    // Extra: wenn disabled bleibt, sieht man warum
     submitBtn?.addEventListener('click', () => {
         dbg('submit button clicked', { disabled: submitBtn.disabled });
         snapshot('button clicked');
     });
 
-    // Autofill / iOS / Browser-Specials
+    // Autofill / Browser-Specials
     requestAnimationFrame(() => {
         updateMessageCounter();
         validateForm('RAF');
@@ -255,7 +289,7 @@ document.addEventListener('DOMContentLoaded', () => {
         validateForm('t+1200ms');
     }, 1200);
 
-    // 🔁 Heartbeat: schreibt regelmäßig Status (wichtig für "sporadisch")
+    // 🔁 Heartbeat (nur sinnvoll, wenn du’s brauchst)
     setInterval(() => {
         updateMessageCounter();
         validateForm('heartbeat');
@@ -264,6 +298,11 @@ document.addEventListener('DOMContentLoaded', () => {
     // Initial
     updateMessageCounter();
     setSubmitEnabled(false, 'init');
+
+    // ✅ NEW: preselect aus URL
+    applyRecipientFromUrl();
+    // cleanUrlQuery(); // <- optional: aktivieren, wenn URL sauber bleiben soll
+
     validateForm('init');
 
     // ✅ Submit
