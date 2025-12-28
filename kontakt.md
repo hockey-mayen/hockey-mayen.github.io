@@ -19,10 +19,10 @@ scripts:
     <select id="recipient" name="recipient" required>
       <!-- WICHTIG: nicht disabled, sonst “sporadisch” kein Value -->
       <option value="" selected>Bitte auswählen…</option>
-      <option value="vorsitz">1. Vorsitzender – Sascha Flinsch</option>
-      <option value="geschaeftsfuehrung">Geschäftsführerin – Nina Graeff</option>
-      <option value="jugendwart">Jugendwart – Mike Flinsch</option>
-      <option value="webmaster">Webmaster – Sergej Schatz</option>
+      <option value="vorsitz">1. Vorsitzender Sascha Flinsch</option>
+      <option value="geschaeftsfuehrung">Geschäftsführerin Nina Graeff</option>
+      <option value="jugendwart">Jugendwart Mike Flinsch</option>
+      <option value="webmaster">Webmaster Sergej Schatz</option>
     </select>
     <small id="recipientError" style="display:none; color:#c0392b; margin-top:6px;">Bitte einen Ansprechpartner auswählen.</small>
 
