@@ -4,12 +4,15 @@ title: "Turniere"
 permalink: /turniere/
 ---
 
+
 <h2>Turniertermine</h2>
 <div class ="aligned-content">
 <p>Wir spielen In der Verbandsliga Rheinland-Pfalz-Saar.</p>
 <p><strong>Und wir sind hartnäckig wie Basalt. Mayener Basalt – hau!</strong></p>
-<p>Hier findest du die Turniertermine für unsere Teams:</p>
+<h3>Hier findest du die Turniertermine für unsere Teams🚀</h3>
 </div>
+
+<div class="aligned-content" data-aos="fade-up" data-aos-delay="200" >
 
 <div class="tiles-container">
     {% for tile in site.data.turniere.tiles %}
@@ -35,5 +38,6 @@ permalink: /turniere/
         {% endif %}
     </div>
     {% endfor %}
+</div>
 </div>
 

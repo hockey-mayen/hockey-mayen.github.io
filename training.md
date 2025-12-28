@@ -15,11 +15,23 @@ Dein Kind möchte den Hockeysport ausprobieren? Du selbst willst den Schläger s
 <br>
 Jung oder alt, Anfänger oder Fortgeschrittene – bei uns findet jeder das passende Training!
 <br>
-Komm einfach vorbei zu unseren Schnupper-Einheiten.
+<br>
+Komm einfach vorbei zu unseren Schnupper-Einheiten in der regulären Trainingszeit!
+<br>
+<strong>Hinweis:</strong> <em>In den Schulferien findet kein Training statt.</em> 
+<br>
+<br>
+Du hast Fragen zu unserem Training und möchtest dich näher informieren? Schreibe uns einfach!
+
+    <p class="email-highlight"><a href="/kontakt/?recipient=jugendwart"> 🏑📩 Hier gehts zum Kontaktformular 📩🏑</a></p>
+<br>
 
 <div class="aligned-content" data-aos="fade-up" data-aos-delay="200" >
   <img src="../assets/images/training/schnuppern.png" style="width: 120px; height: auto; transform: translateY(10px);" />
 </div>
+
+<div class="aligned-content" data-aos="fade-up" data-aos-delay="200" >
+<h3>Unsere Trainingszeiten:</h3>
 
 <div class="tiles-container">
     {% assign datumWechselHalleZuFeld = "2025-03-26" %}
@@ -62,15 +74,13 @@ Komm einfach vorbei zu unseren Schnupper-Einheiten.
     </div>
     {% endfor %}
 </div>
+</div>
 
 <div class="aligned-content">
 Auf dem Kunstrasenplatz sind wir in der warmen Jahreszeit, und in der kalten Jahreszeit - in der Sporthalle.
 
 Hockey Schläger 🏑 in allen Größen stellen wir dir zum Schnupper-Training zur Verfügung.
 
-Du hast Fragen zu unserem Training und möchtest dich näher informieren? Schreibe uns einfach!
-
-    <p class="email-highlight"><a href="/kontakt/?recipient=jugendwart">Kontaktformular</a></p>
 
 </div>
 

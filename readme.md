@@ -27,3 +27,7 @@ https://ch.maswitzerland.com/de
 
 
 https://pagespeed.web.dev/?utm_source=psi&utm_medium=redirect
+
+convert "WU12-neue-trikots-2.png" -quality 80 "WU12-neue-trikots-2.webp"
+
+convert "mu10-15-nov.2025-2.jpg" -quality 80 "mu10-15-nov.2025-2.webp"
