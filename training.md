@@ -22,21 +22,23 @@ Komm einfach vorbei zu unseren Schnupper-Einheiten in der regulären Trainingsze
 <br>
 <br>
 Du hast Fragen zu unserem Training und möchtest dich näher informieren? Schreibe uns einfach!
+</div>
 
-    <p class="email-highlight"><a href="/kontakt/?recipient=jugendwart"> 🏑📩 Hier gehts zum Kontaktformular 📩🏑</a></p>
+<div>
+    <p class="email-highlight"><a href="/kontakt/?recipient=jugendwart"> 🏑📩 Kontaktformular</a></p>
 <br>
 
 <div class="aligned-content" data-aos="fade-up" data-aos-delay="200" >
   <img src="../assets/images/training/schnuppern.png" style="width: 120px; height: auto; transform: translateY(10px);" />
 </div>
 
-<div class="aligned-content" data-aos="fade-up" data-aos-delay="200" >
+<div  data-aos="fade-up" data-aos-delay="200" >
 <h3>Unsere Trainingszeiten:</h3>
 
 <div class="tiles-container">
     {% assign datumWechselHalleZuFeld = "2025-03-26" %}
     {% assign datumWechselFeldZuHalle = "2025-10-31" %}
-    {% assign today = "now" | date: "%Y-%m-%d" %}
+    {% assign today = "now" | date: "%Y-%m-%d" %} 
 
     {% if today >= datumWechselHalleZuFeld and today < datumWechselFeldZuHalle %}
         {% assign istFeldsaison = true %}

@@ -139,7 +139,7 @@ iframe {
     padding-right: 15px;
     /*text-align: center;*/
     max-width: 1000px; /* Optional: Setzt eine maximale Breite für bessere Lesbarkeit */
-    margin: 0 auto; /* Zentriert den Block, aber der Text bleibt linksbündig */
+    margin: 0 auto 10px;    /* top 0, left/right auto, bottom 10px */
 }
 
 .download-link {

@@ -12,7 +12,7 @@ permalink: /turniere/
 <h3>Hier findest du die Turniertermine für unsere Teams🚀</h3>
 </div>
 
-<div class="aligned-content" data-aos="fade-up" data-aos-delay="200" >
+<div data-aos="fade-up" data-aos-delay="200" >
 
 <div class="tiles-container">
     {% for tile in site.data.turniere.tiles %}

@@ -3,13 +3,15 @@
 /* tiles.css: Container für Kacheln */
 .tiles-container {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* 2 Spalten */
-    gap: 15px; /* Abstand zwischen den Kacheln */
-    width: 90%; /* Nutze 90% der Breite des Containers */
+    grid-template-columns: repeat(2, minmax(0, 600px));
+    justify-content: center;   /* zentriert beide Spalten im Container */
+    column-gap: 15px;          /* horizontal */
+    row-gap: 15px;             /* vertikal */
+    /*width: 90%; !* Nutze 90% der Breite des Containers *!*/
     margin-left: auto; /* Zentriert den Container horizontal */
     margin-right: auto;
     max-width: 1300px; /* Begrenze die Breite auf maximal 1200px */
-    padding: 20px; /* Etwas Innenabstand für bessere Optik */
+    padding: 15px; /* Etwas Innenabstand für bessere Optik */
     border-radius: 8px; /* Leicht abgerundete Ecken für den Container */
 }
 
@@ -23,7 +25,7 @@
             0 4px 6px rgba(0, 0, 0, 0.1),
             0 8px 20px rgba(0, 0, 0, 0.15);
     border-radius: 10px;
-    padding: 20px;
+    padding: 10px;
 
     color: #555c5f; /* Grauer Farbton wie bei anderen Texten */
     display: flex;
@@ -69,7 +71,7 @@
     max-width: 100%;
     height: auto;
     border-radius: 5px; /* Abgerundete Ecken am Bild */
-    margin-top: 10px;
+    /*margin-top: 10px;*/
 }
 .tile a {
     display: inline-block;
