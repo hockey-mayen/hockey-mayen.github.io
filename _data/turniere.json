@@ -5,8 +5,8 @@
     {
       "title": "U10 Kinder",
       "link": {
-        "url": "https://www.deutscher-hockey-bund.de/VVI-web/default.asp?lokal=RPS&innen=/VVI-web/RPS-Hockey/CD-Spieltage.asp&auswahl=Halle&gruppe=3",
-        "title": "U10 Termine auf rps.hockey.de",
+        "url": "https://www.hockey.de/VVI-web/default.asp?lokal=RPS&innen=/VVI-web/RPS-Hockey/CD-Spieltage.asp&auswahl=Halle&gruppe=3",
+        "title": "U10 Termine auf hockey.de",
         "image": "/assets/images/turniere/turnier-U10-jungs.png"
       },
 
@@ -20,8 +20,8 @@
     {
       "title": "U10 Mädels",
       "link": {
-        "url": "https://www.deutscher-hockey-bund.de/VVI-web/default.asp?lokal=RPS&innen=/VVI-web/RPS-Hockey/CD-Spieltage.asp&auswahl=Halle&gruppe=3",
-        "title": "Mehr Infos zur Mayener WU10 auf rps.hockey.de",
+        "url": "https://www.hockey.de/VVI-web/default.asp?lokal=RPS&innen=/VVI-web/RPS-Hockey/CD-Spieltage.asp&auswahl=Halle&gruppe=1",
+        "title": "Mehr Infos zur Mayener WU10 auf hockey.de",
         "image": "/assets/images/turniere/turnier-U12-maedels.png"
       },
       "details": [
