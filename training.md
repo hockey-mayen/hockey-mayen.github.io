@@ -13,7 +13,7 @@ permalink: /training/
 Dein Kind möchte den Hockeysport ausprobieren? Du selbst willst den Schläger schwingen ?
 </strong>
 <br>
-Jung oder alt, Anfänger oder Fortgeschrittene 👧🧒👨‍🦰👩‍🦳 – bei uns findet jeder das passende Training!
+Jung oder alt, Anfänger oder Fortgeschrittene – bei uns findet jeder das passende Training!
 <br>
 <br>
 Komm einfach vorbei zu unseren ✨ Schnupper-Einheiten in der regulären Trainingszeit!
