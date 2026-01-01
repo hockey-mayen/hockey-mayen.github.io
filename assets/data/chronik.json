@@ -57,6 +57,15 @@
           "linkTitle": "Pressebericht: Brückenstraßenfest 2025"
         },
         {
+          "headline": "Eine meisterhafte Saison für die U8",
+          "event": "<b>Worms, 4. April 2025</b><br>Zum Saisonabschluss der Altersstufe U8 machten sich zwei Mayener Mannschaften des HC Grün Weiß TuS Mayen zusammen mit ihren Trainern, Eltern und Schiedsrichterin auf die Reise nach Worms. Unter den elf Spielern waren auch drei Jungs, die in ihrem ersten großen Turnier die zweite Mannschaft mit sehr viel Engagement und Leidenschaft unterstützten.",
+          "images": [
+            "/assets/images/chronik/Sergej Schatz und Andi Jung Mayen Hockey U8 Abschluss.webp"
+          ],
+          "link": "https://www.blick-aktuell.de/Sport/Eine-meisterhafte-Saison-fuer-die-U8-623850.html",
+          "linkTitle": "Pressebericht: Die Mannschaft des HC Grün-Weiß TuS Mayen beim U8 Hockeyturnier in Worms"
+        },
+        {
           "headline": "Heimspielturnier der Mädels",
           "event": "<b>Mayen, 9. Februar 2025</b><br>Beim Heimspielturnier steigert sich das U12-Mädchenteam von Spiel zu Spiel. Im letzten Spiel des Turniers verteidigen die Mädels stark das Unentschieden und erspielen sich viele Chancen, in Führung zu gehen. Im Penalty-Shoot-out verpasst das Team von Nina Graeff und Ralf Heepenstrick den Sieg gegen die SG Kreuznacher HC/Gau-Algesheim erst in der dritten Penalty-Runde nur knapp.",
           "images": [
@@ -90,6 +99,7 @@
           "link": "https://www.blick-aktuell.de/Sport/Mayener-U8-Hockeymannschaft-siegreich-in-der-Pfalz-616389.html",
           "linkTitle": "Pressebericht",
           "images": [
+            "/assets/images/chronik/U8Pfalz.webp",
             "/assets/images/chronik/U8Pfalz.webp"
           ]
         }
