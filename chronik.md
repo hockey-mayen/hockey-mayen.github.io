@@ -8,6 +8,7 @@ scripts:
 
 
 <h2>Vereinschronik</h2>
+<h4>📌 wird kontinuierlich vervollständigt 📝 und ergänzt ✨</h4>
 
 <select id="year-dropdown" class="year-dropdown">
 

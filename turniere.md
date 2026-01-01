@@ -7,8 +7,8 @@ permalink: /turniere/
 
 <h2>Turniertermine</h2>
 <div class ="aligned-content">
-<p>Wir spielen In der Verbandsliga Rheinland-Pfalz-Saar.</p>
-<p><strong>Und wir sind hartnäckig wie Basalt. Mayener Basalt – hau!</strong></p>
+<p>Wir spielen 🏑🥅 in der Verbandsliga Rheinland-Pfalz-Saar.</p>
+<p><strong>Und wir sind hartnäckig wie 🪨 Basalt. Mayener 🔥 Basalt – hau! 💪</strong></p>
 <h3>Hier findest du die Turniertermine für unsere Teams🚀</h3>
 </div>
 

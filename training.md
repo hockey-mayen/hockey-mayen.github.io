@@ -7,21 +7,21 @@ permalink: /training/
 ## Training
 
 <div class="aligned-content">
-<strong>am 30.10.2025 startet die Hallensaison, und wir trainieren in der Halle !  </strong>   <br>
+<strong>am 30.10.2025 startet die 🏟️🔥 Hallensaison, und wir trainieren in der Halle !  </strong>   <br>
 
 <strong>
 Dein Kind möchte den Hockeysport ausprobieren? Du selbst willst den Schläger schwingen ?
 </strong>
 <br>
-Jung oder alt, Anfänger oder Fortgeschrittene – bei uns findet jeder das passende Training!
+Jung oder alt, Anfänger oder Fortgeschrittene 👧🧒👨‍🦰👩‍🦳 – bei uns findet jeder das passende Training!
 <br>
 <br>
-Komm einfach vorbei zu unseren Schnupper-Einheiten in der regulären Trainingszeit!
+Komm einfach vorbei zu unseren ✨ Schnupper-Einheiten in der regulären Trainingszeit!
 <br>
-<strong>Hinweis:</strong> <em>In den Schulferien findet kein Training statt.</em> 
+<strong>Hinweis:</strong> <em>In den Schulferien 🏫 findet kein Training statt.</em> 
 <br>
 <br>
-Du hast Fragen zu unserem Training und möchtest dich näher informieren? Schreibe uns einfach!
+Du hast 💬 Fragen zu unserem Training und möchtest dich näher informieren? Schreibe uns einfach!
 </div>
 
 <div>
