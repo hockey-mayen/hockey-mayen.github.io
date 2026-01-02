@@ -12,7 +12,7 @@
         },
         {
           "headline": "U10 Turnier",
-          "event": "<b>Koblenz, 29. November 2025</b><br>Mit 5 Feldspielern und 1 Tormann zeigte Mayen eine richtig starke Teamleistung. Unser Tormann war in Topform und hat mit mehreren starken Paraden viele mögliche Gegentreffer abgefangen. Auch nach vorne sah es sehr gut aus: Die Stürmer haben mutig Druck gemacht, Bälle erobert und Chancen konsequent genutzt.<br><br><b>Ergebnisse:</b><br>Mayen 4 : 2 Koblenz<br>Mayen 1 : 1 Worms2<br>Mayen 1 : 5 Worms1",
+          "event": "<b>Koblenz, 29. November 2025</b><br>Mit 5 Feldspielern und 1 Tormann zeigte Mayen eine richtig starke Teamleistung. Unser Tormann war in <b>Topform</b> und hat mit mehreren starken <b>Paraden</b> viele mögliche Gegentreffer abgefangen. Auch nach vorne sah es sehr gut aus: Die Stürmer haben mutig Druck gemacht, Bälle erobert und Chancen konsequent genutzt.<br><br><b>Das sind die Ergebnisse:</b><br>Mayen 4 : 2 Koblenz<br>Mayen 1 : 1 Worms2<br>Mayen 1 : 5 Worms1",
           "images": [
             "/assets/images/chronik/Koblenz_November2025.webp",
             "/assets/images/chronik/Philip_und_Theo.webp"
@@ -20,14 +20,14 @@
         },
         {
           "headline": "Jugendtrainer",
-          "event": "<b>Mayen, 15. November 2025</b><br>Jugendtrainer unterstützen die Mayener U10 Jungs bei ihrem Heimturnier!",
+          "event": "<b>Mayen, 15. November 2025</b><br>Starke Unterstützung für die Mayener U10-Jungs: Unsere Jugendtrainer Julian S., Hanno F. und Ole F.  begleiten die Kinder nicht nur im Training, sondern sind auch an Spieltagen voll dabei – mit Coaching, Motivation und einem wachsamen Blick am Spielfeldrand. Zusätzlich helfen sie bei Turnieren als Schiedsrichter aus. Ohne dieses Engagement wäre vieles nicht möglich. Danke! \uD83D\uDE4C\uD83C\uDFD1",
           "images": [
             "/assets/images/chronik/mu10-15-nov.2025-2.webp"
           ]
         },
         {
           "headline": "U12 Jungs sind Vize-Meister",
-          "event": "<b>Mayen, 21. September 2025</b><br>Bei der Rheinland-Pfalz-Saar-Meisterschaft in der Verbandsliga erreichen die Mayener U12-Jungs unter der Leitung von Oliver Hannus und Sven Albers den zweiten Platz.",
+          "event": "<b>Mayen, 21. September 2025</b><br>Bei der <b>Rheinland-Pfalz-Saar-Meisterschaft</b> in der Verbandsliga erreichen die Mayener U12-Jungs unter der Leitung von Oliver Hannus und Sven Albers den <b>zweiten Platz.</b>",
           "images": [
             "/assets/images/chronik/u12-vize-1.webp",
             "/assets/images/chronik/1919-3-69.webp",
@@ -37,7 +37,7 @@
         },
         {
           "headline": "Debut der Jungen U10",
-          "event": "<b>Mayen, Mai und Juni 2025</b><br> Die männliche U10 des Hockey-Club „Grün-Weiss“ TuS Mayen absolvierte unter der Leitung von Mike Flinsch, Andi Jung und Sergej Schatz ihre ersten Heimturniere der Feldsaison – und das mit beachtlichen Leistungen und viel Einsatzfreude. Zum ersten mal spielt die junge neue U10 auf Kleinfeld, zum ersten mal mit Tormann! ",
+          "event": "<b>Mayen, Mai und Juni 2025</b><br> Die männliche U10 des Hockey-Club „Grün-Weiss“ TuS Mayen absolvierte unter der Leitung von Mike Flinsch, Andi Jung und Sergej Schatz ihre <b>ersten Turniere</b> der Feldsaison – und das mit beachtlichen Leistungen und viel Einsatzfreude. Zum ersten mal spielt die junge neue U10 auf dem <b>Kleinfeld</b>, zum ersten mal mit einem <b>Tormann</b>!",
           "images": [
             "/assets/images/chronik/MU10_debut_2025_1200.webp",
             "/assets/images/chronik/MU10_debut_2_2025_1200.webp",
@@ -99,7 +99,6 @@
           "link": "https://www.blick-aktuell.de/Sport/Mayener-U8-Hockeymannschaft-siegreich-in-der-Pfalz-616389.html",
           "linkTitle": "Pressebericht",
           "images": [
-            "/assets/images/chronik/U8Pfalz.webp",
             "/assets/images/chronik/U8Pfalz.webp"
           ]
         }
