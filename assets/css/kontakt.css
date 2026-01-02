@@ -176,6 +176,22 @@ html.js #recipientWrap select {
     line-height: 1.25;
 }
 
+/* echtes Overlay für Mobile/All */
+.select-overlay{
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.18);
+    z-index: 49;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .12s ease;
+}
+
+.select-overlay.is-visible{
+    opacity: 1;
+    pointer-events: auto;
+}
+
 /* =========================
    Mobile Feintuning (Dropdown)
    ========================= */

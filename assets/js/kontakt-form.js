@@ -210,32 +210,59 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const options = Array.from(menu.querySelectorAll('[role="option"]'));
 
+        // ✅ echtes Overlay-Element (DOM), nicht ::before
+        let overlayEl = null;
+
+        const ensureOverlay = () => {
+            if (overlayEl) return overlayEl;
+
+            overlayEl = document.createElement('div');
+            overlayEl.className = 'select-overlay';
+            overlayEl.setAttribute('aria-hidden', 'true');
+
+            // ✅ Tap/Click auf Overlay => schließen
+            overlayEl.addEventListener('click', () => close());
+            overlayEl.addEventListener('touchstart', () => close(), { passive: true });
+
+            document.body.appendChild(overlayEl);
+            return overlayEl;
+        };
+
         const open = () => {
             wrap.classList.add('is-open');
             btn.setAttribute('aria-expanded', 'true');
 
-            // active auf aktuell ausgewählte Option setzen (für Hover/Keyboard später)
+            // ✅ Scroll sperren (damit nicht Seite scrollt)
+            document.body.style.overflow = 'hidden';
+
+            // ✅ Overlay aktivieren
+            ensureOverlay().classList.add('is-visible');
+
+            // active auf aktuell ausgewählte Option setzen
             const current = native.value || '';
-            options.forEach((o) => o.classList.toggle('is-active', (o.getAttribute('data-value') || '') === current));
+            options.forEach((o) =>
+                o.classList.toggle('is-active', (o.getAttribute('data-value') || '') === current)
+            );
         };
 
         const close = () => {
             wrap.classList.remove('is-open');
             btn.setAttribute('aria-expanded', 'false');
+
+            // ✅ Scroll wieder erlauben
+            document.body.style.overflow = '';
+
+            // ✅ Overlay ausblenden (und optional entfernen)
+            if (overlayEl) overlayEl.classList.remove('is-visible');
         };
 
         const setSelected = (value) => {
-            // native select setzen (deine Validierung hängt daran!)
             native.value = value;
-
-            // change event triggern -> validateForm läuft bei dir über hook(recipient,...)
             native.dispatchEvent(new Event('change', { bubbles: true }));
 
-            // Button-Text setzen
             const match = options.find((o) => (o.getAttribute('data-value') || '') === value);
             btn.textContent = match ? match.textContent.trim() : 'Bitte auswählen…';
 
-            // aria-selected (checkmark)
             options.forEach((o) => o.setAttribute('aria-selected', 'false'));
             if (match) match.setAttribute('aria-selected', 'true');
         };
@@ -257,19 +284,18 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
 
-        // Click outside schließen
-        document.addEventListener('click', (e) => {
-            if (!wrap.contains(e.target)) close();
-        });
-
         // ESC schließen
         document.addEventListener('keydown', (e) => {
             if (e.key === 'Escape') close();
         });
 
-        // Wenn native select von außen gesetzt wird (z.B. URL preselect), UI nachziehen
+        // Click outside schließen (zusätzlich)
+        document.addEventListener('click', (e) => {
+            if (!wrap.contains(e.target) && wrap.classList.contains('is-open')) close();
+        });
+
+        // Wenn native select von außen gesetzt wird, UI syncen
         native.addEventListener('change', () => {
-            // Nicht erneut dispatchen, nur UI syncen:
             const v = native.value || '';
             const match = options.find((o) => (o.getAttribute('data-value') || '') === v);
             btn.textContent = match ? match.textContent.trim() : 'Bitte auswählen…';
@@ -279,6 +305,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         dbg('custom select initialized');
     }
+
 
     // ==========================================
     // ✅ Recipient aus URL setzen (?recipient=...)
