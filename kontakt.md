@@ -14,17 +14,39 @@ scripts:
   <form id="contactForm" novalidate>
     <!-- Honeypot (gegen einfache Bots) -->
     <input type="text" name="honeypot" id="honeypot" style="display:none" tabindex="-1" autocomplete="off" />
-
+    
     <label for="recipient">Ansprechpartner</label>
-    <select id="recipient" name="recipient" required>
-      <!-- WICHTIG: nicht disabled, sonst “sporadisch” kein Value -->
-      <option value="" selected>Bitte auswählen…</option>
-      <option value="vorsitz">1. Vorsitzender Sascha Flinsch</option>
-      <option value="geschaeftsfuehrung">Geschäftsführerin Nina Graeff</option>
-      <option value="jugendwart">Jugendwart Mike Flinsch</option>
-      <option value="webmaster">Webmaster Sergej Schatz</option>
-    </select>
-    <small id="recipientError" style="display:none; color:#c0392b; margin-top:6px;">Bitte einen Ansprechpartner auswählen.</small>
+    
+    <div class="select-wrap" id="recipientWrap">
+      <!-- echtes Select bleibt für Formular/Validation -->
+      <select id="recipient" name="recipient" required>
+        <option value="" selected>Bitte auswählen…</option>
+        <option value="vorsitz">1. Vorsitzender Sascha Flinsch</option>
+        <option value="geschaeftsfuehrung">Geschäftsführerin Nina Graeff</option>
+        <option value="jugendwart">Jugendwart Mike Flinsch</option>
+        <option value="webmaster">Webmaster Sergej Schatz</option>
+      </select>
+    
+      <!-- Custom UI -->
+    <button type="button"
+    class="select-btn"
+    id="recipientBtn"
+    aria-haspopup="listbox"
+    aria-expanded="false">
+    Bitte auswählen…
+    </button>
+    
+      <ul class="select-menu" id="recipientMenu" role="listbox" tabindex="-1">
+        <li role="option" data-value="" aria-selected="true">Bitte auswählen…</li>
+        <li role="option" data-value="vorsitz">1. Vorsitzender Sascha Flinsch</li>
+        <li role="option" data-value="geschaeftsfuehrung">Geschäftsführerin Nina Graeff</li>
+        <li role="option" data-value="jugendwart">Jugendwart Mike Flinsch</li>
+        <li role="option" data-value="webmaster">Webmaster Sergej Schatz</li>
+      </ul>
+    </div>
+    
+    <small id="recipientError" style="display:none; color:#c0392b; margin-top:6px;">Bitte einen Ansprechpartner
+    auswählen.</small>
 
     <label for="name">Ihr Name</label>
     <input id="name" type="text" name="name" required placeholder="Vor- und Nachname" autocomplete="name" />
@@ -70,6 +92,7 @@ scripts:
 
     <button id="submitBtn" type="submit" class="load-more-btn" disabled>Senden</button>
     <p id="formHint" style="margin-top:10px; font-size:14px; color:#6c757d;"></p>
+
   </form>
 
   <div id="thankYouBox" style="display:none; margin-top:20px; background:#ffffff; border-radius:12px; padding:18px;">
@@ -77,6 +100,7 @@ scripts:
     <p>Ihre Nachricht wurde gesendet. Hier ist eine Zusammenfassung:</p>
 
     <div id="summaryBox" style="background:#f6fbf8; border:1px solid #bdddcc; border-radius:10px; padding:12px;"></div>
+
   </div>
 </div>
 

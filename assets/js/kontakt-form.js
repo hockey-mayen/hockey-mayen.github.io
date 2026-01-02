@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const MIN_MESSAGE_LEN = 25;
 
     const form = document.getElementById('contactForm');
+    document.documentElement.classList.add('js');
     if (!form) return;
 
     const recipient = document.getElementById('recipient');
@@ -39,8 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // =========================
     // ✅ DEBUG per URL: ?debug=1
     // =========================
-    const DEBUG =
-        new URLSearchParams(window.location.search).get('debug') === '1';
+    const DEBUG = new URLSearchParams(window.location.search).get('debug') === '1';
 
     function dbg(...args) {
         if (!DEBUG) return;
@@ -184,17 +184,104 @@ document.addEventListener('DOMContentLoaded', () => {
             : '';
 
         summaryBox.innerHTML = `
-          <div><strong>Ansprechpartner:</strong> ${escapeHtml(payload.recipientLabel)}</div>
-          <div><strong>Name:</strong> ${escapeHtml(payload.name)}</div>
-          <div><strong>E-Mail:</strong> ${escapeHtml(payload.email)}</div>
-          ${telLine}
-          <div style="margin-top:10px;"><strong>Nachricht:</strong></div>
-          <div style="white-space:pre-wrap;">${escapeHtml(payload.message)}</div>
-        `;
+      <div><strong>Ansprechpartner:</strong> ${escapeHtml(payload.recipientLabel)}</div>
+      <div><strong>Name:</strong> ${escapeHtml(payload.name)}</div>
+      <div><strong>E-Mail:</strong> ${escapeHtml(payload.email)}</div>
+      ${telLine}
+      <div style="margin-top:10px;"><strong>Nachricht:</strong></div>
+      <div style="white-space:pre-wrap;">${escapeHtml(payload.message)}</div>
+    `;
+    }
+
+    // ======================================================
+    // ✅ NEW: Custom Dropdown für Ansprechpartner (macOS-like)
+    // Voraussetzung: kontakt.md enthält recipientWrap/Btn/Menu
+    // ======================================================
+    function initCustomRecipientSelect() {
+        const wrap = document.getElementById('recipientWrap');
+        const native = document.getElementById('recipient');
+        const btn = document.getElementById('recipientBtn');
+        const menu = document.getElementById('recipientMenu');
+
+        if (!wrap || !native || !btn || !menu) {
+            dbg('custom select not found (recipientWrap/Btn/Menu missing) -> using native select');
+            return;
+        }
+
+        const options = Array.from(menu.querySelectorAll('[role="option"]'));
+
+        const open = () => {
+            wrap.classList.add('is-open');
+            btn.setAttribute('aria-expanded', 'true');
+
+            // active auf aktuell ausgewählte Option setzen (für Hover/Keyboard später)
+            const current = native.value || '';
+            options.forEach((o) => o.classList.toggle('is-active', (o.getAttribute('data-value') || '') === current));
+        };
+
+        const close = () => {
+            wrap.classList.remove('is-open');
+            btn.setAttribute('aria-expanded', 'false');
+        };
+
+        const setSelected = (value) => {
+            // native select setzen (deine Validierung hängt daran!)
+            native.value = value;
+
+            // change event triggern -> validateForm läuft bei dir über hook(recipient,...)
+            native.dispatchEvent(new Event('change', { bubbles: true }));
+
+            // Button-Text setzen
+            const match = options.find((o) => (o.getAttribute('data-value') || '') === value);
+            btn.textContent = match ? match.textContent.trim() : 'Bitte auswählen…';
+
+            // aria-selected (checkmark)
+            options.forEach((o) => o.setAttribute('aria-selected', 'false'));
+            if (match) match.setAttribute('aria-selected', 'true');
+        };
+
+        // initial sync
+        setSelected(native.value || '');
+
+        // Öffnen/Schließen
+        btn.addEventListener('click', () => {
+            wrap.classList.contains('is-open') ? close() : open();
+        });
+
+        // Auswahl per Klick
+        options.forEach((opt) => {
+            opt.addEventListener('click', () => {
+                const v = opt.getAttribute('data-value') || '';
+                setSelected(v);
+                close();
+            });
+        });
+
+        // Click outside schließen
+        document.addEventListener('click', (e) => {
+            if (!wrap.contains(e.target)) close();
+        });
+
+        // ESC schließen
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') close();
+        });
+
+        // Wenn native select von außen gesetzt wird (z.B. URL preselect), UI nachziehen
+        native.addEventListener('change', () => {
+            // Nicht erneut dispatchen, nur UI syncen:
+            const v = native.value || '';
+            const match = options.find((o) => (o.getAttribute('data-value') || '') === v);
+            btn.textContent = match ? match.textContent.trim() : 'Bitte auswählen…';
+            options.forEach((o) => o.setAttribute('aria-selected', 'false'));
+            if (match) match.setAttribute('aria-selected', 'true');
+        });
+
+        dbg('custom select initialized');
     }
 
     // ==========================================
-    // ✅ NEW: Recipient aus URL setzen (?recipient=...)
+    // ✅ Recipient aus URL setzen (?recipient=...)
     // ==========================================
     function applyRecipientFromUrl() {
         try {
@@ -299,6 +386,9 @@ document.addEventListener('DOMContentLoaded', () => {
     updateMessageCounter();
     setSubmitEnabled(false, 'init');
 
+    // ✅ NEW: Custom Select initialisieren (vor URL-Preselect ist ok)
+    initCustomRecipientSelect();
+
     // ✅ NEW: preselect aus URL
     applyRecipientFromUrl();
     // cleanUrlQuery(); // <- optional: aktivieren, wenn URL sauber bleiben soll
@@ -348,7 +438,9 @@ document.addEventListener('DOMContentLoaded', () => {
             });
 
             let data = null;
-            try { data = await res.json(); } catch {}
+            try {
+                data = await res.json();
+            } catch {}
 
             if (!res.ok || (data && data.ok === false)) {
                 if (res.status === 403) {
