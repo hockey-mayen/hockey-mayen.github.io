@@ -172,6 +172,45 @@ html.js #recipientWrap select {
 }
 
 
+/* =========================
+   Mobile Feintuning (Dropdown)
+   ========================= */
+@media (max-width: 520px) {
+    /* Button + Menü generell etwas kleiner */
+    .select-btn {
+        font-size: 15px;
+        padding: 10px 12px;
+        line-height: 1.2;
+    }
+
+    .select-menu {
+        padding: 4px;          /* weniger Rand */
+        max-height: 220px;     /* etwas kompakter */
+    }
+
+    /* Optionen kompakter + einzeilig */
+    .select-menu [role="option"] {
+        padding: 8px 34px 8px 10px; /* weniger Höhe */
+        font-size: 14px;
+        line-height: 1.2;
+
+        white-space: nowrap;        /* kein Umbruch */
+        overflow: hidden;           /* sonst läuft’s raus */
+        text-overflow: ellipsis;    /* ... wenn zu lang */
+    }
+
+    /* Häkchen etwas näher dran */
+    .select-menu [role="option"][aria-selected="true"]::after {
+        right: 10px;
+    }
+}
+
+/* Optional: auch auf Desktop insgesamt etwas weniger "luftig" */
+.select-menu [role="option"] {
+    line-height: 1.25;
+}
+
+
 @media (max-width: 380px) {
     .cf-turnstile {
         transform: scale(0.9);
