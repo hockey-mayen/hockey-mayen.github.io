@@ -49,6 +49,6 @@
     display: block;
     box-shadow: 0 2px 8px rgba(0,0,0,0.12);  /* ähnlich Tile */
     border-radius: 12px;
-    clip-path: inset(0 round 12px);
+    /*clip-path: inset(0 round 12px);*/
     margin-bottom: 20px;
 }
