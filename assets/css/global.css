@@ -177,24 +177,7 @@ iframe {
 }
 
 
-.video-section {
-    max-width: 1200px;     /* nimm den gleichen Wert wie bei main / tiles */
-    margin: 0 auto;
-    padding: 0 20px;       /* wie bei deinem Layout */
-}
 
-/* Karte darf volle Breite nutzen */
-.video-card {
-    width: 100%;
-}
-
-/* Video responsiv und breit */
-.video-card video {
-    width: 100%;
-    max-width: 100%;
-    height: auto;
-    display: block;
-}
 /* Für Smartphones & Tablets */
 @media screen and (max-width: 1024px) {
     main::before {

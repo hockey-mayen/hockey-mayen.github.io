@@ -30,3 +30,25 @@
     text-align: right;
     font-style: italic;
 }
+
+.video-section {
+    max-width: 1200px;     /* nimm den gleichen Wert wie bei main / tiles */
+    margin: 0 auto;
+ }
+
+/* Karte darf volle Breite nutzen */
+.video-card {
+    width: 100%;
+}
+
+/* Video responsiv und breit */
+.video-card video {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.12);  /* ähnlich Tile */
+    border-radius: 12px;
+    clip-path: inset(0 round 12px);
+    margin-bottom: 50px;
+}
