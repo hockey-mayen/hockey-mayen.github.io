@@ -2,6 +2,11 @@
 Run website locally with:
 bundle exec jekyll serve
 
+cd /home/sergej/git/hockey-mayen/hockey-mayen.github.io
+bundle exec jekyll build
+cd _site
+python3 -m http.server 4000
+
 
 Notes:
 https://visualstudio.microsoft.com/de/app-center/faq/

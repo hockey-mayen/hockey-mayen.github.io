@@ -1,0 +1,19 @@
+{
+  "title": "Videos",
+  "items": [
+    {
+      "title": "Penalty",
+      "date": "2024-01-10",
+      "description": "Anton spielt den Tormann aus",
+      "src": "/assets/images/video/anton-kulinna-penalty.mp4",
+      "type": "video/mp4"
+    },
+    {
+      "title": "Schnelles Tor",
+      "date": "",
+      "description": "Alex zieht den Stürmer auf sich – dann spielt Lion den genialen Pass auf Philip.",
+      "src": "/assets/images/video/philip-schatz-hockey-club-mayen.mp4",
+      "type": "video/mp4"
+    }
+  ]
+}

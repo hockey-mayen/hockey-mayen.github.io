@@ -41,3 +41,21 @@ permalink: /turniere/
 </div>
 </div>
 
+<div class="video-section aligned-content">
+  <h2>{{ site.data.videos.title }}</h2>
+
+  <div class="video-grid">
+    {% for v in site.data.videos.items %}
+      <div class="video-card" data-aos="fade-up" data-aos-delay="150">
+        <h3>{{ v.title }}</h3>
+        {% if v.description %}<p>{{ v.description }}</p>{% endif %}
+
+        <video controls preload="metadata" playsinline>
+          <source src="{{ v.src | relative_url }}" type="{{ v.type }}">
+          Dein Browser unterstützt dieses Video-Format leider nicht.
+        </video>
+        {% if v.date %}<p class="video-meta">{{ v.date }}</p>{% endif %}
+      </div>
+    {% endfor %}
+  </div>
+</div>
