@@ -1,12 +1,16 @@
 
 Run website locally with:
 bundle exec jekyll serve
-
+---
 cd /home/sergej/git/hockey-mayen/hockey-mayen.github.io
 bundle exec jekyll build
 cd _site
 python3 -m http.server 4000
+----
 
+ffmpeg -i WU12_lange_ecke.mp4   -map 0 -map_metadata -1   -vf "scale=-2:720"   -c:v libx264 -preset medium -crf 24   -pix_fmt yuv420p   -c:a aac -b:a 128k   -movflags +faststart   WU12_lange_ecke-720p.mp4
+
+---
 
 Notes:
 https://visualstudio.microsoft.com/de/app-center/faq/

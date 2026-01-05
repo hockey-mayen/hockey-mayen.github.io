@@ -7,7 +7,7 @@ permalink: /training/
 ## Training
 
 <div class="aligned-content">
-<strong>am 30.10.2025 startet die Hallensaison, und wir trainieren in der Halle !  </strong>   <br>
+<strong>Training beginnt wieder am 08.01.2026 nach den Winterferien </strong>   <br>
 
 <strong>
 Dein Kind möchte den Hockeysport ausprobieren? Du selbst willst den Schläger schwingen ?
