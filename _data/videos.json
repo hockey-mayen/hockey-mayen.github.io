@@ -14,6 +14,7 @@
       "date": "",
       "description": "U12 Turnier. Mayener Mädels im Angriffsmodus.",
       "src": "/assets/images/video/WU12_lange_ecke-720p.mp4",
+      "poster": "/assets/images/video/WU12_lange_ecke.jpg",
       "type": "video/mp4"
     },
     {
@@ -21,6 +22,7 @@
       "date": "",
       "description": "Alex zieht den Stürmer auf sich. Dann spielt Lion den genialen Pass auf Philip.",
       "src": "/assets/images/video/alex-lion-philip-hockey-club-mayen-720p.mp4",
+      "poster": "/assets/images/video/alex-lion-philip.jpg",
       "type": "video/mp4"
     }
   ]

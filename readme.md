@@ -12,9 +12,15 @@ cd /home/sergej/git/hockey-mayen/hockey-mayen.github.io
 bundle exec jekyll serve --livereload --incremental --port 4000
 
 ----
-
+recreate 720 p video
 ffmpeg -i WU12_lange_ecke.mp4   -map 0 -map_metadata -1   -vf "scale=-2:720"   -c:v libx264 -preset medium -crf 24   -pix_fmt yuv420p   -c:a aac -b:a 128k   -movflags +faststart   WU12_lange_ecke-720p.mp4
+---
+create video poster (iOS)
+cd /home/sergej/git/hockey-mayen/hockey-mayen.github.io/assets/images/video
 
+ffmpeg -ss 0.3 -i anton-kulinna-penalty-720p.mp4 -frames:v 1 -q:v 3 anton-kulinna-penalty.jpg
+ffmpeg -ss 0.3 -i WU12_lange_ecke-720p.mp4        -frames:v 1 -q:v 3 WU12_lange_ecke.jpg
+ffmpeg -ss 0 -i alex-lion-philip-hockey-club-mayen-720p.mp4 -frames:v 1 -q:v 3 alex-lion-philip.jpg
 ---
 
 Notes:
