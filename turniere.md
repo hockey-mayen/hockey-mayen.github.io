@@ -52,10 +52,11 @@ og_image: /assets/images/og.jpg
         <h3>{{ v.title }}</h3>
         {% if v.description %}<p>{{ v.description }}</p>{% endif %}
 
-        <video controls preload="metadata" playsinline>
-          <source src="{{ v.src | relative_url }}" type="{{ v.type }}">
-          Dein Browser unterstützt dieses Video-Format leider nicht.
-        </video>
+            <video controls preload="metadata" playsinline
+            {% if v.poster %}poster="{{ v.poster | relative_url }}"{% endif %}>
+              <source src="{{ v.src | relative_url }}" type="{{ v.type }}">
+              Dein Browser unterstützt dieses Video-Format leider nicht.
+            </video>
         {% if v.date %}<p class="video-meta">{{ v.date }}</p>{% endif %}
       </div>
     {% endfor %}
