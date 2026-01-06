@@ -1,7 +1,9 @@
 ---
 layout: default
 title: "Turniere"
+description: "Turniertermine und Spieltage des Vereins Hockey-Club Grün-Weiss TuS Mayen e.V. 1919  (U10, U12, U14) – Hallen- und Feldsaison."
 permalink: /turniere/
+og_image: /assets/images/og.jpg   
 ---
 
 

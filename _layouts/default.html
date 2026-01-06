@@ -10,6 +10,11 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://unpkg.com" crossorigin>
 
+    {%- comment -%}
+    Canonical URL sauber normalisieren:
+    - index.html entfernen
+    - außer "/" immer mit trailing slash
+    {%- endcomment -%}
     {% assign canonical_url = page.url | replace:'index.html','' %}
     {% unless canonical_url == '/' %}
     {% assign last_char = canonical_url | slice: -1, 1 %}
@@ -17,32 +22,52 @@
     {% assign canonical_url = canonical_url | append:'/' %}
     {% endif %}
     {% endunless %}
-    <link rel="canonical" href="https://hockey-mayen.de{{ canonical_url }}">
+    <link rel="canonical" href="{{ canonical_url | absolute_url }}">
 
-    <meta name="robots" content="index, follow">
-    <meta name="description"
-          content="Offizielle Website des Hockey-Club Grün-Weiss TuS Mayen e.V. 1919 – Feldhockey und Hallenhockey Training, Teams, Turniere und Vereinsleben in Mayen. Feld- und Hallenhockey für Kinder, Jugendliche und Erwachsene." />
+    {%- comment -%}
+    Sinnvolle Defaults:
+    - site.title / site.description kommen aus _config.yml, falls gesetzt
+    - page.title / page.description kannst du pro Seite im Frontmatter setzen
+    {%- endcomment -%}
+    {% assign site_title = site.title | default: "Hockey-Club Grün-Weiss TuS Mayen e.V. 1919" %}
+    {% assign page_title = page.title | default: site_title %}
+    {% assign meta_title = page.meta_title | default: page_title %}
+    {% assign description = page.description | default: site.description | default: "Offizielle Website des Hockey-Club Grün-Weiss TuS Mayen e.V. 1919 – Feldhockey und Hallenhockey Training, Teams, Turniere und Vereinsleben in Mayen. Feld- und Hallenhockey für Kinder, Jugendliche und Erwachsene." %}
+    {% assign og_type = page.og_type | default: "website" %}
 
-    <meta property="og:title" content="Hockey-Club Grün-Weiss TuS Mayen e.V. 1919" />
-    <meta property="og:description" content="Training, Teams, Turniere und Vereinsleben in Mayen." />
+    {%- comment -%}
+    OG Image:
+    - page.og_image kann ein Pfad sein, z.B. /assets/images/og-turniere.jpg
+    {%- endcomment -%}
+    {% assign og_image = page.og_image | default: "/assets/images/og.jpg" %}
 
-    <meta property="og:url" content="https://hockey-mayen.de{{ canonical_url }}" />
+    <meta name="robots" content="{{ page.robots | default: "index, follow" }}">
+    <meta name="description" content="{{ description }}">
 
-    <meta property="og:image" content="https://hockey-mayen.de/assets/images/og.jpg" />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
+    <!-- Open Graph -->
+    <meta property="og:title" content="{{ page.og_title | default: page_title }}">
+    <meta property="og:description" content="{{ page.og_description | default: description }}">
+    <meta property="og:url" content="{{ canonical_url | absolute_url }}">
+    <meta property="og:image" content="{{ og_image | absolute_url }}">
+    <meta property="og:image:width" content="{{ page.og_image_width | default: "1200" }}">
+    <meta property="og:image:height" content="{{ page.og_image_height | default: "630" }}">
+    <meta property="og:type" content="{{ og_type }}">
+    <meta property="og:site_name" content="{{ site_title }}">
+    <meta property="og:locale" content="de_DE">
 
-    <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="Hockey Club Grün-Weiss TuS Mayen e.V. 1919" />
-    <meta property="og:locale" content="de_DE" />
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="{{ page.twitter_card | default: "summary_large_image" }}">
+    <meta name="twitter:title" content="{{ page.twitter_title | default: page_title }}">
+    <meta name="twitter:description" content="{{ page.twitter_description | default: description }}">
+    <meta name="twitter:image" content="{{ page.twitter_image | default: og_image | absolute_url }}">
 
-    {% if page.scripts %}
-    {% for script in page.scripts %}
-    <script defer src="{{ script }}"></script>
-    {% endfor %}
-    {% endif %}
+    <!-- PWA / Theme -->
+    <meta name="theme-color" content="{{ site.theme_color | default: "#2ea44f" }}">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
-    <!-- Favicon für Browser-Tabs -->
+    <!-- Favicon -->
     <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-48x48.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-48x48.png">
     <link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon/favicon-48x48.png">
@@ -50,13 +75,12 @@
     <link rel="icon" href="/favicon.ico">
 
     <link rel="manifest" href="/site.webmanifest">
-
     <link rel="apple-touch-icon" sizes="180x180" href="/maskable_icon_x192.png">
-    <meta name="mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
+    <!-- AOS -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
+    <!-- Styles -->
     <link rel="stylesheet" href="/assets/css/global.css">
     <link rel="stylesheet" href="/assets/css/header.css">
     <link rel="stylesheet" href="/assets/css/aktuell.css">
@@ -70,24 +94,34 @@
     <link rel="stylesheet" href="/assets/css/training.css">
     <link rel="stylesheet" href="/assets/css/turniere.css">
 
-
-<!--    <link rel="stylesheet" href="/assets/css/all.min.css">-->
+    {%- comment -%}
+    Optional: pro Seite zusätzliche Styles laden:
+    Frontmatter:
+    styles:
+    - /assets/css/xyz.css
+    {%- endcomment -%}
+    {% if page.styles %}
+    {% for style in page.styles %}
+    <link rel="stylesheet" href="{{ style }}">
+    {% endfor %}
+    {% endif %}
 
     <!-- title -->
-    <title>Hockey-Club Grün-Weiss TuS Mayen e.V. 1919 | Feld- & Hallenhockey Mayen</title>
+    <title>
+        {%- if page.title and page.title != site_title -%}
+        {{ meta_title }} | {{ site_title }}
+        {%- else -%}
+        {{ meta_title }}
+        {%- endif -%}
+    </title>
+
     <!-- Strukturierte Daten für Google -->
     <script type="application/ld+json">
         {
             "@context": "https://schema.org",
             "@type": "SportsOrganization",
-            "areaServed": {
-                "@type": "City",
-                "name": "Mayen"
-            },
-            "memberOf": {
-                "@type": "SportsOrganization",
-                "name": "Sportvereine in Mayen"
-            },
+            "areaServed": { "@type": "City", "name": "Mayen" },
+            "memberOf": { "@type": "SportsOrganization", "name": "Sportvereine in Mayen" },
             "name": "Hockey Club Grün-Weiss TuS Mayen e.V. 1919",
             "url": "https://hockey-mayen.de",
             "logo": "https://hockey-mayen.de/assets/images/Logo_transparenter_Hintergrund_300dpi-300x300.png",
@@ -122,6 +156,7 @@
         }
     </script>
 
+    <!-- Service Worker -->
     <script defer>
         if ('serviceWorker' in navigator) {
             window.addEventListener('load', () => {
@@ -130,33 +165,45 @@
         }
     </script>
 
+    <!-- AOS JS -->
     <script defer src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script defer>
         document.addEventListener("DOMContentLoaded", function () {
             AOS.init({
-                offset: 20,       // Scroll-Trigger-Versatz
-                duration: 800,     // Dauer in Millisekunden
-                easing: 'ease-out', // Easing-Funktion
+                offset: 20,
+                duration: 800,
+                easing: 'ease-out',
                 delay: 0,
-                once: true         // Animation nur beim ersten Scrollen
+                once: true
             });
         });
     </script>
 
-    <!-- JavaScript laden -->
+    {%- comment -%}
+    Optional: pro Seite zusätzliche Scripts laden (dein bestehender Mechanismus)
+    Frontmatter:
+    scripts:
+    - /assets/js/xyz.js
+    {%- endcomment -%}
+    {% if page.scripts %}
+    {% for script in page.scripts %}
+    <script defer src="{{ script }}"></script>
+    {% endfor %}
+    {% endif %}
+
+    <!-- Globale JavaScripts -->
     <script defer src="/assets/js/scrollTop.js"></script>
     <script defer src="/assets/js/highlights.js"></script>
 </head>
 
 <body>
-    <!-- Scroll-Button -->
-    <button id="scrollTopBtn" onclick="scrollToTop()">&#8679;</button>
+<!-- Scroll-Button -->
+<button id="scrollTopBtn" onclick="scrollToTop()">&#8679;</button>
 
-    {% include header.html %}
-    <main>
-        {{ content }}
-    </main>
-    {% include footer.html %}
-
+{% include header.html %}
+<main>
+    {{ content }}
+</main>
+{% include footer.html %}
 </body>
 </html>
