@@ -1,7 +1,9 @@
 ---
 layout: default
 title: "Training"
+description: "Termine für Training es Vereins Hockey-Club Grün-Weiss TuS Mayen e.V. 1919  (U10, U12, U14) – Hallen- und Feldsaison."
 permalink: /training/
+og_image: /assets/images/og.jpg   
 ---
 
 ## Training
