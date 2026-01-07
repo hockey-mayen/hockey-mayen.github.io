@@ -119,40 +119,63 @@
     <script type="application/ld+json">
         {
             "@context": "https://schema.org",
-            "@type": "SportsOrganization",
-            "areaServed": { "@type": "City", "name": "Mayen" },
-            "memberOf": { "@type": "SportsOrganization", "name": "Sportvereine in Mayen" },
-            "name": "Hockey Club Grün-Weiss TuS Mayen e.V. 1919",
-            "url": "https://hockey-mayen.de",
-            "logo": "https://hockey-mayen.de/assets/images/Logo_transparenter_Hintergrund_300dpi-300x300.png",
-            "sport": ["Feldhockey", "Hallenhockey"],
-            "foundingDate": "1919",
-            "address": {
-                "@type": "PostalAddress",
-                "streetAddress": "Hockey Kunstrasenplatz Stadion Nettetal Mayen und Sporthalle Albert-Schweitzer-Realschule Mayen",
-                "postalCode": "56727",
-                "addressLocality": "Mayen",
-                "addressCountry": "DE"
-            },
-            "sameAs": [
-                "https://www.facebook.com/HcGrunWeissMayen/",
-                "https://verband.hockey.de/",
-                "https://rps.prd.dhb.digital/"
-            ],
-            "knowsAbout": [
-                "Hockey",
-                "Feldhockey",
-                "Hallenhockey",
-                "Jugendsport",
-                "Vereinssport in Mayen",
-                "Sport in Mayen"
-            ],
-            "contactPoint": {
-                "@type": "ContactPoint",
-                "contactType": "Kontakt",
-                "url": "https://hockey-mayen.de/kontakt/",
-                "availableLanguage": ["de"]
-            }
+            "@graph": [
+                {
+                    "@type": ["Organization", "SportsOrganization"],
+                    "@id": "https://hockey-mayen.de/#club",
+                    "name": "Hockey Club Grün-Weiss TuS Mayen e.V. 1919",
+                    "alternateName": ["Hockey Mayen", "HC Mayen", "HC Grün-Weiss TuS Mayen"],
+                    "url": "https://hockey-mayen.de/",
+                    "logo": {
+                        "@type": "ImageObject",
+                        "url": "https://hockey-mayen.de/assets/images/Logo_transparenter_Hintergrund_300dpi-300x300.png"
+                    },
+                    "description": "Feld- und Hallenhockey in Mayen: Training, Teams, Turniere und Vereinsleben – seit 1919.",
+                    "foundingDate": "1919",
+                    "sport": ["Feldhockey", "Hallenhockey"],
+                    "areaServed": { "@type": "City", "name": "Mayen" },
+                    "sameAs": [
+                        "https://www.tus-mayen.de/",
+                        "https://www.facebook.com/HcGrunWeissMayen/?locale=de_DE",
+                        "https://verband.hockey.de/",
+                        "https://rps.prd.dhb.digital/"
+                    ],
+                    "contactPoint": {
+                        "@type": "ContactPoint",
+                        "contactType": "Kontakt",
+                        "url": "https://hockey-mayen.de/kontakt/",
+                        "availableLanguage": ["de"]
+                    },
+                    "location": [
+                        { "@id": "https://hockey-mayen.de/sportstaetten/#nettetal" },
+                        { "@id": "https://hockey-mayen.de/sportstaetten/#halle" }
+                    ]
+                },
+                {
+                    "@type": "SportsActivityLocation",
+                    "@id": "https://hockey-mayen.de/sportstaetten/#nettetal",
+                    "name": "Kunstrasenplatz Stadion Nettetal (Hockey Mayen)",
+                    "address": {
+                        "@type": "PostalAddress",
+                        "streetAddress": "Bürresheimer Straße",
+                        "postalCode": "56727",
+                        "addressLocality": "Mayen",
+                        "addressCountry": "DE"
+                    }
+                },
+                {
+                    "@type": "SportsActivityLocation",
+                    "@id": "https://hockey-mayen.de/sportstaetten/#halle",
+                    "name": "Sporthalle Albert-Schweitzer-Realschule (Hockey Mayen)",
+                    "address": {
+                        "@type": "PostalAddress",
+                        "streetAddress": "Joignystraße 5",
+                        "postalCode": "56727",
+                        "addressLocality": "Mayen",
+                        "addressCountry": "DE"
+                    }
+                }
+            ]
         }
     </script>
 
