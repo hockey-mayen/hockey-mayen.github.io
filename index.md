@@ -8,11 +8,12 @@ scripts:
 ---
 
 <div class="aligned-content">
-<h2>{{ site.data.startseite.title }}</h2>
+<h2>
+Feldhockey ist eine der schönsten Team-Sportarten
+</h2>
 
 <p> 
-{{ site.data.startseite.content }}
-</p>
+Der Hockeyclub Grün-Weiß TuS Mayen e.V. ist ein traditionsreicher Sportverein für Feld- und Hallenhockey. Gegründet im Jahr 1919, gehört er zu den etablierten Vereinen der rheinland-pfälzischen Hockeyszene. Der Club legt Wert darauf, dass jedes Mitglied das Clubleben aktiv mitgestalten kann. Komm vorbei und werde Teil unserer starken Gemeinschaft in der Eifelstadt Mayen und Umgebung.</p>
 </div>
 <div class="tiles-container">
 
