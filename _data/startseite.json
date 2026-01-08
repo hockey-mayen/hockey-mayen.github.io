@@ -2,12 +2,12 @@
   "tiles": [
     {
       "title": "Training",
-      "description": "Kinder und Erwachsene, Anfänger und Fortgeschrittene, erhalten bei uns ein anspruchsvolles Training. Komm zum Schnuppern.",
+      "description": "Kinder und Erwachsene, Anfänger und Fortgeschrittene, erhalten bei unserem Sportverein anspruchsvolles Hockey-Training. Komm zum Schnuppern!",
       "image": "/assets/images/training.jpg"
     },
     {
       "title": "Turniere",
-      "description": "In der Verbandsliga Rheinland-Pfalz-Saar nehmen unsere kleinen und großem Mitglieder regelmäßig an spannenden Turnieren teil",
+      "description": "In der Verbandsliga Rheinland-Pfalz-Saar nehmen unsere kleinen und großem Mitglieder regelmäßig an spannenden Turnieren teil. Sei dabei und werde auch du zum Hockey Hero!",
       "image": "/assets/images/turniere.jpg"
     },
     {
@@ -17,7 +17,7 @@
     },
     {
       "title": "Jugend und Erwachsene Just for Fun",
-      "description": "Wir spielen Hockey auch ganz locker, bei uns zählt vor allem der Spaß. Als Spielgemeinschaft Koblenz-Mayen treten wir in Turnieren der Verbandsliga an.",
+      "description": "Wir spielen Hockey auch ganz locker: Bei uns zählt vor allem der Spaß. Kein Hockeyverein in deiner Stadt? Komm nach Mayen!",
       "image": "/assets/images/justforfun.webp"
     }
   ]
