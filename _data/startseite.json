@@ -2,22 +2,23 @@
   "tiles": [
     {
       "title": "Training",
-      "description": "Kinder und Erwachsene, Anfänger und Fortgeschrittene, erhalten bei unserem Sportverein anspruchsvolles Hockey-Training. Komm zum Schnuppern!",
+      "description": "Kinder und Erwachsene, Anfänger und Fortgeschrittene, erhalten bei unserem Sportverein anspruchsvolles Hockey-Training. Komm zum <b>Schnuppern!</b>",
       "image": "/assets/images/training.jpg"
     },
     {
       "title": "Turniere",
-      "description": "In der Verbandsliga Rheinland-Pfalz-Saar nehmen unsere kleinen und großem Mitglieder regelmäßig an spannenden Turnieren teil. Sei dabei und werde auch du zum Hockey Hero!",
+      "description": "In der Verbandsliga Rheinland-Pfalz-Saar nehmen unsere kleinen und großem Mitglieder regelmäßig an spannenden <b>Turnieren teil</b>. Sei dabei und werde auch <b>du</b> zum <b>Hockey Hero!</b>",
       "image": "/assets/images/turniere.jpg"
     },
     {
       "title": "Veranstaltungen",
-      "description": "Wir sind eine Hockey-Familie und Gemeinschaft und Spaß stehen bei unseren Vereinsveranstaltungen, wie z.b. beim Sommercamp oder unseren Ausflügen im Mittelpunkt.",
-      "image": "/assets/images/20230831-DSC06023-2.webp"
+      "description": "Wir halten zusammen wie ein Team auf dem Platz: Bei unseren Vereinsveranstaltungen feiern wir <b>Gemeinschaft, Einsatz und Spaß</b> – beim Sommercamp und auf Ausflügen.",
+      "image": "/assets/images/20230831-DSC06023-2.webp",
+
     },
     {
       "title": "Jugend und Erwachsene Just for Fun",
-      "description": "Wir spielen Hockey auch ganz locker: Bei uns zählt vor allem der Spaß. Kein Hockeyverein in deiner Stadt? Komm nach Mayen!",
+      "description": "Wir spielen <b>Hockey</b> auch ganz locker: Bei uns zählt vor allem der <b>Spaß</b>. Kein Hockeyverein in deiner Stadt? Komm nach <b>Mayen!</b>",
       "image": "/assets/images/justforfun.webp"
     }
   ]
