@@ -53,6 +53,12 @@ document.addEventListener("DOMContentLoaded", function () {
         "/assets/images/turniere/turnier40.webp",
         "/assets/images/turniere/turnier41.webp",
         "/assets/images/turniere/turnier42.webp",
+        "/assets/images/turniere/turnier43.webp",
+        "/assets/images/turniere/turnier44.webp",
+        "/assets/images/turniere/turnier45.webp",
+        "/assets/images/turniere/turnier46.webp",
+        "/assets/images/turniere/turnier47.webp",
+        "/assets/images/turniere/turnier48.webp",
     ];
 
     let currentImageIndex = Math.floor(Math.random() * images.length);
