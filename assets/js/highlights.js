@@ -41,7 +41,7 @@ document.addEventListener("DOMContentLoaded", async function () {
         );
 
         function loadEntries() {
-            const maxLength = 650;
+            const maxLength = 1350;
             const nextEntries = allEntries.slice(displayedEntries, displayedEntries + entriesPerLoad);
             const isInitialBatch = displayedEntries === 0;
 
