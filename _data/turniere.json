@@ -14,9 +14,7 @@
         { "date": "15.11.2025", "location": "Mayen" },
         { "date": "29.11.2025", "location": "Koblenz" },
         { "date": "10.01.2026", "location": "Koblenz" },
-        { "date": "24.01.2026", "location": "Mainz" },
-        { "date": "07.02.2026", "location": "<TBD>" },
-        { "date": "28.02.2026", "location": "<TBD>" }
+        { "date": "24.01.2026", "location": "Mainz" }
       ]
     },
     {
@@ -30,9 +28,7 @@
         { "date": "15.11.2025", "location": "Mainz" },
         { "date": "29.11.2025", "location": "Bad Kreuznach"},
         { "date": "10.01.2026", "location": "Mainz"},
-        { "date": "24.01.2026", "location": "SC Idar-Oberstein"},
-        { "date": "07.02.2026", "location": "<TBD>" },
-        { "date": "28.02.2026", "location": "<TBD>" }
+        { "date": "24.01.2026", "location": "SC Idar-Oberstein"}
       ]
     },
     {
