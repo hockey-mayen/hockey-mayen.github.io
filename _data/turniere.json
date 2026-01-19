@@ -5,8 +5,8 @@
     {
       "title": "U10 Kinder",
       "link": {
-        "url": "https://rps.hockey.de/spielbetrieb/hallensaison-jugend/kinderhockey#:~:text=weibliche%20U10-,m%C3%A4nnliche%20U10,-Diesen%20Artikel%20teilen",
-        "title": "U10 Termine auf hockey.de",
+        "url": "https://rps.hockey.de/spielbetrieb/hallensaison-jugend/kinderhockey#:~:text=Spielplan%20weibliche%20U10-,m%C3%A4nnliche%20U10,-Download%20Spielplan%20m%C3%A4nnliche",
+        "title": "👉 hier alle Infos dazu auf 🔗 rps.hockey.de ",
         "image": "/assets/images/turniere/turnier-U10-jungs.png"
       },
 
@@ -15,15 +15,15 @@
         { "date": "29.11.2025", "location": "Koblenz" },
         { "date": "10.01.2026", "location": "Koblenz" },
         { "date": "24.01.2026", "location": "Mainz" },
-        { "date": "07.02.2026", "location": "-TBD-" },
+        { "date": "07.02.2026", "location": "SV Gau-Algesheim, Halle Schloss Ardeck" },
         { "date": "28.02.2026", "location": "-TBD-" }
       ]
     },
     {
       "title": "U10 Mädels",
       "link": {
-        "url": "https://rps.hockey.de/spielbetrieb/hallensaison-jugend/kinderhockey#:~:text=m%C3%A4nnliche%20U8-,weibliche%20U10,-m%C3%A4nnliche%20U10",
-        "title": "Mehr Infos zu der Mayener WU10 auf hockey.de",
+        "url": "https://rps.hockey.de/spielbetrieb/hallensaison-jugend/kinderhockey#:~:text=Spielplan%20m%C3%A4nnliche%20U8-,weibliche%20U10,-Download%20Spielplan%20weibliche",
+        "title": "👉 hier alle Infos dazu auf 🔗 rps.hockey.de ",
         "image": "/assets/images/turniere/turnier-U10-maedels-3.png"
       },
       "details": [
@@ -31,7 +31,7 @@
         { "date": "29.11.2025", "location": "Bad Kreuznach"},
         { "date": "10.01.2026", "location": "Mainz"},
         { "date": "24.01.2026", "location": "SC Idar-Oberstein"},
-        { "date": "07.02.2026", "location": "-TBD-" },
+        { "date": "07.02.2026", "location": "TSG Heidesheim, Halle VG" },
         { "date": "28.02.2026", "location": "-TBD-" }
       ]
     },
@@ -39,7 +39,7 @@
       "title": "U12 Mädels",
       "link": {
         "url": "https://rps.hockey.de/spielbetrieb/hallensaison-jugend/verbandsliga-weibliche-u12",
-        "title": "Mehr Infos zu der Mayener WU12 auf rps.hockey.de",
+        "title": "👉 hier alle Infos dazu auf 🔗 rps.hockey.de ",
         "image": "/assets/images/turniere/turnier-U10-maedels-3.png"
       },
       "details": [
@@ -51,7 +51,7 @@
       "title": "U14 Jungs",
       "link": {
         "url": "https://rps.hockey.de/spielbetrieb/hallensaison-jugend/oberliga-maennliche-u14",
-        "title": "Mehr Infos zu der Mayener MU14 auf rps.hockey.de",
+        "title": "👉 hier alle Infos dazu auf 🔗 rps.hockey.de ",
         "image": "/assets/images/turniere/turnier-U12-jungs.png"
       },
       "details": [

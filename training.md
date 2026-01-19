@@ -35,7 +35,7 @@ Du hast 💬 Fragen zu unserem Training und möchtest dich näher informieren? S
 </div>
 
 <div  data-aos="fade-up" data-aos-delay="200" >
-<h3>Unsere Trainingszeiten:</h3>
+<h3>Unsere Trainingszeiten</h3>
 
 <div class="tiles-container">
     {% assign datumWechselHalleZuFeld = "2025-03-26" %}
@@ -56,18 +56,18 @@ Du hast 💬 Fragen zu unserem Training und möchtest dich näher informieren? S
             {% for time in tile.times %}
                 {% if time.location contains "Kunstrasenplatz" %}
                     <div class="training-time {% if istFeldsaison == false %}inactive{% endif %}">
-                        ⏰<strong>{{ time.day }}, {{ time.time }}</strong> <br>
-                        📍{{ time.location }}
+                        🗓️<strong>{{ time.day }}, {{ time.time }}</strong> <br>
+                        🏑{{ time.location }}
                     </div>
                 {% elsif time.location contains "Sporthalle" %}
                     <div class="training-time {% if istFeldsaison == true %}inactive{% endif %}">
-                        ⏰<strong>{{ time.day }}, {{ time.time }}</strong> <br>
-                        📍{{ time.location }}
+                        🗓️<strong>{{ time.day }}, {{ time.time }}</strong> <br>
+                        🏑{{ time.location }}
                     </div>
                 {% else %}
                     <div class="training-time">
-                        ⏰<strong>{{ time.day }}, {{ time.time }}</strong> <br>
-                        📍{{ time.location }}
+                        🗓️<strong>{{ time.day }}, {{ time.time }}</strong> <br>
+                        🏑{{ time.location }}
                     </div>
                 {% endif %}
             {% endfor %}
