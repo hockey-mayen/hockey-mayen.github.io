@@ -44,7 +44,8 @@
       },
       "details": [
         { "date": "07.12.2025", "location": "Mayen" },
-        { "date": "18.01.2026", "location": "Mayen" }
+        { "date": "18.01.2026", "location": "Mayen" },
+        { "date": "01.03.2026", "location": "-TBD-" }
       ]
     },
     {
@@ -57,7 +58,8 @@
       "details": [
         { "date": "22.11.2025", "location": "Gau-Algesheim" },
         { "date": "10.01.2026", "location": "Mayen" },
-        { "date": "17.01.2026", "location": "Alzey" }
+        { "date": "17.01.2026", "location": "Alzey" },
+        { "date": "24.01.2026", "location": "-TBD-" }
       ]
     }
   ]
