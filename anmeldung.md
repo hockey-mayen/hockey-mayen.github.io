@@ -11,25 +11,36 @@ useCaptcha: false
 
 
 <div id="download-tab" class="aligned-content">
-    <p>
-        Hier kannst du das Anmeldeformular als PDF herunterladen.
-    </p>
-    <p>
-        Drucke es aus, fülle es aus und schicke es an die im Anmeldeformular angegebene Vereinsadresse.
-    </p>
-    <p>
-        Oder gebe es einfach beim nächsten Training ab! Wir freuen uns auf Dich.
-    </p>
-
+    <br>
     <a href="/assets/pdf/Beitrittserklaerung-SEPA_Hockey-ab-2022.pdf" download class="download-link">Anmeldeformular herunterladen (PDF)</a>
+    <br>
+    <br>
 
     <div class="tiles-container">
     <div class="tile">
-        <img src="/assets/images/20230430-DSC03669.webp">
+        <img src="/assets/images/turniere/turnier16.webp" >
     </div>
     <div class="tile">
-        <img src="/assets/images/camp-foto.webp" >
+        <img src="/assets/images/training/training5.webp">
     </div>
     </div>
+</div>
+
+<hr>
+
+<div class="aligned-content" style="margin-top: 2rem;">
+  <h3>Mitgliedsbeiträge</h3>
+  <p>
+    Bei uns bekommst du Training, Teamgeist und eine echte Hockey-Family – und das zu fairen Beiträgen.
+  </p>
+
+    <strong>Kinder &amp; Jugendliche (bis 18 Jahre): 48 € / Jahr</strong>
+    <br><strong>Erwachsene: 72 € / Jahr</strong>
+    <br><strong>Familienbeitrag: 150 € / Jahr</strong>
+
+
+  <p style="margin-top: 1rem;">
+    <strong>Tipp:</strong> Formular downloaden, ausfüllen, absenden – oder einfach beim nächsten Training abgeben 🙂
+  </p>
 </div>
 
