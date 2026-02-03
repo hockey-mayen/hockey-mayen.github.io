@@ -1,6 +1,6 @@
 url: "https://hockey-mayen.de"
 title: "Hockey-Club Grün-Weiss TuS Mayen e.V. 1919"
-description: "Offizielle Website des Vereins Hockey-Club Grün-Weiss TuS Mayen e.V. 1919 – Feld- & Hallenhockey in Mayen."
+description: "Offizielle Website des Sportvereins Hockey-Club Grün-Weiss TuS Mayen e.V. 1919 – Feld- & Hallenhockey in Mayen. Training für Kinder, Jugend und Erwachsene, Schnuppern möglich"
 baseurl: "" # Für GitHub Pages leer lassen
 include:
   - .well-known
