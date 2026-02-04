@@ -18,17 +18,17 @@
     <url>
         <loc>https://hockey-mayen.de/turniere/</loc>
         <lastmod>2026-01-30</lastmod>
-        <priority>0.80</priority>
+        <priority>0.30</priority>
     </url>
     <url>
         <loc>https://hockey-mayen.de/veranstaltungen/</loc>
         <lastmod>2026-01-30</lastmod>
-        <priority>0.80</priority>
+        <priority>0.30</priority>
     </url>
     <url>
         <loc>https://hockey-mayen.de/sportstaetten/</loc>
         <lastmod>2026-01-30</lastmod>
-        <priority>0.80</priority>
+        <priority>0.60</priority>
     </url>
     <url>
         <loc>https://hockey-mayen.de/anmeldung/</loc>
@@ -38,16 +38,16 @@
     <url>
         <loc>https://hockey-mayen.de/kontakt/</loc>
         <lastmod>2026-01-30</lastmod>
-        <priority>0.80</priority>
+        <priority>0.30</priority>
     </url>
     <url>
         <loc>https://hockey-mayen.de/chronik/</loc>
         <lastmod>2026-01-30</lastmod>
-        <priority>0.80</priority>
+        <priority>0.20</priority>
     </url>
     <url>
         <loc>https://hockey-mayen.de/impressum/</loc>
         <lastmod>2026-01-30</lastmod>
-        <priority>0.80</priority>
+        <priority>0.10</priority>
     </url>
 </urlset>
