@@ -9,25 +9,6 @@ useCaptcha: false
 
 <!-- Tab-Inhalt -->
 
-
-<div id="download-tab" class="aligned-content">
-    <br>
-    <a href="/assets/pdf/Beitrittserklaerung-SEPA_Hockey-ab-2022.pdf" download class="download-link">Anmeldeformular herunterladen (PDF)</a>
-    <br>
-    <br>
-
-    <div class="tiles-container">
-    <div class="tile">
-        <img src="/assets/images/turniere/turnier16.webp" >
-    </div>
-    <div class="tile">
-        <img src="/assets/images/training/training5.webp">
-    </div>
-    </div>
-</div>
-
-<hr>
-
 <div class="aligned-content" style="margin-top: 2rem;">
   <h3>Mitgliedsbeiträge</h3>
   <p>
@@ -43,4 +24,24 @@ useCaptcha: false
     <strong>Tipp:</strong> Formular downloaden, ausfüllen, absenden – oder einfach beim nächsten Training abgeben 🙂
   </p>
 </div>
+<hr>
+
+<div id="download-tab" class="aligned-content">
+    <br>
+    <a href="/assets/pdf/Beitrittserklaerung-SEPA_Hockey-ab-2022.pdf" download class="download-link">👉 Anmeldeformular herunterladen (PDF)</a>
+    <br>
+    <br>
+
+    <div class="tiles-container">
+    <div class="tile">
+        <img src="/assets/images/turniere/turnier16.webp" >
+    </div>
+    <div class="tile">
+        <img src="/assets/images/training/training5.webp">
+    </div>
+    </div>
+</div>
+
+
+
 
