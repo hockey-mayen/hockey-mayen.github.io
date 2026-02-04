@@ -1,10 +1,43 @@
 ---
 layout: default
 title: "Training"
-description: "Termine für Training es Vereins Hockey-Club Grün-Weiss TuS Mayen e.V. 1919  (U10, U12, U14) – Hallen- und Feldsaison."
+description: "Termine für Training des Vereins Hockey-Club Grün-Weiss TuS Mayen e.V. 1919  (U10, U12, U14) – Hallen- und Feldsaison."
 permalink: /training/
 og_image: /assets/images/og.jpg   
 ---
+
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"SportsOrganization",
+  "name":"Hockey-Club Grün-Weiss TuS Mayen e.V. 1919",
+  "url":"https://hockey-mayen.de/",
+  "sport":["Field hockey","Indoor hockey"],
+  "description":"Schnuppern in den Trainingszeiten für Kinder, Jugend und Erwachsene in Mayen (Sporthalle). In den Schulferien findet kein Training statt.",
+  "location":[
+    {
+      "@type":"SportsActivityLocation",
+      "name":"Sporthalle Albert-Schweitzer-Realschule",
+      "address":{
+        "@type":"PostalAddress",
+        "streetAddress":"Joignystraße 5",
+        "postalCode":"56727",
+        "addressLocality":"Mayen",
+        "addressCountry":"DE"
+      },
+      "openingHoursSpecification":[
+        { "@type":"OpeningHoursSpecification", "dayOfWeek":"https://schema.org/Thursday", "opens":"16:15", "closes":"17:45", "description":"Mini/U8/U10 Kinder" },
+        { "@type":"OpeningHoursSpecification", "dayOfWeek":"https://schema.org/Tuesday",  "opens":"16:30", "closes":"18:30", "description":"U10/U12 Mädels" },
+        { "@type":"OpeningHoursSpecification", "dayOfWeek":"https://schema.org/Tuesday",  "opens":"18:00", "closes":"20:00", "description":"U14 Jungs" },
+        { "@type":"OpeningHoursSpecification", "dayOfWeek":"https://schema.org/Tuesday",  "opens":"20:00", "closes":"21:30", "description":"Jugend & Erwachsene (Just For Fun)" }
+      ]
+    }
+  ]
+}
+</script>
+
+
 
 ## Training
 
