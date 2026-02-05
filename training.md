@@ -80,7 +80,7 @@ Du hast 💬 Fragen zu unserem Training und möchtest dich näher informieren? S
 
     {% if today >= datumWechselHalleZuFeld and today < datumWechselFeldZuHalle %}
         {% assign istFeldsaison = true %}
-    {% else %}
+    {% else %} 
         {% assign istFeldsaison = false %}
     {% endif %}
 
