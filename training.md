@@ -45,7 +45,7 @@ og_image: /assets/images/og.jpg
 <strong>Training beginnt wieder am 08.01.2026 nach den Winterferien </strong>   <br>
 
 <strong style="color: #d00000;">
-  Wegen Schulnutzung findet vom Mo. 09.02.2026 bis Di. 12.02.2026 kein Training statt!!
+  Wegen Schulnutzung findet vom Mo. 09.02.2026 bis Di. 17.02.2026 kein Training statt!!
 </strong><br>
 
 <strong>
