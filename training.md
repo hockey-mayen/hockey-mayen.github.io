@@ -42,11 +42,10 @@ og_image: /assets/images/og.jpg
 ## Training
 
 <div class="aligned-content">
-<strong>Training beginnt wieder am 08.01.2026 nach den Winterferien </strong>   <br>
 
 <strong style="color: #d00000;">
   Wegen Schulnutzung findet vom Mo. 09.02.2026 bis Di. 17.02.2026 kein Training statt!!
-</strong><br>
+</strong><br><br>
 
 <strong>
 Dein Kind möchte den Hockeysport ausprobieren? Du selbst willst den Schläger schwingen ?
