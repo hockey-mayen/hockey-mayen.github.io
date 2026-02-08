@@ -107,15 +107,7 @@ og_image: /assets/images/og.jpg
       </p>
     </div>
 
-    <!-- Ablauf -->
-    <div class="jff-card" id="ablauf">
-      <h2>Ablauf (grober Plan)</h2>
-      <ul class="jff-list">
-        <strong>10:00</strong> Treffen, gemeinsam aufbauen <br>
-        <strong>10:30</strong> Einteilen der Teams & Start der Spiele <br>
-        <strong>ca. 14:30–15:00</strong> Ende, gemeinsam abbauen
-      </ul>
-    </div>
+
   </div>
 </div>
 
