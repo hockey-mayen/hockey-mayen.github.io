@@ -68,7 +68,7 @@ og_image: /assets/images/og.jpg
     <h1 class="jff-title">🏑 Hallenhockey Just for Fun Turnier</h1>
     <h1 class="jff-title">01.03.2026</h1>
     <p class="jff-sub">
-        Der Club lädt alle <strong>Hockeyspielerinnen und Hockeyspieler</strong> aus der Umgebung Mayen/Koblenz/Neuwied/Westerwald zum Mitspielen ein.
+        Der Club lädt alle <strong>Hockeyspielerinnen und Hockeyspieler</strong> aus der Umgebung Mayen/Koblenz/Neuwied/WW zum Mitspielen ein.
     </p>
   </div>
 
