@@ -84,7 +84,7 @@ og_image: /assets/images/og.jpg
         <span class="jff-badge">🎯 ab Ü14</span>
         <span class="jff-badge">🗓️ Anmeldeschluss 22.02.2026</span>
       </div>
-
+ 
       <ul class="jff-facts">
         <li><strong>Treffen & Aufbau:</strong> ab 10:00 Uhr</li>
         <li><strong>Spielzeit:</strong> ca. 10:30 bis 14:30 / 15:00 Uhr (je nach Ablauf)</li>
