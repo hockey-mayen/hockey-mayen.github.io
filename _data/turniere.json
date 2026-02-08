@@ -3,6 +3,17 @@
   "content": "Hier findest du die aktuellen Turniertermine und Veranstaltungsorte für unsere Teams",
   "tiles": [
     {
+      "title": "Just for Fun Turnier: Erwachsene und Jugend Ü14",
+      "link": {
+        "url": "https://hockey-mayen.de/just-for-fun-turnier/",
+        "title": "👉 hier alle Infos dazu 🔗 auf hockey-mayen.de",
+        "image": "/assets/images/turniere/just-for-fun.png"
+      },
+      "details": [
+        { "date": "01.03.2026", "location": "Mayen" }
+      ]
+    },
+    {
       "title": "U10 Kinder",
       "link": {
         "url": "https://rps.hockey.de/spielbetrieb/hallensaison-jugend/kinderhockey#:~:text=Spielplan%20weibliche%20U10-,m%C3%A4nnliche%20U10,-Download%20Spielplan%20m%C3%A4nnliche",
