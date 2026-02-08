@@ -91,7 +91,7 @@ og_image: /assets/images/og.jpg
         <li><strong>Teilnahme:</strong> alle Erwachsene und Jugend ab <strong>Ü14</strong></li>
         <li class="jff-mail">
           <strong>Anmeldung:</strong><br>
-          <strong>Yannik Dietz:</strong>
+          <strong>Yannik Dietz</strong>
           <a href="mailto:Ya.dietz@icloud.com?subject=Anmeldung%20Just-for-Fun-Turnier%20am%2001.03.2026&body=Hi%20Yannik%2C%0A%0Aich%20m%C3%B6chte%20mich%20f%C3%BCr%20das%20Just-for-Fun-Turnier%20am%2001.03.2026%20anmelden.%0A%0AName%3A%20%0AAlter%20%2F%20Team%3A%20%0A%0ALG">
             Ya.dietz@icloud.com
           </a>
