@@ -61,10 +61,24 @@ og_image: /assets/images/og.jpg
   color:#086B2F;
   text-decoration:underline;
 }
+
+.jff-icon{
+  width:158px;
+  height:auto;
+  flex:0 0 auto;
+  filter: drop-shadow(0 2px 6px rgba(0,0,0,.12));
+}
 </style>
 
 <div class="jff-wrap">
   <div class="jff-hero">
+
+        <img class="jff-icon"
+             src="{{ '/assets/images/turniere/just-for-fun-small.png' | relative_url }}"
+             alt="Hallenhockey Just for Fun"
+             loading="lazy">
+        <div>
+
     <h1 class="jff-title">🏑 Hallenhockey Just for Fun Turnier</h1>
     <h1 class="jff-title">01.03.2026</h1>
     <p class="jff-sub">

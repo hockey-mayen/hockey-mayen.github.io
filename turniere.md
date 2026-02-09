@@ -21,7 +21,7 @@ og_image: /assets/images/og.jpg
         <h3>{{ tile.title }}</h3>
 
         {% if tile.details %}
-            {% for detail in tile.details %}
+            {% for detail in tile.details %} 
             <div class="detail-row">
               <span class="date">{{ detail.date }}</span> 
               <span class="location">{{ detail.location }}</span>
