@@ -3,7 +3,6 @@ layout: default
 title: "Just-for-Fun-Turnier"
 description: "Just-for-Fun Hallenhockey-Turnier in Mayen am 1. März 2026 – ab Ü14. Infos & Anmeldung per E-Mail."
 permalink: /just-for-fun-turnier/
-og_image: /assets/images/og.jpg
 ---
 
 <style>
