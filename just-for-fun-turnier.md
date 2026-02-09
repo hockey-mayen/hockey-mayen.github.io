@@ -63,7 +63,7 @@ og_image: /assets/images/og.jpg
 }
 
 .jff-icon{
-  width:100px;
+  width:80px;
   height:auto;
   flex:0 0 auto;
   filter: drop-shadow(0 2px 6px rgba(0,0,0,.12));
