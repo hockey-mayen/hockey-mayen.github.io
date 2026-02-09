@@ -10,7 +10,7 @@ og_image: /assets/images/og.jpg
   .jff-wrap{max-width:980px;margin:0 auto;padding:18px 16px;}
   .jff-hero{
     border-radius:18px;
-    padding:22px 20px;
+    padding:12px 10px;
     background: linear-gradient(135deg, rgba(0,120,70,.10), rgba(0,0,0,.04));
     box-shadow: 0 10px 25px rgba(0,0,0,.06);
   }
@@ -24,7 +24,7 @@ og_image: /assets/images/og.jpg
   }
   .jff-card{
     border-radius:16px;
-    padding:18px 18px;
+    padding:8px 8px;
     background:#fff;
     box-shadow: 0 10px 22px rgba(0,0,0,.06);
     border: 1px solid rgba(0,0,0,.06);
@@ -63,7 +63,7 @@ og_image: /assets/images/og.jpg
 }
 
 .jff-icon{
-  width:158px;
+  width:120px;
   height:auto;
   flex:0 0 auto;
   filter: drop-shadow(0 2px 6px rgba(0,0,0,.12));
