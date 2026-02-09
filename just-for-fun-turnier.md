@@ -24,7 +24,7 @@ permalink: /just-for-fun-turnier/
   .jff-card{
     border-radius:16px;
     padding:8px 8px;
-    background:#fff;
+    background:#e9eeee;
     box-shadow: 0 10px 22px rgba(0,0,0,.06);
     border: 1px solid rgba(0,0,0,.06);
   }
@@ -62,7 +62,7 @@ permalink: /just-for-fun-turnier/
 }
 
 .jff-icon{
-  width:80px;
+  width:90px;
   height:auto;
   flex:0 0 auto;
   filter: drop-shadow(0 2px 6px rgba(0,0,0,.12));
@@ -81,7 +81,7 @@ permalink: /just-for-fun-turnier/
     <h1 class="jff-title">🏑 Hallenhockey Just for Fun Turnier</h1>
     <h1 class="jff-title">01.03.2026</h1>
     <p class="jff-sub">
-        Der Club lädt alle <strong>Hockeyspielerinnen und Hockeyspieler</strong> aus der Umgebung Mayen/Koblenz/Neuwied/WW zum Mitspielen ein.
+        Der Club lädt alle <strong>Hockeyspielerinnen und Hockeyspieler</strong><br> aus der Umgebung <strong>Mayen/Koblenz/Neuwied/WW</strong> zum Mitspielen ein.
     </p>
   </div>
 
