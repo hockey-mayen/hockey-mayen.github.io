@@ -27,7 +27,7 @@
         { "date": "10.01.2026", "location": "Koblenz" },
         { "date": "24.01.2026", "location": "Mainz" },
         { "date": "07.02.2026", "location": "SV Gau-Algesheim, Halle Schloss Ardeck" },
-        { "date": "28.02.2026", "location": "-TBD-" }
+        { "date": "28.02.2026", "location": "Mainz" }
       ]
     },
     {
@@ -43,7 +43,7 @@
         { "date": "10.01.2026", "location": "Mainz"},
         { "date": "24.01.2026", "location": "SC Idar-Oberstein"},
         { "date": "07.02.2026", "location": "TSG Heidesheim, Halle VG" },
-        { "date": "28.02.2026", "location": "-TBD-" }
+        { "date": "28.02.2026", "location": "TV Alzey, Halle Gustav-Heinemann" }
       ]
     },
     {
@@ -56,7 +56,7 @@
       "details": [
         { "date": "07.12.2025", "location": "Mayen" },
         { "date": "18.01.2026", "location": "Mayen" },
-        { "date": "01.03.2026", "location": "-TBD-" }
+        { "date": "01.03.2026", "location": "Alzey" }
       ]
     },
     {

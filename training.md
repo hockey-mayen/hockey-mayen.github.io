@@ -87,7 +87,7 @@ Du hast 💬 Fragen zu unserem Training und möchtest dich näher informieren? S
     {% for tile in site.data.training.tiles %}
     <div class="tile">
         <h3>{{ tile.title }}</h3>
-
+ 
         {% if tile.times %}
             {% for time in tile.times %}
                 {% if time.location contains "Kunstrasenplatz" %}

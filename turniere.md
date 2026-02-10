@@ -19,7 +19,7 @@ og_image: /assets/images/og.jpg
     {% for tile in site.data.turniere.tiles %}
     <div class="tile">
         <h3>{{ tile.title }}</h3>
-
+  
         {% if tile.details %}
             {% for detail in tile.details %} 
             <div class="detail-row">
