@@ -43,10 +43,6 @@ og_image: /assets/images/og.jpg
 
 <div class="aligned-content">
 
-<strong style="color: #d00000;">
-  Wegen Schulnutzung findet vom Mo. 09.02.2026 bis Di. 17.02.2026 kein Training statt!!
-</strong><br><br>
-
 <strong>
 Dein Kind möchte den Hockeysport ausprobieren? Du selbst willst den Schläger schwingen ?
 </strong>
