@@ -44,6 +44,11 @@ og_image: /assets/images/og.jpg
 <div class="aligned-content">
 
 <strong>
+Wechsel auf den Kunstrasenplatz : ab Mittwoch 11.3.2026
+</strong>
+<br>
+<br>
+<strong>
 Dein Kind möchte den Hockeysport ausprobieren? Du selbst willst den Schläger schwingen ?
 </strong>
 <br>
@@ -70,8 +75,8 @@ Du hast 💬 Fragen zu unserem Training und möchtest dich näher informieren? S
 <h3>Unsere Trainingszeiten</h3>
 
 <div class="tiles-container">
-    {% assign datumWechselHalleZuFeld = "2025-03-26" %}
-    {% assign datumWechselFeldZuHalle = "2025-10-31" %}
+    {% assign datumWechselHalleZuFeld = "2026-03-06" %}
+    {% assign datumWechselFeldZuHalle = "2026-10-31" %}
     {% assign today = "now" | date: "%Y-%m-%d" %} 
 
     {% if today >= datumWechselHalleZuFeld and today < datumWechselFeldZuHalle %}
