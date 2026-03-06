@@ -75,7 +75,7 @@ Du hast 💬 Fragen zu unserem Training und möchtest dich näher informieren? S
 <h3>Unsere Trainingszeiten</h3>
 
 <div class="tiles-container">
-    {% assign datumWechselHalleZuFeld = "2026-03-06" %}
+    {% assign datumWechselHalleZuFeld = "2026-03-05" %}
     {% assign datumWechselFeldZuHalle = "2026-10-31" %}
     {% assign today = "now" | date: "%Y-%m-%d" %} 
 
