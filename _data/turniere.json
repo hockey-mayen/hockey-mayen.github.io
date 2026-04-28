@@ -3,17 +3,6 @@
   "content": "Hier findest du die aktuellen Turniertermine und Veranstaltungsorte für unsere Teams",
   "tiles": [
     {
-      "title": "Just for Fun Turniere: Erwachsene und Jugend",
-      "link": {
-        "url": "https://hockey-mayen.de/just-for-fun-turnier/",
-        "title": "👉 hier alle Infos dazu 🔗 auf hockey-mayen.de",
-        "image": "/assets/images/turniere/just-for-fun-small.png"
-      },
-      "details": [
-        { "date": "01.03.2026", "location": "Mayen" }
-      ]
-    },
-    {
       "title": "U10 Kinder",
       "link": {
         "url": "https://rps.hockey.de/spielbetrieb/hallensaison-jugend/kinderhockey#:~:text=Spielplan%20weibliche%20U10-,m%C3%A4nnliche%20U10,-Download%20Spielplan%20m%C3%A4nnliche",
@@ -22,55 +11,36 @@
       },
 
       "details": [
-        { "date": "15.11.2025", "location": "Mayen" },
-        { "date": "29.11.2025", "location": "Koblenz" },
-        { "date": "10.01.2026", "location": "Koblenz" },
-        { "date": "24.01.2026", "location": "Mainz" },
-        { "date": "07.02.2026", "location": "SV Gau-Algesheim, Halle Schloss Ardeck" },
-        { "date": "28.02.2026", "location": "Mainz" }
-      ]
-    },
-    {
-      "title": "U10 Mädels",
-      "link": {
-        "url": "https://rps.hockey.de/spielbetrieb/hallensaison-jugend/kinderhockey#:~:text=Spielplan%20m%C3%A4nnliche%20U8-,weibliche%20U10,-Download%20Spielplan%20weibliche",
-        "title": "👉 hier alle Infos dazu auf 🔗 rps.hockey.de ",
-        "image": "/assets/images/turniere/turnier-U10-maedels-3.png"
-      },
-      "details": [
-        { "date": "15.11.2025", "location": "Mainz" },
-        { "date": "29.11.2025", "location": "Bad Kreuznach"},
-        { "date": "10.01.2026", "location": "Mainz"},
-        { "date": "24.01.2026", "location": "SC Idar-Oberstein"},
-        { "date": "07.02.2026", "location": "TSG Heidesheim, Halle VG" },
-        { "date": "28.02.2026", "location": "TV Alzey, Halle Gustav-Heinemann" }
       ]
     },
     {
       "title": "U12 Mädels",
       "link": {
-        "url": "https://rps.hockey.de/spielbetrieb/hallensaison-jugend/verbandsliga-weibliche-u12",
+        "url": "https://rps.hockey.de/spielbetrieb/feldsaison-jugend/verbandsliga-wu12",
         "title": "👉 hier alle Infos dazu auf 🔗 rps.hockey.de ",
         "image": "/assets/images/turniere/turnier-U10-maedels-3.png"
       },
       "details": [
-        { "date": "07.12.2025", "location": "Mayen" },
-        { "date": "18.01.2026", "location": "Mayen" },
-        { "date": "01.03.2026", "location": "Alzey" }
+      ]
+    },
+    {
+      "title": "U14 Mädels",
+      "link": {
+        "url": "https://rps.hockey.de/spielbetrieb/feldsaison-jugend/verbandsliga-wu14",
+        "title": "👉 hier alle Infos dazu auf 🔗 rps.hockey.de ",
+        "image": "/assets/images/turniere/turnier-U10-maedels-3.png"
+      },
+      "details": [
       ]
     },
     {
       "title": "U14 Jungs",
       "link": {
-        "url": "https://rps.hockey.de/spielbetrieb/hallensaison-jugend/oberliga-maennliche-u14",
+        "url": "https://rps.hockey.de/spielbetrieb/feldsaison-jugend/verbandsliga-mu14",
         "title": "👉 hier alle Infos dazu auf 🔗 rps.hockey.de ",
         "image": "/assets/images/turniere/turnier-U12-jungs.png"
       },
       "details": [
-        { "date": "22.11.2025", "location": "Gau-Algesheim" },
-        { "date": "10.01.2026", "location": "Mayen" },
-        { "date": "17.01.2026", "location": "Alzey" },
-        { "date": "31.01.2026", "location": "Ludwigshafen" }
       ]
     }
   ]
