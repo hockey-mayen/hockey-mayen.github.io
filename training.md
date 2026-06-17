@@ -45,6 +45,8 @@ og_image: /assets/images/og.jpg
 
 <strong>
 In den Sommerferien 29.6.2026 - 7.8.2026 findet kein Training statt. Das erste Training nach den Ferien ist am 12.8.2026.
+<br>
+Das letzte Training vor den Ferien ist am 24.6.2026
 </strong>
 <br>
 <br>
