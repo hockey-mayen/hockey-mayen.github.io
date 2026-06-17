@@ -44,7 +44,7 @@ og_image: /assets/images/og.jpg
 <div class="aligned-content">
 
 <strong>
-Wechsel auf den Kunstrasenplatz : ab Mittwoch 11.3.2026
+In den Sommerferien 29.6.2026 - 7.8.2026 findet kein Training statt. Das erste Training nach den Ferien ist am 12.8.2026.
 </strong>
 <br>
 <br>
@@ -66,10 +66,6 @@ Du hast 💬 Fragen zu unserem Training und möchtest dich näher informieren? S
 <div>
     <p class="email-highlight"><a href="/kontakt/?recipient=jugendwart"> 🏑📩 Kontaktformular</a></p>
 <br>
-
-<div class="aligned-content" data-aos="fade-up" data-aos-delay="200" >
-  <img src="../assets/images/training/schnuppern.png" style="width: 120px; height: auto; transform: translateY(10px);" />
-</div>
 
 <div  data-aos="fade-up" data-aos-delay="200" >
 <h3>Unsere Trainingszeiten</h3>
