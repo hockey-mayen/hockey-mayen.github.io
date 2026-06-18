@@ -43,31 +43,84 @@ og_image: /assets/images/og.jpg
 
 <div class="aligned-content">
 
-<strong>
-In den Sommerferien 29.6.2026 - 7.8.2026 findet kein Training statt. Das erste Training nach den Ferien ist am 12.8.2026.
-<br>
-Das letzte Training vor den Ferien ist am 24.6.2026
-</strong>
-<br>
-<br>
-<strong>
-Dein Kind möchte den Hockeysport ausprobieren? Du selbst willst den Schläger schwingen ?
-</strong>
-<br>
-Jung oder alt, Anfänger oder Fortgeschrittene – bei uns findet jeder das passende Training!
-<br>
-<br>
-Komm einfach vorbei zu unseren ✨ Schnupper-Einheiten in der regulären Trainingszeit!
-<br>
-<strong>Hinweis:</strong> <em>In den Schulferien findet kein Training statt.</em> 
-<br>
-<br>
-Du hast 💬 Fragen zu unserem Training und möchtest dich näher informieren? Schreibe uns einfach!
+
+<div style="background:#e8f5e9;
+            border:2px solid #2e7d32;
+            color:#1b5e20;
+            padding:15px;
+            border-radius:8px;
+            margin:15px 0;">
+
+<h3 style="margin-top:0;">🏑 Sommerferien 2026 🌞</h3>
+
+📅 Letztes Training: <strong>24.06.2026</strong><br>
+🚫 Trainingspause: <strong>29.06. – 07.08.2026</strong><br>
+🎉 Trainingsstart: <strong>12.08.2026</strong>
+
 </div>
 
-<div>
-    <p class="email-highlight"><a href="/kontakt/?recipient=jugendwart"> 🏑📩 Kontaktformular</a></p>
-<br>
+<div style="
+    background: linear-gradient(135deg, #f7fff8, #e8f5e9);
+    border: 2px solid #2e7d32;
+    border-radius: 14px;
+    padding: 20px;
+    margin: 25px 0;
+    color: #1b5e20;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+">
+
+    <h3 style="
+        margin-top:0;
+        color:#1b5e20;
+    ">
+        🏑 Hockey ausprobieren?
+    </h3>
+
+    <p style="line-height:1.5;">
+        Dein Kind möchte den Hockeysport kennenlernen – oder du selbst willst den Schläger schwingen?
+    </p>
+
+    <p style="line-height:1.5;">
+        Ob jung oder alt, Anfänger oder Fortgeschrittene:
+        Bei uns findet jeder das passende Training.
+    </p>
+
+    <div >
+        ✨ Komm einfach zu unseren Schnupper-Einheiten in der regulären Trainingszeit vorbei!
+    </div>
+
+    <div style="
+        background:#fff8e1;
+        color:#795548;
+        padding:12px;
+        border-radius:8px;
+        margin:15px 0;
+        font-weight:bold;
+    ">
+        📌 In den Schulferien findet kein Training statt.
+    </div>
+
+    <p>
+        💬 Fragen zum Training? Schreib uns gerne.
+    </p>
+
+    <p style="margin-top:20px;">
+        <a href="/kontakt/?recipient=jugendwart"
+           style="
+               display:inline-block;
+               background:#2e7d32;
+               color:white;
+               padding:12px 18px;
+               border-radius:8px;
+               text-decoration:none;
+               font-weight:bold;
+           ">
+            🏑📩 Kontaktformular
+        </a>
+    </p>
+
+</div>
+
 
 <div  data-aos="fade-up" data-aos-delay="200" >
 <h3>Unsere Trainingszeiten</h3>
