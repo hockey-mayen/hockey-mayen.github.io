@@ -51,11 +51,10 @@ og_image: /assets/images/og.jpg
             border-radius:8px;
             margin:15px 0;">
 
-<h3 style="margin-top:0;">🏑 Sommerferien 2026 🌞</h3>
+<h3 style="margin-top:0;">🏑📅 Sommerferien 2026 📅🌞</h3>
 
-📅 Letztes Training: <strong>24.06.2026 - fällt wegen Hitze aus !!</strong><br>
-🚫 Trainingspause: <strong>29.06. – 07.08.2026</strong><br>
-🎉 Trainingsstart: <strong>12.08.2026</strong>
+🚫🌞 Trainingspause: <strong>29.06. – 07.08.2026</strong><br>
+📅🎉 Trainingsstart: <strong>12.08.2026</strong>
 
 </div>
 
