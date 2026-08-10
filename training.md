@@ -44,20 +44,6 @@ og_image: /assets/images/og.jpg
 <div class="aligned-content">
 
 
-<div style="background:#e8f5e9;
-            border:2px solid #2e7d32;
-            color:#1b5e20;
-            padding:15px;
-            border-radius:8px;
-            margin:15px 0;">
-
-<h3 style="margin-top:0;">🏑📅 Sommerferien 2026 📅🌞</h3>
-
-🚫🌞 Trainingspause: <strong>29.06. – 07.08.2026</strong><br>
-📅🎉 Trainingsstart: <strong>12.08.2026</strong>
-
-</div>
-
 <div style="
     background: linear-gradient(135deg, #f7fff8, #e8f5e9);
     border: 2px solid #2e7d32;
