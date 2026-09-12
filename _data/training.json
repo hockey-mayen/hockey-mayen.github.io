@@ -6,7 +6,7 @@
         { "day": "Mittwoch", "time": "16:15 - 17:45 Uhr", "location": "Kunstrasenplatz Stadion Nettetal" },
         { "day": "Donnerstag", "time": "16:15 - 17:45 Uhr", "location": "Sporthalle Albert-Schweitzer-Realschule" }
       ],
-      "trainer": "Training: Mike Flinsch, Sergej Schatz <br> Jugendtrainerinen: Klara R., Helena K., Marie G. <br> Jugendtrainer: Julian S., Hanno F., Ole F."
+      "trainer": "Training: Mike Flinsch, Sergej Schatz <br> Jugendtrainerinen: Klara R., Helena K., Marie G. <br> Jugendtrainer: Julian S., Hanno F., <br> Torwarttrainer Ole F."
     },
     {
       "title": "U12/U14 Mädels",
@@ -22,7 +22,7 @@
         { "day": "Mittwoch", "time": "18:00 - 20:00 Uhr", "location": "Kunstrasenplatz Stadion Nettetal" },
         { "day": "Dienstag", "time": "18:00 - 20:00 Uhr", "location": "Sporthalle Albert-Schweitzer-Realschule" }
       ],
-      "trainer": "Training: Oliver Hannus & Team"
+      "trainer": "Training: Yannik Dietz & Team"
     },
     {
       "title": "Training Jugend und Erwachsene<br>Just For Fun",
