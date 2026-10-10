@@ -41,6 +41,7 @@ document.addEventListener("DOMContentLoaded", function () {
         "/assets/images/training/training34.webp",
         "/assets/images/training/training35.jpeg",
         "/assets/images/training/training36.webp",
+        "/assets/images/training/training37.webp",
     ];
 
     let currentImageIndex = Math.floor(Math.random() * images.length);
