@@ -2,6 +2,14 @@
   "title": "Videos",
   "items": [
     {
+      "title": "Hockey in Aktion",
+      "date": "",
+      "description": "Eltern feiern die Kids nach dem Spiel in Bad Kreuznach",
+      "src": "/assets/images/video/VID-20260608-WA0001-musik.mp4",
+      "poster": "/assets/images/video/VID-20260608-WA0001.jpg",
+      "type": "video/mp4"
+    },
+    {
       "title": "Penalty",
       "date": "",
       "description": "Anton spielt den Tormann aus. Der Ball ist drin!",
@@ -15,6 +23,14 @@
       "description": "U12 Turnier. Mayener Mädels im Angriffsmodus.",
       "src": "/assets/images/video/WU12_lange_ecke-720p-smaller.mp4",
       "poster": "/assets/images/video/WU12_lange_ecke.jpg",
+      "type": "video/mp4"
+    },
+    {
+      "title": "Gemeinsam feiern",
+      "date": "",
+      "description": "Gut gespielt !",
+      "src": "/assets/images/video/WhatsApp%20Video%202026-10-14%20at%2021.23.01.mp4",
+      "poster": "/assets/images/video/whatsapp-2026-10-14-212301.jpg",
       "type": "video/mp4"
     },
     {
