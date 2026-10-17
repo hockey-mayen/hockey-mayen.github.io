@@ -112,7 +112,7 @@ og_image: /assets/images/og.jpg
 
 <div class="tiles-container">
     {% assign datumWechselHalleZuFeld = "2026-03-05" %}
-    {% assign datumWechselFeldZuHalle = "2026-10-31" %}
+    {% assign datumWechselFeldZuHalle = "2026-10-17" %}
     {% assign today = "now" | date: "%Y-%m-%d" %} 
 
     {% if today >= datumWechselHalleZuFeld and today < datumWechselFeldZuHalle %}
