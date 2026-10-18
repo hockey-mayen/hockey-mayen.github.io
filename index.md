@@ -52,4 +52,17 @@ Der Hockeyclub Grün-Weiß TuS Mayen e.V. ist ein traditionsreicher Sportverein 
 
 </div>
 
+<div class="video-section aligned-content">
+  <h2>Unser Vereinsleben im Video</h2>
+  <div class="video-grid">
+    <div class="video-card" data-aos="fade-up" data-aos-delay="150">
+      <h3>Hockey-Club Mayen</h3>
+      <video controls preload="metadata" playsinline width="1280" height="720">
+        <source src="{{ '/assets/images/video/hockey-club-2025-720p.mp4' | relative_url }}" type="video/mp4">
+        Dein Browser unterstützt dieses Video-Format leider nicht.
+      </video>
+    </div>
+  </div>
+</div>
+
 
