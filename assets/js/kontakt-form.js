@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     const MIN_MESSAGE_LEN = 25;
+    const MAX_MESSAGE_LEN = 5000;
 
     const form = document.getElementById('contactForm');
     document.documentElement.classList.add('js');
@@ -19,6 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const emailEl = document.getElementById('email');
     const phoneEl = document.getElementById('phone');
     const messageEl = document.getElementById('message');
+    if (messageEl) messageEl.maxLength = MAX_MESSAGE_LEN;
     const honeypotEl = document.getElementById('honeypot');
 
     const submitBtn = document.getElementById('submitBtn');
@@ -62,10 +64,10 @@ document.addEventListener('DOMContentLoaded', () => {
         const len = sanitizeText(messageEl.value).length;
 
         if (len >= MIN_MESSAGE_LEN) {
-            messageCounter.textContent = `${len}/${MIN_MESSAGE_LEN} Zeichen ✅`;
+            messageCounter.textContent = `${len.toLocaleString('de-DE')} / 5.000 Zeichen (mindestens ${MIN_MESSAGE_LEN})`;
             messageCounter.style.color = '#008f5a';
         } else {
-            messageCounter.textContent = `${len}/${MIN_MESSAGE_LEN} Zeichen (mindestens ${MIN_MESSAGE_LEN})`;
+            messageCounter.textContent = `${len.toLocaleString('de-DE')} / 5.000 Zeichen (mindestens ${MIN_MESSAGE_LEN})`;
             messageCounter.style.color = '#6c757d';
         }
     }
@@ -85,7 +87,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const emailOk = emailVal.length <= 254 && isValidEmail(emailVal);
 
         const msgVal = sanitizeText(messageEl.value);
-        const msgOk = msgVal.length >= MIN_MESSAGE_LEN && msgVal.length <= 5000;
+        const msgOk = msgVal.length >= MIN_MESSAGE_LEN && msgVal.length <= MAX_MESSAGE_LEN;
         const phoneVal = sanitizeText(phoneEl?.value);
         const phoneOk = phoneVal.length <= 50 && !/[\u0000-\u001f\u007f]/.test(phoneVal);
 

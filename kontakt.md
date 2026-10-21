@@ -67,10 +67,10 @@ scripts:
     <textarea id="message" name="message" rows="7" minlength="25" maxlength="5000" required placeholder="Ihre Nachricht…"></textarea>
 
     <small id="messageCounter" style="display:block; color:#6c757d; margin-top:6px;">
-      0/25 Zeichen (mindestens 25)
+      0 / 5.000 Zeichen (mindestens 25)
     </small>
     <small id="messageError" style="display:none; color:#c0392b; margin-top:6px;">
-      Bitte schreiben Sie eine Nachricht mit 25 bis 5.000 Zeichen.
+      Bitte schreiben Sie eine Nachricht mit min. 25 Zeichen.
     </small>
 
     <!-- Turnstile -->
