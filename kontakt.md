@@ -49,27 +49,28 @@ scripts:
     auswählen.</small>
 
     <label for="name">Ihr Name</label>
-    <input id="name" type="text" name="name" required placeholder="Vor- und Nachname" autocomplete="name" />
-    <small id="nameError" style="display:none; color:#c0392b; margin-top:6px;">Bitte Ihren Namen eingeben.</small>
+    <input id="name" type="text" name="name" minlength="2" maxlength="120" required placeholder="Vor- und Nachname" autocomplete="name" />
+    <small id="nameError" style="display:none; color:#c0392b; margin-top:6px;">Bitte einen Namen mit 2 bis 120 Zeichen ohne Zeilenumbrüche eingeben.</small>
 
     <label for="email">Ihre E-Mail-Adresse</label>
-    <input id="email" type="email" name="email" required placeholder="name@beispiel.de" autocomplete="email" />
+    <input id="email" type="email" name="email" maxlength="254" required placeholder="name@beispiel.de" autocomplete="email" />
     <small id="emailError" style="display:none; color:#c0392b; margin-top:6px;">Bitte eine gültige E-Mail-Adresse eingeben.</small>
 
     <label for="phone">Telefonnummer (optional)</label>
-    <input id="phone" type="tel" name="phone" placeholder="+49 170 1234567" autocomplete="tel" />
+    <input id="phone" type="tel" name="phone" maxlength="50" placeholder="+49 170 1234567" autocomplete="tel" />
+    <small id="phoneError" style="display:none; color:#c0392b; margin-top:6px;">Bitte höchstens 50 Zeichen ohne Zeilenumbrüche eingeben.</small>
     <small id="phoneHint" style="display:block; color:#6c757d; margin-top:6px;">
       Optional – falls wir Sie telefonisch erreichen sollen.
     </small>
 
     <label for="message">Ihre Nachricht</label>
-    <textarea id="message" name="message" rows="7" required placeholder="Ihre Nachricht…"></textarea>
+    <textarea id="message" name="message" rows="7" minlength="25" maxlength="5000" required placeholder="Ihre Nachricht…"></textarea>
 
     <small id="messageCounter" style="display:block; color:#6c757d; margin-top:6px;">
-      0/22 Zeichen (mindestens 22)
+      0/25 Zeichen (mindestens 25)
     </small>
     <small id="messageError" style="display:none; color:#c0392b; margin-top:6px;">
-      Bitte schreiben Sie eine Nachricht mit mindestens 22 Zeichen.
+      Bitte schreiben Sie eine Nachricht mit 25 bis 5.000 Zeichen.
     </small>
 
     <!-- Turnstile -->

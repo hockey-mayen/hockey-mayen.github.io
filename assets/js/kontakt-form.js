@@ -28,6 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const nameError = document.getElementById('nameError');
     const emailError = document.getElementById('emailError');
     const messageError = document.getElementById('messageError');
+    const phoneError = document.getElementById('phoneError');
     const messageCounter = document.getElementById('messageCounter');
 
     const thankYouBox = document.getElementById('thankYouBox');
@@ -37,55 +38,23 @@ document.addEventListener('DOMContentLoaded', () => {
     let turnstileToken = '';
     let isSubmitting = false;
 
-    // =========================
-    // ✅ DEBUG per URL: ?debug=1
-    // =========================
-    const DEBUG = new URLSearchParams(window.location.search).get('debug') === '1';
-
-    function dbg(...args) {
-        if (!DEBUG) return;
-        console.log('[contactForm]', ...args);
-    }
-
-    // Kleine Debug-Box unten am Formular (nur wenn DEBUG=true)
-    let debugBox = document.getElementById('contactDebugBox');
-    if (!debugBox && DEBUG) {
-        debugBox = document.createElement('pre');
-        debugBox.id = 'contactDebugBox';
-        debugBox.style.cssText =
-            'margin-top:12px;padding:10px;border-radius:10px;background:#fff;' +
-            'border:1px dashed #bbb;font-size:12px;line-height:1.35;white-space:pre-wrap;' +
-            'color:#333;max-height:220px;overflow:auto;';
-        debugBox.textContent = 'Debug aktiviert…';
-        form.appendChild(debugBox);
-    }
-
-    function writeDebug(text) {
-        if (!DEBUG || !debugBox) return;
-        debugBox.textContent = text;
-    }
-
+    // Nur Normalisierung; HTML-Ausgabe erfolgt unten über Textknoten.
     const sanitizeText = (v) => String(v ?? '').trim();
     const isValidEmail = (value) =>
-        /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(String(value).trim());
+        /^[^\s@<>,;:"\\]+@[^\s@<>,;:"\\]+\.[^\s@<>,;:"\\]{2,}$/.test(String(value).trim());
 
     function setError(el, show) {
         if (!el) return;
         el.style.display = show ? 'block' : 'none';
     }
 
-    function setSubmitEnabled(enabled, reason = '') {
+    function setSubmitEnabled(enabled) {
         if (!submitBtn) return;
         const shouldEnable = !!enabled && !isSubmitting;
 
-        const before = submitBtn.disabled;
         submitBtn.disabled = !shouldEnable;
         if (!shouldEnable) submitBtn.setAttribute('disabled', 'disabled');
         else submitBtn.removeAttribute('disabled');
-
-        if (DEBUG && before !== submitBtn.disabled) {
-            dbg('button changed', { disabled: submitBtn.disabled, reason });
-        }
     }
 
     function updateMessageCounter() {
@@ -101,50 +70,24 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    function snapshot(reason) {
-        const recipientVal = sanitizeText(recipient?.value);
-        const nameVal = sanitizeText(nameEl?.value);
-        const emailVal = sanitizeText(emailEl?.value);
-        const msgVal = sanitizeText(messageEl?.value);
-
-        const snap = {
-            reason,
-            recipientVal,
-            recipientOk: !!recipientVal,
-            nameLen: nameVal.length,
-            nameOk: nameVal.length >= 2,
-            emailVal,
-            emailOk: isValidEmail(emailVal),
-            msgLen: msgVal.length,
-            msgOk: msgVal.length >= MIN_MESSAGE_LEN,
-            tokenLen: (turnstileToken || '').length,
-            captchaOk: !!turnstileToken,
-            isSubmitting,
-            btnDisabled: submitBtn?.disabled,
-        };
-
-        dbg('snapshot', snap);
-        writeDebug(JSON.stringify(snap, null, 2));
-        return snap;
-    }
-
-    function validateForm(reason = 'validate') {
+    function validateForm() {
         if (!recipient || !nameEl || !emailEl || !messageEl) {
-            dbg('validate aborted: missing elements');
             return false;
         }
 
         const recipientVal = sanitizeText(recipient.value);
-        const recipientOk = !!recipientVal;
+        const recipientOk = Object.prototype.hasOwnProperty.call(RECIPIENT_LABELS, recipientVal);
 
         const nameVal = sanitizeText(nameEl.value);
-        const nameOk = nameVal.length >= 2;
+        const nameOk = nameVal.length >= 2 && nameVal.length <= 120 && !/[\u0000-\u001f\u007f]/.test(nameVal);
 
         const emailVal = sanitizeText(emailEl.value);
-        const emailOk = isValidEmail(emailVal);
+        const emailOk = emailVal.length <= 254 && isValidEmail(emailVal);
 
         const msgVal = sanitizeText(messageEl.value);
-        const msgOk = msgVal.length >= MIN_MESSAGE_LEN;
+        const msgOk = msgVal.length >= MIN_MESSAGE_LEN && msgVal.length <= 5000;
+        const phoneVal = sanitizeText(phoneEl?.value);
+        const phoneOk = phoneVal.length <= 50 && !/[\u0000-\u001f\u007f]/.test(phoneVal);
 
         const captchaOk = !!turnstileToken;
 
@@ -152,6 +95,7 @@ document.addEventListener('DOMContentLoaded', () => {
         setError(nameError, nameVal.length > 0 && !nameOk);
         setError(emailError, emailVal.length > 0 && !emailOk);
         setError(messageError, msgVal.length > 0 && !msgOk);
+        setError(phoneError, !phoneOk);
 
         if (hint) {
             hint.textContent = recipientOk
@@ -159,38 +103,37 @@ document.addEventListener('DOMContentLoaded', () => {
                 : '';
         }
 
-        const allOk = recipientOk && nameOk && emailOk && msgOk && captchaOk;
+        const allOk = recipientOk && nameOk && emailOk && phoneOk && msgOk && captchaOk;
 
-        snapshot(`${reason} => allOk=${allOk}`);
-        setSubmitEnabled(allOk, reason);
+        setSubmitEnabled(allOk);
 
         return allOk;
     }
 
-    function escapeHtml(str) {
-        return String(str)
-            .replaceAll('&', '&amp;')
-            .replaceAll('<', '&lt;')
-            .replaceAll('>', '&gt;')
-            .replaceAll('"', '&quot;')
-            .replaceAll("'", '&#039;');
-    }
-
     function renderSummary(payload) {
         if (!summaryBox) return;
+        summaryBox.replaceChildren();
 
-        const telLine = payload.phone
-            ? `<div><strong>Telefon:</strong> ${escapeHtml(payload.phone)}</div>`
-            : '';
+        const appendLine = (label, value) => {
+            const line = document.createElement('div');
+            const title = document.createElement('strong');
+            title.textContent = `${label}: `;
+            line.append(title, document.createTextNode(value));
+            summaryBox.appendChild(line);
+        };
 
-        summaryBox.innerHTML = `
-      <div><strong>Ansprechpartner:</strong> ${escapeHtml(payload.recipientLabel)}</div>
-      <div><strong>Name:</strong> ${escapeHtml(payload.name)}</div>
-      <div><strong>E-Mail:</strong> ${escapeHtml(payload.email)}</div>
-      ${telLine}
-      <div style="margin-top:10px;"><strong>Nachricht:</strong></div>
-      <div style="white-space:pre-wrap;">${escapeHtml(payload.message)}</div>
-    `;
+        appendLine('Ansprechpartner', payload.recipientLabel);
+        appendLine('Name', payload.name);
+        appendLine('E-Mail', payload.email);
+        if (payload.phone) appendLine('Telefon', payload.phone);
+
+        const message = document.createElement('div');
+        message.style.marginTop = '10px';
+        message.style.whiteSpace = 'pre-wrap';
+        const title = document.createElement('strong');
+        title.textContent = 'Nachricht:';
+        message.append(title, document.createTextNode(`\n${payload.message}`));
+        summaryBox.appendChild(message);
     }
 
     // ======================================================
@@ -204,7 +147,6 @@ document.addEventListener('DOMContentLoaded', () => {
         const menu = document.getElementById('recipientMenu');
 
         if (!wrap || !native || !btn || !menu) {
-            dbg('custom select not found (recipientWrap/Btn/Menu missing) -> using native select');
             return;
         }
 
@@ -302,10 +244,7 @@ document.addEventListener('DOMContentLoaded', () => {
             options.forEach((o) => o.setAttribute('aria-selected', 'false'));
             if (match) match.setAttribute('aria-selected', 'true');
         });
-
-        dbg('custom select initialized');
     }
-
 
     // ==========================================
     // ✅ Recipient aus URL setzen (?recipient=...)
@@ -323,23 +262,9 @@ document.addEventListener('DOMContentLoaded', () => {
             if (recipient) {
                 recipient.value = r;
                 recipient.dispatchEvent(new Event('change', { bubbles: true }));
-                dbg('applyRecipientFromUrl', { recipient: r });
             }
-        } catch (e) {
-            dbg('applyRecipientFromUrl error', e);
-        }
-    }
-
-    // Optional: Query wieder entfernen (URL sauber)
-    function cleanUrlQuery() {
-        try {
-            const url = new URL(window.location.href);
-            if (url.searchParams.has('recipient')) {
-                url.searchParams.delete('recipient');
-                history.replaceState({}, '', url.pathname + (url.search ? url.search : '') + url.hash);
-            }
-        } catch (e) {
-            dbg('cleanUrlQuery error', e);
+        } catch {
+            // Eine ungültige URL-Vorauswahl wird ignoriert.
         }
     }
 
@@ -347,80 +272,64 @@ document.addEventListener('DOMContentLoaded', () => {
     window.onTurnstileSuccess = (token) => {
         turnstileToken = String(token || '');
         if (turnstileError) turnstileError.style.display = 'none';
-        dbg('turnstile success', { tokenLen: turnstileToken.length });
-        validateForm('turnstileSuccess');
+        validateForm();
     };
 
     window.onTurnstileExpired = () => {
         turnstileToken = '';
-        dbg('turnstile expired');
-        validateForm('turnstileExpired');
+        validateForm();
     };
 
     window.onTurnstileError = () => {
         turnstileToken = '';
-        dbg('turnstile error');
         if (turnstileError) turnstileError.style.display = 'block';
-        validateForm('turnstileError');
+        validateForm();
     };
 
     // ✅ Events
-    function hook(el, label) {
+    function hook(el) {
         if (!el) return;
-        ['input', 'change', 'keyup', 'blur'].forEach((evt) => {
+        ['input', 'change', 'blur'].forEach((evt) => {
             el.addEventListener(evt, () => {
-                dbg(`event ${label}:${evt}`);
                 updateMessageCounter();
-                validateForm(`${label}:${evt}`);
+                validateForm();
             });
         });
     }
 
-    hook(recipient, 'recipient');
-    hook(nameEl, 'name');
-    hook(emailEl, 'email');
-    hook(phoneEl, 'phone');
-    hook(messageEl, 'message');
-
-    submitBtn?.addEventListener('click', () => {
-        dbg('submit button clicked', { disabled: submitBtn.disabled });
-        snapshot('button clicked');
-    });
+    hook(recipient);
+    hook(nameEl);
+    hook(emailEl);
+    hook(phoneEl);
+    hook(messageEl);
 
     // Autofill / Browser-Specials
     requestAnimationFrame(() => {
         updateMessageCounter();
-        validateForm('RAF');
+        validateForm();
     });
 
     setTimeout(() => {
         updateMessageCounter();
-        validateForm('t+300ms');
+        validateForm();
     }, 300);
 
     setTimeout(() => {
         updateMessageCounter();
-        validateForm('t+1200ms');
+        validateForm();
     }, 1200);
-
-    // 🔁 Heartbeat (nur sinnvoll, wenn du’s brauchst)
-    setInterval(() => {
-        updateMessageCounter();
-        validateForm('heartbeat');
-    }, 800);
 
     // Initial
     updateMessageCounter();
-    setSubmitEnabled(false, 'init');
+    setSubmitEnabled(false);
 
     // ✅ NEW: Custom Select initialisieren (vor URL-Preselect ist ok)
     initCustomRecipientSelect();
 
     // ✅ NEW: preselect aus URL
     applyRecipientFromUrl();
-    // cleanUrlQuery(); // <- optional: aktivieren, wenn URL sauber bleiben soll
 
-    validateForm('init');
+    validateForm();
 
     // ✅ Submit
     form.addEventListener('submit', async (e) => {
@@ -434,11 +343,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 turnstileError.textContent = 'Bitte bestätigen Sie kurz, dass Sie kein Bot sind.';
                 turnstileError.style.display = 'block';
             }
-            validateForm('submit blocked: no token');
+            validateForm();
             return;
         }
 
-        if (!validateForm('submit validate')) return;
+        if (!validateForm()) return;
 
         const recipientKey = sanitizeText(recipient.value);
         const payload = {
@@ -454,9 +363,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
         try {
             isSubmitting = true;
-            setSubmitEnabled(false, 'submitting');
+            setSubmitEnabled(false);
             if (submitBtn) submitBtn.textContent = 'Sende...';
-            snapshot('submitting');
 
             const res = await fetch(WORKER_URL, {
                 method: 'POST',
@@ -469,35 +377,31 @@ document.addEventListener('DOMContentLoaded', () => {
                 data = await res.json();
             } catch {}
 
-            if (!res.ok || (data && data.ok === false)) {
-                if (res.status === 403) {
-                    turnstileToken = '';
-                    if (turnstileError) {
-                        turnstileError.textContent = 'Captcha ungültig/abgelaufen. Bitte erneut bestätigen.';
-                        turnstileError.style.display = 'block';
-                    }
-                    if (window.turnstile && typeof window.turnstile.reset === 'function') {
-                        window.turnstile.reset();
-                    }
-                }
-                throw new Error(`HTTP ${res.status} ${data ? JSON.stringify(data) : ''}`);
+            if (!res.ok || data?.ok !== true) {
+                throw new Error('send-failed');
             }
 
             renderSummary(payload);
             form.style.display = 'none';
             if (thankYouBox) thankYouBox.style.display = 'block';
-            snapshot('submit success');
-        } catch (err) {
-            console.error(err);
-            alert('Leider konnte die Nachricht nicht gesendet werden. Bitte versuchen Sie es später erneut.');
+        } catch {
+            turnstileToken = '';
+            if (turnstileError) {
+                turnstileError.textContent = 'Bitte bestätigen Sie vor einem neuen Versuch erneut, dass Sie kein Bot sind.';
+                turnstileError.style.display = 'block';
+            }
+            if (window.turnstile && typeof window.turnstile.reset === 'function') {
+                window.turnstile.reset();
+            }
+            alert('Der Versand konnte nicht bestätigt werden. Bitte prüfen Sie vor einem erneuten Versuch, ob die Nachricht bereits angekommen ist.');
             if (submitBtn) submitBtn.textContent = 'Senden';
             isSubmitting = false;
-            validateForm('submit error');
+            validateForm();
         } finally {
             if (!thankYouBox || thankYouBox.style.display !== 'block') {
                 isSubmitting = false;
                 if (submitBtn) submitBtn.textContent = 'Senden';
-                validateForm('submit finally');
+                validateForm();
             }
         }
     });
