@@ -208,6 +208,7 @@
     scripts:
     - /assets/js/xyz.js
     {%- endcomment -%}
+    <script defer src="{{ '/assets/js/chronik-content.js' | relative_url }}"></script>
     {% if page.scripts %}
     {% for script in page.scripts %}
     <script defer src="{{ script }}"></script>

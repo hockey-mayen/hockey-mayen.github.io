@@ -49,59 +49,47 @@ document.addEventListener("DOMContentLoaded", async function () {
                 const entryDiv = document.createElement("div");
                 entryDiv.classList.add("chronik-entry");
 
-                const eventText = entry.event || "";
-                const isLongText = eventText.length > maxLength;
+                const heading = document.createElement('h2');
+                ChronikContent.appendHeadline(heading, entry.headline);
+                const paragraph = document.createElement('p');
+                ChronikContent.appendText(paragraph, entry.event, maxLength);
+                entryDiv.append(heading, paragraph);
 
-                let shortText = eventText;
-                let fullText = eventText;
+                if (Array.isArray(entry.images)) {
+                    const gallery = document.createElement('div');
+                    gallery.className = 'chronik-images';
 
-                if (isLongText) {
-                    let trimmedText = eventText.substring(0, maxLength);
-                    const lastSpaceIndex = trimmedText.lastIndexOf(" ");
-                    if (lastSpaceIndex > -1) trimmedText = trimmedText.substring(0, lastSpaceIndex);
-                    shortText = trimmedText + " ...";
+                    entry.images.forEach((value, imgIndex) => {
+                        const src = ChronikContent.safeUrl(value, { image: true });
+                        if (!src) return;
+                        const isHero = isInitialBatch && entryIndex === 0 && imgIndex === 0;
+                        const wrap = document.createElement('div');
+                        wrap.className = 'img-wrap';
+                        wrap.dataset.img = src;
+                        const skeleton = document.createElement('div');
+                        skeleton.className = 'img-skeleton';
+                        skeleton.setAttribute('aria-hidden', 'true');
+                        const image = document.createElement('img');
+                        image.src = src;
+                        image.alt = `Bild zu ${ChronikContent.text(entry.headline)}`;
+                        image.loading = isHero ? 'eager' : 'lazy';
+                        image.decoding = 'async';
+                        image.setAttribute('fetchpriority', isHero ? 'high' : 'low');
+                        wrap.append(skeleton, image);
+                        gallery.appendChild(wrap);
+                    });
+                    if (gallery.childElementCount) entryDiv.appendChild(gallery);
                 }
 
-                const imagesHtml =
-                    entry.images && entry.images.length > 0
-                        ? `<div class="chronik-images">
-                ${entry.images
-                            .map((img, imgIndex) => {
-                                const isHero = isInitialBatch && entryIndex === 0 && imgIndex === 0;
-                                const loading = isHero ? "eager" : "lazy";
-                                const fetchPriority = isHero ? "high" : "low";
-
-                                return `
-                                  <div class="img-wrap" data-img="${img}">
-                                    <div class="img-skeleton" aria-hidden="true"></div>
-                                    <img src="${img}"
-                                      alt="Bild zu ${entry.headline}"
-                                      loading="${loading}"
-                                      decoding="async"
-                                      fetchpriority="${fetchPriority}">
-                                     </div>
-                                        `;}).join("")}
-                                    </div>`
-                                    : "";
-
-                const linkHtml = entry.link
-                    ? `<div class="event-link">
-              <a href="${entry.link}" target="_blank" rel="noopener noreferrer">
-                ${entry.linkTitle || "Mehr erfahren"}
-              </a>
-            </div>`
-                    : "";
-
-                entryDiv.innerHTML = `
-          <h2>${entry.headline}</h2>
-          <p>
-            <span class="short-text">${shortText}</span>
-            <span class="full-text" style="display:none;">${fullText}</span>
-            ${isLongText ? `<a href="#" class="toggle-text">Weiterlesen</a>` : ""}
-          </p>
-          ${imagesHtml}
-          ${linkHtml}
-        `;
+                const link = ChronikContent.createLink(
+                    entry.link, ChronikContent.text(entry.linkTitle) || 'Mehr erfahren'
+                );
+                if (link) {
+                    const linkContainer = document.createElement('div');
+                    linkContainer.className = 'event-link';
+                    linkContainer.appendChild(link);
+                    entryDiv.appendChild(linkContainer);
+                }
 
                 chronikList.appendChild(entryDiv);
                 wireImageLoaders(entryDiv);

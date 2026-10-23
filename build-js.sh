@@ -8,6 +8,7 @@ MINIFIED_FILE="$OUTPUT_DIR/all.min.js"
 # Reihenfolge der JS-Dateien – wie in deinem HTML
 JS_FILES=(
   "scrollTop.js"
+  "chronik-content.js"
   "events.js"
   "highlights.js"
   "trainingImageRotator.js"

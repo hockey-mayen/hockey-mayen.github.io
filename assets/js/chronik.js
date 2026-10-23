@@ -27,45 +27,43 @@ async function loadChronik() {
             let eventItem = document.createElement("li");
             eventItem.className = "event-item";
 
-            const maxLength = 450;
-            let isLongText = entry.event.length > maxLength;
-            let shortText = entry.event;
-            let fullText = entry.event;
+            const details = document.createElement('div');
+            details.className = 'event-details';
+            const heading = document.createElement('span');
+            heading.className = 'event-item-headline';
+            ChronikContent.appendHeadline(heading, entry.headline);
+            details.appendChild(heading);
 
-            if (isLongText) {
-                let trimmedText = entry.event.substring(0, maxLength);
-                let lastSpaceIndex = trimmedText.lastIndexOf(" ");
-                if (lastSpaceIndex > -1) {
-                    shortText = trimmedText.substring(0, lastSpaceIndex);
-                }
-                shortText += " ...";
-            }
+            const { short, full } = ChronikContent.appendText(details, entry.event, 450);
+            short.classList.add('event-text');
+            full.classList.add('event-text');
 
-            let eventContent = `<div class="event-details">
-                                    <span class="event-item-headline">${entry.headline}</span>
-                                    <span class="event-text short-text">${shortText}</span>
-                                    <span class="event-text full-text" style="display: none;">${fullText}</span>`;
-
-            if (isLongText) {
-                eventContent += `<a href="#" class="toggle-text">Weiterlesen</a>`;
-            }
-
-            if (entry.images && entry.images.length > 0) {
-                eventContent += `<div class="event-gallery">`;
-                entry.images.forEach(image => {
-                    eventContent += `<div class="event-image"><img src="${image}" alt="Event Image"></div>`;
+            if (Array.isArray(entry.images)) {
+                const gallery = document.createElement('div');
+                gallery.className = 'event-gallery';
+                entry.images.forEach(value => {
+                    const src = ChronikContent.safeUrl(value, { image: true });
+                    if (!src) return;
+                    const wrapper = document.createElement('div');
+                    wrapper.className = 'event-image';
+                    const image = document.createElement('img');
+                    image.src = src;
+                    image.alt = 'Event Image';
+                    wrapper.appendChild(image);
+                    gallery.appendChild(wrapper);
                 });
-                eventContent += `</div>`;
+                if (gallery.childElementCount) details.appendChild(gallery);
             }
 
-            if (entry.link && entry.linkTitle) {
-                eventContent += `<div class="event-link">
-                                    <a href="${entry.link}" target="_blank">${entry.linkTitle}</a>
-                                </div>`;
+            const link = ChronikContent.createLink(entry.link, entry.linkTitle);
+            if (link && ChronikContent.text(entry.linkTitle)) {
+                const linkContainer = document.createElement('div');
+                linkContainer.className = 'event-link';
+                linkContainer.appendChild(link);
+                details.appendChild(linkContainer);
             }
 
-            eventContent += `</div>`;
-            eventItem.innerHTML = eventContent;
+            eventItem.appendChild(details);
             eventList.appendChild(eventItem);
         });
 
@@ -106,7 +104,7 @@ async function loadChronik() {
     });
 
     // Erstes Jahr automatisch aktiv setzen
-    document.querySelector(`.year-button[data-year='${years[0]}']`).classList.add("active");
+    findYearButton(years[0])?.classList.add("active");
 
     // 📖 "Weiterlesen"-Logik
     document.querySelectorAll(".toggle-text").forEach(link => {
@@ -132,6 +130,12 @@ async function loadChronik() {
     window.addEventListener("scroll", highlightCurrentYear);
 }
 
+// Werte aus den Daten werden nicht in CSS-Selektoren eingesetzt.
+function findYearButton(year) {
+    return Array.from(document.querySelectorAll('.year-button'))
+        .find(button => button.dataset.year === String(year));
+}
+
 // 🎨 **Sanftes Ausblenden, Sprung, dann Einblenden**
 function fadeToYear(year) {
     const timeline = document.getElementById("timeline");
@@ -153,7 +157,7 @@ function fadeToYear(year) {
 
         // 🟢 Nach dem Sprung das aktive Jahr in der Navigation setzen
         document.querySelectorAll(".year-button").forEach(btn => btn.classList.remove("active"));
-        document.querySelector(`.year-button[data-year='${year}']`)?.classList.add("active");
+        findYearButton(year)?.classList.add("active");
 
     }, 400); // Warte, bis das Ausblenden vorbei ist
 }
@@ -172,7 +176,7 @@ function highlightCurrentYear() {
 
     if (currentYear) {
         document.querySelectorAll(".year-button").forEach(btn => btn.classList.remove("active"));
-        let activeButton = document.querySelector(`.year-button[data-year='${currentYear}']`);
+        let activeButton = findYearButton(currentYear);
         if (activeButton) {
             activeButton.classList.add("active");
         }
