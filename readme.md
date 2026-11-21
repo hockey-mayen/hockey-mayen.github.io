@@ -171,41 +171,101 @@ Eine automatisierte Testsuite ist derzeit nicht eingerichtet.
 
 - [PageSpeed Insights](https://pagespeed.web.dev/) zur Prüfung von Ladezeit und Darstellung
 - [ImageKit-Medienbibliothek](https://imagekit.io/dashboard/media-library) zur Verwaltung extern bereitgestellter Medien
-# Dev-Vorschau
 
-`main` veröffentlicht die freigegebene Website auf GitHub Pages. Änderungen werden
-zuerst auf `dev` gepusht und nach Prüfung per Pull Request nach `main` übernommen.
-Der Pages-Workflow ist auf `main` beschränkt, auch bei manueller Ausführung.
+## Dev-Stage und Produktion
 
-Die Vorschau liegt als separates **Direct-Upload-Projekt** auf Cloudflare Pages:
+Stand der Einrichtung: 21. November 2026.
 
-| Einstellung | Wert |
-| --- | --- |
-| Projektname | `hockey-mayen-dev` |
-| Production branch des **Vorschauprojekts** | `dev` |
-| Veröffentlichung | geprüften lokalen Build mit Wrangler hochladen |
-| Build command | `npm run build:dev` |
-| Build output directory | `_site-dev` |
-| `NODE_VERSION` | `24` |
-| `RUBY_VERSION` | `3.2.8` |
-| Custom domain | `dev.hockey-mayen.de` |
+| Umgebung | Branch | Adresse | Veröffentlichung |
+| --- | --- | --- | --- |
+| Produktion | `main` | https://hockey-mayen.de | automatisch durch GitHub Actions nach Push oder PR-Merge nach `main` |
+| Dev-Vorschau | `dev` | https://hockey-mayen-dev.pages.dev | separater Build und manueller Upload mit Wrangler |
 
-Das Projekt und die Zuordnung von `dev.hockey-mayen.de` sind angelegt. Die erste
-Veröffentlichung ist unter https://hockey-mayen-dev.pages.dev erreichbar.
-Für die Custom Domain ist der CNAME `dev` → `hockey-mayen-dev.pages.dev` erforderlich.
-Die DNS-Einträge der Hauptseite nicht ändern.
+Die Vorschau ist ein **Direct-Upload-Projekt** auf Cloudflare Pages mit dem Namen
+`hockey-mayen-dev`. Der dort als „Production branch“ bezeichnete Branch ist `dev`;
+Cloudflare meint damit die Hauptversion dieses Vorschauprojekts, nicht die öffentliche
+Vereinswebsite. Ein Push auf `dev` aktualisiert die Online-Vorschau **nicht automatisch**.
+Eine GitHub-/Cloudflare-CI-Verbindung für diesen Upload ist bisher nicht eingerichtet.
 
-Ein Git-Push allein aktualisiert diese Direct-Upload-Vorschau noch nicht. Bis ein
-separater CI-Deploy mit einem Cloudflare-Pages-API-Token eingerichtet ist, erfolgt
-die Veröffentlichung nach Wrangler-Anmeldung aus dem `dev`-Branch:
+### Änderungen entwickeln und auf Dev veröffentlichen
+
+1. Vor Beginn `git status` sowie die lokalen und Remote-Branches prüfen.
+   Nach einer Produktionsfreigabe `main` und `dev` bei Bedarf regulär zusammenführen;
+   bestehende Änderungen erhalten, keine erzwungenen Pushes oder Resets verwenden.
+2. Änderungen auf `dev` bearbeiten und lokal prüfen.
+3. Gewünschte Quelländerungen gezielt committen und auf `dev` pushen.
+   Generierte Ausgaben und lokale AI-Dateien nicht mit aufnehmen.
+4. Den aktuellen Dev-Stand bauen und separat auf Cloudflare Pages hochladen:
 
 ```bash
 npm run build:dev
 npx --yes --registry=https://registry.npmjs.org wrangler@4.166.0 pages deploy _site-dev --project-name hockey-mayen-dev --branch dev
 ```
 
-Lokal mit `npm run build:dev` bauen. Dieser Build lädt zusätzlich `_config.dev.yml`,
-schließt die Indexierung über Meta-Tags, `robots.txt` und `X-Robots-Tag` aus und
-deaktiviert den Nachrichtenversand im Kontaktformular. Er ist eine öffentlich
-erreichbare Vorschau, keine zugriffsgeschützte Umgebung. Der reguläre Build ohne
-`_config.dev.yml` behält die Produktionsfunktion.
+Der Build bündelt CSS, erzeugt die initialen Highlights und lädt
+`_config.yml` sowie `_config.dev.yml`. Die Ausgabe liegt in `_site-dev/`.
+Lokale Abhängigkeiten müssen vorher installiert sein (`npm ci` und `bundle install`).
+Für npm wird Node.js 24 verwendet; Ruby/Bundler richten sich nach `Gemfile.lock`.
+
+Der Upload setzt eine Cloudflare-Anmeldung voraus. Falls noch keine gültige
+Anmeldung besteht:
+
+```bash
+npx --yes --registry=https://registry.npmjs.org wrangler@4.166.0 login
+```
+
+`--registry` wählt für diese Aufrufe die öffentliche npm-Registry, ohne die
+lokale npm-Konfiguration dauerhaft zu ändern. Zugangsdaten nie in Quellcode,
+Remote-URLs oder Dokumentation schreiben. GitHub-Zugriff erfolgt lokal über die
+GitHub CLI (`gh auth login`, danach `gh auth setup-git --hostname github.com`).
+
+### Unterschiede der Dev-Stage
+
+- Dev ist öffentlich erreichbar, aber über Robots-Meta-Tags, `robots.txt` und
+  `X-Robots-Tag` von der Indexierung ausgeschlossen. Das ist kein Zugangsschutz.
+- Turnstile und der tatsächliche Kontaktformularversand sind auf Dev bewusst
+  deaktiviert. Diese Entscheidung wurde nach Rückfrage ausdrücklich beibehalten.
+  Die Vorschau dient somit keinem vollständigen Formular-Funktionstest.
+- Der Produktionsbuild lädt ausschließlich `_config.yml`, bindet Turnstile ein
+  und erlaubt den normalen Nachrichtenversand. `_config.dev.yml` nicht dem
+  Produktionsworkflow hinzufügen.
+- Zusätzliche HTTP-Header der Vorschau werden durch `scripts/build-dev.sh` in
+  `_site-dev/_headers` erzeugt und von Cloudflare Pages ausgewertet.
+
+### Optionale Dev-Subdomain
+
+`dev.hockey-mayen.de` ist dem Cloudflare-Pages-Projekt bereits zugeordnet. Zum
+letzten technischen Prüfzeitpunkt war die Subdomain noch nicht auflösbar; eine
+abgeschlossene DNS-/HTTPS-Prüfung steht aus. Der dafür benötigte DNS-Eintrag lautet:
+
+| Typ | Name | Ziel | Proxy |
+| --- | --- | --- | --- |
+| CNAME | `dev` | `hockey-mayen-dev.pages.dev` | aktiviert |
+
+Vor dem Anlegen vorhandene `dev`-Einträge prüfen. Die Wrangler-OAuth-Anmeldung
+besitzt Pages-Schreibrechte, aber keine DNS-Schreibrechte. Bestehende DNS-Einträge
+der Hauptseite erhalten. Bis die Subdomain geprüft ist, die funktionierende
+`pages.dev`-Adresse verwenden.
+
+### Getesteten Stand auf Produktion übernehmen
+
+Nach ausdrücklicher Freigabe den getesteten `dev`-Stand per Pull Request nach
+`main` übernehmen. Der Workflow `.github/workflows/jekyll-gh-pages.yml` baut CSS,
+Highlights und Jekyll neu und veröffentlicht auf GitHub Pages. Beide Workflow-Jobs
+sind auf `main` beschränkt, auch bei einem manuellen Start.
+
+Den erfolgreichen Abschluss des Deployments abwarten und danach die Hauptseite
+sowie die Produktionskonfiguration der Kontaktseite prüfen. Eine echte Nachricht
+nur senden, wenn ein solcher Versandtest beauftragt wurde.
+
+Der erste getestete Dev-Stand wurde am 21. November 2026 über PR #2 veröffentlicht:
+https://github.com/hockey-mayen/hockey-mayen.github.io/pull/2.
+Build und Deployment waren erfolgreich; der Eigentümer hat die funktionierende
+Produktionsseite bestätigt.
+
+### Lokale AI-Übergabe
+
+`AGENTS.md` enthält Arbeitsregeln, `AI_HANDOFF.md` den aktuellen Projektstand.
+Beide sind ausschließlich lokal: Sie werden über `.git/info/exclude` ignoriert
+und über `_config.yml` vom Website-Build ausgeschlossen. Bei einem neuen Clone
+müssen diese Dateien und die lokalen Ignore-Regeln separat übernommen werden.
