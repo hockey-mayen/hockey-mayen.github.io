@@ -177,23 +177,32 @@ Eine automatisierte Testsuite ist derzeit nicht eingerichtet.
 zuerst auf `dev` gepusht und nach Prüfung per Pull Request nach `main` übernommen.
 Der Pages-Workflow ist auf `main` beschränkt, auch bei manueller Ausführung.
 
-Cloudflare Pages wird für die Vorschau separat mit diesem Repository verbunden:
+Die Vorschau liegt als separates **Direct-Upload-Projekt** auf Cloudflare Pages:
 
 | Einstellung | Wert |
 | --- | --- |
-| Projektname (vorgesehen) | `hockey-mayen-dev` |
+| Projektname | `hockey-mayen-dev` |
 | Production branch des **Vorschauprojekts** | `dev` |
-| Automatische Preview-Branches | deaktiviert |
-| Build command | `npm ci --include=dev --ignore-scripts --no-audit --no-fund && bundle install && npm run build:dev` |
+| Veröffentlichung | geprüften lokalen Build mit Wrangler hochladen |
+| Build command | `npm run build:dev` |
 | Build output directory | `_site-dev` |
 | `NODE_VERSION` | `24` |
 | `RUBY_VERSION` | `3.2.8` |
 | Custom domain | `dev.hockey-mayen.de` |
 
-Diese Werte dokumentieren die vorgesehene Einrichtung; ein erfolgreicher lokaler
-Build erstellt noch kein Cloudflare-Projekt oder DNS-Eintrag. Die Custom Domain
-zuerst beim Vorschauprojekt hinzufügen und danach den von Cloudflare angezeigten
-DNS-Eintrag verwenden. Die DNS-Einträge der Hauptseite nicht ändern.
+Das Projekt und die Zuordnung von `dev.hockey-mayen.de` sind angelegt. Die erste
+Veröffentlichung ist unter https://hockey-mayen-dev.pages.dev erreichbar.
+Für die Custom Domain ist der CNAME `dev` → `hockey-mayen-dev.pages.dev` erforderlich.
+Die DNS-Einträge der Hauptseite nicht ändern.
+
+Ein Git-Push allein aktualisiert diese Direct-Upload-Vorschau noch nicht. Bis ein
+separater CI-Deploy mit einem Cloudflare-Pages-API-Token eingerichtet ist, erfolgt
+die Veröffentlichung nach Wrangler-Anmeldung aus dem `dev`-Branch:
+
+```bash
+npm run build:dev
+npx --yes --registry=https://registry.npmjs.org wrangler@4.166.0 pages deploy _site-dev --project-name hockey-mayen-dev --branch dev
+```
 
 Lokal mit `npm run build:dev` bauen. Dieser Build lädt zusätzlich `_config.dev.yml`,
 schließt die Indexierung über Meta-Tags, `robots.txt` und `X-Robots-Tag` aus und
