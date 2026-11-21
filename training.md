@@ -41,72 +41,6 @@ og_image: /assets/images/og.jpg
 
 ## Training
 
-<div class="aligned-content">
-
-
-<div style="
-    background: linear-gradient(135deg, #f7fff8, #e8f5e9);
-    border: 2px solid #2e7d32;
-    border-radius: 14px;
-    padding: 20px;
-    margin: 25px 0;
-    color: #1b5e20;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-">
-
-    <h3 style="
-        margin-top:0;
-        color:#1b5e20;
-    ">
-        🏑 Hockey ausprobieren?
-    </h3>
-
-    <p style="line-height:1.5;">
-        Dein Kind möchte den Hockeysport kennenlernen – oder du selbst willst den Schläger schwingen?
-    </p>
-
-    <p style="line-height:1.5;">
-        Ob jung oder alt, Anfänger oder Fortgeschrittene:
-        Bei uns findet jeder das passende Training.
-    </p>
-
-    <div >
-        ✨ Komm einfach zu unseren Schnupper-Einheiten in der regulären Trainingszeit vorbei!
-    </div>
-
-    <div style="
-        background:#fff8e1;
-        color:#795548;
-        padding:12px;
-        border-radius:8px;
-        margin:15px 0;
-        font-weight:bold;
-    ">
-        📌 In den Schulferien findet kein Training statt.
-    </div>
-
-    <p>
-        💬 Fragen zum Training? Schreib uns gerne.
-    </p>
-
-    <p style="margin-top:20px;">
-        <a href="/kontakt/?recipient=jugendwart"
-           style="
-               display:inline-block;
-               background:#2e7d32;
-               color:white;
-               padding:12px 18px;
-               border-radius:8px;
-               text-decoration:none;
-               font-weight:bold;
-           ">
-            🏑📩 Kontaktformular
-        </a>
-    </p>
-
-</div>
-
-
 <div  data-aos="fade-up" data-aos-delay="200" >
 <h3>Unsere Trainingszeiten</h3>
 
@@ -151,6 +85,18 @@ og_image: /assets/images/og.jpg
     </div>
     {% endfor %}
 </div>
+</div>
+
+<div class="aligned-content">
+    <div class="tile-single training-invite" data-aos="fade-up" data-aos-delay="200">
+        <h3>🏑 Hockey ausprobieren?</h3>
+        <p>Dein Kind möchte den Hockeysport kennenlernen – oder du selbst willst den Schläger schwingen?</p>
+        <p>Ob jung oder alt, Anfänger oder Fortgeschrittene: Bei uns findet jeder das passende Training.</p>
+        <div>✨ Komm einfach zu unseren Schnupper-Einheiten in der regulären Trainingszeit vorbei!</div>
+        <div class="training-invite-note">📌 In den Schulferien findet kein Training statt.</div>
+        <p>💬 Fragen zum Training? Schreib uns gerne.</p>
+        <p class="training-invite-action"><a href="/kontakt/?recipient=jugendwart">🏑📩 Kontaktformular</a></p>
+    </div>
 </div>
 
 <div class="aligned-content">

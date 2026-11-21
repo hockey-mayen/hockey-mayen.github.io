@@ -1,28 +1,23 @@
 /* Event-Kachel */
 /* events.css */
 .tile-aktuell, .tile-highlight {
-    background: rgba(255, 255, 255, 0.4);
-    /* Neuer Box-Shadow */
-    box-shadow:
-            0 4px 6px rgba(0, 0, 0, 0.1),
-            0 8px 20px rgba(0, 0, 0, 0.15);
-
+    background: var(--color-card);
+    box-shadow: var(--shadow-card);
     border-radius: 10px;
-
     width: 45%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    flex-grow: 1;
+}
 
+.tile-aktuell {
     min-height: 50vh;
     height: 70vh;
     max-height: 80vh;
-
-    display: flex;
-    flex-direction: column;
     justify-content: center;
-    align-items: center;
     overflow: hidden;
-    text-align: center;
-
-    flex-grow: 1;
 }
 
 /* Wrapper für das Bild */
@@ -35,7 +30,7 @@
 }
 
 /* Bild */
-.event-image {
+.tile-aktuell .event-image {
     border-radius: 5px;
     width: auto;
     height: 100%;
@@ -168,7 +163,7 @@
 /* Responsive Anpassungen für kleinere Bildschirme */
 @media screen and (max-width: 700px) {
     /* Bild */
-    .event-image {
+    .tile-aktuell .event-image {
         max-width: 100%; /* Passt sich maximal der Breite des Containers an */
         width: auto; /* Erhält das Seitenverhältnis */
         display: block; /* Verhindert unerwünschte Zusatzeffekte */

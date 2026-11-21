@@ -1,0 +1,44 @@
+.jff-wrap { max-width: 980px; margin: 0 auto; padding: 18px 16px; }
+.jff-hero {
+    border-radius: 18px;
+    padding: 12px 10px;
+    background: linear-gradient(135deg, rgba(0, 120, 70, 0.10), rgba(0, 0, 0, 0.04));
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+}
+.jff-title { margin: 0 0 6px; font-size: clamp(1.6rem, 2.6vw, 2.2rem); line-height: 1.15; }
+.jff-sub { margin: 0; opacity: 0.85; font-size: 1.05rem; }
+.jff-grid { display: grid; grid-template-columns: 1fr; gap: 16px; margin-top: 16px; }
+.jff-card {
+    border-radius: 16px;
+    padding: 8px;
+    background: #e9eeee;
+    box-shadow: 0 10px 22px rgba(0, 0, 0, 0.06);
+    border: 1px solid rgba(0, 0, 0, 0.06);
+}
+.jff-card h2 { margin: 0 0 10px; font-size: 1.15rem; }
+.jff-facts { list-style: none; padding: 0; margin: 0; }
+.jff-facts li { padding: 8px 0; border-bottom: 1px dashed rgba(0, 0, 0, 0.10); }
+.jff-facts li:last-child { border-bottom: none; }
+.jff-badges { margin-bottom: 8px; }
+.jff-badge {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 999px;
+    font-size: 0.9rem;
+    background: rgba(0, 120, 70, 0.12);
+    margin-right: 6px;
+    margin-bottom: 8px;
+}
+.jff-small { opacity: 0.9; font-size: 0.98rem; margin: 0; }
+.jff-hr { height: 1px; background: rgba(0, 0, 0, 0.08); border: 0; margin: 14px 0; }
+.jff-list { margin: 0; padding-left: 18px; }
+.jff-mail a,
+.jff-mail a:visited { color: #0a833a; font-weight: 700; text-decoration: none; }
+.jff-mail a:hover,
+.jff-mail a:focus-visible { color: #086b2f; text-decoration: underline; }
+.jff-icon {
+    width: 90px;
+    height: auto;
+    flex: 0 0 auto;
+    filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.12));
+}

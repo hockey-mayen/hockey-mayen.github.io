@@ -16,18 +16,17 @@
 }
 
 /* Einzelne Kachel */
-.tile {
-
+.tile,
+.tile-single {
     max-width: 600px;
-    background: rgba(255, 255, 255, 0.4);
-    /* Neuer Box-Shadow */
-    box-shadow:
-            0 4px 6px rgba(0, 0, 0, 0.1),
-            0 8px 20px rgba(0, 0, 0, 0.15);
+    background: var(--color-card);
+    box-shadow: var(--shadow-card);
     border-radius: 10px;
-    padding: 10px;
+}
 
-    color: #555c5f; /* Grauer Farbton wie bei anderen Texten */
+.tile {
+    padding: 10px;
+    color: var(--color-text);
     display: flex;
     flex-direction: column; /* Inhalte vertikal anordnen */
     justify-content: space-between; /* Platz zwischen den Elementen */
@@ -36,12 +35,6 @@
 }
 
 .tile-single {
-    max-width: 600px;
-    background: rgba(255, 255, 255, 0.4);
-    box-shadow:
-            0 4px 6px rgba(0, 0, 0, 0.1),
-            0 8px 20px rgba(0, 0, 0, 0.15);
-    border-radius: 10px;
     padding: 15px;
 
     /* Zentrierung */
@@ -52,12 +45,6 @@
 .tile-single:not(:last-of-type) {
     margin-top: 25px;
     /*margin-bottom: 10px;*/
-}
-
-/* Hover-Effekt: Kachel hebt sich leicht */
-.tile:hover {
-    /*transform: translateY(-3px); !* Leichtes Anheben *!*/
-    /*box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.15); !* Verstärkter Schatten *!*/
 }
 
 /* Zusätzliche Stile für Kachel-Titel und Beschreibung */
@@ -73,9 +60,38 @@
     border-radius: 5px; /* Abgerundete Ecken am Bild */
     margin-top: 10px;
 }
+
+/* Einheitliche Bildhöhe für die Startseiten-Kacheln, auch bei Tabletbreite. */
+.home-tiles > .tile {
+    justify-content: flex-start;
+}
+
+.home-tiles .training-image-container,
+.home-tiles .turniere-image-container {
+    flex: 0 0 auto;
+    margin-top: auto;
+}
+
+.home-tiles .training-image-container img,
+.home-tiles .turniere-image-container img {
+    inset: 0;
+    margin-top: 0;
+}
+
+.home-tiles > .tile > img {
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+}
+
+@media (min-width: 601px) and (max-width: 900px) {
+    .home-tiles > .tile > img {
+        height: 190px;
+    }
+}
 .tile a {
     display: inline-block;
-    color: #004d26;
+    color: var(--color-brand-deep);
     font-weight: bold;
     text-decoration: none;
 }
@@ -134,7 +150,12 @@
 
 .tile-link {
     margin-top: 10px;
-    color: #007b5f;
+    color: var(--color-brand);
+}
+
+.map-nav-icon {
+    width: 100px;
+    height: auto;
 }
 
 @media (max-width: 600px) {

@@ -1,12 +1,13 @@
-function toggleCollapsible() {
-    let content = document.querySelector('.collapsible-content');
-    let arrow = document.querySelector('.arrow');
+document.addEventListener('DOMContentLoaded', () => {
+    const button = document.querySelector('.collapsible-header');
+    const content = document.querySelector('.collapsible-content');
+    const arrow = button?.querySelector('.arrow');
+    if (!button || !content || !arrow) return;
 
-    if (content.style.display === "block") {
-        content.style.display = "none";
-        arrow.innerHTML = "&#9654;"; // Pfeil nach rechts
-    } else {
-        content.style.display = "block";
-        arrow.innerHTML = "&#9660;"; // Pfeil nach unten
-    }
-}
+    button.addEventListener('click', () => {
+        const expanded = button.getAttribute('aria-expanded') === 'true';
+        button.setAttribute('aria-expanded', String(!expanded));
+        content.style.display = expanded ? 'none' : 'block';
+        arrow.textContent = expanded ? '▶' : '▼';
+    });
+});

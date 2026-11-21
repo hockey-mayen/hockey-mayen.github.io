@@ -11,11 +11,10 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     });
 
-    // Funktion zum sanften Scrollen nach oben
-    window.scrollToTop = function() {
+    scrollBtn.addEventListener('click', function() {
         window.scrollTo({
             top: 0,
             behavior: "smooth"
         });
-    };
+    });
 });

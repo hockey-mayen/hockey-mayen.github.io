@@ -14,4 +14,34 @@ author:
 include:
   - .well-known
 exclude:
+  - AGENTS.md
+  - AI_HANDOFF.md
+  - _site-dev/
   - .idea/
+  - .bundle/
+  - node_modules/
+  - vendor/
+  - scripts/
+  - build-css.sh
+  - build-js.sh
+  - package.json
+  - package-lock.json
+  - Gemfile
+  - Gemfile.lock
+  - readme.md
+  - turniere-backup.md
+  - assets/js/_site/
+  - assets/js/all.js
+  - assets/js/all.min.js
+  # Rohdateien und ältere Exporte; die in _data/videos.json verwendeten MP4 bleiben erhalten.
+  - assets/images/hockey-club 2025.mp4
+  - assets/images/hockey-club-2025-720p-2.mp4
+  - assets/images/video/untitled folder/
+  - assets/images/video/hockey-club-2025-720p-2.mp4
+  - assets/images/video/alex-lion-philip-hockey-club-mayen.mp4
+  - assets/images/video/alex-lion-philip-hockey-club-mayen-720p.mp4
+  - assets/images/video/anton-kulinna-penalty.mp4
+  - assets/images/video/anton-kulinna-penalty-720p.mp4
+  - assets/images/video/WU12_lange_ecke.mp4
+  - assets/images/video/WU12_lange_ecke-720p.mp4
+  - assets/images/video/VID-20260608-WA0001.mp4

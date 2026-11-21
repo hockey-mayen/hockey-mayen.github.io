@@ -9,11 +9,14 @@ scripts:
 ## Kontakt
 
 <div class="aligned-content">
+  {% if site.preview %}
+  <p role="status">Dies ist die Testversion. Das Kontaktformular versendet hier keine Nachrichten.</p>
+  {% endif %}
   <p>Schreiben Sie uns – wir melden uns so schnell wie möglich zurück.</p>
 
-  <form id="contactForm" novalidate>
+  <form id="contactForm" novalidate{% if site.preview %} data-preview="true"{% endif %}>
     <!-- Honeypot (gegen einfache Bots) -->
-    <input type="text" name="honeypot" id="honeypot" style="display:none" tabindex="-1" autocomplete="off" />
+    <input type="text" name="honeypot" id="honeypot" tabindex="-1" autocomplete="off" />
     
     <label for="recipient">Ansprechpartner</label>
     
@@ -45,36 +48,36 @@ scripts:
       </ul>
     </div>
     
-    <small id="recipientError" style="display:none; color:#c0392b; margin-top:6px;">Bitte einen Ansprechpartner
+    <small id="recipientError" class="form-error">Bitte einen Ansprechpartner
     auswählen.</small>
 
     <label for="name">Ihr Name</label>
     <input id="name" type="text" name="name" minlength="2" maxlength="120" required placeholder="Vor- und Nachname" autocomplete="name" />
-    <small id="nameError" style="display:none; color:#c0392b; margin-top:6px;">Bitte einen Namen mit 2 bis 120 Zeichen ohne Zeilenumbrüche eingeben.</small>
+    <small id="nameError" class="form-error">Bitte einen Namen mit 2 bis 120 Zeichen ohne Zeilenumbrüche eingeben.</small>
 
     <label for="email">Ihre E-Mail-Adresse</label>
     <input id="email" type="email" name="email" maxlength="254" required placeholder="name@beispiel.de" autocomplete="email" />
-    <small id="emailError" style="display:none; color:#c0392b; margin-top:6px;">Bitte eine gültige E-Mail-Adresse eingeben.</small>
+    <small id="emailError" class="form-error">Bitte eine gültige E-Mail-Adresse eingeben.</small>
 
     <label for="phone">Telefonnummer (optional)</label>
     <input id="phone" type="tel" name="phone" maxlength="50" placeholder="+49 170 1234567" autocomplete="tel" />
-    <small id="phoneError" style="display:none; color:#c0392b; margin-top:6px;">Bitte höchstens 50 Zeichen ohne Zeilenumbrüche eingeben.</small>
-    <small id="phoneHint" style="display:block; color:#6c757d; margin-top:6px;">
+    <small id="phoneError" class="form-error">Bitte höchstens 50 Zeichen ohne Zeilenumbrüche eingeben.</small>
+    <small id="phoneHint" class="form-help">
       Optional – falls wir Sie telefonisch erreichen sollen.
     </small>
 
     <label for="message">Ihre Nachricht</label>
     <textarea id="message" name="message" rows="7" minlength="25" maxlength="5000" required placeholder="Ihre Nachricht…"></textarea>
 
-    <small id="messageCounter" style="display:block; color:#6c757d; margin-top:6px;">
+    <small id="messageCounter" class="form-help">
       0 / 5.000 Zeichen (mindestens 25)
     </small>
-    <small id="messageError" style="display:none; color:#c0392b; margin-top:6px;">
+    <small id="messageError" class="form-error">
       Bitte schreiben Sie eine Nachricht mit min. 25 Zeichen.
     </small>
 
     <!-- Turnstile -->
-    <div style="margin-top:14px;">
+    <div class="turnstile-field">
       <div
         id="turnstileWidget"
         class="cf-turnstile"
@@ -86,32 +89,26 @@ scripts:
         data-error-callback="onTurnstileError"
       ></div>
 
-      <small id="turnstileError" style="display:none; color:#c0392b; margin-top:6px;">
+      <small id="turnstileError" class="form-error">
         Bitte bestätigen Sie kurz, dass Sie kein Bot sind.
       </small>
     </div>
 
     <button id="submitBtn" type="submit" class="load-more-btn" disabled>Senden</button>
-    <p id="formHint" style="margin-top:10px; font-size:14px; color:#6c757d;"></p>
+    <p id="formHint"></p>
 
   </form>
 
-  <div id="thankYouBox" style="display:none; margin-top:20px; background:#ffffff; border-radius:12px; padding:18px;">
-    <h3 style="margin-top:0;">Danke! ✅</h3>
+  <div id="thankYouBox">
+    <h3>Danke! ✅</h3>
     <p>Ihre Nachricht wurde gesendet. Hier ist eine Zusammenfassung:</p>
 
-    <div id="summaryBox" style="background:#f6fbf8; border:1px solid #bdddcc; border-radius:10px; padding:12px;"></div>
+    <div id="summaryBox"></div>
 
   </div>
 </div>
 
 <!-- Turnstile Script -->
+{% unless site.preview %}
 <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" defer></script>
-
-<style>
-  #submitBtn:disabled {
-    opacity: 0.55;
-    cursor: not-allowed;
-    filter: grayscale(15%);
-  }
-</style>
+{% endunless %}

@@ -1,8 +1,8 @@
-<header>
+<header id="top">
     <div class="header-container">
         <!-- Logo separat platzieren -->
         <div class="logo-container">
-            <img src="/assets/images/logo_hc80.webp" alt="Vereinslogo" class="logo">
+            <img src="/assets/images/logo_hc80.webp" alt="Vereinslogo" class="logo" width="250" height="250" fetchpriority="high">
         </div>
 
         <!-- Flexbox-Container für Titel und Navigation -->
@@ -13,12 +13,12 @@
             </div>
             <nav>
                 <ul class="nav-grid">
-                    <li><a href="/" class="{% if page.url == '/' %}active{% endif %}">Aktuell</a></li>
-                    <li><a href="/verein/" class="{% if page.url contains '/verein' %}active{% endif %}">Der Club</a></li>
-                    <li><a href="/training/" class="{% if page.url contains '/training' %}active{% endif %}">Training</a></li>
-                    <li><a href="/turniere/" class="{% if page.url contains '/turniere' %}active{% endif %}">Turniere</a></li>
-                    <li><a href="/veranstaltungen/" class="{% if page.url contains '/veranstaltungen' %}active{% endif %}">Veranstaltungen</a></li>
-                    <li><a href="/sportstaetten/" class="{% if page.url contains '/sportstaetten' %}active{% endif %}">Sportstätten</a></li>
+                    <li><a href="{% if page.url == '/' %}#top{% else %}/{% endif %}" class="{% if page.url == '/' %}active{% endif %}"{% if page.url == '/' %} aria-current="page"{% endif %}>Aktuell</a></li>
+                    <li><a href="{% if page.url == '/verein/' %}#top{% else %}/verein/{% endif %}" class="{% if page.url contains '/verein' %}active{% endif %}"{% if page.url == '/verein/' %} aria-current="page"{% endif %}>Der Club</a></li>
+                    <li><a href="{% if page.url == '/training/' %}#top{% else %}/training/{% endif %}" class="{% if page.url contains '/training' %}active{% endif %}"{% if page.url == '/training/' %} aria-current="page"{% endif %}>Training</a></li>
+                    <li><a href="{% if page.url == '/turniere/' %}#top{% else %}/turniere/{% endif %}" class="{% if page.url contains '/turniere' %}active{% endif %}"{% if page.url == '/turniere/' %} aria-current="page"{% endif %}>Turniere</a></li>
+                    <li><a href="{% if page.url == '/veranstaltungen/' %}#top{% else %}/veranstaltungen/{% endif %}" class="{% if page.url contains '/veranstaltungen' %}active{% endif %}"{% if page.url == '/veranstaltungen/' %} aria-current="page"{% endif %}>Veranstaltungen</a></li>
+                    <li><a href="{% if page.url == '/sportstaetten/' %}#top{% else %}/sportstaetten/{% endif %}" class="{% if page.url contains '/sportstaetten' %}active{% endif %}"{% if page.url == '/sportstaetten/' %} aria-current="page"{% endif %}>Sportstätten</a></li>
                 </ul>
             </nav>
         </div>

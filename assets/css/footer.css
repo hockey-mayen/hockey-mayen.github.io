@@ -1,9 +1,6 @@
 /* footer.css */
 footer {
     background: linear-gradient(135deg, rgb(1, 44, 22), rgb(18, 209, 91));
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
 
 
     color: white;
@@ -21,11 +18,16 @@ footer a {
 }
 
 footer a:hover {
-    color: #a3d9b2;
+    color: var(--color-nav-active);
 }
 
 footer a.active {
-    color: #a3d9b2 !important;
+    color: var(--color-nav-active);
+}
+
+footer a:focus-visible {
+    outline: 2px solid white;
+    outline-offset: 3px;
 }
 
 /* Ensure the footer content is centered */
@@ -119,7 +121,7 @@ footer a.active {
     }
 
     .footer-content {
-        gap: 0px; /* More space between elements */
+        gap: 0;
     }
 
 

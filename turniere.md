@@ -31,8 +31,8 @@ og_image: /assets/images/og.jpg
 
         {% if tile.link %}
         <div class="link-container">
-            <a href="{{ tile.link.url }}" target="_blank">
-                <img src="{{ tile.link.image }}" alt="Link-Bild" style="width: 120px; height: auto;">
+            <a href="{{ tile.link.url }}" target="_blank" rel="noopener noreferrer">
+                <img src="{{ tile.link.image }}" alt="Link-Bild" class="tournament-link-icon" loading="lazy" decoding="async">
                 <div class="link-title">{{ tile.link.title }}</div>
             </a>
         </div>
@@ -51,7 +51,7 @@ og_image: /assets/images/og.jpg
         <h3>{{ v.title }}</h3>
         {% if v.description %}<p>{{ v.description }}</p>{% endif %}
 
-            <video controls preload="metadata" playsinline
+            <video controls preload="none" playsinline
             {% if v.poster %}poster="{{ v.poster | relative_url }}"{% endif %}>
               <source src="{{ v.src | relative_url }}" type="{{ v.type }}">
               Dein Browser unterstützt dieses Video-Format leider nicht.

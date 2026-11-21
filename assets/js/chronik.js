@@ -49,6 +49,8 @@ async function loadChronik() {
                     const image = document.createElement('img');
                     image.src = src;
                     image.alt = 'Event Image';
+                    image.loading = 'lazy';
+                    image.decoding = 'async';
                     wrapper.appendChild(image);
                     gallery.appendChild(wrapper);
                 });

@@ -1,50 +1,52 @@
-@import url('https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&display=swap');
+:root {
+    --color-text: #555c5f;
+    --color-muted: #6c757d;
+    --color-brand: #007b5f;
+    --color-brand-dark: #005f47;
+    --color-brand-deep: #004d26;
+    --color-action: #008f5a;
+    --color-action-hover: #006837;
+    --color-nav-active: #a3d9b2;
+    --color-card: rgba(255, 255, 255, 0.4);
+    --shadow-card: 0 4px 6px rgba(0, 0, 0, 0.1), 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    scrollbar-gutter: stable;
+}
+
+:where(a, button, input, select, textarea):focus-visible {
+    outline: 2px solid var(--color-brand-dark);
+    outline-offset: 3px;
+}
+
 body {
     margin: 0;
-    padding: 0;
     line-height: 1.6;
-    min-height: 100vh; /* Stellt sicher, dass der Body mindestens die Höhe des Bildschirms hat */
-    font-family: "Oswald", Arial, sans-serif;/* als Standardschrift *!*/
-    color: #555c5f; /* Schönes Grau für Texte */
-    position: relative; /* Basis für das Pseudo-Element */
-    overflow-x: hidden; /* Verhindert horizontales Scrollen */
-
+    min-height: 100vh;
+    min-height: 100dvh;
+    font-family: "Oswald", Arial, sans-serif;
+    color: var(--color-text);
+    overflow-x: clip;
     background-color: rgba(200, 220, 210, 0.5);
-
 }
 
 [data-aos="fade-up"] {
     transform: translate3d(0, 15px, 0); /* Kürzere Strecke 100px is default */
 }
 
-/* Verhindert das Springen durch den Scrollbalken */
-html {
-    overflow-y: scroll; /* Scrollbalken immer anzeigen */
-}
-
 main {
     position: relative;
     max-width: 1500px;
     margin: 20px auto;
-    /*padding: 0 20px;*/
     text-align: center;
     overflow: hidden;
-}
-
-/* ✅ Hintergrund NUR für den Content fixieren */
-html::before {
-    content: "";
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    z-index: -1;
-    will-change: transform;
 }
 
 main h2 {
@@ -54,7 +56,7 @@ main h2 {
 
 /* Titel-Design (z. B. für Haupttitel und Kachel-Titel) */
 h2, h3, .tile h3 {
-    color: #007b5f; /* Schönes Grün (ähnlich Jekyll Cayman) */
+    color: var(--color-brand);
     font-family: "Open Sans", Arial, sans-serif;
     font-weight: 600; /* Etwas fetter für Titel */
     margin-bottom: 10px; /* Abstand nach unten */
@@ -63,8 +65,7 @@ h2, h3, .tile h3 {
 
 /* Inhalte und Beschreibungen */
 p, .tile p {
-    color: #555c5f; /* Schönes Grau für Texte */
-    /*font-family: "Open Sans", Arial, sans-serif;*/
+    color: var(--color-text);
     font-family: "Oswald", Arial, sans-serif;
     font-weight: 500; /* Macht die Schrift dicker */
     line-height: 1.6; /* Etwas mehr Zeilenhöhe für bessere Lesbarkeit */
@@ -88,14 +89,14 @@ iframe {
 }
 
 .email-highlight a {
-    color: #014022 !important; /* Hellgrün */
+    color: #014022;
     font-weight: bold;
     text-decoration: none;
 }
 
 .email-highlight a:hover {
     text-decoration: underline;
-    color: #014022 !important; /* Etwas dunkleres Grün beim Hover */
+    color: #014022;
 }
 
 
@@ -143,7 +144,7 @@ iframe {
 }
 
 .download-link {
-    color: #004d26;
+    color: var(--color-brand-deep);
     font-weight: bold;
     text-decoration: none;
 }
@@ -165,7 +166,7 @@ iframe {
     padding: 5px 10px;
     font-size: 14px;
     border: none;
-    background-color: #007b5f;
+    background-color: var(--color-brand);
     color: white;
     border-radius: 5px;
     cursor: pointer;
@@ -173,30 +174,17 @@ iframe {
 }
 
 .copy-gps-btn:hover {
-    background-color: #005f44;
+    background-color: var(--color-brand-dark);
 }
 
-
-
-/* Für Smartphones & Tablets */
-@media screen and (max-width: 1024px) {
-    main::before {
-        background-size: cover;
-        transform: translate3d(0, 0, 0);
-    }
-
-}
-
-/* Für Smartphones & Tablets */
-@media screen and (max-width: 800px) {
-    main::before {
-        background-size: cover;
-        transform: translate3d(0, 0, 0);
-    }
-
-    html::before {
-        background-image: none;
-        background-color: rgba(200, 220, 210, 0.5);
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
     }
 }
 

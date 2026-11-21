@@ -1,11 +1,16 @@
 /* header.css: Header */
 
+@font-face {
+    font-family: 'UnifrakturMaguntia';
+    src: url('/assets/fonts/UnifrakturMaguntia-Regular.ttf') format('truetype');
+    font-style: normal;
+    font-weight: 400;
+    font-display: block;
+}
+
 
 header {
     background: linear-gradient(135deg, rgb(1, 44, 22), rgb(18, 209, 91));
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
     color: white;
     padding-top: 10px;
     padding-bottom: 5px;
@@ -44,12 +49,17 @@ header h1 {
 .logo-container {
     display: flex;
     align-items: flex-start; /* Oben bündig */
+    flex: 0 0 100px;
+    width: 100px;
 }
 
 /* Logo fix links neben dem Titel */
 .logo {
+    display: block;
+    width: 100px;
+    aspect-ratio: 1;
     max-width: 100px;
-    height: auto;
+    height: 100px;
     object-fit: contain;
 }
 
@@ -84,18 +94,24 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-    color: #a3d9b2; /* Helles Grün */
+    color: var(--color-nav-active);
 }
 
 /* Aktiver Zustand - wenn die Seite aktiv ist */
 nav ul li a:focus,
 nav ul li a:active {
-    color: #a3d9b2; /* Bleibt grün nach dem Klicken */
+    color: var(--color-nav-active);
+}
+
+nav ul li a:focus-visible {
+    outline: 2px solid white;
+    outline-offset: 3px;
+    border-radius: 2px;
 }
 
 /* Aktiver Navigationspunkt basierend auf der URL */
 nav ul li a.active {
-    color: #a3d9b2 !important; /* Bleibt grün, wenn die Seite aktiv ist */
+    color: var(--color-nav-active);
     font-weight: bold; /* Optional: Hebt den aktiven Link stärker hervor */
 }
 
@@ -122,6 +138,8 @@ nav ul li a.active {
 .subtitle {
     font-size: 21px;
     font-weight: normal;
+    line-height: 1.6;
+    height: 1.6em;
     margin-top: 0;
     margin-bottom: 1px;
     color: rgba(152, 196, 53, 1 );
@@ -147,7 +165,7 @@ nav ul li a.active {
 
     /* Titel optimieren: Erster Teil in einer Zeile, Mayen darunter */
     header h1 {
-        font-size: 4.5vw;
+        font-size: clamp(1rem, 4.5vw, 1.75rem);
         margin: 0;
         line-height: 1.2;
         text-align: center;
@@ -158,12 +176,14 @@ nav ul li a.active {
         display: flex;
         justify-content: center;
         width: 100%;
+        flex: 0 0 auto;
     }
 
     /* Logo etwas höher setzen ohne den Header zu verschieben */
     .logo {
+        width: 110px;
         max-width: 110px;
-        height: auto;
+        height: 110px;
         padding-left: 0;
         transform: translateY(-5px); /* Hebt das Logo leicht an */
     }
@@ -184,7 +204,7 @@ nav ul li a.active {
 
     /* Club-Titel optimieren */
     .club-title {
-        font-size: 5.3vw;
+        font-size: clamp(1.125rem, 5.3vw, 1.75rem);
         font-weight: bold;
         margin: 0;
         line-height: 1.2;
@@ -192,7 +212,7 @@ nav ul li a.active {
 
     /* Untertitel in gotischer Schrift */
     .subtitle {
-        font-size: 4.5vw;
+        font-size: clamp(1rem, 4.5vw, 1.3125rem);
         font-family: 'UnifrakturMaguntia', cursive;
         color: rgba(152, 196, 53, 1);
         transform: translateY(-0.15em);
@@ -218,7 +238,7 @@ nav ul li a.active {
     }
 
     nav ul li a:hover {
-        color: #a3d9b2;
+        color: var(--color-nav-active);
     }
 
     /* Navigation feintunen */

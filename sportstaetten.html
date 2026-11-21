@@ -1,7 +1,9 @@
 ---
 layout: default
-title: "Kontakt"
+title: "Sportstätten"
 permalink: /sportstaetten/
+scripts:
+  - /assets/js/sportstaetten.js
 ---
 
 <h2>Sportstätten</h2>
@@ -11,7 +13,7 @@ permalink: /sportstaetten/
     <div class="tile" data-aos="fade-up" data-aos-delay="{{ tile.delay }}">
         <h3>{{ tile.title }}</h3>
 
-        <img src="{{ tile.image_link }}" alt="{{ tile.title }}" class="sportstaetten-image">
+        <img src="{{ tile.image_link }}" alt="{{ tile.title }}" class="sportstaetten-image" loading="{% if forloop.first %}eager{% else %}lazy{% endif %}" decoding="async"{% if forloop.first %} fetchpriority="high"{% endif %}>
 
         <p>{{ tile.description }}</p>
         {{ tile.details }}
@@ -23,8 +25,8 @@ permalink: /sportstaetten/
 
         <br>
 
-        <a href="{{ tile.map_link }}" target="_blank">
-            <img src="../assets/images/navigation.png" alt="Navigation" style="width: 100px; height: auto;"><br>
+        <a href="{{ tile.map_link }}" target="_blank" rel="noopener noreferrer">
+            <img src="../assets/images/navigation.png" alt="Navigation" class="map-nav-icon" loading="lazy" decoding="async"><br>
             Google Maps Navigation
         </a>
     </div>
@@ -35,46 +37,4 @@ permalink: /sportstaetten/
     In der warmen Jahreszeit spielen wir Hockey auf dem Kunstrasenplatz im Stadion Nettetal.
     In der kalten Jahreszeit wechseln wir in die Sporthalle der Albert-Schweitzer-Realschule, wo wir die Hallensaison bestreiten.
 </div>
-
-<script>
-    document.addEventListener("DOMContentLoaded", () => {
-        const buttons = document.querySelectorAll(".copy-gps-btn");
-
-        buttons.forEach(button => {
-            button.addEventListener("click", () => {
-                const gpsText = button.parentElement.querySelector(".gps-text").textContent;
-
-                // ✅ Versuche zuerst moderne API
-                if (navigator.clipboard && navigator.clipboard.writeText) {
-                    navigator.clipboard.writeText(gpsText).then(() => {
-                        button.textContent = "✔ Kopiert!";
-                        setTimeout(() => button.textContent = "Kopieren", 2000);
-                    }).catch(err => {
-                        fallbackCopy(gpsText, button);
-                    });
-                } else {
-                    fallbackCopy(gpsText, button);
-                }
-            });
-        });
-
-        function fallbackCopy(text, button) {
-            const tempInput = document.createElement("input");
-            tempInput.style.position = "absolute";
-            tempInput.style.left = "-9999px";
-            tempInput.value = text;
-            document.body.appendChild(tempInput);
-            tempInput.select();
-            try {
-                document.execCommand("copy");
-                button.textContent = "✔ Kopiert!";
-            } catch (err) {
-                console.error("Fallback fehlgeschlagen:", err);
-                button.textContent = "Fehler";
-            }
-            setTimeout(() => button.textContent = "Kopieren", 2000);
-            document.body.removeChild(tempInput);
-        }
-    });
-</script>
 
