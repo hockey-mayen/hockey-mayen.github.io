@@ -1,6 +1,7 @@
 /*highlights.css*/
 /* Scrollbarer Bereich für vergangene Highlights */
 .highlight-container {
+    display: flow-root;
     width: 100%;
     padding: 10px;
     color: var(--color-brand-deep);
@@ -143,6 +144,24 @@
 
 .load-more-btn:hover {
     background: var(--color-action-hover);
+}
+
+/* Den Nachladebutton vom letzten Bild und vom Footer gleichmäßig absetzen. */
+.highlight-container > .load-more-btn {
+    display: block;
+    width: calc(100% - 32px);
+    max-width: 1120px;
+    margin: 16px auto;
+}
+
+.highlight-list > .chronik-entry:last-child {
+    padding-bottom: 0;
+    border-bottom: 0;
+}
+
+.highlight-list > .chronik-entry:last-child .chronik-images > .img-wrap:last-child,
+.highlight-list > .chronik-entry:last-child .chronik-images > .img-wrap:last-child img {
+    margin-bottom: 0;
 }
 
 @media screen and (max-width: 600px) {
