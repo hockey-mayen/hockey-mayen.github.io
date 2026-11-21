@@ -14,13 +14,13 @@
     display: block;
     margin: 14px 0 6px;
     font-weight: 600;
-    color: #004d26;
+    color: var(--color-brand-deep);
 }
 
 /* Inputs / Select / Textarea */
 #contactForm input[type="text"],
 #contactForm input[type="email"],
-#contactForm input[type="tel"],   /* 👈 HIER */
+#contactForm input[type="tel"],
 #contactForm select,
 #contactForm textarea {
     width: 100%;
@@ -29,9 +29,8 @@
     border: 1px solid #bdddcc;
     border-radius: 10px;
     background: #f6fbf8;
-    color: #004d26;
+    color: var(--color-brand-deep);
     font-size: 16px;
-    outline: none;
     transition: border-color 0.15s ease, box-shadow 0.15s ease;
 }
 
@@ -42,13 +41,13 @@
 
 #contactForm input::placeholder,
 #contactForm textarea::placeholder {
-    color: #6c757d;
+    color: var(--color-muted);
 }
 
 #contactForm input:focus,
 #contactForm select:focus,
 #contactForm textarea:focus {
-    border-color: #008f5a;
+    border-color: var(--color-action);
     box-shadow: 0 0 0 4px rgba(0, 143, 90, 0.15);
 }
 
@@ -56,7 +55,7 @@
 #contactForm button[type="submit"] {
     width: 100%;
     margin-top: 16px;
-    background: #008f5a;
+    background: var(--color-action);
     color: #fff;
     border: none;
     padding: 12px 16px;
@@ -68,7 +67,7 @@
 }
 
 #contactForm button[type="submit"]:hover {
-    background: #006837;
+    background: var(--color-action-hover);
 }
 
 #contactForm button[type="submit"]:active {
@@ -78,6 +77,63 @@
 /* Kleine Info-Zeile */
 #formHint {
     text-align: center;
+    margin-top: 10px;
+    font-size: 14px;
+    color: var(--color-muted);
+}
+
+#honeypot {
+    display: none;
+}
+
+#contactForm .form-error {
+    display: none;
+    color: #c0392b;
+    margin-top: 6px;
+}
+
+#contactForm .form-help {
+    display: block;
+    color: var(--color-muted);
+    margin-top: 6px;
+}
+
+#messageCounter.is-valid {
+    color: var(--color-action);
+}
+
+.turnstile-field {
+    margin-top: 14px;
+}
+
+#submitBtn:disabled {
+    opacity: 0.55;
+    cursor: not-allowed;
+    filter: grayscale(15%);
+}
+
+#thankYouBox {
+    display: none;
+    margin-top: 20px;
+    background: #fff;
+    border-radius: 12px;
+    padding: 18px;
+}
+
+#thankYouBox h3 {
+    margin-top: 0;
+}
+
+#summaryBox {
+    background: #f6fbf8;
+    border: 1px solid #bdddcc;
+    border-radius: 10px;
+    padding: 12px;
+}
+
+.summary-message {
+    margin-top: 10px;
+    white-space: pre-wrap;
 }
 
 .cf-turnstile {
@@ -105,15 +161,14 @@ html.js #recipientWrap select {
     border: 1px solid #bdddcc;
     border-radius: 10px;
     background: #f6fbf8;
-    color: #004d26;
+    color: var(--color-brand-deep);
     font-size: 16px;
-    outline: none;
     cursor: pointer;
     transition: border-color 0.15s ease, box-shadow 0.15s ease;
 }
 
 .select-btn:focus {
-    border-color: #008f5a;
+    border-color: var(--color-action);
     box-shadow: 0 0 0 4px rgba(0, 143, 90, 0.15);
 }
 
@@ -146,7 +201,8 @@ html.js #recipientWrap select {
     padding: 10px 40px 10px 12px;
     border-radius: 10px;
     cursor: pointer;
-    color: #004d26;
+    color: var(--color-brand-deep);
+    line-height: 1.25;
 }
 
 .select-menu [role="option"]:hover,
@@ -160,7 +216,7 @@ html.js #recipientWrap select {
     right: 12px;
     top: 50%;
     transform: translateY(-50%);
-    color: #008f5a;
+    color: var(--color-action);
     font-weight: 800;
 }
 
@@ -169,11 +225,6 @@ html.js #recipientWrap select {
     content: "▾";
     float: right;
     opacity: 0.65;
-}
-
-/* Optional: auch auf Desktop insgesamt etwas weniger "luftig" */
-.select-menu [role="option"] {
-    line-height: 1.25;
 }
 
 /* echtes Overlay für Mobile/All */
@@ -226,15 +277,6 @@ html.js #recipientWrap select {
     /* Häkchen etwas näher dran */
     .select-menu [role="option"][aria-selected="true"]::after {
         right: 10px;
-    }
-
-    /* Overlay-Hintergrund */
-    .select-wrap.is-open::before {
-        content: "";
-        position: fixed;
-        inset: 0;
-        background: rgba(0,0,0,0.18);
-        z-index: 49;
     }
 
     /* Menü zentriert */

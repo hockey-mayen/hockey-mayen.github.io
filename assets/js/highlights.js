@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", async function () {
 
     let allEntries = [];
     let displayedEntries = 0;
-    let entriesPerLoad = 3;
+    const entriesPerLoad = 3;
 
     // ✅ Event Delegation
     chronikList.addEventListener("click", (e) => {
@@ -39,6 +39,27 @@ document.addEventListener("DOMContentLoaded", async function () {
         allEntries.sort(
             (a, b) => new Date(b.date || b.headline) - new Date(a.date || a.headline)
         );
+
+        const initialCount = Number(chronikList.dataset.initialCount);
+        const initialEntries = Array.from(chronikList.children);
+        const initialEntriesMatch = Number.isInteger(initialCount)
+            && initialCount > 0
+            && initialCount <= allEntries.length
+            && initialEntries.length === initialCount
+            && initialEntries.every((element, index) => {
+                if (!element.classList.contains('chronik-entry')) return false;
+                const expectedHeading = document.createElement('h2');
+                ChronikContent.appendHeadline(expectedHeading, allEntries[index].headline);
+                return element.querySelector('h2')?.innerHTML === expectedHeading.innerHTML;
+            });
+
+        if (initialEntriesMatch) {
+            displayedEntries = initialCount;
+            wireImageLoaders(chronikList);
+        } else {
+            // Eine veraltete erzeugte Datei wird aus der aktuellen JSON neu aufgebaut.
+            chronikList.replaceChildren();
+        }
 
         function loadEntries() {
             const maxLength = 1350;
@@ -72,8 +93,8 @@ document.addEventListener("DOMContentLoaded", async function () {
                         const image = document.createElement('img');
                         image.src = src;
                         image.alt = `Bild zu ${ChronikContent.text(entry.headline)}`;
-                        image.loading = isHero ? 'eager' : 'lazy';
-                        image.decoding = 'async';
+                        image.setAttribute('loading', isHero ? 'eager' : 'lazy');
+                        image.setAttribute('decoding', 'async');
                         image.setAttribute('fetchpriority', isHero ? 'high' : 'low');
                         wrap.append(skeleton, image);
                         gallery.appendChild(wrap);
@@ -95,14 +116,16 @@ document.addEventListener("DOMContentLoaded", async function () {
                 wireImageLoaders(entryDiv);
             });
 
-            displayedEntries += entriesPerLoad;
+            displayedEntries += nextEntries.length;
             if (displayedEntries >= allEntries.length) loadMoreButton.style.display = "none";
         }
 
-        loadEntries();
+        if (displayedEntries === 0) loadEntries();
 
-        loadMoreButton.addEventListener("click", loadEntries);
-        chronikList.parentNode.appendChild(loadMoreButton);
+        if (displayedEntries < allEntries.length) {
+            loadMoreButton.addEventListener("click", loadEntries);
+            chronikList.parentNode.appendChild(loadMoreButton);
+        }
     } catch (error) {
         console.error("Fehler beim Laden der Chronik:", error);
     }
@@ -119,8 +142,8 @@ document.addEventListener("DOMContentLoaded", async function () {
             };
 
             // Wenn Bild evtl. schon aus Cache da ist
-            if (img.complete && img.naturalWidth > 0) {
-                done(true);
+            if (img.complete) {
+                done(img.naturalWidth > 0);
                 return;
             }
 

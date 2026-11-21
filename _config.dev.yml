@@ -1,0 +1,8 @@
+# Nur beim Dev-Build zusätzlich zu _config.yml laden.
+url: "https://dev.hockey-mayen.de"
+preview: true
+defaults:
+  - scope:
+      path: ""
+    values:
+      robots: "noindex, nofollow, noarchive"

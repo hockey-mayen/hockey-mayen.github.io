@@ -23,6 +23,12 @@ bundle install
 bundle exec jekyll serve
 ```
 
+Der Watcher baut all.min.css nach jeder CSS-Änderung neu; Jekyll übernimmt die Änderung für http://127.0.0.1:4000/
+```bash
+npm run watch:css
+```
+
+
 Die Website ist anschließend unter <http://localhost:4000> erreichbar.
 
 Für automatisches Neuladen im Browser und inkrementelle Builds:
@@ -94,22 +100,19 @@ Das Formular in `kontakt.md` verwendet `assets/js/kontakt-form.js` für Eingabep
 
 ## CSS und JavaScript bündeln
 
-Die Build-Skripte führen die jeweiligen Quelldateien zusammen und minifizieren sie:
+Die CSS-Dateien bleiben nach Seitenteilen getrennt. Der CSS-Build bündelt und minifiziert sie in fester Reihenfolge:
 
 ```bash
-npm install
-./build-css.sh
-./build-js.sh
+npm ci
+npm run build:css
+bundle exec jekyll serve
 ```
 
-| Skript | Zusammengeführte Datei | Minifizierte Datei | Werkzeug |
-| --- | --- | --- | --- |
-| `build-css.sh` | `assets/css/all.css` | `assets/css/all.min.css` | `clean-css-cli` |
-| `build-js.sh` | `assets/js/all.js` | `assets/js/all.min.js` | `terser` |
+Bei CSS-Arbeiten kann in einem zweiten Terminal `npm run watch:css` laufen. Der Watcher schreibt nach jeder Änderung an einer CSS-Quelldatei automatisch `assets/css/all.min.css`; Jekyll lädt die Änderung neu. `./build-css.sh` bleibt als kurzer Aufruf für den gleichen Build verfügbar.
 
-`clean-css-cli` ist in der lokalen `package.json` als Entwicklungsabhängigkeit eingetragen. `terser` wird über `npx` aufgerufen und ist dort derzeit nicht als Abhängigkeit aufgeführt. Die lokale `package.json` wird aktuell noch nicht von Git erfasst.
+Der Build verwendet `clean-css` aus `package.json` und `package-lock.json`. Die Reihenfolge der CSS-Dateien steht in `scripts/build-css.cjs`. Fehlende oder leere Dateien sowie CSS-Build-Warnungen brechen den Build ab. Das gemeinsame Layout lädt ausschließlich `assets/css/all.min.css` für die eigenen Styles; AOS wird separat geladen. Eine Build-Kennung in der CSS-URL verhindert, dass Browser nach einem Deploy die alte Datei aus dem Cache laden. Beim Push auf `main` erstellt GitHub Actions das Bundle vor dem Jekyll-Build neu. Das generierte Bundle ist ebenfalls im Repository, damit die lokale Jekyll-Vorschau ohne laufenden CSS-Watcher funktioniert.
 
-Das gemeinsame Layout lädt `all.min.css`. JavaScript wird derzeit überwiegend über einzelne Dateien eingebunden. Die Reihenfolge der zusammengeführten Dateien steht in den Build-Skripten. `build-js.sh` enthält außerdem Einträge für aktuell fehlende Quelldateien und gibt dafür Warnungen aus.
+JavaScript wird derzeit überwiegend über einzelne Dateien eingebunden. `build-js.sh` ist vom CSS-Build unabhängig und enthält noch Einträge für aktuell fehlende Quelldateien.
 
 ## Bilder und Videos vorbereiten
 
@@ -154,11 +157,11 @@ ffmpeg -ss 0 -i alex-lion-philip-hockey-club-mayen-720p.mp4 -frames:v 1 -q:v 3 a
 
 Ein Push auf `main` startet den GitHub-Actions-Workflow. Dieser baut die Website mit Jekyll und veröffentlicht die Ausgabe auf GitHub Pages. Der Workflow kann auch manuell über den Actions-Bereich gestartet werden.
 
-Die CSS- und JavaScript-Build-Skripte werden vom Workflow nicht ausgeführt. Änderungen an CSS-Quelldateien müssen daher vor der Veröffentlichung auch in `all.min.css` übernommen werden.
+Der Workflow führt `npm ci` und `npm run build:css` vor Jekyll aus. Dadurch werden CSS-Änderungen beim Push auch dann veröffentlicht, wenn `all.min.css` lokal noch nicht neu gebaut wurde. Für eine lokale Vorschau vorher einmal `npm run build:css` ausführen oder `npm run watch:css` parallel laufen lassen.
 
 Für eine lokale Prüfung:
 
-1. Bei CSS-Änderungen das CSS-Bundle neu erzeugen.
+1. Bei CSS-Änderungen das CSS-Bundle neu erzeugen oder den Watcher laufen lassen.
 2. `bundle exec jekyll build` ausführen und die Ausgabe auf Fehler prüfen.
 3. Betroffene Seiten im lokalen Server aufrufen und Darstellung, Links sowie interaktive Funktionen prüfen, auch bei schmaler Bildschirmbreite.
 
@@ -168,3 +171,32 @@ Eine automatisierte Testsuite ist derzeit nicht eingerichtet.
 
 - [PageSpeed Insights](https://pagespeed.web.dev/) zur Prüfung von Ladezeit und Darstellung
 - [ImageKit-Medienbibliothek](https://imagekit.io/dashboard/media-library) zur Verwaltung extern bereitgestellter Medien
+# Dev-Vorschau
+
+`main` veröffentlicht die freigegebene Website auf GitHub Pages. Änderungen werden
+zuerst auf `dev` gepusht und nach Prüfung per Pull Request nach `main` übernommen.
+Der Pages-Workflow ist auf `main` beschränkt, auch bei manueller Ausführung.
+
+Cloudflare Pages wird für die Vorschau separat mit diesem Repository verbunden:
+
+| Einstellung | Wert |
+| --- | --- |
+| Projektname (vorgesehen) | `hockey-mayen-dev` |
+| Production branch des **Vorschauprojekts** | `dev` |
+| Automatische Preview-Branches | deaktiviert |
+| Build command | `npm ci --include=dev --ignore-scripts --no-audit --no-fund && bundle install && npm run build:dev` |
+| Build output directory | `_site-dev` |
+| `NODE_VERSION` | `24` |
+| `RUBY_VERSION` | `3.2.8` |
+| Custom domain | `dev.hockey-mayen.de` |
+
+Diese Werte dokumentieren die vorgesehene Einrichtung; ein erfolgreicher lokaler
+Build erstellt noch kein Cloudflare-Projekt oder DNS-Eintrag. Die Custom Domain
+zuerst beim Vorschauprojekt hinzufügen und danach den von Cloudflare angezeigten
+DNS-Eintrag verwenden. Die DNS-Einträge der Hauptseite nicht ändern.
+
+Lokal mit `npm run build:dev` bauen. Dieser Build lädt zusätzlich `_config.dev.yml`,
+schließt die Indexierung über Meta-Tags, `robots.txt` und `X-Robots-Tag` aus und
+deaktiviert den Nachrichtenversand im Kontaktformular. Er ist eine öffentlich
+erreichbare Vorschau, keine zugriffsgeschützte Umgebung. Der reguläre Build ohne
+`_config.dev.yml` behält die Produktionsfunktion.

@@ -51,3 +51,8 @@
     border-radius: 12px;
     margin-bottom: 20px;
 }
+
+.tournament-link-icon {
+    width: 120px;
+    height: auto;
+}

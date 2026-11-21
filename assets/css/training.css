@@ -7,3 +7,35 @@
     opacity: 0.35; /* Halbtransparent für ausgegraute Einträge */
     color: #777; /* Leicht graue Schrift */
 }
+
+.training-invite {
+    margin: 25px auto;
+}
+
+.training-invite h3 {
+    margin-top: 0;
+}
+
+.training-invite-note {
+    margin: 15px 0;
+    font-weight: bold;
+}
+
+.training-invite-action {
+    margin-top: 20px;
+}
+
+.training-invite-action a {
+    display: inline-block;
+    background: #2e7d32;
+    color: white;
+    padding: 12px 18px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.training-invite-action a:hover,
+.training-invite-action a:focus-visible {
+    background: #1b5e20;
+}

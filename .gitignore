@@ -1,0 +1,13 @@
+# Lokale Abhängigkeiten und Build-Ausgaben
+node_modules/
+vendor/
+.bundle/
+.jekyll-cache/
+.jekyll-metadata
+_site/
+_site-dev/
+.wrangler/
+.env
+.env.*
+!.env.example
+.idea/

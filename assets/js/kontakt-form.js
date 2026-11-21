@@ -52,7 +52,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function setSubmitEnabled(enabled) {
         if (!submitBtn) return;
-        const shouldEnable = !!enabled && !isSubmitting;
+        const shouldEnable = !!enabled && !isSubmitting && form.dataset.preview !== 'true';
 
         submitBtn.disabled = !shouldEnable;
         if (!shouldEnable) submitBtn.setAttribute('disabled', 'disabled');
@@ -62,14 +62,8 @@ document.addEventListener('DOMContentLoaded', () => {
     function updateMessageCounter() {
         if (!messageEl || !messageCounter) return;
         const len = sanitizeText(messageEl.value).length;
-
-        if (len >= MIN_MESSAGE_LEN) {
-            messageCounter.textContent = `${len.toLocaleString('de-DE')} / 5.000 Zeichen (mindestens ${MIN_MESSAGE_LEN})`;
-            messageCounter.style.color = '#008f5a';
-        } else {
-            messageCounter.textContent = `${len.toLocaleString('de-DE')} / 5.000 Zeichen (mindestens ${MIN_MESSAGE_LEN})`;
-            messageCounter.style.color = '#6c757d';
-        }
+        messageCounter.textContent = `${len.toLocaleString('de-DE')} / 5.000 Zeichen (mindestens ${MIN_MESSAGE_LEN})`;
+        messageCounter.classList.toggle('is-valid', len >= MIN_MESSAGE_LEN);
     }
 
     function validateForm() {
@@ -130,8 +124,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (payload.phone) appendLine('Telefon', payload.phone);
 
         const message = document.createElement('div');
-        message.style.marginTop = '10px';
-        message.style.whiteSpace = 'pre-wrap';
+        message.className = 'summary-message';
         const title = document.createElement('strong');
         title.textContent = 'Nachricht:';
         message.append(title, document.createTextNode(`\n${payload.message}`));
@@ -336,6 +329,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // ✅ Submit
     form.addEventListener('submit', async (e) => {
         e.preventDefault();
+        if (form.dataset.preview === 'true') return;
         if (isSubmitting) return;
 
         if (honeypotEl && sanitizeText(honeypotEl.value)) return;

@@ -38,6 +38,8 @@
     list-style: none;
     padding: 0;
     margin: 0;
+    width: 100%;
+    min-width: 0;
 }
 
 /* Einzelne Ereignis-Einträge */
@@ -47,6 +49,7 @@
     margin-bottom: 15px;
     padding-left: 10px;
     position: relative;
+    min-width: 0;
 }
 .event-item-headline {
     font-size: 20px;
@@ -70,6 +73,8 @@
     display: flex;
     flex-direction: column;
     max-width: 100%; /* Verhindert Überlauf */
+    min-width: 0;
+    overflow-wrap: anywhere;
 }
 /* Ereignis-Text */
 .event-text {
@@ -77,19 +82,19 @@
     color: #555c5f; /* Schönes Grau für Texte */
     text-align: left;
 }
-.event-image {
+.event-gallery .event-image {
     margin-top: 10px;
     width: 100%; /* Passt sich der Eintragsbreite an */
 }
 
-.event-image img {
+.event-gallery .event-image img {
     max-width: 100%;
     height: auto;
     border-radius: 5px;
     display: block;
 }
 
-.event-image::before {
+.event-gallery .event-image::before {
     content: none; /* Entfernt den Punkt für das Bild */
 }
 
@@ -126,7 +131,7 @@
 }
 /* Link "Weiterlesen" */
 .toggle-text {
-    color: #007b5f !important;
+    color: var(--color-brand);
     font-weight: bold;
     text-decoration: none;
     margin-left: 5px;
@@ -211,7 +216,7 @@
 
 /* Aktives Jahr bleibt farblich hervorgehoben */
 .year-button.active {
-    color: #007b5f !important; /* Bleibt in Hover-Farbe */
+    color: var(--color-brand);
     font-weight: bold;
     opacity: 1; /* Kein Transparenz-Effekt für aktive Jahr */
 
@@ -238,14 +243,6 @@
 }
 
 /* 🎨 Dropdown-Pfeil durch eigenes Symbol ersetzen */
-.year-dropdown::after {
-    content: "▼"; /* Alternativer Pfeil */
-    font-size: 14px;
-    position: absolute;
-    right: 10px;
-    color: #007b5f;
-}
-
 /* Hover-Effekt */
 .year-dropdown:hover {
     background: linear-gradient(to bottom, #5a96c1, #76b1d8); /* Umgekehrter Verlauf */
@@ -254,7 +251,6 @@
 
 /* Aktives (fokussiertes) Dropdown */
 .year-dropdown:focus {
-    outline: none;
     border: 2px solid #005f47;
     box-shadow: 0px 0px 8px rgba(0, 123, 95, 0.4);
 }
@@ -339,10 +335,4 @@
         width: 7px;
         height: 7px;
     }
-    ul {
-       padding-left: 15px;
-    }
-
-
-
 }

@@ -9,3 +9,9 @@
     margin-left: auto;
     padding: 20px;
 }
+
+@media (max-width: 600px) {
+    .aktuell-container {
+        padding: 0;
+    }
+}

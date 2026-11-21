@@ -5,9 +5,11 @@
     <!-- meta -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; script-src 'self' https://challenges.cloudflare.com; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data: https://challenges.cloudflare.com; media-src 'self'; connect-src 'self' https://challenges.cloudflare.com https://hockey-mayen-contact.sergej-schatz.workers.dev; frame-src https://challenges.cloudflare.com; worker-src 'self'; form-action 'self'">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" href="/assets/images/logo_hc80.webp" as="image" type="image/webp" fetchpriority="high">
+    <link rel="preload" href="/assets/fonts/UnifrakturMaguntia-Regular.ttf" as="font" type="font/ttf" crossorigin>
 
     {%- comment -%}
     Canonical URL sauber normalisieren:
@@ -80,7 +82,7 @@
     <link href="{{ '/assets/vendor/aos/aos.css' | relative_url }}" rel="stylesheet">
 
     <!-- Styles -->
-    <link rel="stylesheet" href="/assets/css/all.min.css">
+    <link rel="stylesheet" href="{{ '/assets/css/all.min.css' | relative_url }}?v={{ site.time | date: '%s' }}">
 
     {%- comment -%}
     Optional: pro Seite zusätzliche Styles laden:
@@ -179,28 +181,9 @@
         }
     </script>
 
-    <!-- Service Worker -->
-    <script defer>
-        if ('serviceWorker' in navigator) {
-            window.addEventListener('load', () => {
-                navigator.serviceWorker.register('/sw.js');
-            });
-        }
-    </script>
-
     <!-- AOS JS -->
     <script defer src="{{ '/assets/vendor/aos/aos.js' | relative_url }}"></script>
-    <script defer>
-        document.addEventListener("DOMContentLoaded", function () {
-            AOS.init({
-                offset: 20,
-                duration: 800,
-                easing: 'ease-out',
-                delay: 0,
-                once: true
-            });
-        });
-    </script>
+    <script defer src="{{ '/assets/js/site.js' | relative_url }}"></script>
 
     {%- comment -%}
     Optional: pro Seite zusätzliche Scripts laden (dein bestehender Mechanismus)
@@ -208,7 +191,9 @@
     scripts:
     - /assets/js/xyz.js
     {%- endcomment -%}
+    {% if page.url == '/' or page.url == '/chronik/' %}
     <script defer src="{{ '/assets/js/chronik-content.js' | relative_url }}"></script>
+    {% endif %}
     {% if page.scripts %}
     {% for script in page.scripts %}
     <script defer src="{{ script }}"></script>
@@ -217,12 +202,14 @@
 
     <!-- Globale JavaScripts -->
     <script defer src="/assets/js/scrollTop.js"></script>
+    {% if page.url == '/' %}
     <script defer src="/assets/js/highlights.js"></script>
+    {% endif %}
 </head>
 
 <body>
 <!-- Scroll-Button -->
-<button id="scrollTopBtn" onclick="scrollToTop()">&#8679;</button>
+<button id="scrollTopBtn" type="button" aria-label="Nach oben scrollen">&#8679;</button>
 
 {% include header.html %}
 <main>

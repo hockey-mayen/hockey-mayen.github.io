@@ -9,7 +9,7 @@ useCaptcha: false
 
 <!-- Tab-Inhalt -->
 
-<div class="aligned-content" style="margin-top: 2rem;">
+<div class="aligned-content membership-intro">
   <h3>Mitgliedsbeiträge</h3>
   <p>
     Bei uns bekommst du Training, Teamgeist und eine echte Hockey-Family – und das zu fairen Beiträgen.
@@ -20,7 +20,7 @@ useCaptcha: false
     <br><strong>Familienbeitrag: 150 € / Jahr</strong>
 
 
-  <p style="margin-top: 1rem;">
+  <p class="membership-tip">
     <strong>Tipp:</strong> Formular downloaden, ausfüllen, absenden – oder einfach beim nächsten Training abgeben 🙂
   </p>
 </div>
