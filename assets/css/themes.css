@@ -76,6 +76,7 @@ html[data-theme="christmas"] body {
 }
 
 html[data-theme="christmas"] header {
+    --holiday-nav-height: 44px;
     width: calc(100% - 40px);
     margin-inline: auto;
     position: relative;
@@ -92,8 +93,8 @@ html[data-theme="christmas"] header {
 html[data-theme="christmas"] header::before {
     content: '';
     position: absolute;
-    inset: auto 0 38px;
-    height: calc(100% - 38px);
+    inset: auto 0 var(--holiday-nav-height);
+    height: calc(100% - var(--holiday-nav-height));
     background: url('/assets/images/christmas/header-waves.svg') center bottom / 100% 100% no-repeat;
     pointer-events: none;
     z-index: -2;
@@ -160,7 +161,7 @@ html[data-theme="christmas"] .holiday-decor-right::after {
 html[data-theme="christmas"] .holiday-shooting-stars {
     display: block;
     position: absolute;
-    inset: 0 0 38px;
+    inset: 0 0 var(--holiday-nav-height);
     overflow: hidden;
     pointer-events: none;
 }
@@ -262,7 +263,7 @@ html[data-theme="christmas"] .header-container {
     grid-template-columns: auto minmax(0, 1fr);
     max-width: none;
     margin: 0 auto;
-    padding: 2.814cqw 6.8cqw 8px;
+    padding: 2.814cqw 6.8cqw 0;
     gap: .938cqw 1.8cqw;
     align-items: center;
 }
@@ -294,6 +295,10 @@ html[data-theme="christmas"] .title-text {
 html[data-theme="christmas"] .header-content nav {
     grid-column: 1 / -1;
     grid-row: 2;
+    width: calc(100% + 13.6cqw);
+    margin-inline: -6.8cqw;
+    padding-inline: 6.8cqw;
+    background: rgba(0, 36, 29, .22);
 }
 
 html[data-theme="christmas"] .club-title-prefix {
@@ -328,16 +333,24 @@ html[data-theme="christmas"] .nav-grid {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
+    height: var(--holiday-nav-height);
     gap: 6px;
     transform: none;
 }
 
+html[data-theme="christmas"] .nav-grid li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 html[data-theme="christmas"] .nav-grid a {
     display: inline-block;
-    padding: 5px 10px;
+    padding: 0 10px;
     border-radius: 0;
     font-size: clamp(12px, 1.9cqw, 18px);
-    font-weight: 400;
+    font-family: inherit;
     white-space: nowrap;
 }
 
@@ -348,8 +361,15 @@ html[data-theme="christmas"] .nav-grid a.active {
 }
 
 html[data-theme="christmas"] main {
-    margin-top: 32px;
+    margin-top: 12px;
     margin-bottom: 44px;
+}
+
+html[data-theme="christmas"] .aktuell-container { padding-top: 0; }
+
+html[data-theme="christmas"] .aktuell-container .chronik-entry h2 {
+    font-size: clamp(22px, 1.9vw, 28px);
+    text-wrap: wrap;
 }
 
 html[data-theme="christmas"] main h2 {
@@ -502,13 +522,13 @@ html[data-theme="christmas"] #scrollTopBtn {
 }
 
 @media (max-width: 600px) {
-    html[data-theme="christmas"] header { width: 100%; }
+    html[data-theme="christmas"] header { width: 100%; --holiday-nav-height: 108px; }
     html[data-theme-switch="ready"] .theme-toolbar {
         padding: 4px 12px 10px;
     }
     html[data-theme="christmas"] .theme-toolbar { padding: 0 12px; }
     html[data-theme="christmas"] .theme-switch button { font-size: 14px; }
-    html[data-theme="christmas"] header::before { bottom: 0; height: 77px; }
+    html[data-theme="christmas"] header::before { height: 77px; }
     html[data-theme="christmas"] .holiday-decor { width: 154px; height: 52px; }
     html[data-theme="christmas"] .holiday-decor-right {
         right: 0;
@@ -521,7 +541,7 @@ html[data-theme="christmas"] #scrollTopBtn {
     html[data-theme="christmas"] .holiday-decor::after { left: 78%; top: 70%; font-size: 16px; }
     html[data-theme="christmas"] .holiday-decor-left::after { top: 30%; }
     html[data-theme="christmas"] .header-container {
-        padding: 42px 16px 8px;
+        padding: 42px 16px 0;
         gap: 7px 10px;
     }
     html[data-theme="christmas"] .logo-container { width: 66px; height: 70px; }
@@ -531,6 +551,11 @@ html[data-theme="christmas"] #scrollTopBtn {
         text-wrap: initial;
     }
     html[data-theme="christmas"] .title-text { padding-left: 12px; }
+    html[data-theme="christmas"] .header-content nav {
+        width: calc(100% + 32px);
+        margin-inline: -16px;
+        padding-inline: 16px;
+    }
     html[data-theme="christmas"] .subtitle {
         margin: 5px 0 0;
         font-size: 13px;
@@ -539,15 +564,16 @@ html[data-theme="christmas"] #scrollTopBtn {
     html[data-theme="christmas"] .nav-grid {
         display: grid;
         grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-rows: repeat(3, minmax(0, 1fr));
         gap: 4px 8px;
     }
     html[data-theme="christmas"] .nav-grid a {
         display: block;
-        padding: 4px 10px;
+        padding: 0 10px;
         font-size: 16px;
     }
     html[data-theme="christmas"] main {
-        margin: 24px auto 32px;
+        margin: 12px auto 32px;
         padding: 0;
     }
     html[data-theme="christmas"] .tiles-container { padding: 16px; gap: 18px; }
