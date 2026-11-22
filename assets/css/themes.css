@@ -75,6 +75,8 @@ html[data-theme="christmas"] body {
 }
 
 html[data-theme="christmas"] header {
+    width: calc(100% - 40px);
+    margin-inline: auto;
     position: relative;
     isolation: isolate;
     container-type: inline-size;
@@ -431,6 +433,7 @@ html[data-theme="christmas"] #scrollTopBtn {
 }
 
 @media (max-width: 600px) {
+    html[data-theme="christmas"] header { width: 100%; }
     html[data-theme-switch="ready"] .theme-toolbar {
         padding: 4px 12px 10px;
     }
