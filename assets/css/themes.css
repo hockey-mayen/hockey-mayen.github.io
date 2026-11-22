@@ -356,7 +356,7 @@ html[data-theme="christmas"] .club-title {
 }
 
 html[data-theme="christmas"] .subtitle {
-    color: #fff3d9;
+    color: #97c235;
     font-size: clamp(17px, 1.5cqw, 21px);
     margin-top: 6px;
     margin-bottom: 0;
