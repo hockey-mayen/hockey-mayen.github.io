@@ -77,8 +77,11 @@ html[data-theme="christmas"] body {
 html[data-theme="christmas"] header {
     position: relative;
     isolation: isolate;
-    background: radial-gradient(ellipse at 20% 90%, #285e49 0, transparent 55%),
-        linear-gradient(125deg, #164734, #103c30 65%, #082e25);
+    container-type: inline-size;
+    overflow: clip;
+    border-radius: 8px 8px 0 0;
+    background: radial-gradient(ellipse at 42% 65%, #00513c 0, transparent 65%),
+        linear-gradient(120deg, #073e2d, #003a2b 65%, #002e25);
     box-shadow: 0 3px 10px rgba(16, 60, 48, .16);
     padding: 0;
 }
@@ -86,8 +89,8 @@ html[data-theme="christmas"] header {
 html[data-theme="christmas"] header::before {
     content: '';
     position: absolute;
-    inset: auto 0 0;
-    height: 110px;
+    inset: auto 0 38px;
+    height: calc(100% - 38px);
     background: url('/assets/images/christmas/header-waves.svg') center bottom / 100% 100% no-repeat;
     pointer-events: none;
     z-index: -2;
@@ -97,9 +100,9 @@ html[data-theme="christmas"] .holiday-decor {
     display: block;
     position: absolute;
     top: 0;
-    width: clamp(300px, 39vw, 560px);
-    aspect-ratio: 3 / 1;
-    background: url('/assets/images/christmas/pine-corner.webp') left top / contain no-repeat;
+    width: 49.5cqw;
+    height: 19cqw;
+    background: url('/assets/images/christmas/pine-corner.webp') left top / 100% 100% no-repeat;
     pointer-events: none;
     z-index: -1;
 }
@@ -109,27 +112,39 @@ html[data-theme="christmas"] .holiday-decor-left {
     background-image: url('/assets/images/christmas/pine-left.webp');
 }
 html[data-theme="christmas"] .holiday-decor-right {
-    right: 0;
-    width: clamp(300px, 45vw, 650px);
+    right: -4cqw;
+    width: 48.5cqw;
+    height: 21cqw;
     background-image: url('/assets/images/christmas/pine-right.webp');
 }
 
+html[data-theme="christmas"] .holiday-decor::before,
 html[data-theme="christmas"] .holiday-decor::after {
-    content: '✦';
+    content: '★';
     position: absolute;
-    left: 74%;
-    top: 62%;
+    left: 80%;
+    top: 11%;
     color: #f7edcf;
-    font: 24px/1 Georgia, serif;
-    text-shadow: -230px 28px #f7edcf;
+    font: clamp(16px, 2.3cqw, 28px)/1 Georgia, serif;
     transform-origin: center;
     animation: holiday-twinkle 4.8s ease-in-out infinite;
 }
 
+html[data-theme="christmas"] .holiday-decor-left::before {
+    left: 7.7%;
+    top: 78%;
+    animation-delay: -1.8s;
+}
+
+html[data-theme="christmas"] .holiday-decor-right::before {
+    left: 53.2%;
+    top: 58%;
+    animation-delay: -3.2s;
+}
+
 html[data-theme="christmas"] .holiday-decor-right::after {
-    left: 84%;
-    top: 74%;
-    text-shadow: -140px -35px #f7edcf;
+    left: 88%;
+    top: 84%;
     animation-duration: 6.1s;
     animation-delay: -2.4s;
 }
@@ -140,6 +155,7 @@ html[data-theme="christmas"] .holiday-decor-right::after {
 }
 
 @media (prefers-reduced-motion: reduce) {
+    html[data-theme="christmas"] .holiday-decor::before,
     html[data-theme="christmas"] .holiday-decor::after {
         animation: none;
         opacity: 1;
@@ -150,10 +166,14 @@ html[data-theme="christmas"] .holiday-decor-right::after {
 
 html[data-theme="christmas"] .theme-toolbar {
     position: absolute;
-    top: 10px;
+    top: 0;
     right: 0;
     padding: 0 16px;
-    background: linear-gradient(90deg, transparent, #103c30 18%);
+    background: transparent;
+}
+
+html[data-theme="christmas"] .theme-switch button {
+    font-size: clamp(11px, 1.4cqw, 14px);
 }
 
 html[data-theme="christmas"] .theme-switch {
@@ -169,10 +189,10 @@ html[data-theme="christmas"] .header-container {
     position: relative;
     display: grid;
     grid-template-columns: auto minmax(0, 1fr);
-    max-width: 1180px;
+    max-width: none;
     margin: 0 auto;
-    padding: 18px 24px 12px;
-    gap: 10px 22px;
+    padding: 4.2cqw 6.8cqw 8px;
+    gap: 1.4cqw 1.8cqw;
     align-items: center;
 }
 
@@ -183,8 +203,8 @@ html[data-theme="christmas"] .header-content {
 html[data-theme="christmas"] .logo-container {
     grid-column: 1;
     grid-row: 1;
-    width: clamp(116px, 12vw, 144px);
-    height: clamp(116px, 12vw, 144px);
+    width: 17cqw;
+    height: 17cqw;
 }
 
 html[data-theme="christmas"] .logo {
@@ -210,22 +230,23 @@ html[data-theme="christmas"] .club-title-prefix {
 }
 
 html[data-theme="christmas"] .title-text {
-    padding-left: 20px;
+    padding-left: 2.9cqw;
     border-left: 1px solid rgba(255, 243, 217, .6);
 }
 
 html[data-theme="christmas"] .club-title {
     font-family: Georgia, 'Times New Roman', serif;
-    font-size: clamp(28px, 2.8vw, 38px);
-    line-height: 1.15;
+    font-size: 3.6cqw;
+    line-height: 1.05;
+    text-align: left;
     text-wrap: balance;
 }
 
 html[data-theme="christmas"] .subtitle {
     color: #fff3d9;
     font-family: Arial, sans-serif;
-    font-size: clamp(14px, 1.2vw, 17px);
-    letter-spacing: 3px;
+    font-size: 1.9cqw;
+    letter-spacing: .3cqw;
     margin-top: 6px;
     margin-bottom: 0;
     text-align: left;
@@ -233,6 +254,8 @@ html[data-theme="christmas"] .subtitle {
 }
 
 html[data-theme="christmas"] .nav-grid {
+    display: flex;
+    flex-direction: row;
     justify-content: space-between;
     gap: 6px;
     transform: none;
@@ -242,7 +265,7 @@ html[data-theme="christmas"] .nav-grid a {
     display: inline-block;
     padding: 5px 10px;
     border-radius: 0;
-    font-size: clamp(15px, 1.3vw, 18px);
+    font-size: clamp(12px, 1.9cqw, 18px);
     font-weight: 400;
     white-space: nowrap;
 }
@@ -407,45 +430,23 @@ html[data-theme="christmas"] #scrollTopBtn {
     opacity: 1;
 }
 
-@media (max-width: 900px) {
-    html[data-theme="christmas"] .header-container {
-        grid-template-columns: auto minmax(0, 1fr);
-        align-items: center;
-        gap: 10px 18px;
-        padding: 46px 24px 14px;
-    }
-    html[data-theme="christmas"] .logo-container {
-        width: 120px;
-        height: 120px;
-    }
-    html[data-theme="christmas"] .header-content {
-        width: 100%;
-        align-items: center;
-    }
-    html[data-theme="christmas"] .header-content nav { width: 100%; }
-    html[data-theme="christmas"] .nav-grid {
-        display: grid;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-    }
-    html[data-theme="christmas"] .nav-grid a {
-        padding: 7px 8px;
-        font-size: 16px;
-    }
-    html[data-theme="christmas"] .holiday-decor { width: 330px; }
-}
-
 @media (max-width: 600px) {
     html[data-theme-switch="ready"] .theme-toolbar {
         padding: 4px 12px 10px;
     }
     html[data-theme="christmas"] .theme-toolbar { padding: 0 12px; }
-    html[data-theme="christmas"] .holiday-decor { width: 220px; }
+    html[data-theme="christmas"] .theme-switch button { font-size: 14px; }
+    html[data-theme="christmas"] header::before { bottom: 0; height: 110px; }
+    html[data-theme="christmas"] .holiday-decor { width: 220px; height: 74px; }
     html[data-theme="christmas"] .holiday-decor-right {
+        right: 0;
         width: 160px;
+        height: 54px;
         background-image: url('/assets/images/christmas/pine-left.webp');
         transform: scaleX(-1);
     }
-    html[data-theme="christmas"] .holiday-decor::after { font-size: 16px; text-shadow: none; }
+    html[data-theme="christmas"] .holiday-decor::before { display: none; }
+    html[data-theme="christmas"] .holiday-decor::after { left: 78%; top: 70%; font-size: 16px; }
     html[data-theme="christmas"] .header-container {
         padding: 58px 16px 12px;
         gap: 10px 12px;
@@ -463,12 +464,14 @@ html[data-theme="christmas"] #scrollTopBtn {
         letter-spacing: 2px;
     }
     html[data-theme="christmas"] .nav-grid {
+        display: grid;
         grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 4px 8px;
     }
     html[data-theme="christmas"] .nav-grid a {
         display: block;
         padding: 8px 10px;
+        font-size: 16px;
     }
     html[data-theme="christmas"] main {
         margin: 24px auto 32px;
