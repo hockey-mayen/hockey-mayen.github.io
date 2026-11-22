@@ -48,7 +48,7 @@ Der Hockeyclub Grün-Weiß TuS Mayen e.V. ist ein traditionsreicher Sportverein 
 
     <!-- Just for Fun-Kachel -->
     <div class="tile">
-        <h3>{{ site.data.startseite.tiles[3].title }}</h3>
+        <h3><span class="standard-card-title">{{ site.data.startseite.tiles[3].title }}</span><span class="christmas-card-title">Just for Fun</span></h3>
         <p>{{ site.data.startseite.tiles[3].description }}</p>
         <img src="{{ site.data.startseite.tiles[3].image }}" alt="{{ site.data.startseite.tiles[3].title }}" loading="lazy" decoding="async">
         <a class="christmas-card-link" href="/just-for-fun-turnier/">Zu Just for Fun</a>
