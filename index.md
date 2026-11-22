@@ -7,7 +7,7 @@ scripts:
   - /assets/js/turniereImageRotator.js
 ---
 
-<div class="aligned-content">
+<div class="aligned-content club-intro">
 <h2>
 Feldhockey ist eine der schönsten Team-Sportarten
 </h2>
@@ -25,6 +25,7 @@ Der Hockeyclub Grün-Weiß TuS Mayen e.V. ist ein traditionsreicher Sportverein 
             <div class="progress-bar"></div>
             <img id="trainingImage">
         </div>
+        <a class="christmas-card-link" href="/training/">Zum Training</a>
     </div>
 
     <!-- Turniere-Kachel mit Bildwechsel -->
@@ -34,6 +35,7 @@ Der Hockeyclub Grün-Weiß TuS Mayen e.V. ist ein traditionsreicher Sportverein 
         <div class="turniere-image-container">
             <img id="turniereImage">
         </div>
+        <a class="christmas-card-link" href="/turniere/">Zu den Turnieren</a>
     </div>
 
     <!-- Veranstaltungen-Kachel -->
@@ -41,11 +43,12 @@ Der Hockeyclub Grün-Weiß TuS Mayen e.V. ist ein traditionsreicher Sportverein 
         <h3>{{ site.data.startseite.tiles[2].title }}</h3>
         <p>{{ site.data.startseite.tiles[2].description }}</p>
         <img src="{{ site.data.startseite.tiles[2].image }}" alt="{{ site.data.startseite.tiles[2].title }}" loading="lazy" decoding="async">
+        <a class="christmas-card-link" href="/veranstaltungen/">Zu den Veranstaltungen</a>
     </div>
 
     <!-- Just for Fun-Kachel -->
     <div class="tile">
-        <h3>{{ site.data.startseite.tiles[3].title }}</h3>
+        <h3><span class="standard-card-title">{{ site.data.startseite.tiles[3].title }}</span><span class="christmas-card-title">Just for Fun</span></h3>
         <p>{{ site.data.startseite.tiles[3].description }}</p>
         <img src="{{ site.data.startseite.tiles[3].image }}" alt="{{ site.data.startseite.tiles[3].title }}" loading="lazy" decoding="async">
     </div>
