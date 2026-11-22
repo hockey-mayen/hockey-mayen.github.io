@@ -1,5 +1,6 @@
 /* Der Standard bleibt durch die vorhandenen Styles definiert. */
 .holiday-decor,
+.holiday-shooting-stars,
 .tile .christmas-card-link,
 .christmas-card-title,
 .theme-toolbar {
@@ -156,7 +157,75 @@ html[data-theme="christmas"] .holiday-decor-right::after {
     45%, 55% { opacity: 1; transform: scale(1.12); filter: brightness(1.35); }
 }
 
+html[data-theme="christmas"] .holiday-shooting-stars {
+    display: block;
+    position: absolute;
+    inset: 0 0 38px;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+html[data-theme="christmas"] .holiday-shooting-star {
+    --flight-x: -22cqw;
+    --flight-y: 7.15cqw;
+    --flight-angle: -18deg;
+    position: absolute;
+    left: 76%;
+    top: 8%;
+    width: clamp(42px, 6cqw, 90px);
+    height: 2px;
+    border-radius: 50%;
+    background: linear-gradient(to right, #fffef5, rgba(255, 243, 211, .6) 18%, transparent);
+    opacity: 0;
+    animation: holiday-shooting-star 23s linear 3s infinite both;
+}
+
+html[data-theme="christmas"] .holiday-shooting-star::before {
+    content: '';
+    position: absolute;
+    top: -1px;
+    left: -1px;
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    background: #fffef5;
+    box-shadow: 0 0 6px rgba(255, 243, 211, .8);
+}
+
+html[data-theme="christmas"] .holiday-shooting-star:nth-child(2) {
+    --flight-x: -27cqw;
+    --flight-y: 9.83cqw;
+    --flight-angle: -20deg;
+    left: 94%;
+    top: 22%;
+    width: clamp(35px, 5cqw, 75px);
+    animation-duration: 29s;
+    animation-delay: 9s;
+}
+
+html[data-theme="christmas"] .holiday-shooting-star:nth-child(3) {
+    --flight-x: -18cqw;
+    --flight-y: 8.39cqw;
+    --flight-angle: -25deg;
+    left: 72%;
+    top: 6%;
+    animation-duration: 31s;
+    animation-delay: 15s;
+}
+
+/* Kurzer Flug mit hellem Kopf und auslaufendem Schweif, danach lange Pause. */
+@keyframes holiday-shooting-star {
+    0% { opacity: 0; transform: translate3d(0, 0, 0) rotate(var(--flight-angle)); }
+    .6%, 3.5% { opacity: .9; }
+    5.5%, 100% {
+        opacity: 0;
+        transform: translate3d(var(--flight-x), var(--flight-y), 0) rotate(var(--flight-angle));
+    }
+}
+
 @media (prefers-reduced-motion: reduce) {
+    html[data-theme="christmas"] .holiday-shooting-stars { display: none; }
+    html[data-theme="christmas"] .holiday-shooting-star { animation: none; }
     html[data-theme="christmas"] .holiday-decor::before,
     html[data-theme="christmas"] .holiday-decor::after {
         animation: none;
