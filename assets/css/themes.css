@@ -142,8 +142,8 @@ html[data-theme="christmas"] .holiday-decor-left::before {
 }
 
 html[data-theme="christmas"] .holiday-decor-right::before {
-    left: 58%;
-    top: 58%;
+    left: 50%;
+    top: 45%;
     animation-delay: -3.2s;
 }
 
@@ -595,7 +595,7 @@ html[data-theme="christmas"] #scrollTopBtn {
     html[data-theme="christmas"] .holiday-decor-left::after { left: 100%; top: 10%; }
     html[data-theme="christmas"] .holiday-decor-right::after { left: 12%; top: calc(115% + 5px); }
     html[data-theme="christmas"] .holiday-extra-star { left: 74%; top: 12%; font-size: 10px; }
-    html[data-theme="christmas"] .holiday-extra-star:nth-child(2) { left: 90%; top: 47%; font-size: 13px; }
+    html[data-theme="christmas"] .holiday-extra-star:nth-child(2) { left: 84%; top: 31%; font-size: 13px; }
     html[data-theme="christmas"] .holiday-extra-star:nth-child(3) { left: 78%; top: 88%; font-size: 11px; }
     html[data-theme="christmas"] .header-container {
         padding: 42px 16px 0;
