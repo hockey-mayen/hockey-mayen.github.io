@@ -311,7 +311,6 @@ html[data-theme="christmas"] .title-text {
 }
 
 html[data-theme="christmas"] .club-title {
-    font-family: Georgia, 'Times New Roman', serif;
     font-size: clamp(20px, 2.412cqw, 36px);
     line-height: 1.05;
     text-align: left;
@@ -320,9 +319,7 @@ html[data-theme="christmas"] .club-title {
 
 html[data-theme="christmas"] .subtitle {
     color: #fff3d9;
-    font-family: Arial, sans-serif;
-    font-size: clamp(12px, 1.273cqw, 18px);
-    letter-spacing: .201cqw;
+    font-size: clamp(17px, 1.5cqw, 21px);
     margin-top: 6px;
     margin-bottom: 0;
     text-align: left;
@@ -368,6 +365,7 @@ html[data-theme="christmas"] main {
 html[data-theme="christmas"] .aktuell-container { padding-top: 0; }
 
 html[data-theme="christmas"] .aktuell-container .chronik-entry h2 {
+    font-family: 'Open Sans', Arial, sans-serif;
     font-size: clamp(22px, 1.9vw, 28px);
     text-wrap: wrap;
 }
@@ -394,6 +392,13 @@ html[data-theme="christmas"] .tiles-container {
     padding: 20px;
 }
 
+html[data-theme="christmas"] .home-tiles {
+    max-width: none;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+html[data-theme="christmas"] .home-tiles > .tile { max-width: none; }
+
 html[data-theme="christmas"] .tile,
 html[data-theme="christmas"] .tile-single,
 html[data-theme="christmas"] .tile-highlight {
@@ -404,7 +409,7 @@ html[data-theme="christmas"] .tile-highlight {
 
 html[data-theme="christmas"] .tile,
 html[data-theme="christmas"] .tile-single {
-    padding: 26px 18px 18px;
+    padding: 34px 18px 18px;
 }
 
 html[data-theme="christmas"] .tile::before,
@@ -424,8 +429,8 @@ html[data-theme="christmas"] .tile-single::after {
     position: absolute;
     top: 4px;
     left: 0;
-    width: 90px;
-    height: 34px;
+    width: clamp(118px, 12vw, 170px);
+    height: clamp(44px, 4.5vw, 64px);
     background: url('/assets/images/christmas/pine-corner.webp') left top / contain no-repeat;
     pointer-events: none;
 }
@@ -558,8 +563,7 @@ html[data-theme="christmas"] #scrollTopBtn {
     }
     html[data-theme="christmas"] .subtitle {
         margin: 5px 0 0;
-        font-size: 13px;
-        letter-spacing: 2px;
+        font-size: 17px;
     }
     html[data-theme="christmas"] .nav-grid {
         display: grid;
@@ -577,9 +581,13 @@ html[data-theme="christmas"] #scrollTopBtn {
         padding: 0;
     }
     html[data-theme="christmas"] .tiles-container { padding: 16px; gap: 18px; }
+    html[data-theme="christmas"] .home-tiles {
+        grid-template-columns: 1fr;
+        padding-inline: 0;
+    }
     html[data-theme="christmas"] .tile h3 { font-size: 22px; }
     html[data-theme="christmas"] .tile,
-    html[data-theme="christmas"] .tile-single { padding: 26px 14px 16px; }
+    html[data-theme="christmas"] .tile-single { padding: 42px 14px 16px; }
     html[data-theme="christmas"] .tile-highlight { border-radius: 0; border-inline: 0; }
     html[data-theme="christmas"] footer { margin-top: 44px; }
     html[data-theme="christmas"] footer::before { top: -40px; height: 41px; }
