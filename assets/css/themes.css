@@ -8,7 +8,7 @@
 }
 
 html[data-theme-switch="ready"] .theme-toolbar {
-    display: flex;
+    display: none;
     justify-content: flex-end;
     position: relative;
     z-index: 2;
@@ -83,7 +83,7 @@ html[data-theme="christmas"] header {
     isolation: isolate;
     container-type: inline-size;
     overflow: clip;
-    border-radius: 8px 8px 0 0;
+    border-radius: 0;
     background: radial-gradient(ellipse at 42% 65%, #00513c 0, transparent 65%),
         linear-gradient(120deg, #073e2d, #003a2b 65%, #002e25);
     box-shadow: 0 3px 10px rgba(16, 60, 48, .16);
@@ -363,6 +363,12 @@ html[data-theme="christmas"] main {
 
 html[data-theme="christmas"] .aktuell-container { padding-top: 0; }
 
+html[data-theme="christmas"] .club-intro {
+    width: calc(100% - 40px);
+    max-width: none;
+    padding-inline: 0;
+}
+
 html[data-theme="christmas"] .aktuell-container .chronik-entry h2 {
     font-size: clamp(22px, 1.9vw, 28px);
     text-wrap: wrap;
@@ -417,6 +423,7 @@ html[data-theme="christmas"] .tile-single::before {
     border-radius: 8px 8px 0 0;
     background: repeating-linear-gradient(135deg, #b3223b 0 5px, #faf0d7 5px 10px);
     pointer-events: none;
+    display: none;
 }
 
 html[data-theme="christmas"] .tile::after,
@@ -582,6 +589,10 @@ html[data-theme="christmas"] #scrollTopBtn {
     html[data-theme="christmas"] main {
         margin: 12px auto 32px;
         padding: 0;
+    }
+    html[data-theme="christmas"] .club-intro {
+        width: 100%;
+        padding-inline: 16px;
     }
     html[data-theme="christmas"] .tiles-container { padding: 16px; gap: 18px; }
     html[data-theme="christmas"] .home-tiles {

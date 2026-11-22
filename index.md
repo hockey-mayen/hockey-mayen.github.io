@@ -7,7 +7,7 @@ scripts:
   - /assets/js/turniereImageRotator.js
 ---
 
-<div class="aligned-content">
+<div class="aligned-content club-intro">
 <h2>
 Feldhockey ist eine der schönsten Team-Sportarten
 </h2>
