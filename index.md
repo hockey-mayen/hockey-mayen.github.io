@@ -25,6 +25,7 @@ Der Hockeyclub Grün-Weiß TuS Mayen e.V. ist ein traditionsreicher Sportverein 
             <div class="progress-bar"></div>
             <img id="trainingImage">
         </div>
+        <a class="christmas-card-link" href="/training/">Zum Training</a>
     </div>
 
     <!-- Turniere-Kachel mit Bildwechsel -->
@@ -34,6 +35,7 @@ Der Hockeyclub Grün-Weiß TuS Mayen e.V. ist ein traditionsreicher Sportverein 
         <div class="turniere-image-container">
             <img id="turniereImage">
         </div>
+        <a class="christmas-card-link" href="/turniere/">Zu den Turnieren</a>
     </div>
 
     <!-- Veranstaltungen-Kachel -->
@@ -41,6 +43,7 @@ Der Hockeyclub Grün-Weiß TuS Mayen e.V. ist ein traditionsreicher Sportverein 
         <h3>{{ site.data.startseite.tiles[2].title }}</h3>
         <p>{{ site.data.startseite.tiles[2].description }}</p>
         <img src="{{ site.data.startseite.tiles[2].image }}" alt="{{ site.data.startseite.tiles[2].title }}" loading="lazy" decoding="async">
+        <a class="christmas-card-link" href="/veranstaltungen/">Zu den Veranstaltungen</a>
     </div>
 
     <!-- Just for Fun-Kachel -->
@@ -48,6 +51,7 @@ Der Hockeyclub Grün-Weiß TuS Mayen e.V. ist ein traditionsreicher Sportverein 
         <h3>{{ site.data.startseite.tiles[3].title }}</h3>
         <p>{{ site.data.startseite.tiles[3].description }}</p>
         <img src="{{ site.data.startseite.tiles[3].image }}" alt="{{ site.data.startseite.tiles[3].title }}" loading="lazy" decoding="async">
+        <a class="christmas-card-link" href="/just-for-fun-turnier/">Zu Just for Fun</a>
     </div>
 
 </div>

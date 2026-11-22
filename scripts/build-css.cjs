@@ -21,6 +21,7 @@ const sourceFiles = [
   'just-for-fun.css',
   'anmeldung.css',
   'datenschutz.css',
+  'themes.css',
 ];
 
 function buildCss() {
