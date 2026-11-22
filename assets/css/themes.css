@@ -568,6 +568,13 @@ html[data-theme="christmas"] #scrollTopBtn {
     opacity: 1;
 }
 
+@media (min-width: 901px) {
+    html[data-theme="christmas"] .nav-grid {
+        justify-content: center;
+        column-gap: clamp(18px, 3cqw, 42px);
+    }
+}
+
 @media (max-width: 600px) {
     html[data-theme="christmas"] header { width: 100%; --holiday-nav-height: 84px; }
     html[data-theme-switch="ready"] .theme-toolbar {
