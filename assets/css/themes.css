@@ -61,8 +61,8 @@ html[data-theme="christmas"] {
     --color-brand: #145640;
     --color-brand-dark: #103c30;
     --color-brand-deep: #103c30;
-    --color-action: #c8102e;
-    --color-action-hover: #a30c25;
+    --color-action: #103c30;
+    --color-action-hover: #082e25;
     --color-holiday-link: #e5102d;
     --color-nav-active: #fff4df;
     --color-card: #fafcf9;
@@ -365,14 +365,11 @@ html[data-theme="christmas"] main {
 html[data-theme="christmas"] .aktuell-container { padding-top: 0; }
 
 html[data-theme="christmas"] .aktuell-container .chronik-entry h2 {
-    font-family: 'Open Sans', Arial, sans-serif;
     font-size: clamp(22px, 1.9vw, 28px);
     text-wrap: wrap;
 }
 
 html[data-theme="christmas"] main h2 {
-    font-family: Georgia, 'Times New Roman', serif;
-    font-size: clamp(24px, 2.5vw, 34px);
     line-height: 1.3;
     text-wrap: balance;
 }
@@ -384,7 +381,7 @@ html[data-theme="christmas"] main > .aligned-content > h2::after {
     height: 3px;
     margin: 18px auto;
     border-radius: 2px;
-    background: var(--color-action);
+    background: var(--color-holiday-link);
 }
 
 html[data-theme="christmas"] .tiles-container {
@@ -442,7 +439,6 @@ html[data-theme="christmas"] .tile:nth-child(even)::after {
 }
 
 html[data-theme="christmas"] .tile h3 {
-    font-size: 24px;
     line-height: 1.3;
     margin-top: 8px;
 }
@@ -507,7 +503,12 @@ html[data-theme="christmas"] footer {
     position: relative;
     margin-top: 68px;
     padding-top: 24px;
-    background: linear-gradient(115deg, #153f31, #0a332a);
+    background: linear-gradient(120deg, #073e2d, #003a2b 65%, #002e25);
+}
+
+html[data-theme="christmas"] footer a:hover,
+html[data-theme="christmas"] footer a.active {
+    color: var(--color-holiday-link);
 }
 
 html[data-theme="christmas"] footer::before {
@@ -527,7 +528,7 @@ html[data-theme="christmas"] #scrollTopBtn {
 }
 
 @media (max-width: 600px) {
-    html[data-theme="christmas"] header { width: 100%; --holiday-nav-height: 108px; }
+    html[data-theme="christmas"] header { width: 100%; --holiday-nav-height: 84px; }
     html[data-theme-switch="ready"] .theme-toolbar {
         padding: 4px 12px 10px;
     }
@@ -569,7 +570,7 @@ html[data-theme="christmas"] #scrollTopBtn {
         display: grid;
         grid-template-columns: repeat(2, minmax(0, 1fr));
         grid-template-rows: repeat(3, minmax(0, 1fr));
-        gap: 4px 8px;
+        gap: 2px 8px;
     }
     html[data-theme="christmas"] .nav-grid a {
         display: block;
@@ -585,7 +586,6 @@ html[data-theme="christmas"] #scrollTopBtn {
         grid-template-columns: 1fr;
         padding-inline: 0;
     }
-    html[data-theme="christmas"] .tile h3 { font-size: 22px; }
     html[data-theme="christmas"] .tile,
     html[data-theme="christmas"] .tile-single { padding: 42px 14px 16px; }
     html[data-theme="christmas"] .tile-highlight { border-radius: 0; border-inline: 0; }
