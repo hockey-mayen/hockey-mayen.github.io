@@ -18,27 +18,35 @@ html[data-theme-switch="ready"] .theme-toolbar {
 
 .theme-switch {
     display: inline-flex;
-    gap: 3px;
-    padding: 3px;
-    border: 1px solid rgba(255, 255, 255, .45);
-    border-radius: 24px;
-    background: rgba(0, 30, 20, .25);
+    align-items: center;
+    gap: 8px;
 }
 
 .theme-switch button {
-    min-height: 34px;
-    padding: 5px 13px;
+    min-height: 44px;
+    padding: 4px 2px;
     border: 0;
-    border-radius: 20px;
+    border-radius: 0;
     background: transparent;
     color: #fff;
-    font: 600 14px/1.4 Arial, sans-serif;
+    font: 400 14px/1.4 Arial, sans-serif;
     cursor: pointer;
 }
 
 .theme-switch button[aria-pressed="true"] {
-    color: #073c28;
-    background: #fff;
+    font-weight: 700;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+
+.theme-switch button:hover {
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+
+.theme-divider {
+    color: rgba(255, 255, 255, .65);
+    font: 14px/1 Arial, sans-serif;
 }
 
 .theme-switch button:focus-visible {
@@ -108,6 +116,27 @@ html[data-theme="christmas"] .holiday-decor::after {
     color: #f7edcf;
     font: 24px/1 Georgia, serif;
     text-shadow: -230px 28px #f7edcf;
+    transform-origin: center;
+    animation: holiday-twinkle 4.8s ease-in-out infinite;
+}
+
+html[data-theme="christmas"] .holiday-decor-right::after {
+    animation-duration: 6.1s;
+    animation-delay: -2.4s;
+}
+
+@keyframes holiday-twinkle {
+    0%, 100% { opacity: .5; transform: scale(.85); filter: brightness(.9); }
+    45%, 55% { opacity: 1; transform: scale(1.12); filter: brightness(1.35); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html[data-theme="christmas"] .holiday-decor::after {
+        animation: none;
+        opacity: 1;
+        transform: none;
+        filter: none;
+    }
 }
 
 html[data-theme="christmas"] .theme-toolbar {
@@ -115,15 +144,16 @@ html[data-theme="christmas"] .theme-toolbar {
     top: 10px;
     right: 0;
     padding: 0 16px;
+    background: linear-gradient(90deg, transparent, #103c30 18%);
 }
 
 html[data-theme="christmas"] .theme-switch {
-    background: #103c30;
+    background: transparent;
 }
 
 html[data-theme="christmas"] .theme-switch button[aria-pressed="true"] {
-    background: var(--color-action);
-    color: #fff;
+    color: #ff8394;
+    text-decoration: none;
 }
 
 html[data-theme="christmas"] .header-container {
@@ -199,15 +229,15 @@ html[data-theme="christmas"] .nav-grid {
 html[data-theme="christmas"] .nav-grid a {
     display: inline-block;
     padding: 5px 10px;
-    border-radius: 8px;
+    border-radius: 0;
     font-size: clamp(15px, 1.3vw, 18px);
     white-space: nowrap;
 }
 
 html[data-theme="christmas"] .nav-grid a:hover,
 html[data-theme="christmas"] .nav-grid a.active {
-    background: var(--color-action);
-    color: #fff;
+    background: transparent;
+    color: #ff8394;
 }
 
 html[data-theme="christmas"] main {
