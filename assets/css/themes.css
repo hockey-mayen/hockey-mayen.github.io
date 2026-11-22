@@ -492,10 +492,6 @@ html[data-theme="christmas"] .home-tiles .tile p {
     margin: 6px 0 20px;
 }
 
-html[data-theme="christmas"] .home-tiles > .tile:nth-child(n+3) > img {
-    display: none;
-}
-
 html[data-theme="christmas"] .standard-card-title { display: none; }
 html[data-theme="christmas"] .christmas-card-title { display: inline; }
 
@@ -518,7 +514,7 @@ html[data-theme="christmas"] .tile .christmas-card-link:hover {
 }
 
 html[data-theme="christmas"] .home-tiles > .tile:nth-child(n+3) .christmas-card-link {
-    margin-top: auto;
+    margin-top: 14px;
     padding: 0;
     background: transparent;
     color: var(--color-action);
