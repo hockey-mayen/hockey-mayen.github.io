@@ -113,6 +113,7 @@ html[data-theme="christmas"] .holiday-decor {
 
 html[data-theme="christmas"] .holiday-decor-left {
     left: 0;
+    z-index: 1;
     background-image: url('/assets/images/christmas/pine-left.webp');
 }
 html[data-theme="christmas"] .holiday-decor-right {
@@ -307,6 +308,7 @@ html[data-theme="christmas"] .header-content {
 }
 
 html[data-theme="christmas"] .logo-container {
+    z-index: 0;
     grid-column: 1;
     grid-row: 1;
     width: 11.39cqw;
@@ -323,12 +325,14 @@ html[data-theme="christmas"] .logo {
 html[data-theme="christmas"] .title-text {
     grid-column: 2;
     grid-row: 1;
+    z-index: 2;
     text-align: left;
 }
 
 html[data-theme="christmas"] .header-content nav {
     grid-column: 1 / -1;
     grid-row: 2;
+    z-index: 2;
     width: calc(100% + 13.6cqw);
     margin-inline: -6.8cqw;
     padding-inline: 6.8cqw;
