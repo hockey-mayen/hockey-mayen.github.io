@@ -100,8 +100,8 @@ html[data-theme="christmas"] .holiday-decor {
     display: block;
     position: absolute;
     top: 0;
-    width: 49.5cqw;
-    height: 19cqw;
+    width: 33.165cqw;
+    height: 12.73cqw;
     background: url('/assets/images/christmas/pine-corner.webp') left top / 100% 100% no-repeat;
     pointer-events: none;
     z-index: -1;
@@ -112,9 +112,9 @@ html[data-theme="christmas"] .holiday-decor-left {
     background-image: url('/assets/images/christmas/pine-left.webp');
 }
 html[data-theme="christmas"] .holiday-decor-right {
-    right: -4cqw;
-    width: 48.5cqw;
-    height: 21cqw;
+    right: -2.68cqw;
+    width: 32.495cqw;
+    height: 14.07cqw;
     background-image: url('/assets/images/christmas/pine-right.webp');
 }
 
@@ -122,10 +122,10 @@ html[data-theme="christmas"] .holiday-decor::before,
 html[data-theme="christmas"] .holiday-decor::after {
     content: '★';
     position: absolute;
-    left: 80%;
+    left: 100%;
     top: 11%;
     color: #f7edcf;
-    font: clamp(16px, 2.3cqw, 28px)/1 Georgia, serif;
+    font: clamp(14px, 1.54cqw, 20px)/1 Georgia, serif;
     transform-origin: center;
     animation: holiday-twinkle 4.8s ease-in-out infinite;
 }
@@ -137,13 +137,13 @@ html[data-theme="christmas"] .holiday-decor-left::before {
 }
 
 html[data-theme="christmas"] .holiday-decor-right::before {
-    left: 53.2%;
+    left: 58%;
     top: 58%;
     animation-delay: -3.2s;
 }
 
 html[data-theme="christmas"] .holiday-decor-right::after {
-    left: 88%;
+    left: 78%;
     top: 84%;
     animation-duration: 6.1s;
     animation-delay: -2.4s;
@@ -191,8 +191,8 @@ html[data-theme="christmas"] .header-container {
     grid-template-columns: auto minmax(0, 1fr);
     max-width: none;
     margin: 0 auto;
-    padding: 4.2cqw 6.8cqw 8px;
-    gap: 1.4cqw 1.8cqw;
+    padding: 2.814cqw 6.8cqw 8px;
+    gap: .938cqw 1.8cqw;
     align-items: center;
 }
 
@@ -203,8 +203,8 @@ html[data-theme="christmas"] .header-content {
 html[data-theme="christmas"] .logo-container {
     grid-column: 1;
     grid-row: 1;
-    width: 17cqw;
-    height: 17cqw;
+    width: 11.39cqw;
+    height: 11.39cqw;
 }
 
 html[data-theme="christmas"] .logo {
@@ -236,7 +236,7 @@ html[data-theme="christmas"] .title-text {
 
 html[data-theme="christmas"] .club-title {
     font-family: Georgia, 'Times New Roman', serif;
-    font-size: 3.6cqw;
+    font-size: clamp(20px, 2.412cqw, 36px);
     line-height: 1.05;
     text-align: left;
     text-wrap: balance;
@@ -245,8 +245,8 @@ html[data-theme="christmas"] .club-title {
 html[data-theme="christmas"] .subtitle {
     color: #fff3d9;
     font-family: Arial, sans-serif;
-    font-size: 1.9cqw;
-    letter-spacing: .3cqw;
+    font-size: clamp(12px, 1.273cqw, 18px);
+    letter-spacing: .201cqw;
     margin-top: 6px;
     margin-bottom: 0;
     text-align: left;
@@ -436,24 +436,25 @@ html[data-theme="christmas"] #scrollTopBtn {
     }
     html[data-theme="christmas"] .theme-toolbar { padding: 0 12px; }
     html[data-theme="christmas"] .theme-switch button { font-size: 14px; }
-    html[data-theme="christmas"] header::before { bottom: 0; height: 110px; }
-    html[data-theme="christmas"] .holiday-decor { width: 220px; height: 74px; }
+    html[data-theme="christmas"] header::before { bottom: 0; height: 77px; }
+    html[data-theme="christmas"] .holiday-decor { width: 154px; height: 52px; }
     html[data-theme="christmas"] .holiday-decor-right {
         right: 0;
-        width: 160px;
-        height: 54px;
+        width: 112px;
+        height: 38px;
         background-image: url('/assets/images/christmas/pine-left.webp');
         transform: scaleX(-1);
     }
     html[data-theme="christmas"] .holiday-decor::before { display: none; }
     html[data-theme="christmas"] .holiday-decor::after { left: 78%; top: 70%; font-size: 16px; }
+    html[data-theme="christmas"] .holiday-decor-left::after { top: 30%; }
     html[data-theme="christmas"] .header-container {
-        padding: 58px 16px 12px;
-        gap: 10px 12px;
+        padding: 42px 16px 8px;
+        gap: 7px 10px;
     }
-    html[data-theme="christmas"] .logo-container { width: 86px; height: 100px; }
+    html[data-theme="christmas"] .logo-container { width: 66px; height: 70px; }
     html[data-theme="christmas"] .club-title {
-        font-size: clamp(19px, 4.5vw, 25px);
+        font-size: clamp(18px, 4.5vw, 23px);
         text-align: left;
         text-wrap: initial;
     }
@@ -470,7 +471,7 @@ html[data-theme="christmas"] #scrollTopBtn {
     }
     html[data-theme="christmas"] .nav-grid a {
         display: block;
-        padding: 8px 10px;
+        padding: 4px 10px;
         font-size: 16px;
     }
     html[data-theme="christmas"] main {
