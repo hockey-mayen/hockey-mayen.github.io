@@ -93,8 +93,7 @@ html[data-theme="christmas"] header {
 html[data-theme="christmas"] header::before {
     content: '';
     position: absolute;
-    inset: auto 0 var(--holiday-nav-height);
-    height: calc(100% - var(--holiday-nav-height));
+    inset: 0;
     background: url('/assets/images/christmas/header-waves.svg') center bottom / 100% 100% no-repeat;
     pointer-events: none;
     z-index: -2;
@@ -298,7 +297,7 @@ html[data-theme="christmas"] .header-content nav {
     width: calc(100% + 13.6cqw);
     margin-inline: -6.8cqw;
     padding-inline: 6.8cqw;
-    background: rgba(0, 36, 29, .22);
+    background: transparent;
 }
 
 html[data-theme="christmas"] .club-title-prefix {
@@ -534,7 +533,6 @@ html[data-theme="christmas"] #scrollTopBtn {
     }
     html[data-theme="christmas"] .theme-toolbar { padding: 0 12px; }
     html[data-theme="christmas"] .theme-switch button { font-size: 14px; }
-    html[data-theme="christmas"] header::before { height: 77px; }
     html[data-theme="christmas"] .holiday-decor {
         width: 56cqw;
         height: clamp(76px, 23cqw, 96px);
