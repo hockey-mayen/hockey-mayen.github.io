@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 130">
+  <defs>
+    <path id="fir" d="M0 0C1 9 3 16 7 23L3 22C6 30 10 36 14 41L8 39C11 47 16 54 20 59L12 57C16 66 21 75 27 82L17 79C22 89 29 99 35 105C25 107 17 105 10 101L10 114H-9V102C-17 105-25 107-35 105C-28 98-22 90-17 80L-27 83C-21 75-16 66-12 58L-20 60C-15 53-11 47-8 40L-14 42C-9 35-6 29-3 22L-7 24C-3 15-1 8 0 0Z"/>
+    <path id="fir-full" d="M0 0C-2 13-7 25-12 30L-5 28C-10 42-16 50-24 57L-14 54C-18 66-26 77-35 84L-22 80C-27 91-35 100-42 106C-29 110-15 108-7 104V120H8V105C18 110 30 111 40 106C32 100 27 90 22 82L32 86C24 76 18 65 14 54L23 58C14 47 8 35 5 27L11 31C5 17 1 8 0 0Z"/>
+  </defs>
+  <g fill="#315b45">
+    <use href="#fir" transform="translate(48 48) scale(.45 .6) rotate(-2 0 114)"/>
+    <use href="#fir-full" transform="translate(67 57) scale(.38 .52)"/>
+    <use href="#fir" transform="translate(243 50) scale(.48 .58) rotate(2 0 114)"/>
+    <use href="#fir-full" transform="translate(278 61) scale(.38 .49)"/>
+    <use href="#fir" transform="translate(455 53) scale(.4 .53)"/>
+  </g>
+  <g fill="#153f31">
+    <use href="#fir" transform="translate(22 32) scale(.68 .82) rotate(-2 0 114)"/>
+    <use href="#fir-full" transform="translate(90 5) scale(.86 .99) rotate(1 0 120)"/>
+    <use href="#fir" transform="translate(118 46) scale(.54 .68) rotate(3 0 114)"/>
+    <use href="#fir" transform="translate(222 27) scale(.72 .84) rotate(-3 0 114)"/>
+    <use href="#fir-full" transform="translate(263 16) scale(.63 .88) rotate(2 0 120)"/>
+    <use href="#fir" transform="translate(298 51) scale(.46 .61) rotate(-1 0 114)"/>
+    <use href="#fir-full" transform="translate(418 8) scale(.82 .96) rotate(-2 0 120)"/>
+    <use href="#fir" transform="translate(476 34) scale(.64 .76) rotate(2 0 114)"/>
+  </g>
+</svg>
