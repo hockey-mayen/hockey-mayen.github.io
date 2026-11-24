@@ -1,5 +1,6 @@
 const fs = require('node:fs');
 const path = require('node:path');
+const { createHash } = require('node:crypto');
 const CleanCSS = require('clean-css');
 
 const root = path.resolve(__dirname, '..');
@@ -27,7 +28,14 @@ const sourceFiles = [
 function buildCss() {
   const source = sourceFiles.map((file) => {
     const filename = path.join(cssDir, file);
-    const css = fs.readFileSync(filename, 'utf8');
+    const css = fs.readFileSync(filename, 'utf8').replace(
+      /url\((['"]?)(\/assets\/images\/christmas\/[a-z0-9-]+\.svg)\1\)/gi,
+      (_match, _quote, url) => {
+        const image = fs.readFileSync(path.join(root, url.slice(1)));
+        const version = createHash('sha256').update(image).digest('hex').slice(0, 12);
+        return `url('${url}?v=${version}')`;
+      },
+    );
     if (!css.trim()) throw new Error(`CSS-Quelldatei ist leer: ${file}`);
     return `/* ${file} */\n${css}`;
   }).join('\n');
