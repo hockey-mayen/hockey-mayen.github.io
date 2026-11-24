@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1140 760">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 760">
   <title>Clemenskirche mit gedrehtem Turmhelm und Genovevaburg</title>
   <!-- Konturen in den Bildkoordinaten der Vorlagen; nur proportional skaliert. -->
   <g transform="translate(-110 0)">
@@ -30,7 +30,7 @@
       <path d="M170 3L172 33M162 17L180 11M404 259V280M398 266H410"/>
     </g>
   </g>
-  <g transform="translate(400 270) scale(1.35)">
+  <g transform="translate(350 40) scale(2)">
     <g fill="#153f31">
       <path d="M81 169Q125 183 171 169V341H81Z"/>
       <path d="M78 167Q103 114 128 57Q147 120 173 167Q127 187 78 167Z"/>
